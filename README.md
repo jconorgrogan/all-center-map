@@ -1,6 +1,12 @@
-# Lean Proof Improving the Minor-Arc Threshold to `2/15`
+# Uniform Minor-Arc Cancellation for Primes at the \(X^{2/15+\varepsilon}\) Scale
 
-## Uniform cancellation for prime-weighted exponential sums
+A formally verified improvement from the \(8/33\) local Fourier scale to \(2/15\).
+
+We prove a uniform local minor-arc \(L^2\) estimate for the von Mangoldt exponential sum on every frequency interval of length \(1/H\), valid for \(H \ge X^{2/15+\varepsilon}\). This improves the \(8/33\) scale appearing in the Matomäki–Radziwiłł–Tao machinery for averaged shifted-prime correlations.
+
+- **Previous relevant scale:** \(8/33 \approx 0.2424\)
+- **New scale:** \(2/15 \approx 0.1333\)
+- **Status:** Lean + independent kernel / NanoDa / Comparator verification. Exact theorem: [`AllCenterMAP.map_two_fifteenths`](STATEMENT.md)
 
 Prime numbers leave a signal in the exponential sum
 `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`, where `Λ(n)` is the von Mangoldt weight.
@@ -21,9 +27,8 @@ Matomäki–Radziwiłł–Tao on correlations of the von Mangoldt function and d
 functions. Their earlier `8/33` scale for averaged prime-pair information gives
 context for why a uniform local estimate at `2/15` is useful: it controls the
 short frequency windows that arise when studying primes with a prescribed shift.
-
-This improves that earlier threshold: `2/15 < 8/33`, so the theorem reaches
-shorter frequency windows.
+This repository records that local estimate; it does not claim the downstream
+prime-pair consequences.
 
 The constants `C` and `X₀` are ineffective. The proof uses Siegel's theorem, so
 it establishes their existence without giving an algorithm that computes them.

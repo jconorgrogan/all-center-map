@@ -2,7 +2,7 @@
 
 Status: ready for Palomar submission review.
 
-- Public repository: `https://github.com/jconorgrogan/all-center-map`
+- Public repository: `https://github.com/jconorgrogan/prime-minor-arcs-2-15`
 - Public commit: `027444a2ba3ae339013016a538460793b47c3c71`
 - MAP closure replay: 100,596 declarations
 - Guth–Maynard large-value closure replay: 75,874 declarations

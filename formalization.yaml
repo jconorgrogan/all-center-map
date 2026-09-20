@@ -1,6 +1,6 @@
 version: "v0.4"
 project:
-  name: "Lean Proof Improving the Minor-Arc Threshold to 2/15"
+  name: "Uniform Minor-Arc Cancellation for Primes at the X^{2/15+ε} Scale"
   description: >-
     Prime numbers leave a signal in exponential sums. Away from the simple
     rational frequencies called major arcs, the squared von Mangoldt exponential
