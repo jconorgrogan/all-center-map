@@ -12,8 +12,9 @@ project:
     X and H. This gives uniform minor-arc cancellation at the 2/15 threshold.
     The estimate is part of the analytic machinery behind
     Matomäki–Radziwiłł–Tao's work on divisor correlations and averaged prime
-    pairs, including their 8/33 scale. Since 2/15 < 8/33, this reaches shorter
-    frequency windows. The constants C and X0 are ineffective
+    pairs, including their 8/33 scale. Since 2/15 < 8/33, the admissible H is
+    smaller, so the frequency windows of length 1/H are wider and the
+    shift-averaging intervals are shorter. The constants C and X0 are ineffective
     because the proof uses Siegel's theorem. The development also contains an
     internal proof of the epsilon-form of Guth–Maynard's large-value estimate
     for Dirichlet polynomials. The MAP proof closure contains 100,596

@@ -54,7 +54,7 @@ The theorem proved here reaches
 H\ge X^{2/15+\varepsilon},\qquad \frac{2}{15}\approx 0.1333.
 ```
 
-So the local estimate remains valid on substantially shorter frequency windows.
+The frequency-window length is $1/H$. A smaller admissible $H$ therefore reaches substantially wider frequency windows, and shorter shift-averaging intervals.
 
 The $2/15$ threshold is the local scale that the Guth–Maynard large-value estimates for Dirichlet polynomials make available for this argument. The main step in the development is carrying that strength through to an **all-center local minor-arc $L^{2}$ estimate for the von Mangoldt exponential sum**.
 
