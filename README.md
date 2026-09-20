@@ -1,6 +1,6 @@
-# Lean Proof of Uniform Minor-Arc Cancellation at the `2/15` Threshold
+# Lean Proof Improving the Minor-Arc Threshold to `2/15`
 
-## Prime-weighted exponential sums and short frequency windows
+## Uniform cancellation for prime-weighted exponential sums
 
 Prime numbers leave a signal in the exponential sum
 `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`, where `Λ(n)` is the von Mangoldt weight.
@@ -14,12 +14,16 @@ Here `A` and `ε` can be any positive numbers. The constants and the rational
 frequency cutoffs are chosen once, before the center and the scale are known.
 The exponent `2/15` is therefore a uniform threshold for local minor-arc
 cancellation, which is the estimate needed in arguments about primes in short
+shift intervals.
 
 This estimate is part of the analytic machinery behind work of
 Matomäki–Radziwiłł–Tao on correlations of the von Mangoldt function and divisor
 functions. Their earlier `8/33` scale for averaged prime-pair information gives
 context for why a uniform local estimate at `2/15` is useful: it controls the
 short frequency windows that arise when studying primes with a prescribed shift.
+
+This improves that earlier threshold: `2/15 < 8/33`, so the theorem reaches
+shorter frequency windows.
 
 The constants `C` and `X₀` are ineffective. The proof uses Siegel's theorem, so
 it establishes their existence without giving an algorithm that computes them.

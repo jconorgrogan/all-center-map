@@ -1,6 +1,6 @@
 version: "v0.4"
 project:
-  name: "Lean Proof of Uniform Minor-Arc Cancellation at the 2/15 Threshold"
+  name: "Lean Proof Improving the Minor-Arc Threshold to 2/15"
   description: >-
     Prime numbers leave a signal in exponential sums. Away from the simple
     rational frequencies called major arcs, the squared von Mangoldt exponential
@@ -12,7 +12,8 @@ project:
     X and H. This gives uniform minor-arc cancellation at the 2/15 threshold.
     The estimate is part of the analytic machinery behind
     Matomäki–Radziwiłł–Tao's work on divisor correlations and averaged prime
-    pairs, including their 8/33 scale. The constants C and X0 are ineffective
+    pairs, including their 8/33 scale. Since 2/15 < 8/33, this reaches shorter
+    frequency windows. The constants C and X0 are ineffective
     because the proof uses Siegel's theorem. The development also contains an
     internal proof of the epsilon-form of Guth–Maynard's large-value estimate
     for Dirichlet polynomials. The MAP proof closure contains 100,596
