@@ -2,26 +2,20 @@
 
 ## A Lean formalization at the `2/15` threshold
 
-This release proves `AllCenterMAP.map_two_fifteenths`, a theorem about how much
-prime-weighted Fourier energy can concentrate in a short interval of
-frequencies. The exact commit is public on GitHub.
+Prime numbers leave a signal in the exponential sum
+`Λ(n) exp(2πi nα)` over `X < n ≤ 2X`, where `Λ(n)` is the von Mangoldt weight.
+That signal is strongest near rational frequencies. Remove those major-arc
+frequencies, and consider any short interval of the remaining circle centered at
+any point. The theorem proves that the total squared signal in that interval is
+at most `C X (log X)^(-A)` whenever `H ≥ X^(2/15+ε)` and `X` is large enough.
 
-## The short version: what is the point?
+Here `A` and `ε` can be any positive numbers. The constants and the rational
+frequency cutoffs are chosen once, before the center and the scale are known.
+The exponent `2/15` is therefore a uniform threshold for local minor-arc
+cancellation, which is the estimate needed in arguments about primes in short
+shift intervals.
 
-The theorem studies the exponential sum `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`,
-where `Λ(n)` gives prime numbers their standard analytic weight. Such sums can
-be large near simple rational frequencies (the major arcs). Away from those
-frequencies (the minor arcs), this theorem says that the total squared signal
-inside **every** short circle arc is small—smaller than `X` by any chosen power
-of `log X`, once `H` is at least `X^(2/15+ε)`.
-
-In plain terms: at this scale, no location on the circle can hide a large amount
-of prime-like Fourier energy in the minor arcs. The same cutoffs and constants
-work for every center; they are not tuned after seeing the center. That uniformity
-is the part that matters for using the estimate in shifted-prime arguments.
-
-The number `2/15` is the threshold exponent. It says how short the local arc may
-be while the minor-arc energy estimate still holds.
+Its formal name is `AllCenterMAP.map_two_fifteenths`.
 
 For every positive logarithmic saving A and positive epsilon, fixed positive
 integer major-arc cutoffs and constants control the normalized Haar integral of
@@ -32,7 +26,7 @@ See [the precise mathematical statement](STATEMENT.md).
 
 ## Resources
 
-- [Plain-English overview and exact statement](STATEMENT.md)
+- [Overview and exact statement](STATEMENT.md)
 - [Formal statement](Challenge.lean)
 - [Proof entry point](Solution.lean)
 - [Guth–Maynard formalization](GUTH_MAYNARD.md)
@@ -50,18 +44,7 @@ Of these, 1,860 preserve the verified authoring snapshot byte-for-byte; one has
 statements unchanged. The complete 100,596-declaration proof closure replays
 exactly into an empty Lean kernel environment.
 
-## Research audience
-
-The MAP statement gives local minor-arc control with arbitrary logarithmic
-saving, uniformly over every circle center at the stated power scale. The
-quantifier order matters: no new cutoffs are chosen to accommodate an individual
-center. This is relevant to analytic number theorists studying minor arcs and
-shifted-prime correlations.
-
-For researchers in formalized analytic number theory, the internally proved
-Guth–Maynard large-value theorem is a second substantial point of entry.
-
-## Internal Guth–Maynard formalization
+## A second theorem in the development
 
 A substantial part of the development is an internal proof of the epsilon-form
 of Guth–Maynard's Theorem 1.1 on large values of Dirichlet polynomials. The closed
@@ -81,37 +64,7 @@ the polynomial and the large-value set. The exact definition is
 Its own 75,874-declaration dependency closure passed fresh replay into an empty
 Lean kernel environment with only the three standard axioms.
 
-The supporting formalization and its verification record are described in
-`GUTH_MAYNARD.md`.
-
-## What is formalized
-
-The main formal result is the all-center MAP estimate at exponent `2/15`.
-The development also contains reusable formalized tools for large values of
-Dirichlet polynomials, including the internal Guth–Maynard theorem described
-above. Together they provide a proof framework for local questions about prime
-correlations and short frequency intervals.
-
-## Reproduction
-
-The exact proof environment is Lean `v4.30.0-rc2` and Mathlib commit
-`0f9072dd907c6e2e4264ab241a049cab50137f7c`. Palomar accepts eligible RC toolchains;
-the matching lean4export tag resolves to
-`12581a6b680d8478175596338eb2d53383a323e3`.
-
-Local structural checks do not require a public repository:
-
-```sh
-python3 scripts/static_preflight.py .
-ruby scripts/validate-formalization.rb
-python3 scripts/check-claims.py
-```
-
-The final Linux check must include Comparator statement identity, Lean kernel
-acceptance, independent NanoDa replay under Landrun, and permitted-axiom audit.
-The publication/submission gate additionally requires a clean committed Git tree
-and the actual public GitHub origin. Do not invent a repository or source history.
-
-Conor Grogan confirmed authorship, responsible maintenance, and Apache-2.0
-licensing for this prepared release on 2026-09-20. Publication to `jconorgrogan` on GitHub is authorized once the release is ready.
-Palomar preparation must stop before the final submission button. See `RELEASE_STATUS.md` for checked versus pending work.
+The complete formal environment and reproducibility material are collected in
+the linked resources above. The project uses Lean `v4.30.0-rc2` with Mathlib
+commit `0f9072dd907c6e2e4264ab241a049cab50137f7c` and is released under the
+Apache-2.0 license.

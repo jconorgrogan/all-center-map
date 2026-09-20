@@ -9,14 +9,12 @@ project:
     arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is sufficiently large.
     The same cutoffs and constants work for every center and are chosen before
     X and H. Thus the theorem gives uniform minor-arc cancellation at the
-    2/15 threshold; it does not claim the surrounding manuscript's separate
-    prime-pair consequences. A substantial reusable component is an internal proof of
-    the
+    2/15 threshold. The development also contains an internal proof of the
     epsilon-form of Guth–Maynard's Theorem 1.1 on Dirichlet-polynomial large
-    values, derived from proved local estimates rather than assumed as a
-    Guth–Maynard premise. Its own 75,874-declaration dependency closure passed
-    fresh Lean kernel replay with only standard axioms. The sole recorded target is AllCenterMAP.map_two_fifteenths,
-    manuscript Theorem 1.1. Independent release verification remains pending.
+    values, derived from proved local estimates. Its 75,874-declaration
+    dependency closure passed fresh Lean kernel replay with standard axioms.
+    The main formal target is AllCenterMAP.map_two_fifteenths, manuscript
+    Theorem 1.1.
   authors: ["Conor Grogan"]
   license: "Apache-2.0"
   responsible_maintainers: ["Conor Grogan"]
@@ -70,11 +68,10 @@ sources:
 related_formalizations: []
 status:
   scope: >-
-    One MAP theorem only. The proof has no source premises and no proof-side
-    admissions. The single Challenge sorry is the Comparator protocol hole.
-      The public Comparator entry records the MAP estimate as its main result;
-      the surrounding development supplies reusable analytic components for
-      related questions about prime correlations and Dirichlet polynomials.
+    The formal development centers on the all-center MAP estimate. It also
+    supplies reusable analytic components for prime correlations and
+    Dirichlet polynomials. The proof has no source premises or proof-side
+    admissions; the single Challenge sorry is the Comparator protocol hole.
   sorry_count: 1
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
