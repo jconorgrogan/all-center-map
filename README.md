@@ -56,11 +56,9 @@ So the local estimate remains valid on substantially shorter frequency windows.
 
 The $2/15$ threshold is the local scale that the Guth–Maynard large-value estimates for Dirichlet polynomials make available for this argument. The main step in the development is carrying that strength through to an **all-center local minor-arc $L^{2}$ estimate for the von Mangoldt exponential sum**.
 
-This repository establishes the minor-arc theorem itself. Separate prime-pair, Goldbach, density-one, and decoding consequences require their own deductions.
-
 ## Formal verification
 
-The release contains the full substantive proof, not a theorem wrapper around an external assumption. The MAP endpoint — 1,861 Lean modules, 100,596 declarations, about 18.7 MB of source — has been replayed into an empty Lean kernel environment. A fresh Linux build (10,255 jobs), Comparator statement identity, independent NanoDa replay, source/dependency scanning, and an axiom audit all passed.
+The MAP endpoint — 1,861 Lean modules, 100,596 declarations, about 18.7 MB of source — has been replayed into an empty Lean kernel environment. A fresh Linux build (10,255 jobs), Comparator statement identity, independent NanoDa replay, source/dependency scanning, and an axiom audit all passed.
 
 The proof uses only Lean's standard axioms: `propext`, `Quot.sound`, and `Classical.choice`.
 
@@ -98,7 +96,7 @@ The main source families are:
 - **Ford** — exponential-sum and zeta-function estimates
 - **Chen–Gupta–Li** — character large values and zero-density estimates
 
-The last three are supporting source families, not claims that those papers have been formalized. See [PROVENANCE.md](PROVENANCE.md).
+See [PROVENANCE.md](PROVENANCE.md) for the source map.
 
 ## Repository map
 

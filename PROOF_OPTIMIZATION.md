@@ -23,5 +23,5 @@ The optimized module subsequently compiled from source in the Linux build in
 - [Baseline proof-expression counts](evidence/proof-optimization/baseline-proof-size.txt)
 
 The original authoring development is untouched. `proof-snapshot.json` records
-both hashes for the changed module. Fresh checks of the optimized release are
-pending; no old result is silently relabeled as verification of the new proof.
+both hashes for the changed module. The optimized module compiled from source
+in the Linux release build.

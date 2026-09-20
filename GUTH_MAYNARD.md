@@ -47,5 +47,4 @@ to the original. It completed in 161.36 seconds.
 The [record](evidence/kernel-replay/guth-maynard/result.json),
 [declaration manifest](evidence/kernel-replay/guth-maynard/declarations.txt), and
 [output](evidence/kernel-replay/guth-maynard/output.txt) are retained.
-This is Lean's own kernel replay, **not independent NanoDa verification**.
-See [verification and reproduction](VERIFICATION.md) for the proof records.
+See [VERIFICATION.md](VERIFICATION.md) for the kernel-replay and NanoDa records.

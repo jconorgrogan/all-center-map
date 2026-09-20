@@ -34,11 +34,10 @@ sources:
     authors: ["Conor Grogan"]
     relationship: "other"
     note: >-
-      The manuscript's MAP theorem is the release target. The source manuscript is a local
-      artifact identified by SHA-256 in MANUSCRIPT_ALIGNMENT.md. STATEMENT.md
-      supplies the exact selected mathematical statement in this release.
-      The historical manuscript is not claimed to be publicly available.
-      Authorship and release licensing were confirmed on 2026-09-20.
+      The manuscript's MAP theorem is the release target. The source manuscript
+      is identified by SHA-256 in MANUSCRIPT_ALIGNMENT.md. STATEMENT.md is the
+      reader-facing statement. Authorship and Apache-2.0 licensing were
+      confirmed on 2026-09-20.
   - title: "Correlations of the von Mangoldt and higher divisor functions I. Long shift ranges"
     type: "paper"
     authors: ["Kaisa Matomaki", "Maksym Radziwill", "Terence Tao"]

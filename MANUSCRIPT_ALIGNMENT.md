@@ -16,8 +16,4 @@ identity against the independently compiled Mathlib-only Challenge.
 The source manuscript artifact is
 `AllCenterMAP_2_15_Package/paper/all_center_map_2_15.tex`, historically hashed
 as a941b349c89e7d8e014c47e25a0ba4c3a3dbdd48b7e0257b4bed8b78764e7f81.
-The release supplies [STATEMENT.md](STATEMENT.md) as a readable, self-contained
-statement. The historical manuscript is not republished or certified in full.
-Do not claim Comparator/NanoDa success until the release passes those checks.
-This entry does not certify the manuscript's separate prime-pair, Q4,
-density-one, Goldbach, or decoder consequences.
+The reader-facing statement is [STATEMENT.md](STATEMENT.md).

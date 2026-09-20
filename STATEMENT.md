@@ -17,10 +17,8 @@ the local `2/15` threshold here. The constants in this theorem are ineffective:
 Siegel's theorem supplies existence without an effective procedure for computing
 them.
 
-This is the mathematical statement selected for this release. The authoritative
-formal surface is [Challenge.lean](Challenge.lean); its independent proof is
-[Solution.lean](Solution.lean). This document does not assert the separate
-prime-pair consequences discussed in the historical manuscript.
+The formal statement is [Challenge.lean](Challenge.lean); the proof is
+[Solution.lean](Solution.lean).
 
 Write the circle as $\mathbb T=\mathbb R/\mathbb Z$, with its usual quotient
 metric and Haar measure of total mass one. Define
@@ -53,12 +51,9 @@ upper bound on $H$ in this statement and no exceptional set of centers.
 This is Theorem 1.1 (Uniform local minor-arc estimate) of the local manuscript
 *Prime Pairs at the Prime Number Theorem Threshold: Hardy–Littlewood for Almost
 Every Shift in Every Interval of Length X^(2/15+epsilon)*, attributed to Conor
-Grogan. The historical TeX source has SHA-256
+Grogan. The TeX source has SHA-256
 `a941b349c89e7d8e014c47e25a0ba4c3a3dbdd48b7e0257b4bed8b78764e7f81`.
-No public version of that historical manuscript is asserted here. This release
-provides the explicit MAP statement and substantive Lean proof directly.
 
-The independent Challenge contains one protocol `sorry`. The Solution does not
-import Challenge and has no admission. Release verification status is recorded
-in [VERIFICATION.md](VERIFICATION.md); source-to-statement alignment is recorded
-in [MANUSCRIPT_ALIGNMENT.md](MANUSCRIPT_ALIGNMENT.md).
+The Challenge contains one protocol `sorry`. The Solution does not import
+Challenge. Verification is recorded in [VERIFICATION.md](VERIFICATION.md);
+alignment is recorded in [MANUSCRIPT_ALIGNMENT.md](MANUSCRIPT_ALIGNMENT.md).

@@ -3,12 +3,9 @@ import Mathlib
 /-!
 # All-center MAP at the `2/15` scale
 
-This is the complete statement surface for the proposed first Palomar entry.
-It contains Theorem 1.1 only. The prime-pair, fourth-correlation, density-one,
-Goldbach, and decoder consequences are deliberately outside this entry.
-
-The single deliberate Challenge hole is the Comparator protocol statement.
-The independent Solution supplies the proved endpoint; no proof-side hole is permitted.
+This is the statement surface for Theorem 1.1.
+The Challenge hole is the Comparator protocol statement.
+The Solution supplies the proved endpoint.
 -/
 
 namespace AllCenterMAP

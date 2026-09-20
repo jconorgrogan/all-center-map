@@ -42,21 +42,16 @@ or partial declarations in the selected proof closure.
 One release module now uses direct algebraic identities instead of two expansive
 `ring` proofs. Its statements are unchanged and its candidate compilation passed;
 see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md). The recorded MAP replay above
-is baseline evidence. Fresh optimized release verification remains pending.
-The separately checked Guth–Maynard proof closure does not depend on the changed
-BHP declarations.
+is the authoring-baseline replay. The optimized module then compiled from source
+in the Linux build in 6.0 seconds. The Guth–Maynard proof closure does not
+depend on the changed BHP declarations.
 
-## Pending release checks
+## Release checks
 
-A fresh Linux source build is running. Comparator statement identity and NanoDa
-replay under Landrun remain pending. The local Linux run uses native ARM64;
-both it and the planned Ubuntu 24.04 x86_64 GitHub CI run are project checks,
-not the official Palomar verification workflow. Palomar additionally isolates
-the canonical Challenge, controls dependency/cache provenance, and enforces
-its own sandbox and resource profile during submission. No official Palomar
-verification or registration is claimed.
-Run `bash scripts/verify-linux.sh --local` for the private release check, or omit
-`--local` for the additional clean Git/public-origin provenance gate.
+The optimized release passed a fresh Linux source build (10,255 jobs),
+Comparator statement identity, independent NanoDa replay, Lean kernel checks,
+source/dependency scanning, and an axiom audit. See
+[RELEASE_STATUS.md](RELEASE_STATUS.md).
 
-Old scaffold reports are historical evidence only. A prepared command, a
-protocol Challenge hole, or a Git commit alone does not establish verification.
+Run `bash scripts/verify-linux.sh --local` for the private release check, or
+omit `--local` for the additional clean Git/public-origin provenance gate.

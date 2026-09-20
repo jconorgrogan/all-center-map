@@ -8,8 +8,4 @@ The release preparation gates are complete.
 - MAP closure replay: 100,596 declarations.
 - Guth–Maynard large-value closure replay: 75,874 declarations.
 - Citation and source-alignment review: complete.
-- Public GitHub commit: recorded in `RELEASE_STATUS.md`.
-- Palomar form: filled and stopped before final submission.
-
-The release is ready for Palomar submission review. The final registration click
-remains intentionally held for the user.
+- Public repository: `https://github.com/jconorgrogan/prime-minor-arcs-2-15`
