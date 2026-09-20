@@ -108,13 +108,14 @@ fidelity:
     identity and independent kernel verification of the release are recorded in
     VERIFICATION.md.
 review:
-  status: "internal agent-assisted semantic review with Lean, Comparator, NanoDa, and Landrun checks"
+  status: "mechanical Lean, Comparator, NanoDa, and Landrun checks"
   notes: >-
     The authoring baseline zero-argument MAP endpoint passed the pinned Lean
     build, trust-zero source check, and fresh complete proof-closure replay.
-    The release has one documented, checked algebraic proof-term optimization;
+    The release has one documented, checked algebraic proof-term optimization.
     The optimized release passed the fresh Linux build, Comparator, NanoDa, and
-    Lean kernel checks. No external human review is represented by this field.
+    Lean kernel checks. The hosted public replay is the GitHub Actions workflow
+    Palomar release checks. This field does not record a human referee report.
 alignment:
   namespace: "AllCenterMAP"
   statements:

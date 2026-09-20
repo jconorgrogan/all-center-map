@@ -6,7 +6,7 @@ A formally verified local Fourier estimate for the von Mangoldt function.
 
 - **Previous relevant scale:** `8/33 ≈ 0.2424`
 - **New scale:** `2/15 ≈ 0.1333`
-- **Status:** Lean + independent kernel / NanoDa / Comparator verification. Exact theorem: [`AllCenterMAP.map_two_fifteenths`](STATEMENT.md)
+- **Status:** Lean proof of [`AllCenterMAP.map_two_fifteenths`](STATEMENT.md). Comparator, NanoDa, and Lean kernel checks passed. Public replay: [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml).
 
 ## The estimate
 
@@ -64,7 +64,7 @@ The MAP endpoint — 1,861 Lean modules, 100,596 declarations, about 18.7 MB of 
 
 The proof uses only Lean's standard axioms: `propext`, `Quot.sound`, and `Classical.choice`.
 
-See [VERIFICATION.md](VERIFICATION.md) and [RELEASE_STATUS.md](RELEASE_STATUS.md).
+The public hosted replay of those checks is the GitHub Actions workflow [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml). See [VERIFICATION.md](VERIFICATION.md) and [RELEASE_STATUS.md](RELEASE_STATUS.md).
 
 ## Guth–Maynard large-value theorem
 

@@ -11,10 +11,14 @@ if [ "$(uname -s)" != Linux ]; then
 fi
 
 gate_args=()
-if [ "${1:-}" = "--local" ] && [ "$#" -eq 1 ]; then
+if [ "${1:-}" = "--local" ] || [ "${1:-}" = "--ci" ]; then
+  if [ "$#" -ne 1 ]; then
+    echo "usage: verify-linux.sh [--local|--ci]" >&2
+    exit 2
+  fi
   gate_args=(--local)
 elif [ "$#" -ne 0 ]; then
-  echo "usage: verify-linux.sh [--local]" >&2
+  echo "usage: verify-linux.sh [--local|--ci]" >&2
   exit 2
 fi
 python3 scripts/check-release-gate.py "${gate_args[@]}"
@@ -61,10 +65,8 @@ python3 scripts/check-claims.py --verified \
   --axiom-log .cache/solution-axioms.log \
   --comparator-log .cache/comparator.log
 
-if [ "${1:-}" = "--local" ]; then
-  if [ "${GITHUB_ACTIONS:-}" = "true" ]; then
-    echo "PUBLIC LINUX CHECKS PASSED: pinned-commit GitHub Actions replay completed."
-  else
-    echo "PRIVATE LINUX CHECKS PASSED: publication provenance and final submitter approval remain separate."
-  fi
+if [ "${1:-}" = "--ci" ] || [ "${GITHUB_ACTIONS:-}" = "true" ]; then
+  echo "PUBLIC LINUX CHECKS PASSED: pinned-commit GitHub Actions replay completed."
+elif [ "${1:-}" = "--local" ]; then
+  echo "LOCAL LINUX CHECKS PASSED: publication provenance remains a separate Git gate."
 fi

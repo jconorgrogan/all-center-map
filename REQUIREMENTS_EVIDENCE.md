@@ -15,8 +15,9 @@ verified v4.30.0-rc2/Mathlib 0f9072dd907c6e2e4264ab241a049cab50137f7c pair.
 0bce2769d753e69fe092f4f2b02cb1428d6287a6.
 
 The public repository is `https://github.com/jconorgrogan/prime-minor-arcs-2-15`.
-Comparator, Lean's kernel, and independent NanoDa are recorded as passed in
-[RELEASE_STATUS.md](RELEASE_STATUS.md).
+The author Linux Comparator, Lean kernel, and NanoDa results are in
+[VERIFICATION.md](VERIFICATION.md). The hosted public replay is the GitHub
+Actions workflow `Palomar release checks`.
 
 The PalomarSubmission source was pinned during this audit at
 3561d237dcc4b28482558ad28a64d767d7cc8615. Its verification-profile.json pins

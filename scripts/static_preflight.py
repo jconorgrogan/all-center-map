@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -51,10 +52,25 @@ def regular_file(audit: Audit, path: Path) -> None:
                   f"required regular file missing: {path.name}")
 
 
+SKIP_DIRS = {".git", ".lake", ".cache", ".bundle", "vendor", "__pycache__"}
+
+
 def walk_source(root: Path):
+    try:
+        output = subprocess.check_output(
+            ["git", "-C", str(root), "ls-files", "-z"],
+            stderr=subprocess.DEVNULL,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        output = b""
+    if output:
+        for rel in output.split(b"\0"):
+            if rel:
+                yield root / rel.decode()
+        return
     for base, dirs, files in os.walk(root, followlinks=False):
         base_path = Path(base)
-        dirs[:] = [d for d in dirs if d not in {".git", ".lake"}]
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for name in files:
             yield base_path / name
 

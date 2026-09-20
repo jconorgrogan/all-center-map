@@ -1,5 +1,18 @@
 # Verification
 
+The formal theorem is `AllCenterMAP.map_two_fifteenths`.
+
+Two different things are recorded here:
+
+- **Independent checkers.** Comparator checks statement identity. NanoDa is an
+  independently implemented kernel. Lean's kernel is a second kernel.
+- **Independent hosted replay.** GitHub Actions runs those same checks on a
+  pinned commit of this repository.
+
+Human mathematical refereeing is separate from both.
+
+## Author Linux run
+
 The optimized release passed:
 
 - a fresh Linux source build: **10,255** jobs
@@ -8,8 +21,6 @@ The optimized release passed:
 - Lean kernel checks
 - source and dependency scanning
 - an axiom audit: only `propext`, `Quot.sound`, and `Classical.choice`
-
-See [RELEASE_STATUS.md](RELEASE_STATUS.md).
 
 The MAP endpoint proof closure is **100,596** declarations across **1,861**
 modules. The Guth–Maynard large-value closure is **75,874** declarations.
@@ -24,6 +35,15 @@ One module has a checked algebraic proof-term optimization with unchanged
 statements; see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md). That module
 compiled from source in the Linux build in 6.0 seconds. The Guth–Maynard
 closure does not depend on it.
+
+## Public hosted replay
+
+The public replay is the GitHub Actions workflow
+[Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml).
+
+It first confirms the checkout is a clean pinned commit on this repository,
+then runs `bash scripts/verify-linux.sh --ci`. That is the same Linux path:
+source build, Comparator, NanoDa, Lean kernel, source scan, and axiom audit.
 
 ## Reproduce the closure checks
 
@@ -41,11 +61,6 @@ The `unsafe` entry point in this verification utility enables Lean's replay API;
 it is not imported by the mathematical development. The utility refuses unsafe
 or partial declarations in the selected proof closure.
 
-The public replay is the GitHub Actions workflow `Palomar release checks` on
-this repository. Earlier public runs stopped at the publication gate because
-Bundler wrote `vendor/bundle` into the checkout before the script ran; that is
-an environment failure, not a mathematical one. The workflow now confirms the
-clean pinned commit first, then runs `bash scripts/verify-linux.sh --local`.
-
-Locally, run `bash scripts/verify-linux.sh --local` for the release check, or
-omit `--local` for the additional clean Git/public-origin provenance gate.
+On a Linux machine with a clean clone, `bash scripts/verify-linux.sh` also
+checks GitHub origin provenance. Use `--local` to run only the verification
+checks, or `--ci` for the same checks with the public-replay success line.

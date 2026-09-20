@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - name: Confirm pinned-commit publication gate
+      - name: Confirm the checkout is a clean pinned commit
         run: |
           git rev-parse HEAD
           git status --porcelain
@@ -37,5 +37,5 @@ jobs:
         with:
           go-version: "1.24.0"
           cache: false
-      - name: Run fail-closed Linux release verification
-        run: ./scripts/verify-linux.sh --local
+      - name: Replay Linux verification
+        run: ./scripts/verify-linux.sh --ci

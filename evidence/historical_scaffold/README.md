@@ -1,3 +1,8 @@
+# Archived pre-release notes
+
+These files are a snapshot from before the MAP endpoint was proved. They are
+not the current status. The live documents are at the repository root.
+
 # All-center MAP Palomar release candidate
 
 This directory is a **fail-closed release candidate**, not a Palomar
