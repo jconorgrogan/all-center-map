@@ -1,19 +1,28 @@
-# Uniform minor-arc cancellation for prime-weighted exponential sums
+# Lean Proof of Uniform Minor-Arc Cancellation at the `2/15` Threshold
 
-## A Lean formalization at the `2/15` threshold
+## Prime-weighted exponential sums and short frequency windows
 
 Prime numbers leave a signal in the exponential sum
 `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`, where `Λ(n)` is the von Mangoldt weight.
-That signal is strongest near rational frequencies. Remove those major-arc
-frequencies, and consider any short interval of the remaining circle centered at
-any point. The theorem proves that the total squared signal in that interval is
-at most `C X (log X)^(-A)` whenever `H ≥ X^(2/15+ε)` and `X` is large enough.
+That signal is strongest near rational frequencies. For any center on the
+circle—whether the center itself is near a rational frequency or not—the
+theorem integrates only the minor-arc portion inside the centered interval. It
+proves that this portion has total squared signal at most
+`C X (log X)^(-A)` whenever `H ≥ X^(2/15+ε)` and `X` is large enough.
 
 Here `A` and `ε` can be any positive numbers. The constants and the rational
 frequency cutoffs are chosen once, before the center and the scale are known.
 The exponent `2/15` is therefore a uniform threshold for local minor-arc
 cancellation, which is the estimate needed in arguments about primes in short
-shift intervals.
+
+This estimate is part of the analytic machinery behind work of
+Matomäki–Radziwiłł–Tao on correlations of the von Mangoldt function and divisor
+functions. Their earlier `8/33` scale for averaged prime-pair information gives
+context for why a uniform local estimate at `2/15` is useful: it controls the
+short frequency windows that arise when studying primes with a prescribed shift.
+
+The constants `C` and `X₀` are ineffective. The proof uses Siegel's theorem, so
+it establishes their existence without giving an algorithm that computes them.
 
 Its formal name is `AllCenterMAP.map_two_fifteenths`.
 
@@ -47,7 +56,7 @@ exactly into an empty Lean kernel environment.
 ## A second theorem in the development
 
 A substantial part of the development is an internal proof of the epsilon-form
-of Guth–Maynard's Theorem 1.1 on large values of Dirichlet polynomials. The closed
+of Guth–Maynard's large-value estimate for Dirichlet polynomials. The closed
 declaration
 [`GuthMaynardActualEndpointWeakTheta.actual_guthMaynardTheorem11`](Proof/GuthMaynardActualEndpointWeakTheta.lean)
 is derived from the proved local estimate

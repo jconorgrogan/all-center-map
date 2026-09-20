@@ -10,6 +10,13 @@ prime-weighted energy. The estimate works around every center with one common
 choice of parameters, which is what makes it useful for local and shifted-prime
 questions.
 
+The analytic context is the study of correlations of the von Mangoldt function
+with divisor functions and of prime pairs in short shift ranges. The `8/33`
+scale in Matomäki–Radziwiłł–Tao's averaged results gives a useful comparison for
+the local `2/15` threshold here. The constants in this theorem are ineffective:
+Siegel's theorem supplies existence without an effective procedure for computing
+them.
+
 This is the mathematical statement selected for this release. The authoritative
 formal surface is [Challenge.lean](Challenge.lean); its independent proof is
 [Solution.lean](Solution.lean). This document does not assert the separate

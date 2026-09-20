@@ -1,17 +1,22 @@
 version: "v0.4"
 project:
-  name: "Uniform minor-arc cancellation for prime-weighted exponential sums"
+  name: "Lean Proof of Uniform Minor-Arc Cancellation at the 2/15 Threshold"
   description: >-
     Prime numbers leave a signal in exponential sums. Away from the simple
     rational frequencies called major arcs, the squared von Mangoldt exponential
     sum over X < n <= 2X has total mass at most C X (log X)^(-A) inside every
     centered arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is large
-    enough. The same cutoffs and constants work for every center and are chosen
-    before X and H. This gives uniform minor-arc cancellation at the 2/15
-    threshold. The development also contains an internal proof of the
-    epsilon-form of Guth–Maynard's Theorem 1.1 on large values of Dirichlet
-    polynomials. Its 75,874-declaration dependency closure passed fresh Lean
-    kernel replay with standard axioms. The formal statement is
+    enough. For every center, the integral takes only the minor-arc portion of
+    the centered interval; the center itself may lie anywhere on the circle.
+    The same cutoffs and constants work for every center and are chosen before
+    X and H. This gives uniform minor-arc cancellation at the 2/15 threshold.
+    The estimate is part of the analytic machinery behind
+    Matomäki–Radziwiłł–Tao's work on divisor correlations and averaged prime
+    pairs, including their 8/33 scale. The constants C and X0 are ineffective
+    because the proof uses Siegel's theorem. The development also contains an
+    internal proof of the epsilon-form of Guth–Maynard's large-value estimate
+    for Dirichlet polynomials. Its 75,874-declaration dependency closure passed
+    fresh Lean kernel replay with standard axioms. The formal statement is
     AllCenterMAP.map_two_fifteenths, manuscript Theorem 1.1.
   authors: ["Conor Grogan"]
   license: "Apache-2.0"
