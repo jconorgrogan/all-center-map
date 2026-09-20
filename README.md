@@ -8,31 +8,31 @@ A formally verified local Fourier estimate for the von Mangoldt function.
 
 ## The estimate
 
-This repository contains a complete Lean proof of a uniform local minor-arc $L^2$ estimate for
+This repository contains a complete Lean proof of a uniform local minor-arc $L^{2}$ estimate for
 
-$$
-S_X(\alpha)=\sum_{\lfloor X\rfloor<n\le\lfloor 2X\rfloor}\Lambda(n)e^{2\pi i n\alpha}.
-$$
+```math
+S_X(\alpha)=\sum_{\lfloor X\rfloor\lt n\le\lfloor 2X\rfloor}\Lambda(n)e^{2\pi i n\alpha}.
+```
 
-Write $\mathbb{T}=\mathbb{R}/\mathbb{Z}$ with normalized Haar measure. For positive integers $B,D$, let $\mathfrak{M}_{B,D}(X)$ be the union of the neighborhoods $\mathrm{dist}(\alpha,a/q)\le(\log X)^D/X$ over reduced fractions $a/q$ with $1\le q\le(\log X)^B$, and write $\mathfrak{m}_{B,D}(X)=\mathbb{T}\setminus\mathfrak{M}_{B,D}(X)$.
+Write $\mathbb{T}=\mathbb{R}/\mathbb{Z}$ with normalized Haar measure. For positive integers $B,D$, let $\mathfrak{M}\_{B,D}(X)$ be the union of the neighborhoods $\mathrm{dist}(\alpha,a/q)\le(\log X)^{D}/X$ over reduced fractions $a/q$ with $1\le q\le(\log X)^{B}$, and write $\mathfrak{m}\_{B,D}(X)=\mathbb{T}\setminus\mathfrak{M}\_{B,D}(X)$.
 
 ### Theorem
 
-For every $A>0$ and $\varepsilon>0$, there exist integers $B,D\ge 1$ and constants $C>0$, $X_0\ge 2$ such that for every $X\ge X_0$, every
+For every $A\gt 0$ and $\varepsilon\gt 0$, there exist integers $B,D\ge 1$ and constants $C\gt 0$, $X\_{0}\ge 2$ such that for every $X\ge X\_{0}$, every
 
-$$
+```math
 H\ge X^{2/15+\varepsilon},
-$$
+```
 
-and **every** center $\alpha_0\in\mathbb{T}$,
+and **every** center $\alpha\_{0}\in\mathbb{T}$,
 
-$$
+```math
 \int_{\overline{B}(\alpha_0,\,1/(2H))\cap\mathfrak{m}_{B,D}(X)}
 |S_X(\alpha)|^2\,d\alpha
 \le C X(\log X)^{-A}.
-$$
+```
 
-The parameters $B,D,C,X_0$ are chosen before $X$, $H$, and $\alpha_0$. There is no exceptional set of centers. The measure is not rescaled by the length of the local arc. The constants are ineffective because the proof uses Siegel's theorem.
+The parameters $B,D,C,X\_{0}$ are chosen before $X$, $H$, and $\alpha\_{0}$. There is no exceptional set of centers. The measure is not rescaled by the length of the local arc. The constants are ineffective because the proof uses Siegel's theorem.
 
 The formal statement is [`AllCenterMAP.map_two_fifteenths`](Challenge.lean). The fully expanded major-arc definition is in [STATEMENT.md](STATEMENT.md).
 
@@ -42,19 +42,19 @@ Local minor-arc estimates of this type are a Fourier-analytic input in the study
 
 The Matomäki–Radziwiłł–Tao machinery obtains the corresponding local minor-arc control at the scale
 
-$$
+```math
 H\ge X^{8/33+\varepsilon},\qquad \frac{8}{33}\approx 0.2424.
-$$
+```
 
 The theorem proved here reaches
 
-$$
+```math
 H\ge X^{2/15+\varepsilon},\qquad \frac{2}{15}\approx 0.1333.
-$$
+```
 
 So the local estimate remains valid on substantially shorter frequency windows.
 
-The $2/15$ threshold is the local scale that the Guth–Maynard large-value estimates for Dirichlet polynomials make available for this argument. The main step in the development is carrying that strength through to an **all-center local minor-arc $L^2$ estimate for the von Mangoldt exponential sum**.
+The $2/15$ threshold is the local scale that the Guth–Maynard large-value estimates for Dirichlet polynomials make available for this argument. The main step in the development is carrying that strength through to an **all-center local minor-arc $L^{2}$ estimate for the von Mangoldt exponential sum**.
 
 This repository establishes the minor-arc theorem itself. Separate prime-pair, Goldbach, density-one, and decoding consequences require their own deductions.
 
@@ -70,13 +70,13 @@ See [VERIFICATION.md](VERIFICATION.md) and [RELEASE_STATUS.md](RELEASE_STATUS.md
 
 A substantial component of the development is an internal proof of the epsilon-form of Guth and Maynard's large-value estimate for Dirichlet polynomials. The closed theorem [`GuthMaynardActualEndpointWeakTheta.actual_guthMaynardTheorem11`](Proof/GuthMaynardActualEndpointWeakTheta.lean) is derived from the proved local estimate [`GuthMaynardProp31Actual.actual_fixedWeightProp31`](Proof/GuthMaynardProp31Actual.lean), not from a Guth–Maynard axiom.
 
-For every $\eta>0$, there are constants $C>0$ and $T_0\ge 2$ such that the following holds uniformly for $T\ge T_0$, $V>0$, $N\ge 1$, coefficients $|b_n|\le 1$, and any one-separated finite set $W\subset[0,T]$ on which
+For every $\eta\gt 0$, there are constants $C\gt 0$ and $T\_{0}\ge 2$ such that the following holds uniformly for $T\ge T\_{0}$, $V\gt 0$, $N\ge 1$, coefficients $|b\_{n}|\le 1$, and any one-separated finite set $W\subset[0,T]$ on which
 
-$$
-\Bigl|\sum_{N<n\le 2N} b_n e^{it\log n}\Bigr|\ge V:
-$$
+```math
+\Bigl|\sum_{N\lt n\le 2N} b_n e^{it\log n}\Bigr|\ge V:
+```
 
-$$
+```math
 |W|
 \le
 C T^\eta
@@ -85,7 +85,7 @@ C T^\eta
 +\frac{N^{18/5}}{V^4}
 +\frac{T N^{12/5}}{V^4}
 \Bigr).
-$$
+```
 
 Its dependency closure of 75,874 declarations passed the same kernel replay with the same three axioms. Details are in [GUTH_MAYNARD.md](GUTH_MAYNARD.md).
 
