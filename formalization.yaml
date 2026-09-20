@@ -2,19 +2,17 @@ version: "v0.4"
 project:
   name: "Uniform minor-arc cancellation for prime-weighted exponential sums"
   description: >-
-    A Lean proof about how much prime-weighted Fourier energy can concentrate in
-    a short interval of frequencies. Away from the simple rational frequencies
-    called major arcs, the squared von Mangoldt exponential sum over
-    X < n <= 2X has total mass at most C X (log X)^(-A) inside every centered
-    arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is sufficiently large.
-    The same cutoffs and constants work for every center and are chosen before
-    X and H. Thus the theorem gives uniform minor-arc cancellation at the
-    2/15 threshold. The development also contains an internal proof of the
-    epsilon-form of Guth–Maynard's Theorem 1.1 on Dirichlet-polynomial large
-    values, derived from proved local estimates. Its 75,874-declaration
-    dependency closure passed fresh Lean kernel replay with standard axioms.
-    The main formal target is AllCenterMAP.map_two_fifteenths, manuscript
-    Theorem 1.1.
+    Prime numbers leave a signal in exponential sums. Away from the simple
+    rational frequencies called major arcs, the squared von Mangoldt exponential
+    sum over X < n <= 2X has total mass at most C X (log X)^(-A) inside every
+    centered arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is large
+    enough. The same cutoffs and constants work for every center and are chosen
+    before X and H. This gives uniform minor-arc cancellation at the 2/15
+    threshold. The development also contains an internal proof of the
+    epsilon-form of Guth–Maynard's Theorem 1.1 on large values of Dirichlet
+    polynomials. Its 75,874-declaration dependency closure passed fresh Lean
+    kernel replay with standard axioms. The formal statement is
+    AllCenterMAP.map_two_fifteenths, manuscript Theorem 1.1.
   authors: ["Conor Grogan"]
   license: "Apache-2.0"
   responsible_maintainers: ["Conor Grogan"]
