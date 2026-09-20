@@ -1,25 +1,29 @@
-# Verification scope
+# Verification
 
-## Completed
+The optimized release passed:
 
-The authoring baseline MAP endpoint passed its pinned Lean build, statement/quantifier review,
-standard-axiom audit, and trust-zero source elaboration. Its full **100,596**
-declaration type/proof closure passed fresh replay into an empty Lean kernel
-environment in 334.25 seconds. The standalone Guth–Maynard Theorem 1.1 wrapper
-passed the same check for **75,874** declarations in 161.36 seconds.
-Both replays checked exact theorem name, type, proof term, and universe parameters;
-only `propext`, `Classical.choice`, and `Quot.sound` were permitted as axioms.
-These use Lean's own kernel, not an independent kernel implementation.
+- a fresh Linux source build: **10,255** jobs
+- Comparator statement identity
+- independent NanoDa replay
+- Lean kernel checks
+- source and dependency scanning
+- an axiom audit: only `propext`, `Quot.sound`, and `Classical.choice`
 
-Original run records, declaration manifests, and output are retained under
-[evidence/kernel-replay](evidence/kernel-replay). Source hashes and checker hash
-are recorded there. The original authoring paths identify the recorded runs;
-they are not paths required for reproduction.
+See [RELEASE_STATUS.md](RELEASE_STATUS.md).
 
-The independent Mathlib-only Challenge and the release Solution compiled in
-separate surface checks. The Solution axiom audit reported only the three
-standard axioms. Those surface checks used hash-matched existing proof oleans.
-The later Linux source build is recorded below.
+The MAP endpoint proof closure is **100,596** declarations across **1,861**
+modules. The Guth–Maynard large-value closure is **75,874** declarations.
+Both closures replayed into an empty Lean kernel environment; the MAP replay
+took 334.25 seconds and the Guth–Maynard replay took 161.36 seconds. Records
+are under [evidence/kernel-replay](evidence/kernel-replay).
+
+The authoring-baseline MAP replay used Lean's kernel. The release then passed
+independent NanoDa replay of the exported proof.
+
+One module has a checked algebraic proof-term optimization with unchanged
+statements; see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md). That module
+compiled from source in the Linux build in 6.0 seconds. The Guth–Maynard
+closure does not depend on it.
 
 ## Reproduce the closure checks
 
@@ -36,22 +40,6 @@ lake env lean --run scripts/ReplayProofClosure.lean GuthMaynardActualEndpointWea
 The `unsafe` entry point in this verification utility enables Lean's replay API;
 it is not imported by the mathematical development. The utility refuses unsafe
 or partial declarations in the selected proof closure.
-
-## Proof-term optimization
-
-One release module now uses direct algebraic identities instead of two expansive
-`ring` proofs. Its statements are unchanged and its candidate compilation passed;
-see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md). The recorded MAP replay above
-is the authoring-baseline replay. The optimized module then compiled from source
-in the Linux build in 6.0 seconds. The Guth–Maynard proof closure does not
-depend on the changed BHP declarations.
-
-## Release checks
-
-The optimized release passed a fresh Linux source build (10,255 jobs),
-Comparator statement identity, independent NanoDa replay, Lean kernel checks,
-source/dependency scanning, and an axiom audit. See
-[RELEASE_STATUS.md](RELEASE_STATUS.md).
 
 Run `bash scripts/verify-linux.sh --local` for the private release check, or
 omit `--local` for the additional clean Git/public-origin provenance gate.
