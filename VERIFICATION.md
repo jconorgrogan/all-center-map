@@ -41,5 +41,11 @@ The `unsafe` entry point in this verification utility enables Lean's replay API;
 it is not imported by the mathematical development. The utility refuses unsafe
 or partial declarations in the selected proof closure.
 
-Run `bash scripts/verify-linux.sh --local` for the private release check, or
+The public replay is the GitHub Actions workflow `Palomar release checks` on
+this repository. Earlier public runs stopped at the publication gate because
+Bundler wrote `vendor/bundle` into the checkout before the script ran; that is
+an environment failure, not a mathematical one. The workflow now confirms the
+clean pinned commit first, then runs `bash scripts/verify-linux.sh --local`.
+
+Locally, run `bash scripts/verify-linux.sh --local` for the release check, or
 omit `--local` for the additional clean Git/public-origin provenance gate.

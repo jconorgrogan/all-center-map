@@ -266,8 +266,11 @@ def publication_errors() -> list[str]:
         head = git("rev-parse", "HEAD")
         if not SHA40.fullmatch(head):
             errors.append("release HEAD is not a full 40-character commit SHA")
-        if git("status", "--porcelain"):
-            errors.append("release worktree is not clean")
+        porcelain = git("status", "--porcelain")
+        if porcelain:
+            preview = ", ".join(line[3:] for line in porcelain.splitlines()[:8])
+            errors.append(f"release worktree is not clean ({preview})")
+            print(porcelain, file=sys.stderr)
         remote = git("remote", "get-url", "origin")
         if not GITHUB_REMOTE.fullmatch(remote):
             errors.append("origin is not a real GitHub repository URL")

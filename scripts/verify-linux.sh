@@ -62,5 +62,9 @@ python3 scripts/check-claims.py --verified \
   --comparator-log .cache/comparator.log
 
 if [ "${1:-}" = "--local" ]; then
-  echo "PRIVATE LINUX CHECKS PASSED: publication provenance and final submitter approval remain separate."
+  if [ "${GITHUB_ACTIONS:-}" = "true" ]; then
+    echo "PUBLIC LINUX CHECKS PASSED: pinned-commit GitHub Actions replay completed."
+  else
+    echo "PRIVATE LINUX CHECKS PASSED: publication provenance and final submitter approval remain separate."
+  fi
 fi

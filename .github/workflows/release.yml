@@ -21,6 +21,11 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - name: Confirm pinned-commit publication gate
+        run: |
+          git rev-parse HEAD
+          git status --porcelain
+          python3 scripts/check-release-gate.py
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: false
@@ -33,4 +38,4 @@ jobs:
           go-version: "1.24.0"
           cache: false
       - name: Run fail-closed Linux release verification
-        run: ./scripts/verify-linux.sh
+        run: ./scripts/verify-linux.sh --local

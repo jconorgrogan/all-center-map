@@ -1,5 +1,7 @@
 .lake/
 .cache/
+.bundle/
+vendor/
 __pycache__/
 *.py[cod]
 *.log
