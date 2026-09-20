@@ -3,7 +3,7 @@
 Status: ready for Palomar submission review.
 
 - Public repository: `https://github.com/jconorgrogan/all-center-map`
-- Public commit: `78f555f419506b1bb261e743b6afc4ab6a8cf6b1`
+- Public commit: `027444a2ba3ae339013016a538460793b47c3c71`
 - MAP closure replay: 100,596 declarations
 - Guth–Maynard large-value closure replay: 75,874 declarations
 - Fresh Linux build: 10,255 jobs passed
