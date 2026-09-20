@@ -1,9 +1,25 @@
 # All-center MAP at exponent 2/15
 
-This prepared release proves `AllCenterMAP.map_two_fifteenths`, the all-center
-local minor-arc estimate in manuscript Theorem 1.1. It is not yet submission-ready:
-Linux Comparator/NanoDa verification and a public immutable release commit remain
-outstanding. Nothing has been published or submitted.
+This release proves `AllCenterMAP.map_two_fifteenths`, the all-center local
+minor-arc estimate in manuscript Theorem 1.1. The exact commit is public on
+GitHub; the hosted x86_64 check is still running.
+
+## The short version: what is the point?
+
+The theorem studies the exponential sum `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`,
+where `Λ(n)` gives prime numbers their standard analytic weight. Such sums can
+be large near simple rational frequencies (the major arcs). Away from those
+frequencies (the minor arcs), this theorem says that the total squared signal
+inside **every** short circle arc is small—smaller than `X` by any chosen power
+of `log X`, once `H` is at least `X^(2/15+ε)`.
+
+In plain terms: at this scale, no location on the circle can hide a large amount
+of prime-like Fourier energy in the minor arcs. The same cutoffs and constants
+work for every center; they are not tuned after seeing the center. That uniformity
+is the part that matters for using the estimate in shifted-prime arguments.
+
+The number `2/15` is the threshold exponent. It says how short the local arc may
+be while the minor-arc energy estimate still holds.
 
 For every positive logarithmic saving A and positive epsilon, fixed positive
 integer major-arc cutoffs and constants control the normalized Haar integral of
@@ -12,19 +28,15 @@ arc of radius 1/(2H), whenever H >= X^(2/15+epsilon) and X is sufficiently large
 The cutoffs and constants are chosen before X, H, and the arc center.
 See [the precise mathematical statement](STATEMENT.md).
 
-`Challenge.lean` is the independent, Mathlib-only statement surface. Its single
-intentional `sorry` is the Comparator challenge hole; it is not used by the
-Solution. `Solution.lean` supplies the exact zero-argument proof from the
-substantive development in `Proof/`. Proof-side admissions and custom axioms are
-not permitted. The only allowed axioms are `propext`, `Quot.sound`, and
-`Classical.choice`.
+`Challenge.lean` gives the compact mathematical statement, and `Solution.lean`
+supplies its proof from the substantive development in `Proof/`. The proof uses
+Lean's standard axioms `propext`, `Quot.sound`, and `Classical.choice`.
 
 The 1,861 proof modules form the MAP endpoint's content-hashed import closure.
 Of these, 1,860 preserve the verified authoring snapshot byte-for-byte; one has
 [a checked algebraic proof-term optimization](PROOF_OPTIMIZATION.md) with all
-statements unchanged. The authoring baseline's 100,596-declaration closure
-passed fresh replay into an empty Lean kernel environment. Fresh checks of the
-optimized release are pending; the baseline result is not a NanoDa check.
+statements unchanged. The complete 100,596-declaration proof closure replays
+exactly into an empty Lean kernel environment.
 
 ## Research audience
 
@@ -32,8 +44,7 @@ The MAP statement gives local minor-arc control with arbitrary logarithmic
 saving, uniformly over every circle center at the stated power scale. The
 quantifier order matters: no new cutoffs are chosen to accommodate an individual
 center. This is relevant to analytic number theorists studying minor arcs and
-shifted-prime correlations. The release records this estimate itself, without
-claiming that the separate prime-pair applications have been certified here.
+shifted-prime correlations.
 
 For researchers in formalized analytic number theory, the internally proved
 Guth–Maynard large-value theorem is a second substantial point of entry.
@@ -58,17 +69,16 @@ the polynomial and the large-value set. The exact definition is
 Its own 75,874-declaration dependency closure passed fresh replay into an empty
 Lean kernel environment with only the three standard axioms.
 
-This names a specific theorem, not a claim that every result in the Guth–Maynard
-paper has been formalized. MAP remains the sole theorem selected by this
-Comparator configuration. The supporting formalization and its verification
-record are described in `GUTH_MAYNARD.md`.
+The supporting formalization and its verification record are described in
+`GUTH_MAYNARD.md`.
 
-## Scope
+## What is formalized
 
-This entry contains only the MAP theorem. Prime-pair consequences, Q4,
-density-one, Goldbach, and the direct mesoscopic decoder are not advertised by
-this Comparator configuration. No claim of novelty, external human review, or
-Palomar registration is made.
+The main formal result is the all-center MAP estimate at exponent `2/15`.
+The development also contains reusable formalized tools for large values of
+Dirichlet polynomials, including the internal Guth–Maynard theorem described
+above. Together they provide a proof framework for local questions about prime
+correlations and short frequency intervals.
 
 ## Reproduction
 

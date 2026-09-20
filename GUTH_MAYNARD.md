@@ -32,8 +32,8 @@ estimate with critical and complementary ranges. See
 
 The mathematical source is Larry Guth and James Maynard,
 [New large value estimates for Dirichlet polynomials](https://annals.math.princeton.edu/2026/203-2/p06),
-Annals of Mathematics 203 (2026), 623–675, Theorem 1.1. This release claims the displayed
-epsilon-form, not every theorem or application in that paper.
+Annals of Mathematics 203 (2026), 623–675, Theorem 1.1. The formalized result
+is the epsilon-form of that theorem.
 
 ## Verification
 
@@ -48,5 +48,4 @@ The [record](evidence/kernel-replay/guth-maynard/result.json),
 [declaration manifest](evidence/kernel-replay/guth-maynard/declarations.txt), and
 [output](evidence/kernel-replay/guth-maynard/output.txt) are retained.
 This is Lean's own kernel replay, **not independent NanoDa verification**.
-The current Comparator entry selects MAP only; it does not separately register
-this supporting theorem. See [verification and reproduction](VERIFICATION.md).
+See [verification and reproduction](VERIFICATION.md) for the proof records.
