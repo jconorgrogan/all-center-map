@@ -3,7 +3,8 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs,enumitem,microtype}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=BrickRed]{hyperref}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=BrickRed,breaklinks=true]{hyperref}
 \setlist{nosep,leftmargin=*}
 \allowdisplaybreaks
 
@@ -40,24 +41,24 @@ Interval of Length $X^{2/15+\varepsilon}$}
 \maketitle
 
 \begin{abstract}
-Let
+Write \(S_X\) for the von Mangoldt exponential sum on \((X,2X]\):
 \[
- S_X(\alpha)=\sum_{X<n\le 2X}\Lambda(n)\e^{2\pi i n\alpha}.
+ S_X(\alpha)=\sum_{X<n\le 2X}\Lambda(n)\,e^{2\pi i n\alpha}.
 \]
-For every \(A,\eps>0\), we choose narrow neighborhoods of rational points with
-logarithmically bounded denominators and prove
+For every \(A,\eps>0\), after removing narrow major arcs around rationals
+with logarithmically bounded denominators, we prove
 \[
  \sup_{|J|=1/H}\int_{J\setminus\mathfrak M}|S_X(\alpha)|^2\,d\alpha
  \ll_{A,\eps}X(\log X)^{-A}
+ \qquad\text{for all }H\ge X^{2/15+\eps}.
 \]
-whenever \(H\ge X^{2/15+\eps}\).  It follows that, in every translated shift
-interval of the stated length, the Hardy--Littlewood prime-pair formula
-holds in mean square and for all but \(O(H(\log X)^{-A})\) individual
-shifts, and the second moment of \(R_X\) matches its singular-series
-prediction.  The same estimate gives the weighted Goldbach formula for
-almost every target in \([X,X+H]\), together with a balanced version whose
-summands lie in \((X,2X]\).  This replaces the exponent \(8/33\) in
-Matom\"aki--Radziwi\l\l--Tao by \(2/15\).
+Consequently, in every translated shift interval of this length the
+Hardy--Littlewood prime-pair formula holds in mean square and for all but
+\(O\bigl(H(\log X)^{-A}\bigr)\) individual shifts, and the second moment of
+\(R_X\) matches its singular-series prediction.  The same estimate yields
+the weighted Goldbach formula for almost every target in \([X,X+H]\),
+together with a balanced form whose summands lie in \((X,2X]\).  This
+replaces the Matom\"aki--Radziwi\l\l--Tao exponent \(8/33\) by \(2/15\).
 \end{abstract}
 
 \section*{Introduction}
@@ -90,13 +91,15 @@ translated interval of length \(X^{2/15+\eps}\), almost all shifts obey the
 Hardy--Littlewood prediction.
 
 \section{Statements}
-Write $L=\log X$, $e(t)=\e^{2\pi i t}$, and identify
+Write $L=\log X$, $e(t)=e^{2\pi i t}$, and identify
 $\T=\mathbb R/\mathbb Z$.  For positive $P,Q$ set
-\[
- \M(P,Q)=\bigcup_{q\le Q}\ \bigcup_{\substack{a\bmod q\\(a,q)=1}}
- \left\{\alpha\in\T:\left\|\alpha-\frac aq\right\|_{\T}\le\frac PX\right\},
- \qquad \m(P,Q)=\T\setminus\M(P,Q).
-\]
+\begin{align*}
+ \M(P,Q)
+ &=\bigcup_{q\le Q}\ \bigcup_{\substack{a\bmod q\\(a,q)=1}}
+ \left\{\alpha\in\T:\left\|\alpha-\frac aq\right\|_{\T}\le\frac PX\right\},\\
+ \m(P,Q)
+ &=\T\setminus\M(P,Q).
+\end{align*}
 
 \begin{theorem}[Uniform local minor-arc estimate]\label{thm:map}
 For every $A>0$ and $\eps>0$ there are positive integers
@@ -120,10 +123,11 @@ The constants may be ineffective.
 \end{theorem}
 
 \begin{remark}[Formalization]
-The estimate~(1.1) is proved in Lean~4 as
-\texttt{AllCenterMAP.map\_two\_fifteenths}.
-See \url{https://github.com/jconorgrogan/prime-minor-arcs-2-15};
-the formalization has been submitted to Palomar.
+The estimate~(1.1) has been submitted to Palomar.  The Lean theorem is
+\begin{center}
+\texttt{AllCenterMAP.map\_two\_fifteenths}\\[3pt]
+{\small\url{https://github.com/jconorgrogan/prime-minor-arcs-2-15}}
+\end{center}
 \end{remark}
 
 For $h\ne0$ define
