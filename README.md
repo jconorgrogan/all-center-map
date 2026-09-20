@@ -1,8 +1,10 @@
-# All-center MAP at exponent 2/15
+# Uniform minor-arc cancellation for prime-weighted exponential sums
 
-This release proves `AllCenterMAP.map_two_fifteenths`, the all-center local
-minor-arc estimate in manuscript Theorem 1.1. The exact commit is public on
-GitHub; the hosted x86_64 check is still running.
+## A Lean formalization at the `2/15` threshold
+
+This release proves `AllCenterMAP.map_two_fifteenths`, a theorem about how much
+prime-weighted Fourier energy can concentrate in a short interval of
+frequencies. The exact commit is public on GitHub.
 
 ## The short version: what is the point?
 
@@ -27,6 +29,16 @@ the squared von Mangoldt exponential sum on the minor-arc portion of every circl
 arc of radius 1/(2H), whenever H >= X^(2/15+epsilon) and X is sufficiently large.
 The cutoffs and constants are chosen before X, H, and the arc center.
 See [the precise mathematical statement](STATEMENT.md).
+
+## Resources
+
+- [Plain-English overview and exact statement](STATEMENT.md)
+- [Formal statement](Challenge.lean)
+- [Proof entry point](Solution.lean)
+- [Guth–Maynard formalization](GUTH_MAYNARD.md)
+- [Verification record](VERIFICATION.md)
+- [Source and citation map](PROVENANCE.md)
+- [Reproducibility and proof optimization notes](PROOF_OPTIMIZATION.md)
 
 `Challenge.lean` gives the compact mathematical statement, and `Solution.lean`
 supplies its proof from the substantive development in `Proof/`. The proof uses

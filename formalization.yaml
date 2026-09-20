@@ -1,6 +1,6 @@
 version: "v0.4"
 project:
-  name: "All-center local minor-arc estimate at exponent 2/15"
+  name: "Uniform minor-arc cancellation for prime-weighted exponential sums"
   description: >-
     A Lean proof about how much prime-weighted Fourier energy can concentrate in
     a short interval of frequencies. Away from the simple rational frequencies

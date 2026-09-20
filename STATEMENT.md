@@ -1,4 +1,14 @@
-# All-center local minor-arc estimate
+# Uniform minor-arc cancellation for prime-weighted exponential sums
+
+## Why it matters
+
+Prime numbers leave a structured signal in exponential sums. Near simple
+rational frequencies that signal can be large, so analytic number theory treats
+those frequencies separately as the major arcs. This theorem controls the rest:
+on the minor arcs, even a short frequency window cannot collect much total
+prime-weighted energy. The estimate works around every center with one common
+choice of parameters, which is what makes it useful for local and shifted-prime
+questions.
 
 This is the mathematical statement selected for this release. The authoritative
 formal surface is [Challenge.lean](Challenge.lean); its independent proof is
