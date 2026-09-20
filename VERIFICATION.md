@@ -1,0 +1,62 @@
+# Verification scope
+
+## Completed
+
+The authoring baseline MAP endpoint passed its pinned Lean build, statement/quantifier review,
+standard-axiom audit, and trust-zero source elaboration. Its full **100,596**
+declaration type/proof closure passed fresh replay into an empty Lean kernel
+environment in 334.25 seconds. The standalone Guth–Maynard Theorem 1.1 wrapper
+passed the same check for **75,874** declarations in 161.36 seconds.
+Both replays checked exact theorem name, type, proof term, and universe parameters;
+only `propext`, `Classical.choice`, and `Quot.sound` were permitted as axioms.
+These use Lean's own kernel, not an independent kernel implementation.
+
+Original run records, declaration manifests, and output are retained under
+[evidence/kernel-replay](evidence/kernel-replay). Source hashes and checker hash
+are recorded there. The original authoring paths identify the recorded runs;
+they are not paths required for reproduction.
+
+The independent Mathlib-only Challenge and the release Solution compiled in
+separate surface checks. The Solution axiom audit reported only the three
+standard axioms. These surface checks used hash-matched existing proof oleans;
+they were not a fresh Linux source build.
+
+## Reproduce the closure checks
+
+After `lake build Challenge Solution SolutionAxiomAudit`, run:
+
+```sh
+mkdir -p .cache
+lake env lean --run scripts/ReplayProofClosure.lean MAPReleaseEndpoint \
+  MAPReleaseEndpoint.zero_argument_map_two_fifteenths .cache/map-declarations.txt
+lake env lean --run scripts/ReplayProofClosure.lean GuthMaynardActualEndpointWeakTheta \
+  GuthMaynardActualEndpointWeakTheta.actual_guthMaynardTheorem11 .cache/gm-declarations.txt
+```
+
+The `unsafe` entry point in this verification utility enables Lean's replay API;
+it is not imported by the mathematical development. The utility refuses unsafe
+or partial declarations in the selected proof closure.
+
+## Proof-term optimization
+
+One release module now uses direct algebraic identities instead of two expansive
+`ring` proofs. Its statements are unchanged and its candidate compilation passed;
+see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md). The recorded MAP replay above
+is baseline evidence. Fresh optimized release verification remains pending.
+The separately checked Guth–Maynard proof closure does not depend on the changed
+BHP declarations.
+
+## Pending release checks
+
+A fresh Linux source build is running. Comparator statement identity and NanoDa
+replay under Landrun remain pending. The local Linux run uses native ARM64;
+both it and the planned Ubuntu 24.04 x86_64 GitHub CI run are project checks,
+not the official Palomar verification workflow. Palomar additionally isolates
+the canonical Challenge, controls dependency/cache provenance, and enforces
+its own sandbox and resource profile during submission. No official Palomar
+verification or registration is claimed.
+Run `bash scripts/verify-linux.sh --local` for the private release check, or omit
+`--local` for the additional clean Git/public-origin provenance gate.
+
+Old scaffold reports are historical evidence only. A prepared command, a
+protocol Challenge hole, or a Git commit alone does not establish verification.

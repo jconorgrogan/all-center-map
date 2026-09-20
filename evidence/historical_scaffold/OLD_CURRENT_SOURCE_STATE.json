@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-08-30",
+  "source_directory": "/Users/computer/Tensor/research/palomar_full_certification_2026-08-29/map",
+  "source_git_commit": null,
+  "source_git_status": "blocked: parent certification directory is not a Git checkout",
+  "top_level_lean_file_count": 558,
+  "content_manifest": "evidence/CURRENT_SOURCE_CONTENT.sha256",
+  "content_manifest_sha256": "c0e72b588e4a36d008004501594cd99c2a6573d807c2475e7ccbec6da4dded59",
+  "canonical_files_not_modified": [
+    "map/lakefile.lean",
+    "map/CertificationAxiomAudit.lean"
+  ]
+}

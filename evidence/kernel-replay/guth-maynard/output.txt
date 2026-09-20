@@ -1,0 +1,2 @@
+Selected 75874 declarations for GuthMaynardActualEndpointWeakTheta.actual_guthMaynardTheorem11
+PASS: exact target proof replayed from empty environment: GuthMaynardActualEndpointWeakTheta.actual_guthMaynardTheorem11

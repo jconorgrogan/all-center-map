@@ -1,0 +1,16 @@
+{
+  "source_sha256": "79fffacda3788911d58dda5b703971b0d6e871eac5ed81e5b11b300bd5dd7254",
+  "exit_code": 0,
+  "elapsed_seconds": 48.0,
+  "argv": [
+    "/usr/bin/time",
+    "-l",
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/Users/computer/map-ai-snapshot-20260908/FLEET_20260912/reports/map_release_perf_candidate_20260920/check.sb",
+    "/Users/computer/.elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lean",
+    "-o",
+    "/Users/computer/map-ai-snapshot-20260908/FLEET_20260912/reports/map_release_perf_candidate_20260920/BHPCanonicalAllCharacterLiteral.olean",
+    "BHPCanonicalAllCharacterLiteral.lean"
+  ]
+}

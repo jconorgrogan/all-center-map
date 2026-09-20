@@ -1,0 +1,114 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "All-center MAP at the prime-number-theorem threshold"
+  description: >-
+    Release-candidate packaging for a Lean formalization of the uniform local
+    minor-arc estimate for the von Mangoldt exponential sum on every circle arc
+    of length 1/H when H is at least X^(2/15+epsilon). The advertised theorem is
+    currently absent, so this snapshot is not a completed formalization and is
+    not eligible for submission.
+  authors:
+    - "Conor Grogan"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "BLOCKED: confirm the responsible maintainer before a public release"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11N37"]
+
+sources:
+  - title: >-
+      Prime Pairs at the Prime Number Theorem Threshold: Hardy--Littlewood for
+      Almost Every Shift in Every Interval of Length X^(2/15+epsilon)
+    type: original-proof
+    authors:
+      - "Conor Grogan"
+    relationship: other
+    author_endorsement: "not-contacted"
+    note: >-
+      Theorem 1.1 is the sole proposed Comparator declaration. The manuscript
+      is currently a local source artifact; assign a stable public identifier
+      or versioned URL before submission. BLOCKED: record the author's release
+      approval.
+  - title: "Higher uniformity of arithmetic functions in short intervals II. Almost all intervals"
+    type: article
+    authors:
+      - "Kaisa Matomaki"
+      - "Maksym Radziwill"
+      - "Terence Tao"
+    relationship: background
+    location: "https://doi.org/10.1093/qmath/haad042"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    The intended entry covers only the manuscript's Theorem 1.1, the all-center
+    local minor-arc estimate at exponent 2/15. It excludes the translated
+    prime-pair, fourth-correlation, density-one, Goldbach, and decoder claims.
+    The current proof development has only conditional endpoint constructors;
+    no zero-argument proof of this statement exists. The release Challenge also
+    strengthens the current internal Prop by requiring the manuscript's stated
+    positive cutoff exponents, so a small monotonicity bridge is still required
+    after the endpoint is proved.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["BLOCKED: inventory every model used in the proof and release work"]
+      framework: "Codex"
+      tool_setup: >-
+        Lean/Lake compilation, source scans, axiom audits, finite numerical
+        death tests, literature inspection, and release scaffolding.
+      cost:
+        wall_time: "BLOCKED: reconstruct total elapsed effort"
+        spend_usd: "BLOCKED: record amount or not tracked"
+        hardware: "local macOS authoring; Linux verification pending"
+      prompting_notes: >-
+        Agents were assigned focused formalization, adversarial audit, source
+        concordance, computational death-test, and release-engineering tasks.
+  spend_usd: "BLOCKED: record total amount or not tracked"
+  notes: >-
+    Human-directed, agent-assisted formalization with repeated kernel builds,
+    statement audits, and explicit rejection of conditional endpoints as the
+    final result.
+
+fidelity:
+  divergences: >-
+    The release statement targets manuscript Theorem 1.1 only. The internal
+    PrimePairEndpoints.AllCenterLocalMAP currently quantifies cutoff exponents
+    over natural numbers without the manuscript's explicit positivity clauses;
+    Challenge.lean includes 1 <= B and 1 <= D. No proof of the resulting
+    release theorem exists yet. The normalized Haar measure, reduced rational
+    arcs, 2/15 exponent, all-center quantification, and choice order otherwise
+    match the manuscript statement.
+
+review:
+  status: "self-assessed; release engineering review in progress"
+  reviewers:
+    - "none"
+  notes: >-
+    Internal hostile audits and Lean kernel checks cover many promoted helper
+    layers. They do not establish the missing zero-argument MAP endpoint,
+    statement identity under Comparator, Linux reproducibility, or NanoDa
+    replay.
+
+alignment:
+  namespace: "AllCenterMAP"
+  statements:
+    - source: "Theorem 1.1 (Uniform local minor-arc estimate)"
+      lean: "AllCenterMAP.map_two_fifteenths"
+      module: "Challenge"
+      status: "blocked: declaration has no zero-argument proof term"
+      note: >-
+        This is the only proposed Palomar declaration. Its positive cutoff
+        conditions follow the manuscript and are stronger than the current
+        internal Prop surface.
+
+acknowledgements: >-
+  Mathlib, Lean 4, Palomar, Comparator, lean4export, NanoDa, and Landrun.

@@ -1,0 +1,29 @@
+BHPCanonicalAllCharacterLiteral.lean:123:6: warning: exponent 399 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+'MAPBHPCanonicalAllCharacterLiteral.fourth_power_sum_five_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MAPBHPCanonicalAllCharacterLiteral.canonicalFourfoldHeightShiftedFourthIntegral_polylog_le_fixed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MAPBHPCanonicalAllCharacterLiteral.canonicalShiftedPerronConvolutionFourth_le_exactKernel_fixed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MAPBHPCanonicalAllCharacterLiteral.canonicalAllCharacterSelectedFourthMomentLiteral_of_sources' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+       47.96 real         7.06 user        13.53 sys
+          5748637696  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              162714  page reclaims
+              274526  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               46938  voluntary context switches
+              267480  involuntary context switches
+         93112004129  instructions retired
+         56590329076  cycles elapsed
+           969645816  peak memory footprint

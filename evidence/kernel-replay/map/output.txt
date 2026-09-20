@@ -1,0 +1,2 @@
+Selected 100596 declarations for MAPReleaseEndpoint.zero_argument_map_two_fifteenths
+PASS: exact target proof replayed from empty environment: MAPReleaseEndpoint.zero_argument_map_two_fifteenths

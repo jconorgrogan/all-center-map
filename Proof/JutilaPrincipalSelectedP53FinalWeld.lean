@@ -1,0 +1,25 @@
+import JutilaPrincipalEpsilonRemainderCertified
+import JutilaPrincipalSelectedP53Constructor
+
+/-!
+# Final selected-P53 weld
+
+This module connects the certified principal epsilon remainder to the
+epsilon-agnostic selected-P53 constructor.  The superseded unverified
+remainder module is intentionally not imported.
+-/
+
+namespace MAPJutilaPrincipalSelectedP53FinalWeld
+
+open MAPJutilaPrincipalEpsilonRemainder
+open MAPJutilaPrincipalSelectedP53Constructor
+open MAPJutilaGappedCollarSelectedP53Adapter
+
+theorem jutilaGappedSelectedPrincipalP53Eventually :
+    JutilaGappedSelectedPrincipalP53Eventually := by
+  exact MAPJutilaPrincipalSelectedP53Constructor.jutilaGappedSelectedPrincipalP53Eventually
+    eventually_principal_canonical_directSeries_lt_one
+
+end MAPJutilaPrincipalSelectedP53FinalWeld
+
+#print axioms MAPJutilaPrincipalSelectedP53FinalWeld.jutilaGappedSelectedPrincipalP53Eventually

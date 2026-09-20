@@ -1,0 +1,121 @@
+version: "v0.4"
+project:
+  name: "All-center local minor-arc estimate at exponent 2/15"
+  description: >-
+    A Lean proof of the all-center local minor-arc estimate for the von Mangoldt
+    exponential sum over X < n <= 2X. For every positive A and epsilon, fixed
+    positive integer logarithmic major-arc cutoffs and constants bound the
+    normalized Haar mass on the minor-arc part of every centered circle arc of
+    radius 1/(2H) by C X (log X)^(-A), uniformly when H >= X^(2/15+epsilon) and
+    X is sufficiently large. The cutoffs and constants precede X, H, and the
+    center. A substantial reusable component is an internal proof of the
+    epsilon-form of Guth–Maynard's Theorem 1.1 on Dirichlet-polynomial large
+    values, derived from proved local estimates rather than assumed as a
+    Guth–Maynard premise. Its own 75,874-declaration dependency closure passed
+    fresh Lean kernel replay with only standard axioms. The sole recorded target is AllCenterMAP.map_two_fifteenths,
+    manuscript Theorem 1.1. Independent release verification remains pending.
+  authors: ["Conor Grogan"]
+  license: "Apache-2.0"
+  responsible_maintainers: ["Conor Grogan"]
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11N37"]
+sources:
+  - title: >-
+      Prime Pairs at the Prime Number Theorem Threshold: Hardy--Littlewood for
+      Almost Every Shift in Every Interval of Length X^(2/15+epsilon)
+    type: "original-proof"
+    authors: ["Conor Grogan"]
+    relationship: "other"
+    note: >-
+      Theorem 1.1 is the only release target. The source manuscript is a local
+      artifact identified by SHA-256 in MANUSCRIPT_ALIGNMENT.md. STATEMENT.md
+      supplies the exact selected mathematical statement in this release.
+      The historical manuscript is not claimed to be publicly available.
+      Authorship and release licensing were confirmed on 2026-09-20.
+  - title: "Correlations of the von Mangoldt and higher divisor functions I. Long shift ranges"
+    type: "paper"
+    authors: ["Kaisa Matomaki", "Maksym Radziwill", "Terence Tao"]
+    relationship: "background"
+    location: "https://arxiv.org/abs/1707.01315v3"
+    note: >-
+      Includes the Corollary 5.3 source reference. A preserved Lean header
+      mislabels this as Part II; PROVENANCE.md records the primary-source
+      correction. Source-facing proposition interfaces are not separate
+      claims of whole-paper formalization.
+  - title: "New large value estimates for Dirichlet polynomials"
+    type: "paper"
+    authors: ["Larry Guth", "James Maynard"]
+    relationship: "other"
+    location: "https://annals.math.princeton.edu/2026/203-2/p06"
+    note: >-
+      The epsilon-form of Theorem 1.1 is proved internally as a supporting
+      result. This source is credited for that auxiliary mathematics; the
+      original-proof claim concerns the MAP target, not the Guth–Maynard theorem.
+  - title: "Vinogradov's integral and bounds for the Riemann zeta function"
+    type: "paper"
+    authors: ["Kevin Ford"]
+    relationship: "other"
+    location: "https://doi.org/10.1112/S0024611502013655"
+    note: "Source for internally reconstructed supporting estimates; not the original MAP claim."
+  - title: "Large Value Estimates for Dirichlet Polynomials with Characters and Zero Density of Dirichlet L-Functions"
+    type: "paper"
+    authors: ["Bin Chen", "Vishal Gupta", "Yung Chi Li"]
+    relationship: "other"
+    location: "https://arxiv.org/abs/2507.08296v2"
+    note: "Supporting source family in the proof development; no separate Comparator claim is made for the whole paper."
+related_formalizations: []
+status:
+  scope: >-
+    One MAP theorem only. The proof has no source premises and no proof-side
+    admissions. The single Challenge sorry is the Comparator protocol hole.
+    Prime-pair consequences, Q4, density-one, Goldbach, and decoder results are
+    excluded from this entry. Linux Comparator/NanoDa verification and public
+    immutable commit preparation are not yet complete.
+  sorry_count: 1
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+      models: ["OpenAI models through Codex; complete per-turn model inventory not retained"]
+      tool_setup: >-
+        Lean/Lake compilation, source and statement audits, exact proof-closure
+        kernel replay, and finite computational diagnostics. Separate model
+        agents assisted with proof construction and semantic reviews.
+      cost:
+        wall_time: "complete effort accounting not available"
+        spend_usd: "not tracked"
+        hardware: "macOS proof authoring and kernel replay; Linux release verification pending"
+      prompting_notes: >-
+        Human-directed theorem formalization with focused proof tasks,
+        adversarial statement reviews, explicit assumption audits, and numerical
+        diagnostics kept distinct from formal proofs.
+  spend_usd: "not tracked"
+  notes: >-
+    Model details not preserved in the available records are not inferred from
+    agent names. No external human mathematical review is claimed.
+fidelity:
+  divergences: >-
+    The statement uses the finite interval floor(X) < n <= floor(2X), reduced
+    rational logarithmic major arcs, normalized circle Haar measure, positive
+    natural cutoff exponents, and all-center quantifiers. The exact endpoint
+    was compared to the manuscript statement during internal review. Comparator
+    identity and independent kernel verification of the release remain pending.
+review:
+  status: "internal agent-assisted semantic review and Lean kernel checks; independent release checks pending"
+  notes: >-
+    The authoring baseline zero-argument MAP endpoint passed the pinned Lean
+    build, trust-zero source check, and fresh complete proof-closure replay.
+    The release has one documented, checked algebraic proof-term optimization;
+    its fresh release checks are pending.
+    These do not constitute external human review or NanoDa verification.
+alignment:
+  namespace: "AllCenterMAP"
+  statements:
+    - source: "Theorem 1.1 (Uniform local minor-arc estimate)"
+      lean: "AllCenterMAP.map_two_fifteenths"
+      module: "Challenge"
+      status: "proved endpoint; release verification pending"
+acknowledgements: "Lean 4, Mathlib, Palomar, Comparator, lean4export, NanoDa, and Landrun."

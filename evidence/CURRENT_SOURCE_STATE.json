@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "observed_date": "2026-09-20",
+  "source_kind": "isolated MAP source closure with one recorded proof-term optimization",
+  "entry_module": "MAPReleaseEndpoint",
+  "proof_module_count": 1861,
+  "proof_bytes": 18745581,
+  "source_commit": null,
+  "source_repository": null,
+  "manifest": "proof-snapshot.json",
+  "publication_commit": "not yet created",
+  "note": "Contains the substantive development. The future release Git commit will identify these bytes; no old upstream Git history is invented.",
+  "release_change_count": 1
+}

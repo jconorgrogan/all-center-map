@@ -1,0 +1,18 @@
+--- baseline/Proof/BHPCanonicalAllCharacterLiteral.lean
++++ release/Proof/BHPCanonicalAllCharacterLiteral.lean
+@@ -296,12 +296,13 @@
+     calc
+       ‖criticalPrefixPolynomial q X z.1 z.2‖ ^ 4 ≤
+           (C * L ^ 2 * (V z + a + b + d + r z)) ^ 4 := hp
+-      _ = (C * L ^ 2) ^ 4 * (V z + a + b + d + r z) ^ 4 := by ring
++      _ = (C * L ^ 2) ^ 4 * (V z + a + b + d + r z) ^ 4 := by
++        exact mul_pow (C * L ^ 2) (V z + a + b + d + r z) 4
+       _ ≤ (C * L ^ 2) ^ 4 *
+           (125 * (V z ^ 4 + a ^ 4 + b ^ 4 + d ^ 4 + r z ^ 4)) :=
+         mul_le_mul_of_nonneg_left hsum (pow_nonneg (by positivity) 4)
+       _ = 125 * (C * L ^ 2) ^ 4 *
+-          (V z ^ 4 + a ^ 4 + b ^ 4 + d ^ 4 + r z ^ 4) := by ring
++          (V z ^ 4 + a ^ 4 + b ^ 4 + d ^ 4 + r z ^ 4) := by ac_rfl
+   have hq0 : 0 ≤ (q : ℝ) := by positivity
+   have hX0 : 0 ≤ (X : ℝ) := by positivity
+   have hTpos : 0 < T := by linarith

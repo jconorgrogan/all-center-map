@@ -1,0 +1,4 @@
+MAPBHPCanonicalAllCharacterLiteral.fourth_power_sum_five_le: unique proof expressions = 19659
+MAPBHPCanonicalAllCharacterLiteral.canonicalFourfoldHeightShiftedFourthIntegral_polylog_le_fixed: unique proof expressions = 5312
+MAPBHPCanonicalAllCharacterLiteral.canonicalShiftedPerronConvolutionFourth_le_exactKernel_fixed: unique proof expressions = 2233
+MAPBHPCanonicalAllCharacterLiteral.canonicalAllCharacterSelectedFourthMomentLiteral_of_sources: unique proof expressions = 16414694
