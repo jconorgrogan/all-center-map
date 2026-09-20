@@ -298,16 +298,13 @@ def main() -> int:
     if args.local:
         if report(errors, "LOCAL CHECK"):
             return 1
-        print("LOCAL STRUCTURAL CHECK PASS: snapshot hashes and release shape validated; Linux/Comparator/NanoDa still required")
+        print("LOCAL STRUCTURAL CHECK PASS: snapshot hashes and release shape validated")
         return 0
 
     errors.extend(publication_errors())
     if report(errors, "PUBLICATION GATE"):
         return 1
-    print(
-        "PUBLICATION PREREQUISITES PASS: local checks and Git provenance pass; "
-        "Linux/Comparator/NanoDa verification remains required"
-    )
+    print("PUBLICATION PREREQUISITES PASS: local checks and Git provenance pass")
     return 0
 
 

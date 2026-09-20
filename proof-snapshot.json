@@ -12003,7 +12003,7 @@
       "release_sha256": "79fffacda3788911d58dda5b703971b0d6e871eac5ed81e5b11b300bd5dd7254",
       "change": "Two ring normalizations replaced by direct mul_pow and ac_rfl proofs; statements, names, constants, hypotheses, and imports unchanged.",
       "evidence": "evidence/proof-optimization/bhp.diff",
-      "validation": "Candidate compiled with pinned Lean and standard axioms; fresh optimized Linux release checks pending."
+      "validation": "Candidate compiled with pinned Lean and standard axioms. The optimized module compiled from source in the Linux release build."
     }
   ]
 }

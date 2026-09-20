@@ -18,8 +18,8 @@ they are not paths required for reproduction.
 
 The independent Mathlib-only Challenge and the release Solution compiled in
 separate surface checks. The Solution axiom audit reported only the three
-standard axioms. These surface checks used hash-matched existing proof oleans;
-they were not a fresh Linux source build.
+standard axioms. Those surface checks used hash-matched existing proof oleans.
+The later Linux source build is recorded below.
 
 ## Reproduce the closure checks
 

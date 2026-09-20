@@ -8,7 +8,7 @@
   "source_commit": null,
   "source_repository": null,
   "manifest": "proof-snapshot.json",
-  "publication_commit": "not yet created",
-  "note": "Contains the substantive development. The future release Git commit will identify these bytes; no old upstream Git history is invented.",
+  "publication_repository": "https://github.com/jconorgrogan/prime-minor-arcs-2-15",
+  "note": "Isolated source closure published at https://github.com/jconorgrogan/prime-minor-arcs-2-15. source_commit and source_repository stay null because the proof bytes did not come from an invented upstream Git history.",
   "release_change_count": 1
 }
