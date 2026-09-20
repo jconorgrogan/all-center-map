@@ -2,6 +2,8 @@
 
 A formally verified local Fourier estimate for the von Mangoldt function.
 
+**Paper:** [Prime Pairs at the Prime Number Theorem Threshold](paper/prime-pairs-pnt-threshold.pdf) ([TeX](paper/prime-pairs-pnt-threshold.tex)). This repository formalizes Theorem 1.1 of that paper.
+
 - **Previous relevant scale:** `8/33 ≈ 0.2424`
 - **New scale:** `2/15 ≈ 0.1333`
 - **Status:** Lean + independent kernel / NanoDa / Comparator verification. Exact theorem: [`AllCenterMAP.map_two_fifteenths`](STATEMENT.md)
@@ -100,6 +102,7 @@ See [PROVENANCE.md](PROVENANCE.md) for the source map.
 
 ## Repository map
 
+- [paper/prime-pairs-pnt-threshold.pdf](paper/prime-pairs-pnt-threshold.pdf) — companion paper
 - [STATEMENT.md](STATEMENT.md) — precise mathematical statement
 - [Challenge.lean](Challenge.lean) — compact formal theorem
 - [Solution.lean](Solution.lean) — proof entry point

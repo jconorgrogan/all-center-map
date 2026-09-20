@@ -1,0 +1,312 @@
+\appendix
+\section{A published-input density lemma for polylogarithmic conductors}
+\label{app:pzd}
+
+The all-center argument only uses conductors bounded by a fixed power of the
+logarithm. The following narrower lemma avoids any appeal to an unrefereed
+hybrid character-aspect theorem while retaining the $30/13$ coefficient.
+
+For a Dirichlet character $\chi$, let $N(\sigma,T,\chi)$ count, with
+multiplicity, the zeros $\rho=\beta+i\gamma$ of $L(s,\chi)$ satisfying
+$\beta\ge\sigma$ and $|\gamma|\le T$.
+
+\begin{theorem}[Polylogarithmic-conductor density]\label{thm:pzd}
+Fix $K>0$, $\delta>0$, and $\eta>0$.  Uniformly for
+\[
+ T\ge T_0(K,\delta,\eta),\qquad
+ \frac12+\delta\le\sigma\le\frac45,
+ \qquad Q\le(\log T)^K,
+\]
+one has
+\[
+ \sum_{q\le Q}\sum_{\chi\bmod q}N(\sigma,T,\chi)
+ \ll_{K,\delta,\eta}
+ T^{\frac{30}{13}(1-\sigma)+\eta}.
+ \tag{A.1}
+\]
+\end{theorem}
+
+\begin{proof}
+We first reduce to primitive characters.  If $\chi\pmod q$ is induced by the
+primitive character $\chi^*\pmod r$, then
+\[
+ L(s,\chi)=L(s,\chi^*)
+ \prod_{\substack{p\mid q\\p\nmid r}}
+       (1-\chi^*(p)p^{-s}).
+\]
+Every zero of a factor in the finite product has real part zero.  Consequently
+the zeros counted in (A.1) are zeros of $L(s,\chi^*)$.  The number of
+character--modulus pairs under consideration is $O(Q^2)$, so it is enough to
+prove, for every primitive $\chi\pmod r$, $r\le Q$,
+\[
+ N(\sigma,T,\chi)
+ \ll_{K,\delta,\eta}
+ T^{\frac{30}{13}(1-\sigma)+\eta/2}.
+ \tag{A.2}
+\]
+
+We give the reduction of (A.2) to published large-values and moment estimates.
+This also records where conductor uniformity enters. Fix small constants
+$\kappa>0$ and $0<\vartheta<1$, to be chosen at the end in terms of $\eta$, and put
+\[
+ \mathcal R=r(T+2),\qquad U=2\mathcal R^\kappa,
+ \qquad Y=\mathcal R^{1/2}.
+\]
+If $r=1$, the character is the zeta character.  The range
+$7/10\le\sigma\le4/5$ follows from \cite[Theorem~1.2]{GuthMaynard2026},
+while the lower range follows from the Ingham estimate summarized in
+\cite[(1.4)]{GuthMaynard2026}.  We may therefore assume $r>1$;
+the primitive character $\chi$ is then nonprincipal and no pole residue
+occurs. Form the usual mollifier
+\[
+ M_U(s,\chi)=\sum_{d\le U}\mu(d)\chi(d)d^{-s}.
+\]
+For $\operatorname{Re} s>1$,
+\[
+ L(s,\chi)M_U(s,\chi)
+ =\sum_{n\ge1}c_n\chi(n)n^{-s},
+ \qquad c_n=\sum_{\substack{d\mid n\\d\le U}}\mu(d).
+ \tag{A.3}
+\]
+Thus $c_1=1$ and $c_n=0$ for $1<n\le U$. We now record the detector without
+discarding its weights. Mellin inversion for $e^{-n/Y}$ and a contour shift
+to $\operatorname{Re} z=1/2-\beta$ give, at a zero
+$\rho=\beta+i\gamma$,
+\begin{align}
+ e^{-1/Y}+\sum_{n>U}c_n\chi(n)n^{-\rho}e^{-n/Y}
+  ={}&\frac1{2\pi i}\int_{\operatorname{Re} z=1/2-\beta}
+       \Gamma(z)Y^zL(\rho+z,\chi)M_U(\rho+z,\chi)\,dz.         \tag{A.4}
+\end{align}
+The apparent pole at $z=0$ is removable: since $L(\rho,\chi)=0$,
+$L(\rho+z,\chi)=zH_\rho(z)$ with $H_\rho$ holomorphic near zero, while
+$z\Gamma(z)=\Gamma(z+1)$.  There is no pole at $z=1-\rho$ because $\chi$
+is nonprincipal.  If
+$N_\chi(t,t+1)$ denotes the number of nontrivial zeros in the critical strip,
+counted with multiplicity, whose ordinates lie in $[t,t+1]$, we use the local
+zero count
+\[
+ N_\chi(t,t+1)\ll\log(r(|t|+2)).                                \tag{A.5}
+\]
+This estimate controls multiplicity.  Put
+$a=1/2-\beta$ and $B=(\log\mathcal R)^2$.  Parametrizing the shifted line by
+$z=a+iv$ gives $dz=i\,dv$ and $\rho+z=1/2+i(\gamma+v)$.  Equivalently, with
+the absolute critical-line ordinate $u=\gamma+v$, the integrand is
+\[
+ \Gamma\bigl(a+i(u-\gamma)\bigr)
+ Y^{a+i(u-\gamma)}L(1/2+iu,\chi)M_U(1/2+iu,\chi),
+\]
+and the truncated interval is $|u-\gamma|\le B$.  Uniformly for
+$1/2<\beta\le1$ and $|v|\ge1$, the fixed-strip bound for $L$, the elementary
+bound $|M_U(1/2+i(\gamma+v),\chi)|\le U+1$, and vertical Gamma decay give
+\begin{align*}
+ &\left|\Gamma(a+iv)Y^{a+iv}
+ L(1/2+i(\gamma+v),\chi)M_U(1/2+i(\gamma+v),\chi)\right| \\
+ &\qquad\ll r^2(U+1)(1+|v|)(5+|\gamma|+|v|)^2e^{-|v|} \\
+ &\qquad\ll r^2(U+1)(5+|\gamma|)^2(1+|v|)^3e^{-|v|}.
+\end{align*}
+Hence the two vertical tails are
+\[
+ \ll r^2(U+1)(5+|\gamma|)^2e^{-B/2}.
+\]
+If $N=\lceil YB\rceil$, the arithmetic tail is at most
+\[
+ (U+1)e^{-(N+1)/Y}(1-e^{-1/Y})^{-1}
+ \ll (U+1)Y e^{-B}.
+\]
+Since $\mathcal R=r(T+2)$, $Y=\mathcal R^{1/2}$,
+$U=2\mathcal R^\kappa$, $|\gamma|\le T$, and
+$r\le(\log T)^K$, both tails are $O_A(\mathcal R^{-A})$ for every fixed
+$A$. Consequently every remaining zero satisfies either
+\[
+ \left|\sum_{U<n\le Y(\log\mathcal R)^2}
+ c_n\chi(n)n^{-\rho}e^{-n/Y}\right|\gg1,                        \tag{I}
+\]
+or the shifted critical-line integral containing
+$L(1/2+i(\gamma+u),\chi)M_U(1/2+i(\gamma+u),\chi)$ is large for
+$|u|\le(\log\mathcal R)^2$. This is the classical Montgomery
+Dirichlet-$L$ detector \cite[Chapters~10 and 12]{Montgomery1971}; (A.3) displays
+the character-twisted coefficient identity. Equation (A.5) controls
+multiplicity and permits thinning at any prescribed separation, with the
+separation length times a logarithm as the loss.
+
+For the critical-line alternative, first thin the original ordinates at
+separation $3(\log\mathcal R)^2$. The shifted ordinates are then
+one-separated, and the thinning loss is polylogarithmic by (A.5). The detector
+inequality and the integrability of the gamma factor imply, for one shifted
+ordinate $v$, that
+\[
+ |L(1/2+iv,\chi)M_U(1/2+iv,\chi)|
+ \gg Y^{\sigma-1/2}\mathcal R^{-o(1)}.
+\]
+Since
+\[
+ |M_U(1/2+iv,\chi)|\le\sum_{d\le U}d^{-1/2}\ll U^{1/2},
+\]
+Montgomery's discrete family fourth moment
+\cite[Theorem~10.3]{Montgomery1971}, restricted to the fixed primitive character
+by nonnegativity,
+\[
+ \sum_v|L(1/2+iv,\chi)|^4\ll(rT)^{1+o(1)}
+\]
+at one-separated ordinates gives
+\[
+ \#\mathcal Z_{II}\ll\mathcal R^{2(1-\sigma)+2\kappa+o(1)}.           \tag{A.6}
+\]
+All conductor factors are harmless because
+$r\le(\log T)^K$. Notice that we used the pointwise bound for $M_U$; a
+fourth moment of $L$ and only a second moment of $M_U$ would not justify (A.6).
+
+It remains to count the zeros satisfying (I). Dyadic subdivision supplies
+one $N$ with
+\[
+ \mathcal R^\kappa\ll N\ll\mathcal R^{1/2}
+                    (\log\mathcal R)^2
+ \tag{A.7}
+\]
+and a large block for a proportion $(\log\mathcal R)^{-O(1)}$ of these
+zeros. The lower bound holds because the coefficients in (A.3) vanish for
+$1<n\le U$.
+We retain the exponential weight in the coefficients.  The real part of a
+zero must also be removed before applying one large-values theorem to the
+whole set. Fix the left edge $\sigma$, put $L=\log N$, choose a fixed
+$\zeta_0\in C_c^\infty((1/2,2))$ equal to one near
+$[1,1+\log(2)/L]$, and set
+\[
+ \psi_\beta(u)=\zeta_0(u/L)e^{-(\beta-\sigma)u}.
+\]
+Uniformly for $\sigma\le\beta\le1$,
+\[
+ \|\psi_\beta^{(j)}\|_1\ll_jL^{1-j},\qquad
+ |\widehat\psi_\beta(\xi)|\ll_jL^{1-j}|\xi|^{-j},
+ \qquad \|\widehat\psi_\beta\|_1\ll1.                         \tag{A.8}
+\]
+Fourier inversion gives, up to the fixed Fourier-sign convention,
+\[
+ \sum_{N<n\le2N}c_ne^{-n/Y}\chi(n)n^{-\beta-i\gamma}
+ =\int_{\mathbb R}\widehat\psi_\beta(\xi)
+   \sum_{N<n\le2N}c_ne^{-n/Y}\chi(n)
+        n^{-\sigma-i(\gamma+2\pi\xi)}\,d\xi.
+ \tag{A.9}
+\]
+Put $H=\mathcal R^\vartheta$. By (A.8), choosing the
+integration-by-parts order in terms of $\vartheta$ makes the contribution of
+$|\xi|>H$ smaller than the block threshold, uniformly in $\beta$. Indeed,
+$|c_n|\le d(n)$ gives the crude uniform estimate
+\[
+ \sup_t\left|
+ \sum_{N<n\le2N}c_ne^{-n/Y}\chi(n)n^{-\sigma-it}
+ \right|
+ \ll \mathcal R^{o(1)}N^{1-\sigma},
+\]
+and its product with the Fourier tail from (A.8) is smaller than any prescribed
+fixed power of $\mathcal R^{-1}$ after increasing the integration-by-parts
+order. Thus every
+retained zero chooses some $|\xi_\rho|\le H$ where a common polynomial is
+large. Normalize with
+\[
+ C_N=\max_{N<n\le2N}|c_n|=\mathcal R^{o(1)}
+\]
+(the block is nonzero), and define the zero-independent polynomial
+\[
+ D_\chi(t)=\sum_{N<n\le2N}a_n\chi(n)n^{it},
+ \qquad a_n=\frac{c_ne^{-n/Y}(N/n)^\sigma}{C_N},
+ \qquad |a_n|\le1,
+ \tag{A.10}
+\]
+which satisfies
+\[
+ |D_\chi(t_j)|\ge N^\sigma\mathcal R^{-o(1)}
+ \tag{A.11}
+\]
+at a shifted ordinate $t_j=-\gamma-2\pi\xi_\rho$. Any unit interval contains
+at most $O((H+1)\log\mathcal R)$ of these shifted ordinates, counted with
+multiplicity: all their original ordinates lie in an interval of length
+$O(H)$, so this follows from (A.5). Greedy selection therefore leaves a
+one-separated subset of cardinality
+\[
+ \gg\#\mathcal Z_I/((H+1)\log\mathcal R).                             \tag{A.12}
+\]
+It lies in an interval of length $O(T+H)=O(T)$. Translating that interval
+multiplies the common coefficients by unimodular factors. This quantifies the
+real-part-removal step compressed in \cite[Section~13.1]{GuthMaynard2026}; the fixed factor
+$\chi(n)e^{-n/Y}$ remains in the coefficients throughout.
+
+Guth and Maynard's published large-values theorem \cite[Theorem~1.1]{GuthMaynard2026}
+applies to every complex coefficient sequence bounded by one.  Hence it
+applies to (A.10).  Their power argument in
+\cite[Section~13.1]{GuthMaynard2026} has two branches: Theorem~1.1 is used
+when the powered length is at most their switching scale, and the usual
+discrete mean-value theorem is used in the complementary branch.  Both inputs
+allow arbitrary bounded complex coefficients.  In the present twisted setting,
+complete multiplicativity gives
+\[
+ \chi(n_1)\cdots\chi(n_k)=\chi(n_1\cdots n_k),
+\]
+and, literally,
+\[
+ D_\chi^k(t)=
+ \sum_{N^k<m\le(2N)^k}\chi(m)b_m m^{it},
+ \qquad |b_m|\le d_k(m)=\mathcal R^{o(1)}.
+\]
+Split this support into $O_k(1)$ dyadic blocks. The triangle inequality and
+pigeonholing retain one common block for a fixed positive proportion of the
+selected ordinates; normalize its divisor-bounded coefficients before
+applying \cite[Theorem~1.1]{GuthMaynard2026}. These operations cost only
+$\mathcal R^{o(1)}$. By (A.7) and $r\le(\log T)^K$, the polynomial length obeys
+$N\le T^{1/2+o_K(1)}$ and $N\ge T^{\kappa+o_K(1)}$. The integer $k$ in
+their proof is therefore bounded in terms of $\kappa$; this is enough because
+$\kappa$ is fixed before $T\to\infty$. The same power argument gives, for
+$7/10\le\sigma\le4/5$,
+\[
+ \#\mathcal Z_I
+ \le T^{\frac{15(1-\sigma)}{3+5\sigma}
+          +\vartheta+o_{K,\kappa}(1)}.
+ \tag{A.13}
+\]
+Because
+\[
+ \frac{15}{3+5\sigma}\le\frac{30}{13}
+ \quad\left(\sigma\ge\frac7{10}\right),
+ \qquad
+ \min_{7/10\le\sigma\le4/5}
+ \left(\frac{15}{3+5\sigma}-2\right)(1-\sigma)
+ =\frac1{35},
+\]
+we may first choose $\kappa$ so that $2\kappa<1/70$ and then choose
+$\vartheta$ and all remaining subpower losses smaller than the allocated
+$\eta/2$. Equations (A.6) and (A.13) prove (A.2) in this range.
+
+For $1/2+\delta\le\sigma\le7/10$, Montgomery's classical family estimate
+\cite[Theorem~12.1]{Montgomery1971} gives, for each modulus $r$,
+\[
+ \sum_{\chi\bmod r}N(\sigma,T,\chi)
+ \ll (rT)^{\frac{3(1-\sigma)}{2-\sigma}}
+       (\log(rT))^9;
+ \tag{A.14}
+\]
+for the fixed character under consideration, nonnegativity gives explicitly
+\[
+ N(\sigma,T,\chi)
+ \le \sum_{\psi\bmod r}N(\sigma,T,\psi).
+\]
+Since
+\[
+ \frac3{2-\sigma}\le\frac{30}{13}
+ \quad\left(\sigma\le\frac7{10}\right),
+\]
+(A.2) follows throughout the asserted strip after taking $T$ sufficiently
+large in terms of $K,\delta,\eta$.
+
+Finally $Q^{O(1)}=(\log T)^{O_K(1)}=T^{o_K(1)}$.  Summing (A.2) over the
+$O(Q^2)$ original character--modulus pairs and allocating the total subpower
+loss to $\eta/2$ proves (A.1).
+\end{proof}
+
+\begin{remark}[Scope of the density lemma]
+The theorem does not extend the Guth--Maynard estimate to a character family.
+It applies that published arbitrary-coefficient theorem separately to each
+character and uses that the family is only polylogarithmic. The fixed-character
+detector, fourth-moment input, real-part removal, spacing loss, and bounded-power
+coefficient normalization are displayed above because they are the uniformity
+points on which this reduction depends.
+\end{remark}

@@ -1,0 +1,945 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=BrickRed]{hyperref}
+\setlist{nosep,leftmargin=*}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\mathbb T}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\e}{\mathrm e}
+\newcommand{\E}{\mathcal E}
+\newcommand{\M}{\mathfrak M}
+\newcommand{\m}{\mathfrak m}
+\newcommand{\Sg}{\mathfrak S}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\RePart}{Re}
+
+\title{Prime Pairs at the Prime Number Theorem Threshold\\
+\large Hardy--Littlewood for Almost Every Shift in Every
+Interval of Length $X^{2/15+\varepsilon}$}
+\author{Conor Grogan}
+\date{20 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let
+\[
+ S_X(\alpha)=\sum_{X<n\le 2X}\Lambda(n)\e^{2\pi i n\alpha}.
+\]
+For every \(A,\eps>0\), we choose narrow neighborhoods of rational points with
+logarithmically bounded denominators and prove
+\[
+ \sup_{|J|=1/H}\int_{J\setminus\mathfrak M}|S_X(\alpha)|^2\,d\alpha
+ \ll_{A,\eps}X(\log X)^{-A}
+\]
+whenever \(H\ge X^{2/15+\eps}\).  It follows that, in every translated shift
+interval of the stated length, the Hardy--Littlewood prime-pair formula
+holds in mean square and for all but \(O(H(\log X)^{-A})\) individual
+shifts, and the second moment of \(R_X\) matches its singular-series
+prediction.  The same estimate gives the weighted Goldbach formula for
+almost every target in \([X,X+H]\), together with a balanced version whose
+summands lie in \((X,2X]\).  This replaces the exponent \(8/33\) in
+Matom\"aki--Radziwi\l\l--Tao by \(2/15\).
+\end{abstract}
+
+\section*{Introduction}
+The prime number theorem in short intervals counts one copy of the primes:
+\[
+ \psi(x+y)-\psi(x)\sim y.
+\]
+The Hardy--Littlewood problem correlates the primes with a translate:
+\[
+ R_X(h)=\sum_{X<n\le2X}\Lambda(n)\Lambda(n+h)
+ \sim X\mathfrak S(h).
+\]
+The singular series \(\mathfrak S(h)\) is the product of the local congruence
+factors.  At \(h=2\), this correlation contains the twin-prime problem.
+The theorems below are averages over \(h\) and leave every fixed shift open.
+Averaging in \(h\) lets us reach the \(2/15\) short-interval scale.
+
+The current one-point theory gives the prime number theorem for almost all
+intervals of length \(x^{2/15+\eps}\) \cite{GafniTao2026}.  Matom\"aki,
+Radziwi\l\l, and Tao \cite{MRT2019} proved the Hardy--Littlewood prime-pair
+asymptotic for almost all shifts in families of length
+\(X^{8/33+\eps}\).  Theorem~\ref{thm:map} lowers the two-point threshold to
+\(X^{2/15+\eps}\), so the one-point and two-point thresholds now agree.
+For \(X=10^{30}\), the old and new shift scales are approximately
+\(10^{7.27}\) and \(10^4\): about nineteen million shifts versus ten
+thousand.
+
+The estimate is uniform in the center of the shift interval: in every
+translated interval of length \(X^{2/15+\eps}\), almost all shifts obey the
+Hardy--Littlewood prediction.
+
+\section{Statements}
+Write $L=\log X$, $e(t)=\e^{2\pi i t}$, and identify
+$\T=\mathbb R/\mathbb Z$.  For positive $P,Q$ set
+\[
+ \M(P,Q)=\bigcup_{q\le Q}\ \bigcup_{\substack{a\bmod q\\(a,q)=1}}
+ \left\{\alpha\in\T:\left\|\alpha-\frac aq\right\|_{\T}\le\frac PX\right\},
+ \qquad \m(P,Q)=\T\setminus\M(P,Q).
+\]
+
+\begin{theorem}[Uniform local minor-arc estimate]\label{thm:map}
+For every $A>0$ and $\eps>0$ there are positive integers
+$B=B(A,\eps)$, $D=D(A,\eps)$ and positive constants $C=C(A,\eps)$ and
+$X_0=X_0(A,\eps)$ such that, for $X\ge X_0$, with
+\[
+ Q=L^B,\qquad P=L^D,
+\]
+one has, simultaneously for every real $H\ge X^{2/15+\eps}$,
+\[
+ \sup_{\substack{J\subset\T\ \mathrm{an\ arc}\\ |J|=1/H}}
+ \int_{J\setminus\M(P,Q)}\abs{S_X(\alpha)}^2\dd\alpha
+ \le CXL^{-A}.
+ \tag{1.1}
+\]
+The order of choice is
+\[
+ A,\eps\longrightarrow B,D,C,X_0\longrightarrow X,H,J.
+\]
+The constants may be ineffective.
+\end{theorem}
+
+\begin{remark}[Formalization]
+The estimate~(1.1) is proved in Lean~4 as
+\texttt{AllCenterMAP.map\_two\_fifteenths}.
+See \url{https://github.com/jconorgrogan/prime-minor-arcs-2-15};
+the formalization has been submitted to Palomar.
+\end{remark}
+
+For $h\ne0$ define
+\[
+ R_X(h)=\sum_{X<n\le2X}\Lambda(n)\Lambda(n+h)
+\]
+and
+\[
+ \Sg(h)=
+ \begin{cases}
+ 2C_2\displaystyle\prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2},&2\mid h,\\[5pt]
+ 0,&2\nmid h,
+ \end{cases}
+ \qquad C_2=\prod_{p>2}\frac{p(p-2)}{(p-1)^2}.
+\]
+
+\begin{theorem}[Translated prime-pair consequences]\label{thm:pairs}
+Fix $A,\eps>0$.  Uniformly for
+\[
+ X^{2/15+\eps}\le H\le X^{1-\eps},\qquad
+ 0\le h_0\le X^{1-\eps},
+\]
+and $I=\{h\in\Z:|h-h_0|\le H,\ h\ne0\}$,
+\[
+ \sum_{h\in I}\abs{R_X(h)-X\Sg(h)}^2
+ \ll_{A,\eps}HX^2L^{-A},                                      \tag{1.2}
+\]
+\[
+ \sum_{h\in I}R_X(h)^2
+ =X^2\sum_{h\in I}\Sg(h)^2+O_{A,\eps}(HX^2L^{-A}),           \tag{1.3}
+\]
+and
+\[
+ \#\{h\in I:\abs{R_X(h)-X\Sg(h)}>XL^{-A}\}
+ \ll_{A,\eps}HL^{-A}.                                        \tag{1.4}
+\]
+\end{theorem}
+
+For an integer $N\ge2$, let
+\[
+ G(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m),
+\]
+where the pairs are ordered, and let $\Sg(N)$ denote the binary Goldbach
+singular series, equal to zero for odd $N$ and to the expression above for even
+$N$.
+
+\begin{theorem}[Averaged Goldbach at $2/15$]\label{thm:goldbach}
+For every $A,\eps>0$, uniformly for
+\[
+ X^{2/15+\eps}\le H\le X^{1-\eps},
+\]
+one has
+\[
+ G(N)=\Sg(N)N+O_{A,\eps}(XL^{-A})                              \tag{1.5}
+\]
+for all but $O_{A,\eps}(HL^{-A})$ integers $N\in[X,X+H]$.
+The same formula holds for the log-weighted prime-only sum
+\[
+ W(N)=\sum_{\substack{p+q=N\\p,q\ \mathrm{prime}}}\log p\log q.
+\]
+Every sufficiently large even target outside the exceptional set
+has a Goldbach representation.
+\end{theorem}
+
+\section{Two estimates}
+The first estimate integrates the two Dirichlet polynomials in \(t\) and in
+their relative shift \(u\) at the same time.  The second gives the prime number
+theorem simultaneously for every short interval and residue class, for all
+moduli \(q\le(\log X)^K\).
+
+\subsection{A two-variable mean for Dirichlet polynomials}
+
+\begin{lemma}[Mixed mean]\label{lem:mixed}
+Let $c>0$, let $a\ge0$ be an integer, and let $k\ge1$ be an integer.
+Let $M,N\ge2$, $N\ge cM^2$, and $T,U\ge1$.  Suppose
+$|\beta(m)|\le\log^a(2m)$ on $(M,2M]$ and
+$|g(n)|\le\tau_k(n)\log^a(2n)$ on $(N,2N]$.  Put
+\[
+ B(t)=\sum_m\beta(m)m^{-1/2-it},\qquad
+ G(t)=\sum_ng(n)n^{-1/2-it}.
+\]
+If $I$ is any interval of length $T$, then, with
+$R=\max(2,k^2)$,
+\[
+ \int_I|G(t)|^2\int_{|u|\le2U}|B(t+u)|^2\dd u\dd t
+ \ll_{c,a,k}\log^{4a+2R+2}(2MN)(UT+UN+MN+T).          \tag{2.1}
+\]
+Fixed character phases may be inserted in either polynomial.
+\end{lemma}
+
+\begin{proof}
+Use a fixed multiple of
+\[
+ \eta((t-t_0)/T)\eta(u/U),\qquad
+ \eta(v)=\left(\frac{\sin(\pi v/4)}{\pi v/4}\right)^2,
+\]
+to majorize the rectangle.  The Fourier transform of $\eta$ is supported in
+$[-1/4,1/4]$.  Expanding the two squares therefore leaves only quadruples with
+\[
+ |m_1-m_2|\le K:=\min(M,\pi M/U),\qquad
+ |m_1n_1-m_2n_2|\le Y:=2\pi MN/T.
+\]
+The four weights \(m_i^{-1/2}n_i^{-1/2}\) contribute \(O((MN)^{-1})\), and
+the two Fourier transforms contribute \(O(TU)\).  The left side of
+(2.1) is at most a fixed power of \(\log(2MN)\) times
+\[
+ \frac{TU}{MN}
+ \sum_{\substack{m_i\asymp M,\ n_i\asymp N\\
+ |m_1-m_2|\le K,\ |m_1n_1-m_2n_2|\le Y}}
+ \tau_k(n_1)\tau_k(n_2).                               \tag{2.2}
+\]
+We split this sum into three cases.
+
+If $m_1=m_2$, then $n_1-n_2=O(N/T)$.  Cauchy's inequality and
+$\sum_{n\le2N}\tau_k(n)^2\ll N\log^{R-1}(2N)$ give the terms $UT+UN$.
+
+Now let $m_1\ne m_2$.  Write $m_1=da$, $m_2=db$, $(a,b)=1$.
+For a nonzero determinant,
+\[
+ an_1-bn_2=\ell,\qquad0<|\ell|\le Y/d.
+\]
+Set \(d_1=(\ell,b)\) and \(d_2=(\ell,a)\).  Dividing the first congruence by
+\(d_1\) and the second by \(d_2\) gives reduced residue classes, with moduli
+\(O_c((N/d_i)^{1/2})\).  Apply Shiu's theorem
+\cite[Theorem~1]{Shiu1980} on the full intervals \(N<n_i\le2N\), followed by
+Cauchy's inequality.  For each fixed \(\ell\), the result is
+\[
+ \frac{Nd}{M}\log^{R}(2MN)
+ \sqrt{\tau_R(d_1)\tau_R(d_2)}.
+\]
+Since $(a,b)=1$, $d_1d_2=(\ell,ab)$, while
+\[
+ \sum_{0<|\ell|\le Y/d}\tau_R((\ell,ab))
+ =2\sum_{v\mid ab}\tau_{R-1}(v)\left\lfloor\frac{Y}{dv}\right\rfloor
+ \ll\frac Yd\log^{R-1}(2MN).                           \tag{2.3}
+\]
+If $Y/d<1$, there is no nonzero value of \(\ell\).
+Summing the possible pairs \((m_1,m_2)\) gives the term $MN$ in (2.1).
+
+For determinant zero, $n_1=br$ and $n_2=ar$.  Divisor
+submultiplicativity and the divisor second moment give
+\[
+ \sum_r\tau_k(br)\tau_k(ar)
+ \ll\frac{Nd}{M}\log^{R-1}(2MN)\tau_k(a)\tau_k(b).
+\]
+Here $d\le K$.  For fixed $d$, Cauchy's inequality bounds the neighboring
+$a,b$ pairs by
+\[
+ (M/d)(K/d)\log^{R-1}(2MN).
+\]
+Summing $d\le K$ gives the term $T$.  Combining the three cases proves
+(2.1).  Character twists have modulus at most one throughout.
+\end{proof}
+
+\subsection{A uniform short-interval prime number theorem}
+
+\begin{proposition}[Simultaneous short-interval progressions]\label{prop:ap}
+Fix $D,K>0$ and $\eps>0$.  For all sufficiently large $X$,
+\[
+ \int_{X/2}^{4X}\max_{q\le L^K}\max_{(a,q)=1}
+ \sup_{X^{2/15+\eps}\le Y\le X}
+ \left|\frac{\psi(x+Y;q,a)-\psi(x;q,a)-Y/\varphi(q)}Y\right|^2\dd x
+ \ll_{D,K,\eps}XL^{-D}.                                \tag{2.4}
+\]
+The threshold and the implied constant may be ineffective.
+\end{proposition}
+
+\begin{proof}
+We give the exponent calculation, since it is what fixes $2/15$. It is enough
+to treat $0<\eps\le1/10$, since a larger value follows by decreasing $\eps$.
+Put
+\[
+ \theta=\frac2{15}+\eps,\qquad
+ \tau=\frac{13}{15}-\frac\eps2,\qquad T=X^\tau,\qquad Q=L^K.
+\]
+For each character \(\chi\), use the primitive character that induces it.
+If \(\rho=\beta+i\gamma\) runs over the nontrivial zeros of the corresponding
+\(L\)-function, counted with multiplicity, set
+\[
+ Z=\sum_{q\le Q}\sum_{\chi\bmod q}\sum_{|\gamma|\le T}X^{2(\beta-1)}.
+\]
+Set $\delta_0=\min(\eps/16,1/120)$. The density theorem for
+polylogarithmic conductors proved in
+Appendix~\ref{app:pzd}, used with exponent $K+1$ since
+$Q\le(\log T)^{K+1}$ for large $X$, gives, for every fixed
+$\eta_{\rm zd}>0$, uniformly on
+\[
+ \frac12+\delta_0\le\sigma\le\frac45,
+\]
+\[
+ \sum_{q\le Q}\sum_{\chi\bmod q}N(\sigma,T,\chi)
+ \ll_{K,\delta_0,\eta_{\rm zd}}
+ T^{\frac{30}{13}(1-\sigma)+\eta_{\rm zd}}.          \tag{2.5}
+\]
+Its inputs are Montgomery's classical Dirichlet-$L$ zero detector and moment
+estimates together with Guth--Maynard's published arbitrary-coefficient
+large-values theorem, applied separately to each of the only polylogarithmically
+many characters.  Thus no hybrid character-family theorem is used. The zeros with
+$\beta<1/2+\delta_0$ contribute
+\[
+ \ll Q^2T L X^{-1+2\delta_0}\ll_{\eps,K}X^{-c_\eps}
+\]
+by the elementary zero count.  Partition
+$[1/2+\delta_0,4/5]$ into $O_\eps(1)$ intervals
+$[\sigma,\sigma+\Delta]$ with
+\[
+ \Delta\le\min\!\left(\frac1{100},\frac{3\eps}{52}\right),
+\]
+and apply (2.5) at each left endpoint. Choose
+\[
+ \eta_{\rm zd}=\frac{3\eps}{52\tau}.
+\]
+Since
+\[
+ 2-\frac{30}{13}\tau=\frac{15}{13}\eps>0,
+\]
+the $X$-exponent of a mesh cell is at most
+\[
+ -\frac{15\eps}{13}(1-\sigma)+2\Delta+\tau\eta_{\rm zd}
+ \le-\frac{3\eps}{52}.
+\]
+Here we used $\sigma\le4/5$ and
+$\Delta\le3\eps/52$. Thus every mesh interval contributes a fixed negative
+power of $X$, uniformly over all $q\le Q$.
+
+Near one, Jutila \cite[(1.7)]{Jutila1977} proves, for every fixed $\eta>0$,
+\[
+ \sum_{\chi\bmod q}N(\sigma,T,\chi)
+ \ll_\eta(qT)^{(2+\eta)(1-\sigma)},\qquad4/5\le\sigma<1. \tag{2.6}
+\]
+With $\eta=1/10$,
+\[
+ 2-\frac{21}{10}\frac{\log(qT)}{\log X}\ge\frac16
+\]
+for large $X$.  Khale's Vinogradov--Korobov region
+\cite[Theorem~1.1]{Khale2024} gives, for every zero with $|\gamma|\ge10$,
+\[
+ 1-\beta\gg_K L^{-2/3}(\log L)^{-1/3}.
+\]
+For the conductor-one zeta factor, apply Khale's theorem to the principal
+character modulo~$3$; the additional factor $1-3^{-s}$ has zeros only on
+$\Re s=0$.
+The classical low-height region and Siegel's theorem handle the
+possible real exceptional zero; for $q\le L^K$ its weighted contribution is
+$O(L^{2K}\exp(-c_KL^{3/4}))$.  For every fixed $D$,
+\[
+ Z\ll_{D,K,\eps}L^{-D}.                                 \tag{2.7}
+\]
+The explicit formula and local zero count used here are
+\cite[Theorem~11.3, Lemma~11.4(a), Theorems~12.3 and 12.10]{Koukoulopoulos}.
+They apply to arbitrary characters; changing to the inducing character costs
+$O(\log q\log X)$.
+
+Let
+\[
+ F_\chi(t)=\sum_{|\gamma|\le T}t^{\rho-1}
+ \qquad (X/4\le t\le6X),
+\]
+extended by zero, where the zeros are those of the primitive character
+inducing~$\chi$.  If $\rho=\beta+i\gamma$ and
+$\rho'=\beta'+i\gamma'$, direct integration gives
+\[
+ \left|\int_{X/4}^{6X}t^{\rho+\overline{\rho'}-2}\,\dd t\right|
+ \ll \frac{X^{\beta+\beta'-1}}{1+|\gamma-\gamma'|}.
+\]
+Writing $w_\rho=X^{\beta-1}$, using
+$2w_\rho w_{\rho'}\le w_\rho^2+w_{\rho'}^2$, and grouping the ordinates
+of~$\rho'$ into unit intervals, Lemma~11.4(a) and the harmonic sum give
+\[
+ \norm{F_\chi}_2^2
+ \ll XL^2\sum_{|\gamma|\le T}X^{2(\beta-1)}.
+\]
+Consequently
+\[
+ \sum_{q\le Q}\sum_{\chi\bmod q}\norm{F_\chi}_2^2
+ \ll XL^2Z.                                             \tag{2.8}
+\]
+
+Let
+\[
+ E_\chi(x,Y)=\psi(x+Y,\chi)-\psi(x,\chi)
+              -\mathbf 1_{\chi=\chi_0}Y.
+\]
+Subtracting the explicit formula at $x+Y$ and $x$, and using the
+primitive--imprimitive correction, gives uniformly in the asserted ranges
+\[
+ \frac{|E_\chi(x,Y)|}{Y}
+ \le M^+F_\chi(x)+O(X^{-\eps/2}L^2),                    \tag{2.9}
+\]
+where $M^+$ is the one-sided Hardy--Littlewood maximal operator.  Character
+orthogonality is used only before the supremum:
+\[
+ E_{q,a}(x,Y)=\frac1{\varphi(q)}
+   \sum_{\chi\bmod q}\overline\chi(a)E_\chi(x,Y).
+\]
+After (2.9), Cauchy--Schwarz, rather than orthogonality, yields
+\[
+ \sup_Y\left|\frac{E_{q,a}(x,Y)}Y\right|^2
+ \le \frac1{\varphi(q)}\sum_{\chi\bmod q}
+   \left(M^+F_\chi(x)+O(X^{-\eps/2}L^2)\right)^2.       \tag{2.10}
+\]
+The right side is independent of~$a$.  Since the summands are nonnegative,
+$\max_{q\le Q}$ is at most their sum over~$q$.  The $L^2$ boundedness of
+$M^+$, followed by (2.7)--(2.8), therefore gives
+\[
+ \int_{X/2}^{4X}\max_{q\le Q}\max_{(a,q)=1}\sup_Y
+ \left|\frac{E_{q,a}(x,Y)}Y\right|^2\,\dd x
+ \ll XL^2Z+QX^{1-\eps}L^4.
+\]
+Taking the logarithmic saving in (2.7) larger by two, and absorbing the
+second, power-saving term, proves (2.4).
+\end{proof}
+
+\begin{remark}[Comparison with the hybrid theorem]
+Chen--Gupta--Li version~2 \cite[Theorem~1.2]{CGL2026} states the stronger
+hybrid estimate
+\[
+ \sum_{\chi\bmod q}N(\sigma,T,\chi)
+ \le(qT)^{o(1)}\left(q^{\frac73(1-\sigma)}T^{2(1-\sigma)}
+ +(qT)^{\frac{30}{13}(1-\sigma)}\right).
+\]
+That theorem also implies Proposition~\ref{prop:ap}, but it is not used in
+this paper. Appendix~\ref{app:pzd} proves the weaker polylogarithmic-conductor
+slice needed here from published inputs.
+\end{remark}
+
+\section{Near and far from rational points}
+Write the center of a short Fourier interval as
+\(\gamma=a/q+\lambda\).  If \(\lambda\) is small,
+Proposition~\ref{prop:ap} controls a neighborhood of \(a/q\).  If
+\(\lambda\) is larger, Matom\"aki--Radziwi\l\l--Tao convert the Fourier
+integral into the two-variable mean from Lemma~\ref{lem:mixed}.  We split at
+\(|\lambda|H_*\asymp R\); both estimates use the same values of \(a\) and
+\(q\).
+
+\begin{proof}[Proof of Theorem~\ref{thm:map}]
+Put
+\[
+ \rho=\min(\eps/4,1/1200),\quad
+ H_*=\tfrac12X^{2/15+\rho},\quad
+ \delta=\rho/16.
+\]
+Every arc of length $1/H$, $H\ge X^{2/15+\eps}$, lies in the concentric arc
+of length $1/H_*$.  It is therefore enough to work at $H_*$.  Set
+\[
+ K_0=\lceil1/\delta\rceil,\quad \kappa=2K_0,
+\]
+choose \(C_s=C_s(\eps)\) large enough to cover the fixed powers of \(\log X\)
+in the Heath--Brown decomposition and its mean-value estimates, and then take
+\[
+ B=\left\lceil4(A+C_s+20)\right\rceil,\quad Q=L^B,
+\]
+\[
+ C_c=A+C_s+2B+30,\quad R=L^{C_c},\quad
+ y=\frac{H_*}{32R},
+\]
+\[
+ D_{\rm AP}=A+4B+10,\qquad
+ D=\left\lceil A+2B+10\right\rceil,\qquad P=L^D.     \tag{3.1}
+\]
+These numbers are fixed before $X$, the arc length, or the center is chosen.
+Apply Proposition~\ref{prop:ap} with
+$\eps_{\rm AP}=\rho/2$, $K=B$, and $D=D_{\rm AP}$.  After enlarging the
+lower threshold for $X$, we have
+$64L^{C_c}\le X^{\rho/2}$, and hence
+$y\ge X^{2/15+\rho/2}$.  Thus the proposition applies at length $y$ with
+exactly the denominator range and logarithmic saving used below.
+
+\paragraph{Near a rational point.}
+For each reduced $a/q$, introduce the signed measure
+\[
+ \nu_{q,a}=\sum_{X<n\le2X}\Lambda(n)e(an/q)\delta_n
+ -\frac{\mu(q)}{\varphi(q)}\mathbf1_{(X,2X]}(t)\,dt.
+\]
+Since $4R/H_*=1/(8y)$, the signed-measure Gallagher inequality gives
+\[
+ \int_{|\beta|\le1/(8y)}|\widehat\nu_{q,a}(\beta)|^2\,d\beta
+ \ll y^{-2}\int_{\mathbb R}|\nu_{q,a}((x,x+y])|^2\,dx.
+\]
+Decompose the interior sum into reduced residue classes modulo $q$ and apply
+Cauchy's inequality before Proposition~\ref{prop:ap}.  The interior,
+endpoint, and prime-power terms contribute respectively
+$q^2XL^{-D_{\rm AP}}$, $yL^2$, and $L^4/y$ for one rational arc after
+Gallagher normalization.  Summing the reduced numerators over $q\le Q$ and
+using $\sum_{q\le Q}\varphi(q)q^2\ll Q^4$ and
+$\sum_{q\le Q}\varphi(q)\ll Q^2$, while estimating the continuous main term
+outside $|\beta|\le P/X$ by $|\beta|^{-1}$, gives on the union $\mathcal W$ of intervals
+$\|\alpha-a/q\|\le4R/H_*$, $q\le Q$,
+\[
+ \int_{\mathcal W\setminus\M(P,Q)}|S_X(\alpha)|^2\dd\alpha
+ \ll XQ^4L^{-D_{\rm AP}}+Q^2yL^2+\frac{Q^2L^4}{y}+\frac{XQ^2}{P}
+ \ll XL^{-A}.                                          \tag{3.2}
+\]
+The last term comes from the continuous main term
+$\int_X^{2X}e(\beta t)\dd t$ outside $|\beta|\le P/X$; prime powers sharing
+a factor with $q$ and the two endpoints of $(X,2X]$ give the middle terms.
+Every term uses the same
+denominator range \(q\le Q\).
+
+\paragraph{Farther from a rational point.}
+Let $\gamma$ be the midpoint of a target arc.  Dirichlet approximation gives
+\[
+ \gamma=a/q+\lambda,\qquad q\le Q,\qquad |\lambda|\le(qQ)^{-1}.
+\]
+If $|\lambda|\le2R/H_*$, the target interval lies in $\mathcal W$, and (3.2)
+applies.  Otherwise put $U=|\lambda|H_*>2R$.  Corollary~5.3 of
+Matom\"aki--Radziwi\l\l--Tao \cite{MRT2019}, with $\eta=Q^{-1/2}$, gives
+\[
+ \int_{\lambda-1/H_*}^{\lambda+1/H_*}|S_X(a/q+\theta)|^2\dd\theta
+ \ll\frac{d_2(q)^4}{qU^2}\sup_{q=q_0q_1}\mathcal I(q_0,q_1)+\mathcal E_0,
+ \tag{3.3}
+\]
+where
+\[
+ \mathcal I(q_0,q_1)=\int_I\left(
+ \sum_{\chi\bmod q_1}\int_{t-U}^{t+U}
+ |\mathcal D[\Lambda\1_{(X,2X]}](1/2+it',\chi,q_0)|\dd t'
+ \right)^2\dd t
+\]
+and \(I\) is the range
+$Q^{-1/2}|\lambda|X\le|t|\le Q^{1/2}|\lambda|X$.
+The denominator in (3.3) is $qU^2$.  The remaining term satisfies
+$\mathcal E_0\ll XL^{O(1)}(Q^{-1/2}+U^{-1})^2$, which is
+$O(XL^{-A})$ by (3.1).
+
+Use the $m=8$ Heath--Brown decomposition in
+\cite[Lemmas~2.15--2.16]{MRT2019}.  Its hypotheses hold because, with
+$H_0=H_*X^{-\delta}$,
+\[
+ (2/15+\rho-\delta)-(1/8+\delta)=1/120+7\rho/8>0.       \tag{3.4}
+\]
+The small terms save a fixed power of $X$.  The terms with $q_0>1$ are
+supported on powers of the prime dividing $q_0$ and have squared norm
+$O(L^3)$; hence \(q_0=1\) in the remaining convolution terms.
+
+Remove the sharp product cutoff with
+\cite[Corollary~2.5]{MRT2019}, applied to the \emph{untruncated}
+convolution $f'$.  Factor the resulting polynomial and then restore the
+cutoff.  The Perron error saves a fixed power of \(X\), and its translations
+stay inside a fixed enlargement of the same \(t\)-range.
+
+\begin{remark}[Notation in the truncation-removal step]
+In the corresponding display of \cite[Section~6]{MRT2019}, the occurrences
+of $\widetilde f$ in the application of Corollary~2.5 and in the definition
+of $F$ appear to be typographical slips for the untruncated convolution
+$f'$.  This interpretation is forced by the preceding identity,
+Proposition~6.1, and the parallel Appendix~A argument.  We write the
+untruncated function explicitly and pay the truncation error above.
+\end{remark}
+
+The decomposition labels its remaining pieces Type II and Type \(d_j\).
+Type II and the first two Type-\(d\) pieces follow from the character second-
+and fourth-moment estimates in \cite[Lemma~2.10 and Corollary~2.12]{MRT2019},
+as in Section~7 there.  After
+division by \(qU^2X\), the resulting terms are
+\[
+ qQ^{1/2}|\lambda|,\quad Q^{1/2}X^{-\delta},\quad
+ X^{-\delta},\quad U^{-1},                              \tag{3.5}
+\]
+all small in the present range.
+
+For a Type-$d_j$ cell, $3\le j\le7$, select its shortest displayed
+$\beta$-factor, of length $M$.  At least two other displayed $\beta$-factors
+are no shorter, so the
+complementary length $N'$ satisfies $N'\gg M^2$.  Dyadically decompose the
+complementary convolution into $O_\eps(1)$ blocks of length $N'$.  On every
+block, $N'\gg NM_2\cdots M_j\gg M^2$, and its coefficient remains bounded by
+a fixed divisor function, at the cost of a fixed logarithmic factor.  Cauchy
+and Fubini bound the overlap of the two inner $t'$-windows by $O(U)$;
+expanding the squared character sum leaves at most $q^2$ mixed means.
+Lemma~\ref{lem:mixed}
+then gives, after division by $qU^2X$,
+\[
+ L^{O(1)}\left(qQ^{1/2}|\lambda|+\frac qM+\frac qU
+ +\frac{qQ^{1/2}}{H_*}\right)                           \tag{3.6}
+\]
+which is at most
+\[
+ L^{O(1)}\left(Q^{-1/2}+QX^{-2/15-\rho+\delta}
+ +Q/R+Q^{3/2}/H_*\right).                               \tag{3.7}
+\]
+The first and third terms save powers of \(L\); the other terms save powers of
+\(X\).  With the values in (3.1), multiplying each term by \(L^{C_s}\)
+still gives \(O(L^{-A})\).  The definition of \(C_s\) includes the number of
+pieces, both character sums, the Perron shifts, and the divisor factor in
+(3.3).
+
+The two cases cover every center.  In the second case, (3.3) bounds the entire
+target interval and therefore its minor-arc part.  Together with (3.2), this
+gives (1.1).
+\end{proof}
+
+\begin{remark}[The major arcs must depend on the saving]
+A rational peak at a denominator $r$ just beyond a fixed cutoff $Q$ has local
+energy of order $X/r^2$, which exceeds $XL^{-A}$ once $A>2B+O(1)$, and the
+tail of the continuous main term forces the width exponent to grow with $A$
+as well.  The order $\forall A\,\exists B,D$ in Theorem~\ref{thm:map} is
+therefore essential; the reversed order $\exists B,D\,\forall A$ gives a
+false statement.
+\end{remark}
+
+\section{Prime-pair variance, fourth correlation, and density one}
+\begin{proof}[Proof of Theorem~\ref{thm:pairs}]
+Let $f(n)=\Lambda(n)\1_{(X,2X]}(n)$ and
+$C_f(h)=\sum_nf(n)f(n+h)$.  Use the set
+\(\M=\M(P,Q)\) supplied by Theorem~\ref{thm:map}, put
+\(\m=\T\setminus\M\), and define the major-arc contribution
+\[
+ M_f(h)=\int_{\M}|S_X(\alpha)|^2e(-h\alpha)\dd\alpha.
+\]
+A Fejér-kernel large sieve for the positive measure
+$\1_{\m}|S_X(\alpha)|^2\dd\alpha$ gives
+\[
+ \sum_{|h-h_0|\le H}|C_f(h)-M_f(h)|^2
+ \ll H\left(\int_{\m}|S_X|^2\right)
+ \sup_{|J|=1/H}\int_{J\cap\m}|S_X|^2.                  \tag{4.1}
+\]
+Parseval gives $\int_\T|S_X|^2=\sum_{X<n\le2X}\Lambda(n)^2\ll XL$.
+Use Theorem~\ref{thm:map} with one extra logarithm to obtain
+\[
+ \sum_{|h-h_0|\le H}|C_f(h)-M_f(h)|^2\ll HX^2L^{-A}.  \tag{4.2}
+\]
+
+The standard major-arc calculation, using
+\cite[Proposition~4.1]{MRT2019}, yields, for $0<|h|<X$,
+\[
+ M_f(h)=(X-|h|)\Sg(h)+O_C(XL^{-C}\tau(|h|)^2).          \tag{4.3}
+\]
+Standard mean-value bounds for fixed powers of \(\tau\) control the sum of
+these errors after $C$ is enlarged.  The difference between $C_f(h)$ and
+$R_X(h)$, together with
+the overlap correction $|h|\Sg(h)$, is
+$O((|h|+1)L^{O(1)})$ per shift.  Since the stated range gives
+$|h|=O(X^{1-\eps})$, its total square is smaller by a fixed power of \(X\)
+than the right side of (1.2).  Adding these contributions to (4.2) gives
+(1.2).
+
+Write $E_h=R_X(h)-X\Sg(h)$.  Then
+\[
+ \sum_{h\in I}R_X(h)^2
+ =X^2\sum_{h\in I}\Sg(h)^2
+ +2X\sum_{h\in I}\Sg(h)E_h+\sum_{h\in I}E_h^2.        \tag{4.4}
+\]
+The standard bound $\sum_{h\in I}\Sg(h)^2\ll HL^{O(1)}$, Cauchy's inequality,
+and (1.2) with a larger logarithmic exponent make the last two terms
+$O(HX^2L^{-A})$, giving (1.3).
+
+Apply (1.2) with exponent $3A$.  Every exception counted in (1.4)
+contributes more than $X^2L^{-2A}$ to the variance, which gives (1.4).
+\end{proof}
+
+\section{Averaged Goldbach}
+\begin{proof}[Proof of Theorem~\ref{thm:goldbach}]
+Choose every cutoff independently of the target.  For integers $r\ge1$ define
+\[
+ L_X(r)=\1_{X/2<r\le X},\qquad Q_X(r)=\1_{1\le r<X},
+\]
+\[
+ A_X(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m)L_X(n)Q_X(m),
+\quad
+ B_X(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m)L_X(n)L_X(m),
+\]
+and
+\[
+ E_X(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m)
+ \{1-L_X(n)Q_X(m)-Q_X(n)L_X(m)+L_X(n)L_X(m)\}.
+\]
+The pointwise indicator identity gives
+\[
+ G(N)=2A_X(N)-B_X(N)+E_X(N).                            \tag{5.1}
+\]
+Because \(Q_X\) excludes \(X\), the overlap in \(A_X\) excludes \(X\) as
+well.  The endpoint term is
+\[
+ 2\,\1_{X/2<N-X<X}\Lambda(X)\Lambda(N-X)
+\]
+when $X$ is an integer.  For sufficiently large $X$, however,
+$H\le X^{1-\eps}\le X/2$, so this term vanishes.  Writing $N=X+h$, the sum
+\(B_X(N)\) and the terms with a summand greater than \(X\) each contain
+$O(h+1)$ pairs.  Therefore
+\[
+ |B_X(N)|+|E_X(N)|\ll(H+1)L^2\ll_{A,\eps}XL^{-A}.       \tag{5.2}
+\]
+
+Put
+\[
+ S(\alpha)=\sum_{X/2<n\le X}\Lambda(n)e(n\alpha),\qquad
+ F(\alpha)=\sum_{1\le m<X}\Lambda(m)e(m\alpha).
+\]
+Orthogonality gives
+\[
+ A_X(N)=\int_\T S(\alpha)F(\alpha)e(-N\alpha)\dd\alpha.\tag{5.3}
+\]
+Let \(\M\) be the union of the rational intervals used in the major-arc
+calculation below, and put \(\m=\T\setminus\M\).  On \(\m\), define
+$d\nu=\1_\m SF\dd\alpha$.  For any finite complex measure $\nu$ and any
+block $I$ of at most $H+1$ consecutive integers, the nonnegative Fejér kernel
+gives
+\[
+ \sum_{k\in I}|\widehat\nu(k)|^2
+ \ll H|\nu|(\T)\sup_{|J|=1/H}|\nu|(J).                \tag{5.4}
+\]
+To prove (5.4), shift the frequency block to the origin and use the Fej\'er
+kernel $K_{2\lceil H\rceil+2}$, whose triangular Fourier weights are bounded
+below on that block, including its endpoints.  After taking total variation,
+partition the tail using
+$K_{2\lceil H\rceil+2}(t)\ll H(1+H\|t\|_\T)^{-2}$.
+
+Parseval and Cauchy give $|\nu|(\T)\ll XL$.  Apply
+Theorem~\ref{thm:map} to $S$ at scale $X/2$ with saving $K$.  Replacing
+$\eps$ by $\eps/2$ makes both bounds
+\[
+ (X/2)^{2/15+\eps/2}\le H\le(X/2)^{1-\eps/2}
+\]
+hold for large $X$.  Another Cauchy inequality gives
+\[
+ \sup_{|J|=1/H}|\nu|(J)\ll XL^{(1-K)/2}.
+\]
+\[
+ \sum_{X\le N\le X+H}|\widehat\nu(N)|^2
+ \ll HX^2L^{(3-K)/2}.                                  \tag{5.5}
+\]
+At the pointwise threshold $XL^{-A}$, Chebyshev's inequality gives
+$O(HL^{-A})$ exceptions when
+\[
+ K\ge6A+3.                                             \tag{5.6}
+\]
+
+For the major arcs, let $Q=L^B$ and use width
+$L^{B_0}/X$.  Choose $B,B_0$ after the exponents defining the MAP arcs at
+scale $X/2$, and large enough that the present major-arc set contains those
+arcs.  For any fixed \(R>0\), Proposition~4.1 of \cite{MRT2019}
+gives, when $\alpha=a/q+\beta$,
+\[
+ S(\alpha)=\frac{\mu(q)}{\varphi(q)}\int_{X/2}^{X}e(\beta x)\dd x+O(XL^{-R}),
+\]
+\[
+ F(\alpha)=\frac{\mu(q)}{\varphi(q)}\int_0^{X}e(\beta y)\dd y+O(XL^{-R}).
+\]
+For $X\le N\le X+H\le3X/2$, the continuous convolution has the exact length
+\[
+ \int_{\mathbb R}\1_{(X/2,X]}(x)\1_{[0,X)}(N-x)\dd x=X/2. \tag{5.7}
+\]
+After the $\beta$ integral and the reduced-residue sum,
+\[
+ \int_\M SF e(-N\alpha)\dd\alpha
+ =\frac X2\Sg(N)+O\!\left(XL^{-C_{\rm major}}\tau(N)^{O(1)}\right). \tag{5.8}
+\]
+This derivation uses Proposition~4.1 of \cite{MRT2019} directly; the
+displayed Goldbach major-arc proposition there has supports whose continuous
+overlap vanishes at the displayed coefficient, so it is bypassed.
+The condition $B\ge2C_{\rm major}$ bounds the omitted part of the Ramanujan
+series, and $B_0\ge2B+C_{\rm major}$ bounds the extension of the \(\beta\)
+integral.  A short-interval mean-value bound for a fixed power of \(\tau\),
+followed by Markov's inequality, gives at most
+$O(HL^{-A})$ targets on which the error in (5.8) exceeds $XL^{-A}$.
+
+Choose the parameters in the order
+\[
+ A,\eps\to C_{\rm major}\to K\to B\to B_0,R\to X_0.
+\]
+Outside the two exceptional sets, (5.3), (5.5), and (5.8) give
+\[
+ A_X(N)=\frac X2\Sg(N)+O_{A,\eps}(XL^{-A}).
+\]
+Equations (5.1)--(5.2) yield $G(N)=X\Sg(N)+O(XL^{-A})$.
+Also,
+$|(N-X)\Sg(N)|\ll H L^{O(1)}\ll XL^{-A}$, after enlarging the input saving,
+so (1.5) follows.
+
+Every term of $G(N)-W(N)$ contains a proper prime power.  Chebyshev's bound
+gives uniformly
+\[
+ |G(N)-W(N)|\ll X^{1/2}L^2,
+\]
+smaller than $XL^{-A}$ for every fixed $A$.  The weighted prime-only formula
+follows.  For even \(N\) outside the exceptional set, \(\Sg(N)\) is
+bounded below by a positive constant, so $W(N)>0$ when $X$ is large.
+\end{proof}
+
+There is a balanced variant, with both summands in the same dyadic range.
+
+\begin{theorem}[Balanced averaged Goldbach]\label{thm:balanced}
+Fix $A,\eps>0$ and $\delta\in(0,1/2)$.  For an integer $N\in(2X,4X)$ put
+\[
+ G_X(N)=\sum_{\substack{n+m=N\\X<n,m\le2X}}\Lambda(n)\Lambda(m),
+ \qquad
+ \ell_X(N)=\min(N-2X,\,4X-N).
+\]
+Uniformly for $X^{2/15+\eps}\le H\le X^{1-\eps}$ and every interval
+$J\subset[(2+\delta)X,(4-\delta)X]$ of length $H$,
+\[
+ G_X(N)=\Sg(N)\,\ell_X(N)+O_{A,\eps,\delta}(XL^{-A})
+ \tag{5.9}
+\]
+for all but $O_{A,\eps,\delta}(HL^{-A})$ integers $N\in J$.  Outside the
+same exceptional set, every even $N\in J$ satisfies
+\[
+ \#\{p+q=N:X<p,q\le2X\}
+ =\frac{\Sg(N)\,\ell_X(N)}{L^2}\left(1+O\!\left(\frac1L\right)\right).
+\]
+\end{theorem}
+
+\begin{proof}
+Both factors are now $S_X$, so the argument above simplifies.  Orthogonality
+gives $G_X(N)=\int_\T S_X(\alpha)^2e(-N\alpha)\dd\alpha$.  Take $\M$ as in
+the major-arc calculation above and put $d\nu=\1_\m S_X^2\dd\alpha$.
+Parseval gives $|\nu|(\T)\le\sum_{X<n\le2X}\Lambda(n)^2\ll XL$, while
+Theorem~\ref{thm:map} with saving $K$ gives directly
+\[
+ \sup_{|J'|=1/H}|\nu|(J')
+ \le\sup_{|J'|=1/H}\int_{J'\cap\m}|S_X(\alpha)|^2\dd\alpha
+ \ll XL^{-K}.
+\]
+No rescaling is needed, because $S_X$ is the sum in Theorem~\ref{thm:map}
+itself.  Now (5.4) gives
+\[
+ \sum_{N\in J}|\widehat\nu(N)|^2\ll HX^2L^{1-K}.
+\]
+Chebyshev's inequality at the threshold $XL^{-A}$ gives $O(HL^{-A})$
+exceptions when $K\ge3A+1$.
+On the major arcs, the approximation of $S_X$ by
+Proposition~4.1 of \cite{MRT2019}, the $\beta$ integral, and the
+reduced-residue sum give, exactly as in (5.8),
+\[
+ \begin{aligned}
+ \int_\M S_X(\alpha)^2e(-N\alpha)\dd\alpha
+ &=\Sg(N)\int_{\mathbb R}\1_{(X,2X]}(x)\1_{(X,2X]}(N-x)\dd x\\
+ &\quad+O\!\left(XL^{-C_{\rm major}}\tau(N)^{O(1)}\right),
+ \end{aligned}
+\]
+and the continuous overlap equals $\ell_X(N)$.  The divisor-moment and
+Markov step is unchanged.  Prime powers contribute $O(X^{1/2}L^2)$
+uniformly.  On $J$ one has $\ell_X(N)\ge\delta X$, and every surviving
+summand satisfies $\log p\log q=L^2(1+O(1/L))$, which gives the prime-only
+count.
+\end{proof}
+
+\section*{Scope and machine-checked components}
+The results concern almost every shift or target in every sufficiently long
+translated interval.  A prescribed shift such as $h=2$, a prescribed
+Goldbach target, and a pair of prescribed short summand intervals are
+pointwise problems; the present methods leave them open.
+
+Siegel's theorem enters Proposition~\ref{prop:ap} through the possible
+exceptional zero, so the constants throughout may be ineffective.
+
+Theorem~\ref{thm:map} is formalized in Lean~4 as
+\texttt{AllCenterMAP.map\_two\_fifteenths}.  The proof is
+\url{https://github.com/jconorgrogan/prime-minor-arcs-2-15}
+and has been submitted to Palomar, with
+\texttt{comparator.json} targeting that declaration.  The release passed a
+Linux source build of $10{,}255$ jobs, Comparator statement identity against
+the independently compiled Challenge, independent NanoDa replay, and Lean
+kernel acceptance.  The MAP proof closure contains $100{,}596$ declarations
+across $1{,}861$ modules; the internal Guth--Maynard large-value closure
+contains $75{,}874$ declarations.  Both closures replayed into an empty
+kernel.  The axiom audit reports only \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}.
+
+\input{polylog_zero_density_lemma}
+
+\begin{thebibliography}{9}
+\bibitem{CGL2026}
+B. Chen, V. Gupta, and Y. C. Li,
+\emph{Large Value Estimates for Dirichlet Polynomials with Characters and Zero Density of Dirichlet $L$-Functions},
+arXiv:2507.08296v2 (2026), Theorem 1.2.
+\url{https://arxiv.org/pdf/2507.08296v2}.
+
+\bibitem{GafniTao2026}
+A. Gafni and T. Tao,
+\emph{On the number of exceptional intervals to the prime number theorem in
+short intervals},
+Ess. Number Th. \textbf{5} (2026), 221--241.
+\url{https://arxiv.org/abs/2505.24017v1}.
+
+\bibitem{GuthMaynard2026}
+L. Guth and J. Maynard,
+\emph{New large value estimates for Dirichlet polynomials},
+Ann. of Math. (2) \textbf{203} (2026), no.~2, 623--675.
+\url{https://doi.org/10.4007/annals.2026.203.2.6}.
+
+\bibitem{Montgomery1971}
+H. L. Montgomery,
+\emph{Topics in Multiplicative Number Theory},
+Lecture Notes in Mathematics 227, Springer, 1971.
+
+\bibitem{Jutila1977}
+M. Jutila,
+\emph{On Linnik's constant},
+Math. Scand. \textbf{41} (1977), 45--62, Theorem 1, equation (1.7).
+\url{https://journals.msp.org/mscand/article/view/1943}.
+
+\bibitem{Khale2024}
+T. Khale,
+\emph{An explicit Vinogradov--Korobov zero-free region for Dirichlet $L$-functions},
+Q. J. Math. \textbf{75} (2024), 299--332, Theorem 1.1.
+\url{https://doi.org/10.1093/qmath/haae010}.
+
+\bibitem{Koukoulopoulos}
+D. Koukoulopoulos,
+\emph{The Distribution of Prime Numbers},
+Graduate Studies in Mathematics 203, American Mathematical Society, 2019.
+\url{https://dms.umontreal.ca/~koukoulo/documents/publications/primes.pdf}.
+
+\bibitem{MRT2019}
+K. Matom\"aki, M. Radziwi\l\l, and T. Tao,
+\emph{Correlations of the von Mangoldt and higher divisor functions I: Long shift ranges},
+Proc. Lond. Math. Soc. \textbf{118} (2019), 284--350.
+\url{https://arxiv.org/abs/1707.01315v3}.
+
+\bibitem{Shiu1980}
+P. Shiu,
+\emph{A Brun--Titchmarsh theorem for multiplicative functions},
+J. Reine Angew. Math. \textbf{313} (1980), 161--170.
+\url{https://eudml.org/doc/152201}.
+\end{thebibliography}
+
+\end{document}

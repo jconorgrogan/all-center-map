@@ -48,11 +48,8 @@ upper bound on $H$ in this statement and no exceptional set of centers.
 
 ## Source and scope
 
-This is Theorem 1.1 (Uniform local minor-arc estimate) of the local manuscript
-*Prime Pairs at the Prime Number Theorem Threshold: Hardy–Littlewood for Almost
-Every Shift in Every Interval of Length X^(2/15+epsilon)*, attributed to Conor
-Grogan. The TeX source has SHA-256
-`a941b349c89e7d8e014c47e25a0ba4c3a3dbdd48b7e0257b4bed8b78764e7f81`.
+This is Theorem 1.1 (Uniform local minor-arc estimate) of
+[Prime Pairs at the Prime Number Theorem Threshold](paper/prime-pairs-pnt-threshold.pdf).
 
 The Challenge contains one protocol `sorry`. The Solution does not import
 Challenge. Verification is recorded in [VERIFICATION.md](VERIFICATION.md);

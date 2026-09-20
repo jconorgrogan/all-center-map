@@ -13,7 +13,8 @@ The release proof is the zero-argument theorem
 restates the definitions directly; Comparator must verify exact statement
 identity against the independently compiled Mathlib-only Challenge.
 
-The source manuscript artifact is
-`AllCenterMAP_2_15_Package/paper/all_center_map_2_15.tex`, historically hashed
-as a941b349c89e7d8e014c47e25a0ba4c3a3dbdd48b7e0257b4bed8b78764e7f81.
+The source manuscript is
+[paper/prime-pairs-pnt-threshold.tex](paper/prime-pairs-pnt-threshold.tex),
+with the compiled paper at
+[paper/prime-pairs-pnt-threshold.pdf](paper/prime-pairs-pnt-threshold.pdf).
 The reader-facing statement is [STATEMENT.md](STATEMENT.md).
