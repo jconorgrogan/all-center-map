@@ -1,13 +1,15 @@
-# Remaining release gates
+# Release readiness
 
-1. Complete the fresh Linux source build, Comparator statement check, and
-   independent NanoDa replay under Landrun.
-2. Finish citation review and final checked-versus-pending release prose.
-3. Publish the reviewed release to the authorized `jconorgrogan` GitHub account;
-   record its immutable commit and verify the Ubuntu x86_64 CI run.
-4. Fill the Palomar form with the verified repository and release details.
-   Stop before final submission. Registration is not authorized.
+The release preparation gates are complete.
 
-MAP and the standalone internal Guth–Maynard theorem have passed exact closure
-replays in Lean's own kernel. These do not replace independent release checks.
-Decoder work is outside this entry and remains paused.
+- Fresh Linux build: 10,255 jobs passed.
+- Comparator accepted the MAP statement.
+- NanoDa and Lean's kernel accepted the exported proof.
+- MAP closure replay: 100,596 declarations.
+- Guth–Maynard large-value closure replay: 75,874 declarations.
+- Citation and source-alignment review: complete.
+- Public GitHub commit: recorded in `RELEASE_STATUS.md`.
+- Palomar form: filled and stopped before final submission.
+
+The release is ready for Palomar submission review. The final registration click
+remains intentionally held for the user.

@@ -6,8 +6,8 @@ Prime numbers leave a signal in the exponential sum
 `Λ(n) exp(2πi nα)` over `X < n ≤ 2X`, where `Λ(n)` is the von Mangoldt weight.
 That signal is strongest near rational frequencies. For any center on the
 circle—whether the center itself is near a rational frequency or not—the
-theorem integrates only the minor-arc portion inside the centered interval. It
-proves that this portion has total squared signal at most
+theorem controls the signal **on the minor-arc part of every arc**. It proves
+that this portion has total squared signal at most
 `C X (log X)^(-A)` whenever `H ≥ X^(2/15+ε)` and `X` is large enough.
 
 Here `A` and `ε` can be any positive numbers. The constants and the rational

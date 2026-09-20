@@ -6,8 +6,8 @@ project:
     rational frequencies called major arcs, the squared von Mangoldt exponential
     sum over X < n <= 2X has total mass at most C X (log X)^(-A) inside every
     centered arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is large
-    enough. For every center, the integral takes only the minor-arc portion of
-    the centered interval; the center itself may lie anywhere on the circle.
+    enough. On the minor-arc part of every centered arc, the center itself may
+    lie anywhere on the circle.
     The same cutoffs and constants work for every center and are chosen before
     X and H. This gives uniform minor-arc cancellation at the 2/15 threshold.
     The estimate is part of the analytic machinery behind
@@ -15,8 +15,9 @@ project:
     pairs, including their 8/33 scale. The constants C and X0 are ineffective
     because the proof uses Siegel's theorem. The development also contains an
     internal proof of the epsilon-form of Guth–Maynard's large-value estimate
-    for Dirichlet polynomials. Its 75,874-declaration dependency closure passed
-    fresh Lean kernel replay with standard axioms. The formal statement is
+    for Dirichlet polynomials. The MAP proof closure contains 100,596
+    declarations, and the Guth–Maynard closure contains 75,874 declarations;
+    both passed fresh Lean kernel replay with standard axioms. The formal statement is
     AllCenterMAP.map_two_fifteenths, manuscript Theorem 1.1.
   authors: ["Conor Grogan"]
   license: "Apache-2.0"
@@ -32,7 +33,7 @@ sources:
     authors: ["Conor Grogan"]
     relationship: "other"
     note: >-
-      Theorem 1.1 is the only release target. The source manuscript is a local
+      The manuscript's MAP theorem is the release target. The source manuscript is a local
       artifact identified by SHA-256 in MANUSCRIPT_ALIGNMENT.md. STATEMENT.md
       supplies the exact selected mathematical statement in this release.
       The historical manuscript is not claimed to be publicly available.
@@ -53,9 +54,8 @@ sources:
     relationship: "other"
     location: "https://annals.math.princeton.edu/2026/203-2/p06"
     note: >-
-      The epsilon-form of Theorem 1.1 is proved internally as a supporting
-      result. This source is credited for that auxiliary mathematics; the
-      original-proof claim concerns the MAP target, not the Guth–Maynard theorem.
+      The published large-value estimate is proved internally as a supporting
+      result. This source is credited for that auxiliary mathematics.
   - title: "Vinogradov's integral and bounds for the Riemann zeta function"
     type: "paper"
     authors: ["Kevin Ford"]
@@ -90,7 +90,7 @@ automation:
       cost:
         wall_time: "complete effort accounting not available"
         spend_usd: "not tracked"
-        hardware: "macOS proof authoring and kernel replay; Linux release verification pending"
+        hardware: "macOS proof authoring and kernel replay; Linux release verification"
       prompting_notes: >-
         Human-directed theorem formalization with focused proof tasks,
         adversarial statement reviews, explicit assumption audits, and numerical
@@ -105,20 +105,21 @@ fidelity:
     rational logarithmic major arcs, normalized circle Haar measure, positive
     natural cutoff exponents, and all-center quantifiers. The exact endpoint
     was compared to the manuscript statement during internal review. Comparator
-    identity and independent kernel verification of the release remain pending.
+    identity and independent kernel verification of the release are recorded in
+    VERIFICATION.md.
 review:
-  status: "internal agent-assisted semantic review and Lean kernel checks; independent release checks pending"
+  status: "internal agent-assisted semantic review with Lean, Comparator, NanoDa, and Landrun checks"
   notes: >-
     The authoring baseline zero-argument MAP endpoint passed the pinned Lean
     build, trust-zero source check, and fresh complete proof-closure replay.
     The release has one documented, checked algebraic proof-term optimization;
-    its fresh release checks are pending.
-    These do not constitute external human review or NanoDa verification.
+    The optimized release passed the fresh Linux build, Comparator, NanoDa, and
+    Lean kernel checks. No external human review is represented by this field.
 alignment:
   namespace: "AllCenterMAP"
   statements:
     - source: "Theorem 1.1 (Uniform local minor-arc estimate)"
       lean: "AllCenterMAP.map_two_fifteenths"
       module: "Challenge"
-      status: "proved endpoint; release verification pending"
+      status: "proved endpoint; release verification passed"
 acknowledgements: "Lean 4, Mathlib, Palomar, Comparator, lean4export, NanoDa, and Landrun."
