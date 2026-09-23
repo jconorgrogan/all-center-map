@@ -43,7 +43,8 @@ provenance. The required sandbox installation is documented in the
 [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml)
 runs two jobs on the public commit: the repository's Linux checks and the
 official full Palomar verifier. The latter is pinned to PalomarSubmission
-`1703d7babd984ccc3831cdf89c28221abe34808f`.
+`1703d7babd984ccc3831cdf89c28221abe34808f` and uses its approved GitHub-hosted
+`palomar-standard-v1` execution profile.
 
 The official verifier separately compiles the Challenge against frozen
 canonical dependencies, protects that statement from the candidate build,
