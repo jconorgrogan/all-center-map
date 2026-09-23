@@ -230,7 +230,8 @@ theorem logExpMap_hasDerivAt (τ : ℝ) :
       (Real.exp (-(2 * Real.pi) * τ) * -(2 * Real.pi)) τ := by
   have hlin' : HasDerivAt (fun t : ℝ => -(2 * Real.pi) * t) (-(2 * Real.pi)) τ := by
     simpa using (hasDerivAt_id τ).const_mul (-(2 * Real.pi))
-  simpa [logExpMap] using
+  change HasDerivAt (fun t : ℝ => Real.exp (-(2 * Real.pi) * t)) _ τ
+  simpa only [Function.comp_def] using!
     (Real.hasDerivAt_exp (-(2 * Real.pi) * τ)).comp τ hlin'
 
 def logMellinKernel (ξ v : ℝ) : ℂ :=
@@ -773,5 +774,3 @@ end GuthMaynardS3LiteralLemma82
 #print axioms GuthMaynardS3LiteralLemma82.integral_ratioProfile_le
 #print axioms GuthMaynardS3LiteralLemma82.integral_ratioDirichletKernel_sq_on_unit_le
 #print axioms GuthMaynardS3LiteralLemma82.integral_smoothedRatio_sq_le
-
-

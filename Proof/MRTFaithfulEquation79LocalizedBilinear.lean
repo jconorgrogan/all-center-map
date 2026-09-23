@@ -88,7 +88,7 @@ theorem packetCorrelationBilinear_mono
   unfold packetCorrelationBilinear
   apply lintegral_mono
   intro z
-  exact mul_le_mul_right' (mul_le_mul (hFG z.1) (hFG z.2) bot_le bot_le) _
+  exact mul_le_mul_left (mul_le_mul (hFG z.1) (hFG z.2) bot_le bot_le) _
 
 /-- The faithful equation-(79) amplitude is pointwise bounded by the critical
 norm with the exact source-region mask retained. -/
@@ -152,7 +152,7 @@ theorem equation81Average_mono
   unfold equation81Average
   apply lintegral_mono
   intro t
-  exact mul_le_mul_right' (hFG t) _
+  exact mul_le_mul_left (hFG t) _
 
 /-- The exact signed-component split commutes with the positive moving-window
 integral up to the endpoint-safe inequality needed downstream. -/
@@ -172,7 +172,7 @@ theorem equation81Average_sourceMasked_le_components
             symmetricBoxWeight R x t := by
       apply lintegral_mono
       intro t
-      exact mul_le_mul_right' (sourceMasked_le_signed_components hX heta) _
+      exact mul_le_mul_left (sourceMasked_le_signed_components hX heta) _
     _ = ∫⁻ t : ℝ,
           componentMaskedCriticalNormWeight N X beta eta f .negative t *
             symmetricBoxWeight R x t +
@@ -404,13 +404,13 @@ theorem ennreal_add_sq_le_four_sum_sq (a b : ENNReal) :
         pow_le_pow_left' (add_le_add hab le_rfl) 2
       _ = 4 * b ^ 2 := by ring
       _ ≤ 4 * (a ^ 2 + b ^ 2) :=
-        mul_le_mul_left' (le_add_left le_rfl) 4
+        mul_le_mul_right (le_add_left le_rfl) 4
   · calc
       (a + b) ^ 2 ≤ (a + a) ^ 2 :=
         pow_le_pow_left' (add_le_add le_rfl hba) 2
       _ = 4 * a ^ 2 := by ring
       _ ≤ 4 * (a ^ 2 + b ^ 2) :=
-        mul_le_mul_left' (le_add_right le_rfl) 4
+        mul_le_mul_right (le_add_right le_rfl) 4
 
 /-- The complete two-component collar localization.  The constant `12` is a
 safe overlap-independent constant: `4` for splitting the signed components
@@ -486,7 +486,7 @@ theorem lintegral_sourceMaskedAverage_sq_le_twelve
             (-outerLower X beta eta), (equation81Average R F x) ^ 2) +
           ∫⁻ x in Set.Icc (outerLower X beta eta)
             (outerUpper X beta eta), (equation81Average R F x) ^ 2)) :=
-      mul_le_mul_left' hcomponents 4
+      mul_le_mul_right hcomponents 4
     _ = 12 * ((∫⁻ x in Set.Icc (-outerUpper X beta eta)
           (-outerLower X beta eta),
           (equation81Average R (criticalNormWeight N f) x) ^ 2) +
@@ -553,7 +553,7 @@ theorem faithful_equation79PacketEnergy_source_scale_masked
     hH hHalf hhard
     (measurable_sourceMaskedCriticalNormWeight N X beta eta f)
     (sourceMasked_equation81Average_ne_top (le_trans zero_le_one hH))
-  exact (mul_le_mul_left' henergy _).trans hschur
+  exact (mul_le_mul_right henergy _).trans hschur
 
 /-- The literal source components are wider than the moving-window radius
 throughout the hard range; no enlarged frequency mask is required. -/
@@ -607,7 +607,7 @@ theorem faithful_equation79PacketEnergy_source_scale
         hX hH hHalf hbeta hhard heta hetaSmall
     _ ≤ 18 * ENNReal.ofReal (faithfulEquation82Scale X H beta) *
         (12 * proposition51ILintegral N X H f beta eta) :=
-      mul_le_mul_left' hlocal _
+      mul_le_mul_right hlocal _
     _ = _ := by ring
 
 /-- Real-valued manuscript normalization of the fully localized estimate. -/

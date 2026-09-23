@@ -72,7 +72,7 @@ private theorem conductor_height_rpow_le
   have hrpowOne :
       Real.rpow ((1 + |t|) * (1 + |u|)) p48HeightExponent ≤
         (1 + |t|) * (1 + |u|) := by
-    simpa only [Real.rpow_one] using
+    simpa only [Real.rpow_one] using!
       Real.rpow_le_rpow_of_exponent_le hrightOne
         p48HeightExponent_le_one
   calc

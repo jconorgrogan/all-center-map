@@ -40,7 +40,9 @@ theorem mollifier_eq_sum_range {q U : ℕ}
   rw [tsum_eq_sum]
   intro n hn
   have hnU : U < n := by
-    simpa only [Finset.mem_range, not_lt] using hn
+    have : U + 1 ≤ n := by
+      simpa only [Finset.mem_range, not_lt] using hn
+    exact Nat.lt_of_succ_le this
   rw [LSeries.term_def]
   split_ifs with hn0
   · rfl
@@ -125,7 +127,7 @@ theorem analyticAt_shiftedZeroQuotient
         (dslope (DirichletCharacter.LFunction chi) rho) (rho + 0) := by
       simpa using hds
     have hadd : AnalyticAt ℂ (fun w : ℂ => rho + w) 0 := by fun_prop
-    simpa [shiftedZeroQuotient, Function.comp_def] using hds'.comp hadd
+    simpa [shiftedZeroQuotient, Function.comp_def] using! hds'.comp hadd
   · have hdiv : AnalyticAt ℂ
         (fun w : ℂ => (DirichletCharacter.LFunction chi (rho + w) -
           DirichletCharacter.LFunction chi rho) / w) z := by

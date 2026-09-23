@@ -64,10 +64,10 @@ theorem analyticOrderAt_principalRegularized_eq_completed
       (fun z => a z * completedRiemannZeta z * g z) s =
         analyticOrderAt (fun z => a z * completedRiemannZeta z) s +
           analyticOrderAt g s by
-      simpa only [Pi.mul_apply] using analyticOrderAt_mul (ha.mul hcomp) hg,
+      simpa only [Pi.mul_apply] using! analyticOrderAt_mul (ha.mul hcomp) hg,
     show analyticOrderAt (fun z => a z * completedRiemannZeta z) s =
         analyticOrderAt a s + analyticOrderAt completedRiemannZeta s by
-      simpa only [Pi.mul_apply] using analyticOrderAt_mul ha hcomp,
+      simpa only [Pi.mul_apply] using! analyticOrderAt_mul ha hcomp,
     ha.analyticOrderAt_eq_zero.mpr haNe,
     hg.analyticOrderAt_eq_zero.mpr hgNe,
     zero_add, add_zero]

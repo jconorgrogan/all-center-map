@@ -67,7 +67,7 @@ theorem sum_norm_twisted_star_eq
     Equiv.mk star star star_involutive star_involutive
   have h := e.sum_comp (fun chi : DirichletCharacter ℂ q =>
     ‖twistedFinitePolynomial q (dyadicSupport N) b chi t‖ ^ 2)
-  simpa [e] using h
+  simpa [e] using! h
 
 /-- Premise-free continuous all-character mean square for either half of the
 Ramachandra squared formula, on the exact symmetric interval `[-U,U]`. -/

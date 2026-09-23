@@ -193,8 +193,8 @@ theorem unique_integer_lift
       rw [show jacobian (Int.castRingHom (ZMod q)) f z =
           castMatrix (intJacobian f x) by
             ext i j
-            simpa [jacobian, intJacobian, z] using
-              (eval_intCast_zmod (q := q) (pderiv j (f i)) (x))]
+            simp [jacobian, intJacobian, z, castMatrix]
+            exact eval_intCast_zmod (q := q) (pderiv j (f i)) x]
       exact det_cast_zmod _
     rw [heq]
     cases hD : (intJacobian f x).det with

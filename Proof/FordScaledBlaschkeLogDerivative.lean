@@ -104,7 +104,7 @@ theorem logDeriv_scaledBlaschkeFill_decomposition
             (shiftedCanonicalFactor c (3 * a) ρ z) ^ m ρ) s := by
     change logDeriv (fun z : ℂ => ∏ ρ ∈ S,
       (shiftedCanonicalFactor c (3 * a) ρ z) ^ m ρ) s = _
-    rw [logDeriv_prod]
+    rw [logDeriv_fun_prod]
     · intro ρ hρ
       have hsρ : s ≠ ρ := by
         intro h

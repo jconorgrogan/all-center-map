@@ -386,9 +386,14 @@ theorem mem_fejerGridBall
   have hjmem : j ∈ fejerGridIndices M := by
     rw [fejerGridIndices, Finset.mem_Icc]
     constructor
-    · exact_mod_cast hjlowerReal
-    · apply (Int.cast_le (R := ℝ)).mp
-      simpa using hjupperReal
+    · have hr : ((↑(-((M / 2 + 1 : ℕ) : ℤ)) : ℝ) ≤ (j : ℝ)) := by
+        rw [Int.cast_neg, Int.cast_natCast]
+        exact hjlowerReal
+      exact (Int.cast_le (R := ℝ)).mp hr
+    · have hr : ((j : ℝ) ≤ (↑((M / 2 + 1 : ℕ) : ℤ) : ℝ)) := by
+        rw [Int.cast_natCast]
+        exact hjupperReal
+      exact (Int.cast_le (R := ℝ)).mp hr
   refine ⟨j, hjmem, ?_⟩
   rw [fejerGridBall, mem_closedBall, dist_eq_norm]
   have hdiff :

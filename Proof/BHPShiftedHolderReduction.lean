@@ -193,7 +193,7 @@ theorem sum_shiftedPerronConvolution_fourth_le_exactKernel
         intro z hz
         have hh := perronConvolution_fourth_le_cubeWeightMass_mul
           (t := z.2) (continuous_shiftedCriticalLineLNorm z.1 hdeltaHalf) hT
-        simpa [W, F, shiftedCriticalLineLFourth] using hh
+        simpa [W, F, shiftedCriticalLineLFourth] using! hh
       _ = W ^ 3 * ∑ z ∈ S, F z := by rw [Finset.mul_sum]
   have hfiber :
       (∑ chi : DirichletCharacter ℂ q,

@@ -53,7 +53,7 @@ private theorem logDeriv_gammaFactor
     funext w
     simp [KoukWeierstrassGammaFactors.gammaFactor,
       KoukWeierstrassGammaFactors.u, a]]
-  rw [logDeriv_mul
+  rw [logDeriv_fun_mul
     (f := fun w : ℂ => 1 + w / a)
     (g := fun w : ℂ => Complex.exp (-(w / a)))
     z hlinne (Complex.exp_ne_zero _)
@@ -191,7 +191,7 @@ private theorem logDeriv_gammaProductRhs
   have hGammaDiff : DifferentiableAt ℂ Complex.Gamma z :=
     Complex.differentiableAt_Gamma z hpoles
   have hlin : HasDerivAt (fun w : ℂ => -(w * c)) (-c) z := by
-    simpa using ((hasDerivAt_id z).mul_const c).neg
+    simpa using! ((hasDerivAt_id z).mul_const c).neg
   have hexp : HasDerivAt (fun w : ℂ => Complex.exp (-(w * c)))
       (Complex.exp (-(z * c)) * (-c)) z := hlin.cexp
   have hldexp : logDeriv (fun w : ℂ => Complex.exp (-(w * c))) z = -c := by
@@ -199,11 +199,11 @@ private theorem logDeriv_gammaProductRhs
     field_simp [Complex.exp_ne_zero]
   have hldden : logDeriv (fun w : ℂ => w * Complex.Gamma w) z =
       z⁻¹ + Complex.digamma z := by
-    rw [logDeriv_mul (f := fun w : ℂ => w) (g := Complex.Gamma) z
+    rw [logDeriv_fun_mul (f := fun w : ℂ => w) (g := Complex.Gamma) z
       hz0 hGamma0 (by fun_prop) hGammaDiff]
     simp [Complex.digamma_def, logDeriv_id']
   unfold gammaProductRhs
-  rw [logDeriv_div
+  rw [logDeriv_fun_div
     (f := fun w : ℂ => Complex.exp (-(w * c)))
     (g := fun w : ℂ => w * Complex.Gamma w) z
     (Complex.exp_ne_zero _) (mul_ne_zero hz0 hGamma0)

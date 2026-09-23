@@ -383,7 +383,7 @@ theorem source_proposition5_1
     exact hsum.trans (div_le_div_of_nonneg_right (by dsimp [Cpos]; linarith)
       (pow_nonneg (show 0 ≤ T by linarith) _))
   have hfinal := hsum'.trans (habsorb T hT)
-  simpa [Real.rpow_neg (show 0 ≤ T by linarith), Real.rpow_natCast] using hfinal
+  simpa [Real.rpow_neg (show 0 ≤ T by linarith), Real.rpow_natCast] using! hfinal
 
 end
 end GuthMaynardS1Proposition51Endpoint

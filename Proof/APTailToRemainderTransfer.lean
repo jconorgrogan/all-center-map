@@ -393,7 +393,7 @@ theorem lintegral_familyDyadicZeroMajorant_le
                   ∫⁻ x : ℝ, (primitiveZeroNormField chi X T x) ^ 2) := by
             have hinv : (q.totient : ℝ≥0∞)⁻¹ ≤ 1 :=
               ENNReal.inv_le_one.mpr hphiOne
-            exact (mul_le_mul_right' hinv _).trans_eq (one_mul _)
+            exact (mul_le_mul_left hinv _).trans_eq (one_mul _)
           _ = 4 * (N + 1 : ℝ≥0∞) *
               ∑ chi : DirichletCharacter ℂ q,
                 ∫⁻ x : ℝ, (primitiveZeroNormField chi X T x) ^ 2 := by
@@ -496,7 +496,6 @@ theorem maximalExplicitFormulaRemainderTransfer_of_tailFamilySquare
   have hHpos : 0 < H := Real.rpow_pos_of_pos hXpos _
   have hHone : 1 ≤ H := by
     apply Real.one_le_rpow hXone
-    dsimp [H]
     linarith
   have hreach : X / H < (2 : ℝ) ^ (N + 1) := by
     have hdiv : X / H ≤ X := by
@@ -564,7 +563,7 @@ theorem maximalExplicitFormulaRemainderTransfer_of_tailFamilySquare
     _ ≤ 2 * (4 * (N + 1 : ℝ≥0∞) * apZeroFieldEnergy Q X T +
           ENNReal.ofReal
             (Ct * X * Real.rpow (Real.log X) (-A))) := by
-      apply mul_le_mul_left'
+      apply mul_le_mul_right
       apply add_le_add hzero
       simpa [familyLiteralTailMajorant, reserve, T, Q] using htailBound
     _ = (8 * (N + 1 : ℝ≥0∞)) * apZeroFieldEnergy Q X T +
@@ -575,7 +574,7 @@ theorem maximalExplicitFormulaRemainderTransfer_of_tailFamilySquare
           apZeroFieldEnergy Q X T +
         ENNReal.ofReal
           (C * X * Real.rpow (Real.log X) (-A)) := by
-      exact add_le_add (mul_le_mul_right' hscale _) htailCoeff
+      exact add_le_add (mul_le_mul_left hscale _) htailCoeff
     _ = ENNReal.ofReal (C * (Real.log X) ^ 2) *
           apZeroFieldEnergy
             ⌊Real.rpow (Real.log X) K⌋₊ X

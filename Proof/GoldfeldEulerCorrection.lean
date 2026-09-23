@@ -59,7 +59,7 @@ theorem norm_changeLevel_eulerProduct_one_le
           (1 - chi p * (p : ℂ) ^ (-(1 : ℂ)))‖ ≤
         ∏ p ∈ N.primeFactors, (1 + ((p : ℝ)⁻¹)) := by
     rw [norm_prod]
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro p hp
       positivity
     intro p hp

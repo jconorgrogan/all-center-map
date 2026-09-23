@@ -190,7 +190,7 @@ theorem exists_actual_prop11_2_bound {eps : ℝ} (heps : 0 < eps) :
             Real.rpow T (eps / 8) := by
           convert GuthMaynardS3Source.sqrt_rpow (x := T) (a := eps / 4) hTpos.le using 1 <;> ring
         have hmul := congrArg (fun z : ℝ => Real.sqrt Ce * z) hsqrtT
-        simpa only [mul_assoc] using hmul
+        simpa only [mul_assoc] using! hmul
       rw [hsqrt]
       have hδ : 1 ≤ Real.rpow T (eps / 4 : ℝ) :=
         Real.one_le_rpow hT1 (by positivity)

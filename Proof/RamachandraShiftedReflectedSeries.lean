@@ -158,7 +158,7 @@ theorem coefficientEnergy_quarterLineReflectedBlockCoeff_le
   have hNn : (N : ℝ) ≤ n := by exact_mod_cast hnN.le
   have hbase : Real.rpow (n : ℝ) (-(3 / 2 : ℝ)) ≤
       Real.rpow (N : ℝ) (-(3 / 2 : ℝ)) :=
-    Real.rpow_le_rpow_of_exponent_nonpos hNR hNn (by norm_num)
+    Real.rpow_le_rpow_of_nonpos hNR hNn (by norm_num)
   have hpow : (n : ℝ) ^
         (-2 * (1 - sigma - (-(sigma + 1 / 4)))) ≤
       Real.rpow (N : ℝ) (-(3 / 2 : ℝ)) / (n : ℝ) := by

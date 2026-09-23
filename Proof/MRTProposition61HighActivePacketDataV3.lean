@@ -119,10 +119,10 @@ theorem activePacketIndexedCells
       (fun packet => freePacketCellRefinedV3 p T hX hdelta component packet)
     rw [← hcell] at hsource
     dsimp [activePacketIndexedData, activeCellError]
-    simpa only [freePacketCellRefinedV3] using hsource
+    simpa only [freePacketCellRefinedV3] using! hsource
   | typeD1 | typeD2 | typeD4 | typeD5 | typeD6 | typeD7 | typeII =>
     dsimp [activePacketIndexedData, activeCellError, dynamicHBSourceMassV3]
-    simpa only [freePacketCellRefinedV3, zero_add] using hnonneg
+    simpa only [freePacketCellRefinedV3, zero_add] using! hnonneg
 
 /-- Public certificate constructor for the active-mask free-truncation data.
 Its numerical input is the actual expanded RHS of this exact data object. -/

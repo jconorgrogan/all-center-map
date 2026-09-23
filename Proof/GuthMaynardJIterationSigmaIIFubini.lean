@@ -43,7 +43,7 @@ theorem integrable_sigmaIITripleKernel
               sigmaIIAffineFrequency M3 ell m2 p.1 * p.2.1)) := by
         unfold sigmaIIAffineFrequency sourcePhase
         fun_prop
-    simpa [Function.uncurry, sigmaIITripleKernel, fourierPairKernel] using
+    simpa [Function.uncurry, sigmaIITripleKernel, fourierPairKernel] using!
       hcoef.aestronglyMeasurable.mul hphase.aestronglyMeasurable
   · filter_upwards with p
     rcases p with ⟨tau, u, u'⟩
@@ -102,7 +102,7 @@ theorem integrable_intervalIntegral_sigmaIITripleKernel
   have hright := hK.integral_prod_right
   have horder : -Ctau ≤ Ctau := by linarith
   simpa only [intervalIntegral.integral_of_le horder,
-    Set.uIoc_of_le horder, K] using hright
+    Set.uIoc_of_le horder, K] using! hright
 
 /-- A single affine Fourier pair can now be integrated in `tau` and moved
 to the product `u,u'` space with no assumed Fubini equality. -/

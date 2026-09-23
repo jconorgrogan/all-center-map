@@ -45,9 +45,10 @@ theorem hasDerivAt_wholeLineCorrelationAlong
     HasDerivAt (wholeLineCorrelationAlong X H cutoff h)
       (wholeLineCorrelationAlongDeriv X H cutoff cutoff' h w) w := by
   unfold wholeLineCorrelationAlong wholeLineCorrelationAlongDeriv
-  convert (hasDerivAt_wholeLineCutoffAutocorrelation hcutoffCont hcutoff'Cont
-    hcutoffBound hcutoff'Bound hcutoffDeriv).scomp w
-      hasDerivAt_wholeLinePacketShift using 1 <;> ring
+  simpa only [Function.comp_def] using!
+    (hasDerivAt_wholeLineCutoffAutocorrelation hcutoffCont hcutoff'Cont
+      hcutoffBound hcutoff'Bound hcutoffDeriv).comp w
+        hasDerivAt_wholeLinePacketShift
 
 theorem hasDerivAt_wholeLineCorrelationAlongDeriv
     {X H h w B1 B2 : ℝ} {cutoff cutoff' cutoff'' : ℝ → ℝ}
@@ -70,7 +71,7 @@ theorem hasDerivAt_wholeLineCorrelationAlongDeriv
       hcutoff'Cont hcutoff''Cont hcutoffBound hcutoff''Bound hcutoffSecond
   have hcomp : HasDerivAt (fun z ↦ C1 (delta z))
       (C2 (delta w) * delta w) w := by
-    convert hC1.scomp w hd using 1 <;> ring
+    simpa only [Function.comp_def] using! hC1.comp w hd
   have hprod := hcomp.mul hd
   unfold wholeLineCorrelationAlongDeriv wholeLineCorrelationAlongSecond
   change HasDerivAt (fun z ↦ C1 (delta z) * delta z) _ w
@@ -102,7 +103,8 @@ theorem hasDerivAt_wholeLineOuterProduct
   have hright := (houterDeriv ((w + h) / 100)).scomp w
     (((hasDerivAt_id w).add_const h).div_const 100)
   convert hleft.mul hright using 1 <;>
-    simp only [Function.comp_apply, Pi.mul_apply, id_eq] <;> ring
+    (try funext z) <;>
+    simp only [Function.comp_def, Pi.mul_apply, id_eq, smul_eq_mul] <;> ring
 
 theorem hasDerivAt_wholeLineOuterProductDeriv
     {h w : ℝ} {outer outer' outer'' : ℝ → ℝ}
@@ -121,7 +123,8 @@ theorem hasDerivAt_wholeLineOuterProductDeriv
   unfold wholeLineOuterProductDeriv wholeLineOuterProductSecond
   convert ((ho'L.div_const 100).mul hoR).add
     (hoL.mul (ho'R.div_const 100)) using 1 <;>
-      simp only [Function.comp_apply, Pi.mul_apply, id_eq] <;> ring
+      (try funext z) <;>
+      simp only [Function.comp_def, Pi.mul_apply, Pi.add_apply, id_eq, smul_eq_mul] <;> ring
 
 def wholeLinePacketWeight (H h w : ℝ) : ℝ :=
   H * Real.exp (w / 2) * Real.exp ((w + h) / 2)
@@ -135,7 +138,8 @@ theorem hasDerivAt_wholeLinePacketWeight {H h w : ℝ} :
   have hright := (Real.hasDerivAt_exp ((w + h) / 2)).scomp w
     (((hasDerivAt_id w).add_const h).div_const 2)
   convert ((hleft.const_mul H).mul hright) using 1 <;>
-    simp only [Function.comp_apply, Pi.mul_apply, id_eq] <;> ring
+    (try funext z) <;>
+    simp only [Function.comp_def, Pi.mul_apply, id_eq, smul_eq_mul] <;> ring
 
 def wholeLineOffDiagonalAmplitude
     (X H : ℝ) (cutoff outer : ℝ → ℝ) (h w : ℝ) : ℝ :=

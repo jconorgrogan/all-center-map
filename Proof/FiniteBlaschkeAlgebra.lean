@@ -85,7 +85,7 @@ theorem one_le_norm_finiteBlaschkeProduct_center
     (hc : c ∉ F) :
     1 ≤ ‖finiteBlaschkeProduct c R F m c‖ := by
   simp only [finiteBlaschkeProduct, norm_prod, norm_pow]
-  exact Finset.one_le_prod (fun ρ hρ =>
+  exact Finset.one_le_prod₀ (fun ρ hρ =>
     one_le_pow₀ (one_le_norm_shiftedCanonicalFactor_center hR
       (hF ρ hρ) (fun h => hc (h ▸ hρ))))
 

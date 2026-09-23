@@ -119,7 +119,7 @@ theorem integrable_p53RightOneScaleIntegrand
         (1 + s + ((1 : ℝ) : ℂ) + (v : ℂ) * I) :=
       (DirichletCharacter.differentiableAt_LFunction chi _
         (Or.inl harg)).continuousAt
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       (ContinuousAt.comp
         (f := fun u : ℝ =>
           1 + s + ((1 : ℝ) : ℂ) + (u : ℂ) * I)
@@ -141,7 +141,7 @@ theorem integrable_p53RightOneScaleIntegrand
     have houter : ContinuousAt Complex.Gamma
         (((1 : ℝ) : ℂ) + (v : ℂ) * I) :=
       Complex.continuousAt_Gamma _ hnp
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       (ContinuousAt.comp
         (f := fun u : ℝ => ((1 : ℝ) : ℂ) + (u : ℂ) * I)
         (g := Complex.Gamma) (x := v) houter hinner)

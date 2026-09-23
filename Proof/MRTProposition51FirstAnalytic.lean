@@ -190,7 +190,7 @@ theorem coefficientGallagherInequality_constant_four
   have hfreq2 := memLp_two_coefficientFrequencyProduct X f hy.le
   have hrightInt : Integrable (fun xi : ℝ ↦
       ‖gallagherWindowKernel y xi * exponentialSum X f (-xi)‖ ^ 2) :=
-    (memLp_two_iff_integrable_sq_norm hfreq2.1).1 hfreq2
+    (memLp_two_iff_integrable_sq_norm hfreq2.aestronglyMeasurable).1 hfreq2
   have hpoint : ∀ xi ∈ Set.Icc (-r) r,
       ‖exponentialSum X f (-xi)‖ ^ 2 ≤
         4 / y ^ 2 *

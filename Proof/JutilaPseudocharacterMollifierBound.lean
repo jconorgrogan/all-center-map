@@ -42,7 +42,7 @@ theorem pseudocharacterEulerProduct_le_sq_div_totient
       (∏ p ∈ n.primeFactors, ((p : ℝ) + 1)) ≤
         ∏ p ∈ n.primeFactors,
           ((p : ℝ) ^ 2 / ((p : ℝ) - 1)) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro p hp
       exact add_nonneg (Nat.cast_nonneg p) (by norm_num)
     · exact hlocal

@@ -87,7 +87,7 @@ theorem analyticAt_lemma295PoleNumerator
     analyticAt_id.sub analyticAt_const
   have hreg : AnalyticAt ℂ
       (fun z : ℂ => regularizedRiemannZeta (z - g * Complex.I)) s := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       (analyticAt_regularizedRiemannZeta (s - g * Complex.I)).comp
         (f := fun z : ℂ => z - g * Complex.I) hinner
   exact (hreg.mul (hpow.analyticAt s)).mul

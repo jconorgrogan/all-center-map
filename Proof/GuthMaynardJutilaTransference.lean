@@ -549,7 +549,7 @@ theorem source_mul_primeReciprocal_le_target
         · apply Continuous.intervalIntegrable
           unfold transferenceIntegrand primeFourierPolynomial natTrigPoly
           fun_prop
-        · exact intervalIntegral.intervalIntegrable_const
+        · exact intervalIntegrable_const
         · intro α hα
           exact transferenceIntegrand_le_target hJ hJ' hM hM' a σ G α
     _ = targetQuadratic a J J' M M' σ G := by

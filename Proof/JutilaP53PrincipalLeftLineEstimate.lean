@@ -29,7 +29,7 @@ theorem norm_trivialEulerCorrection_le_twoPow
   rw [norm_prod]
   calc
     _ ≤ ∏ _p ∈ q.primeFactors, (2 : ℝ) := by
-      apply Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+      apply Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
       intro p hp
       have hpPrime : p.Prime := Nat.prime_of_mem_primeFactors hp
       have hpPos : (0 : ℝ) < p := by exact_mod_cast hpPrime.pos
@@ -511,7 +511,7 @@ theorem integrable_p53PrincipalIntegrand_leftHalf
         (x := t)
         (DirichletCharacter.differentiableAt_LFunction
           (1 : DirichletCharacter ℂ q) _ (Or.inl hz1)).continuousAt hinner
-    simpa [F, p53TwoScaleContourIntegrand] using
+    simpa [F, p53TwoScaleContourIntegrand] using!
       ((hcontGamma.mul hcontQ).mul hcontL).aestronglyMeasurable
   · filter_upwards [] with t
     have hraw := norm_p53PrincipalIntegrand_leftHalf_le q s hU hV hsLo hsHi

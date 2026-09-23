@@ -82,7 +82,7 @@ theorem block_energy_envelope {eta : ℝ} (heta : 0 < eta) (heta1 : eta ≤ 1/10
       hT hUT hp.profile_lower hp.profile_upper hcard hsep hcontained hheight
       (one_le_pow₀ (by norm_num)) (one_le_pow₀ (by norm_num)) (dilated_bin_le_sixteen_middle hj) hMU
     rw [hMcast] at hm
-    simpa only [V,A82,R,E,rho,mul_add,mul_assoc] using hm
+    simpa only [V,A82,R,E,rho,mul_add,mul_assoc] using! hm
   have hblock := block_affine_sq_le_of_signed_bins N W rho A i k d
     hT heta hsep hcontained hd hp.profile_lower hbin
   let F : ℝ := 8*(16*D*rho*(N : ℝ)^2/K)^2*A82*R*L^2*Ce*U^eta

@@ -53,7 +53,7 @@ theorem norm_circleAverage_pow_four_le {F : ℂ → ℂ} {c : ℂ} {R : ℝ}
       Real.circleAverage (fun z => ‖F z‖ ^ 4) c R := by
   have : IsFiniteMeasure (volume.restrict (Set.uIoc 0 (2 * Real.pi))) := by
     rw [Set.uIoc_of_le (by positivity)]; infer_instance
-  have : NeZero (volume (Set.uIoc 0 (2 * Real.pi))) := ⟨by simp⟩
+  have : NeZero (volume (Set.uIoc 0 (2 * Real.pi))) := ⟨by simp [Real.pi_pos]⟩
   let h : ℝ → ℂ := fun θ => F (circleMap c R θ)
   have hhcont : ContinuousOn h (Set.Icc 0 (2 * Real.pi)) := by
     exact hF.comp (continuous_circleMap c R).continuousOn
@@ -72,8 +72,8 @@ theorem norm_circleAverage_pow_four_le {F : ℂ → ℂ} {c : ℂ} {R : ℝ}
         ⨍ θ in 0..2 * Real.pi, ‖h θ‖ ^ 4 := by
     refine (convexOn_pow 4).map_average_le (continuousOn_pow 4)
       isClosed_Ici (by filter_upwards; simp) ?_ ?_
-    · simpa [Set.uIoc_of_le (show 0 ≤ 2 * Real.pi by positivity)] using hnormInt.1
-    · simpa [Function.comp_apply, Set.uIoc_of_le (show 0 ≤ 2 * Real.pi by positivity)] using hpowInt.1
+    · simpa [Set.uIoc_of_le (show 0 ≤ 2 * Real.pi by positivity)] using! hnormInt.1
+    · simpa [Function.comp_apply, Set.uIoc_of_le (show 0 ≤ 2 * Real.pi by positivity)] using! hpowInt.1
   rw [Real.circleAverage_eq_intervalAverage, Real.circleAverage_eq_intervalAverage]
   have havgtriangle : ‖⨍ θ in 0..2 * Real.pi, h θ‖ ≤
       ⨍ θ in 0..2 * Real.pi, ‖h θ‖ := by

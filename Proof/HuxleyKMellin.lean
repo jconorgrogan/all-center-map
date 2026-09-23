@@ -93,7 +93,7 @@ theorem mellinConvergent_huxleyKWeight {s : ℂ} (hs : 0 < s.re) :
   have h1c := mellinConvergent_scaledJWeight 1 hs
   have h0c := MAPHuxleyJMellin.mellinConvergent_huxleyJWeight hs
   unfold MellinConvergent huxleyKWeight
-  simpa only [smul_add, smul_sub] using ((h4c.add h3c).sub h1c).sub h0c
+  simpa only [smul_add, smul_sub] using! ((h4c.add h3c).sub h1c).sub h0c
 
 /-- Pointwise continuity needed for literal Mellin inversion. -/
 theorem continuousAt_huxleyKWeight {x : ℝ} (hx : 0 < x) :

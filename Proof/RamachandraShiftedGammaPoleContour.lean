@@ -577,8 +577,9 @@ theorem tendsto_shiftedGamma_lowerHorizontal_zero
               (t := -B) (by
                 rw [abs_neg, abs_of_nonneg (le_trans zero_le_one hB)]
                 exact hB)
-          simpa [abs_neg, abs_of_nonneg (le_trans zero_le_one hB)] using hbound))
-  · simpa using henv
+          simpa [shiftedGammaHorizontalEnvelope, abs_neg,
+            abs_of_nonneg (le_trans zero_le_one hB)] using! hbound))
+  · simpa [shiftedGammaHorizontalEnvelope, sub_eq_add_neg] using! henv
 
 /-- Multiplying the raw integrand by `w` and applying the Gamma recurrence
 produces this analytic numerator. -/

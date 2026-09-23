@@ -22,14 +22,14 @@ theorem two_pow_primeFactors_card_le_of_cutoff
       _ = K := Finset.card_range K
   have hcard : small.card + large.card = q.primeFactors.card := by
     simpa [small, large] using
-      (Finset.filter_card_add_filter_neg_card_eq_card
-        (s := q.primeFactors) (fun p => p < K))
+      (Finset.card_filter_add_card_filter_not
+        (s := q.primeFactors) (p := fun p => p < K))
   have hlarge : (2 : ℝ)^large.card ≤ Real.rpow (∏ p ∈ large, (p : ℝ)) eta := by
     have heq := Real.finsetProd_rpow large (fun p => (p : ℝ))
       (fun p hp => Nat.cast_nonneg p) eta
     change (2 : ℝ)^large.card ≤ (∏ p ∈ large, (p : ℝ)) ^ eta
     rw [← heq, ← Finset.prod_const]
-    apply Finset.prod_le_prod (fun p hp => by norm_num)
+    apply Finset.prod_le_prod₀ (fun p hp => by norm_num)
     intro p hp
     have hKp : K ≤ p := Nat.le_of_not_gt (Finset.mem_filter.mp hp).2
     have hpbound : Real.rpow 2 eta⁻¹ ≤ (p : ℝ) :=

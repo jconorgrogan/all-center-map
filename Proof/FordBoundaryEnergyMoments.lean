@@ -106,7 +106,7 @@ private theorem wordFreq_block_eq
     (alpha : Fin k → ZMod L) :
     fordBoundaryBlock (FordBoundaryPinnedCross.wordFreq f g s) alpha =
       fordBoundaryBlock f alpha * (fordBoundaryBlock g alpha) ^ s := by
-  simpa only [fordBoundaryBlock, FordBoundaryPinnedCross.wordFreq] using
+  simpa only [fordBoundaryBlock, FordBoundaryPinnedCross.wordFreq] using!
     block_product_word f g alpha
 
 private def energy_equiv

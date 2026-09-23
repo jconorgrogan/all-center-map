@@ -683,7 +683,7 @@ theorem continuous_criticalLineLNorm
       ((DirichletCharacter.LFunction chi) ∘
         (fun x : ℝ => (((1 / 2 : ℝ) : ℂ) + x * Complex.I))) t :=
     ContinuousAt.comp houter hinner
-  simpa only [Function.comp_apply] using hc
+  simpa only [Function.comp_def] using hc
 
 /-- Pairs selected for one fixed character. -/
 def characterFiber {q : ℕ}
@@ -927,7 +927,7 @@ theorem sum_perronConvolution_fourth_le_exactKernel
         intro z hz
         have hh := perronConvolution_fourth_le_cubeWeightMass_mul
           (t := z.2) (continuous_criticalLineLNorm z.1) hT
-        simpa [W, F, criticalLineLFourth] using hh
+        simpa [W, F, criticalLineLFourth] using! hh
       _ = W ^ 3 * ∑ z ∈ S, F z := by
         rw [Finset.mul_sum]
   have hfiber :

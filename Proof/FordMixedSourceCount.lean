@@ -33,12 +33,26 @@ theorem card_mixedSourceBstar_le {p r n d : ℕ}
     (phi : Fin n → Polynomial ℤ) (m : mixedTarget p r n d) :
     Fintype.card (mixedSourceBstar hp hR phi m) ≤
       p ^ ((r-d)*(r-d-1)/2 + r*d+n) := by
+  classical
+  letI : Fintype (MAPFordMixedResidueCardinality.residueVector p r (equationExponent r d) m) := by
+    unfold MAPFordMixedResidueCardinality.residueVector
+    exact @Pi.instFintype (Fin n)
+      (fun i => residueFiber p r (equationExponent r d i) (m i))
+      inferInstance inferInstance (fun i => residueFiberFintype p r _ (m i))
+  letI (t : MAPFordMixedResidueCardinality.residueVector p r (equationExponent r d) m) :
+      Fintype (sourceBstarAt (d := d) hp hR phi (fun i => ((t i).1.val : ℤ))) :=
+    sourceBstarAtFintype hp hR phi _
+  letI : Fintype (liftedSource p r n d hp hR phi (equationExponent r d) m) :=
+    by unfold liftedSource; infer_instance
   have hcard := Fintype.card_le_of_injective (mixedToLiftedSource hp hR phi m)
     (mixedToLiftedSource_injective hp hR phi m)
   have hbound := card_liftedSource_le (d := d) hp hR phi
     (equationExponent r d) (fun i => equationExponent_le p r n d i) m
   have hexponent := mixed_exponent_eq_triangular hr
-  simpa only [equationExponent, hexponent] using hcard.trans hbound
+  have hbound' : Fintype.card (liftedSource p r n d hp hR phi (equationExponent r d) m) ≤
+      p ^ ((r-d)*(r-d-1)/2 + r*d+n) := by
+    simpa only [Fintype.card_eq_nat_card, equationExponent, hexponent] using! hbound
+  exact hcard.trans hbound'
 
 theorem card_sourceBstar_kd_le {p r k d : ℕ}
     (hp : p.Prime) (hR : 1 ≤ r) (hd : d ≤ k) (hr : r ≤ k)

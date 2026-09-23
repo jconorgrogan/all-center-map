@@ -180,7 +180,7 @@ theorem norm_iteratedDeriv_sectionThreeCutoff_le
     (schwartzIteratedDerivative i sectionThreeCutoffSchwartz) x
   rw [schwartzIteratedDerivative_apply] at hseminorm
   simpa [cutoffDerivativeSup, sectionThreeCutoffSchwartz,
-    HasCompactSupport.toSchwartzMap] using hseminorm
+    HasCompactSupport.toSchwartzMap] using! hseminorm
 
 /-- The exact imaginary-power derivative budget on the support interval. -/
 theorem norm_iteratedDeriv_imaginary_cpow_le

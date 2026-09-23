@@ -54,7 +54,7 @@ theorem canonical_truncation_le_X
   have hqQpos : 0 < q * Q := by linarith
   have hlone : lambda ≤ 1 := hcap.trans ((div_le_one hqQpos).2 hqQ)
   have hpow : Real.rpow X (23 / 24 : ℝ) ≤ X := by
-    simpa only [Real.rpow_one] using
+    simpa only [Real.rpow_one] using!
       Real.rpow_le_rpow_of_exponent_le hX (by norm_num : (23 / 24 : ℝ) ≤ 1)
   calc
     _ ≤ 1 * X := mul_le_mul hlone hpow

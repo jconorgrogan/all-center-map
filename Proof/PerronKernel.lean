@@ -167,23 +167,28 @@ theorem hasDerivAt_endpointPrimitive {c t : ℝ} (hc : 0 < c) :
   have hden : c ^ 2 + t ^ 2 ≠ 0 := by positivity
   have hatanR : HasDerivAt (fun u : ℝ => Real.arctan (u / c))
       (c / (c ^ 2 + t ^ 2)) t := by
-    convert (Real.hasDerivAt_arctan (t / c)).comp t
-      ((hasDerivAt_id t).div_const c) using 1
-    field_simp [hc0]
+    have h := (Real.hasDerivAt_arctan (t / c)).comp t
+      ((hasDerivAt_id t).div_const c)
+    convert h
+    · rfl
+    · field_simp [hc0]
   have hquad : HasDerivAt (fun u : ℝ => c ^ 2 + u ^ 2) (2 * t) t := by
-    convert (hasDerivAt_const t (c ^ 2)).add ((hasDerivAt_id t).pow 2) using 1
-    simp [two_mul]
+    convert (hasDerivAt_const t (c ^ 2)).add (hasDerivAt_pow 2 t) using 1
+    simp [pow_one]
   have hlogR : HasDerivAt (fun u : ℝ => (2 : ℝ)⁻¹ * Real.log (c ^ 2 + u ^ 2))
       (t / (c ^ 2 + t ^ 2)) t := by
-    convert ((Real.hasDerivAt_log hden).comp t hquad).const_mul (2 : ℝ)⁻¹ using 1
-    field_simp [hden]
+    have h := ((Real.hasDerivAt_log hden).comp t hquad).const_mul (2 : ℝ)⁻¹
+    convert h
+    · rfl
+    · field_simp [hden]
   have hatanC := hatanR.ofReal_comp
   have hlogC := hlogR.ofReal_comp
   have hprim0 : HasDerivAt (endpointPrimitive c)
       (((c / (c ^ 2 + t ^ 2) : ℝ) : ℂ) -
         Complex.I * ((t / (c ^ 2 + t ^ 2) : ℝ) : ℂ)) t := by
-    simpa [endpointPrimitive, Complex.ofReal_mul] using
-      hatanC.sub ((hasDerivAt_const t Complex.I).mul hlogC)
+    convert hatanC.sub ((hasDerivAt_const t Complex.I).mul hlogC)
+    · ext x; simp [endpointPrimitive]
+    · simp [Complex.ofReal_mul]
   have heq : (((c / (c ^ 2 + t ^ 2) : ℝ) : ℂ) -
         Complex.I * ((t / (c ^ 2 + t ^ 2) : ℝ) : ℂ)) =
       Complex.mk (c / (c ^ 2 + t ^ 2)) (-t / (c ^ 2 + t ^ 2)) := by

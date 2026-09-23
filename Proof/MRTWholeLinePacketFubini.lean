@@ -288,7 +288,7 @@ theorem pair_integral_x_eq_sheared_integrals
         sourcePacketTripleKernel X H beta t t' cutoff outer (x, z)) =
         ∫ w : ℝ, ∫ wp : ℝ, ∫ x : ℝ,
           sourcePacketTripleKernel X H beta t t' cutoff outer (x, (w, wp)) := by
-      simpa only using MeasureTheory.integral_prod
+      exact MeasureTheory.integral_prod
         (fun z : ℝ × ℝ ↦ ∫ x : ℝ,
           sourcePacketTripleKernel X H beta t t' cutoff outer (x, z)) hF
     _ = ∫ w : ℝ, ∫ h : ℝ, ∫ x : ℝ,

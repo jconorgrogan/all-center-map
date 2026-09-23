@@ -23,7 +23,9 @@ lemma hasDerivAt_mixedDiff_of_pos
     HasDerivAt (mixedDiff hs f) (mixedDiff hs f' x) x := by
   induction hs generalizing x with
   | nil =>
-      simpa using hderiv x hx
+      convert hderiv x hx
+      · ext; rfl
+      · rfl
   | cons h hs ih =>
       have hh : 0 ≤ h := hsteps h (by simp)
       have htail : ∀ q ∈ hs, 0 ≤ q := by
@@ -33,7 +35,9 @@ lemma hasDerivAt_mixedDiff_of_pos
       have hshift := ih (x := x + h) (by linarith) htail
       have hcomp := hshift.comp x ((hasDerivAt_id x).add_const h)
       have hsub := hcomp.sub hbase
-      simpa [mixedDiff] using hsub
+      convert hsub
+      · ext; rfl
+      · simp [mixedDiff]
 
 /-- The logarithm instance of the derivative compatibility lemma, with the
 reciprocal as the differentiated kernel. -/
@@ -84,23 +88,28 @@ lemma reciprocalKernel_pos {p : ℕ} {x : ℝ} (hx : 0 < x) :
 lemma hasDerivAt_reciprocalKernel {p : ℕ} {x : ℝ} (hp : 1 ≤ p) (hx : 0 < x) :
     HasDerivAt (reciprocalKernel p)
       (-(p : ℝ) / x ^ (p + 1)) x := by
-  have hpow : x ^ p = x * x ^ (p - 1) := by
+  have hx0 : x ≠ 0 := hx.ne'
+  have h := (hasDerivAt_pow p x).inv (pow_ne_zero p hx0)
+  have hder : (-((p : ℝ) * x ^ (p - 1)) / (x ^ p) ^ 2) = (-(p : ℝ) / x ^ (p + 1)) := by
+    have hxpow : x ^ p ≠ 0 := pow_ne_zero p hx0
+    have hxpow' : x ^ (p + 1) ≠ 0 := pow_ne_zero (p + 1) hx0
+    have hsq : (x ^ p) ^ 2 ≠ 0 := pow_ne_zero 2 hxpow
+    apply (div_eq_div_iff hsq hxpow').mpr
+    have hpow : x ^ (p - 1) * x ^ (p + 1) = (x ^ p) ^ 2 := by
+      rw [← pow_add, ← pow_mul, mul_two]
+      congr 1
+      omega
     calc
-      x ^ p = x ^ ((p - 1) + 1) := by rw [Nat.sub_add_cancel hp]
-      _ = x ^ (p - 1) * x := by rw [pow_succ]
-      _ = x * x ^ (p - 1) := by ring
-  have h := (hasDerivAt_const x (1 : ℝ)).div
-    ((hasDerivAt_id x).pow p) (by positivity : x ^ p ≠ 0)
+      -((p : ℝ) * x ^ (p - 1)) * x ^ (p + 1)
+          = -((p : ℝ) * (x ^ (p - 1) * x ^ (p + 1))) := by ring
+      _ = -((p : ℝ) * (x ^ p) ^ 2) := by rw [hpow]
+      _ = -(p : ℝ) * (x ^ p) ^ 2 := by ring
   unfold reciprocalKernel
+  have hfun : (fun y : ℝ => 1 / y ^ p) = fun y => (y ^ p)⁻¹ := by
+    funext y; simp [one_div]
+  rw [hfun]
   convert h using 1
-  simp only [id_eq, Pi.pow_apply, zero_mul, zero_sub, one_mul]
-  field_simp [hx.ne']
-  rw [hpow]
-  have hps : x ^ (p + 1) = x * x ^ p := by
-    rw [pow_succ]
-    ring
-  rw [hps, hpow]
-  ring
+  exact hder.symm
 
 lemma continuousOn_reciprocalKernel {p : ℕ} {a b : ℝ}
     (ha : 0 < a) :

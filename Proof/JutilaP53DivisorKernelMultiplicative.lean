@@ -78,6 +78,7 @@ theorem p53PairPseudoArithmetic_eq_pmul (r r' : ℕ) :
       (p53SinglePseudoArithmetic r).pmul
         (p53SinglePseudoArithmetic r') := by
   ext n
+  rw [ArithmeticFunction.pmul_apply]
   by_cases hn : n = 0
   · subst n
     simp [p53PairPseudoArithmetic, p53SinglePseudoArithmetic]

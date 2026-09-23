@@ -28,7 +28,7 @@ theorem hurwitz_eq_finite_add_cellSeries_upper_right
       (Complex.continuous_im.isOpen_preimage _ isOpen_Ioi)
   have hUpre : IsPreconnected U := by
     dsimp [U]
-    simpa only [Set.mem_setOf_eq] using
+    simpa [Set.setOf_and] using
       ((convex_halfSpace_re_gt 0).inter (convex_halfSpace_im_gt 0)).isPreconnected
   have hF : AnalyticOnNhd ℂ F U := by
     apply DifferentiableOn.analyticOnNhd

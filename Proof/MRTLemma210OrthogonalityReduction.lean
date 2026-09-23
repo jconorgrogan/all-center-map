@@ -130,7 +130,8 @@ theorem sum_twistedFinitePolynomial_norm_sq
         twistedFinitePolynomial q S a chi t *
           star (twistedFinitePolynomial q S a chi t) by
     intro chi
-    simpa only [Complex.ofReal_pow] using
+    simpa only [RCLike.ofReal_eq_complex_ofReal, Complex.ofReal_pow,
+      RCLike.star_def] using!
       (RCLike.mul_conj (twistedFinitePolynomial q S a chi t)).symm]
   simp_rw [twistedFinitePolynomial_mul_star]
   rw [sum_character_two_finsets_comm]

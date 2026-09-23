@@ -366,7 +366,7 @@ theorem continuous_principal_detector_epsilonLeft
     funext u
     exact jutilaDetectorExtension_eq_raw chiOne xi D S X hLrho
       (principalEpsilonLeft_ne_zero hbetaLo u)
-  simpa [hfun, rho] using ((hG.mul hL).mul hpow).mul hMc
+  simpa [hfun, rho] using! ((hG.mul hL).mul hpow).mul hMc
 
 theorem integrable_principal_detector_epsilonLeft
     {beta t : ℝ} (xi : ℕ → ℂ) {D : Finset ℕ}

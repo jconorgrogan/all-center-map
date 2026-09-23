@@ -239,7 +239,7 @@ theorem square_selected_le_complementLowerProduct
       ((factors[s].length ^ 2 : ℕ) : ℝ) ≤
         (factorLowerProduct (complementFactorList factors s) : ℝ) := by
     simpa [M, prefixScales, restScales, complementFactorList,
-      factorLowerProduct, List.map_append, List.prod_append] using hreal
+      factorLowerProduct, List.map_append, List.prod_append, Function.comp_def] using! hreal
   exact_mod_cast hcast
 
 /-- The exact `j >= 3` high-packet geometry used by the mixed-mean theorem. -/
@@ -307,7 +307,7 @@ theorem typeD_high_regrouping_geometry
       change (factors.map (fun f => (f.length : ℝ)))[s]? = scales[s]? at hget
       rw [List.getElem?_eq_getElem hsMap,
         List.getElem?_eq_getElem hsScale] at hget
-      simpa using hget.symm
+      simpa using! hget.symm
     have hprefixSmall := largestSmallPrefix_succ_not_small
       (scales := scales) (smallScale := Real.rpow X delta) hsScale
     have hsmall : 1 ≤ Real.rpow X delta :=
@@ -317,7 +317,7 @@ theorem typeD_high_regrouping_geometry
     apply hprefixSmall
     rw [scalePrefixProduct_succ scales hsScale]
     rw [show scales[s] = 1 by simpa [heq] using hscaleAt]
-    simpa using hprefix
+    simpa using! hprefix
   have hregroup : factorConvolution
         (dynamicComponentFactorList logIndex zbag mbag) =
       factors[s].coeff * factorConvolution (complementFactorList factors s) := by

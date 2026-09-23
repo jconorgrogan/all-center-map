@@ -318,6 +318,8 @@ theorem realized_class_card_le
       dsimp [canonicalSourcePoint, positiveResidue] at hv
       simp [Nat.add_sub_of_le hj'] at hv
       split_ifs at hv <;> omega
+  letI : Fintype (mixedSourceBstar hp hR phi m) :=
+    mixedSourceBstarFintype (p := p) (r := r) (n := k - d) (d := d) hp hR phi m
   have hcard := Fintype.card_le_of_injective inject hinj
   simpa [realized, X, cls, n, phi, a, m] using
     hcard.trans (MAPFordMixedSourceCount.card_sourceBstar_kd_le

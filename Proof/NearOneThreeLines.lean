@@ -88,7 +88,7 @@ private theorem nearOneNormalizedL_diffContOnCl
       (verticalStrip (-1) (1 + r)) :=
     (DirichletCharacter.differentiable_LFunction hχ).diffContOnCl
   have hmul := hinv.smul hL
-  simpa [nearOneNormalizedL, d, div_eq_inv_mul, mul_comm] using hmul
+  simpa [nearOneNormalizedL, d, div_eq_inv_mul, mul_comm] using! hmul
 
 private theorem norm_nearOneNormalizedL_le_q_sq
     {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) (hχ : χ ≠ 1)

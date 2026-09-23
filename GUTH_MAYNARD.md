@@ -32,13 +32,13 @@ estimate with critical and complementary ranges. See
 
 The mathematical source is Larry Guth and James Maynard,
 [New large value estimates for Dirichlet polynomials](https://annals.math.princeton.edu/2026/203-2/p06),
-Annals of Mathematics 203 (2026), 623–675, Theorem 1.1. The formalized result
-is the epsilon-form of that theorem.
+Annals of Mathematics 203 (2026), 623–675. The formalized result
+is the epsilon-form of its principal large-value estimate.
 
 ## Verification
 
-The declaration compiled with only `propext`, `Classical.choice`, and `Quot.sound`.
-On 2026-09-20 its own complete type/proof dependency closure of **75,874
+On 2026-09-20, under Lean `v4.30.0-rc2`, the declaration compiled with only
+`propext`, `Classical.choice`, and `Quot.sound`. Its complete type/proof dependency closure of **75,874
 declarations** passed a fresh replay into an empty Lean kernel environment.
 The replay rejected nonstandard axioms and unsafe/partial dependencies and
 compared the resulting theorem's name, type, proof term, and universe parameters
@@ -47,4 +47,6 @@ to the original. It completed in 161.36 seconds.
 The [record](evidence/kernel-replay/guth-maynard/result.json),
 [declaration manifest](evidence/kernel-replay/guth-maynard/declarations.txt), and
 [output](evidence/kernel-replay/guth-maynard/output.txt) are retained.
-See [VERIFICATION.md](VERIFICATION.md) for the kernel-replay and NanoDa records.
+The current project pins Lean `v4.35.0-rc2`. See
+[VERIFICATION.md](VERIFICATION.md) for reproduction commands and the separately
+identified current and historical verification evidence.

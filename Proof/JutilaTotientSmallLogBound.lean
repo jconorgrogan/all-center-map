@@ -27,7 +27,7 @@ theorem div_totient_le_cutoff_add_log
   have hprod : (q : ℝ)/(Nat.totient q : ℝ) ≤ (A.card : ℝ)+1 := by
     rw [div_totient_eq_prod q hq]
     apply LE.le.trans _ (prod_div_pred_le_card_add_one A hA)
-    apply Finset.prod_le_prod_of_subset_of_one_le hsub
+    apply Finset.prod_le_prod_of_subset_of_one_le₀ hsub
     · intro p hp
       have hpR : (1 : ℝ) < p := by exact_mod_cast (Nat.prime_of_mem_primeFactors hp).one_lt
       exact div_nonneg (Nat.cast_nonneg p) (by linarith)

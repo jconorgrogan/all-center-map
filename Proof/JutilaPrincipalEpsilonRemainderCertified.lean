@@ -85,7 +85,7 @@ theorem norm_jutilaLocalEulerProductComplex_le
         ∏ p ∈ n.primeFactors, ‖jutilaLocalEulerFactorComplex chi p s‖ := by
       simpa [jutilaLocalEulerProductComplex, n] using hprodNorm
     _ ≤ ∏ p ∈ n.primeFactors, ((p : ℝ) + 1) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro p hp
         exact norm_nonneg _
       · intro p hp

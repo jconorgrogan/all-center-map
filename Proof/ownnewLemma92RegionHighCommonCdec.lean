@@ -210,7 +210,7 @@ theorem ownnewLemma92RegionHigh_commonCdec
     hT hf.bound_nonneg hCdec hRlo hN10 hN20 hN30 (by norm_num) hRhi
     (le_rfl) (le_rfl) (le_rfl) hm1 hm2 hpsi hratioLo hratioHi hdecay
     hghat.integrableOn
-  simpa only [Rlo] using hbudget
+  simpa only [Rlo] using! hbudget
 
 end GuthMaynardJIteration
 

@@ -450,7 +450,7 @@ theorem bhpPrincipalRightLine_eq_correctedLeft_sub_horizontal_add_residue
             bhpPerronIntegrand (1 : DirichletCharacter ℂ q) X t
               ((delta : ℂ) + Complex.I * u)) =
           (2 * Real.pi * Complex.I) * bhpPrincipalResidue q X t := by
-      simpa [mul_comm] using hrect
+      simpa [mul_comm, sub_eq_add_neg] using hrect
     apply (mul_left_cancel₀ Complex.I_ne_zero)
     simp [mul_sub, mul_add, ← mul_assoc, Complex.I_mul_I]
     linear_combination hrect'

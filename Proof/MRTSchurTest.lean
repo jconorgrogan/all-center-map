@@ -48,7 +48,7 @@ theorem lintegral_bilinear_le_two_mul_of_schur
     calc
       F z ≤ ((A z.1 : ENNReal) ^ 2 + (A z.2 : ENNReal) ^ 2) * K z.1 z.2 := by
         unfold F
-        exact mul_le_mul_right' hab _
+        exact mul_le_mul_left hab _
       _ = G₁ z + G₂ z := by unfold G₁ G₂; ring
   have hI₁ : (∫⁻ z : α × α, G₁ z ∂μ.prod μ) ≤
       (∫⁻ x, (A x : ENNReal) ^ 2 ∂μ) * M := by
@@ -64,7 +64,7 @@ theorem lintegral_bilinear_le_two_mul_of_schur
           unfold G₁
           exact lintegral_const_mul' ((A x : ENNReal) ^ 2)
             (fun y ↦ K x y) (by simp)]
-        exact mul_le_mul_left' (hrow x) _
+        exact mul_le_mul_right (hrow x) _
       _ = (∫⁻ x, (A x : ENNReal) ^ 2 ∂μ) * M := by
         exact lintegral_mul_const' M _ hM
   have hswap : (∫⁻ z : α × α, G₂ z ∂μ.prod μ) =
@@ -88,7 +88,7 @@ theorem lintegral_bilinear_le_two_mul_of_schur
           unfold G₂
           exact lintegral_const_mul' ((A x : ENNReal) ^ 2)
             (fun y ↦ K y x) (by simp)]
-        exact mul_le_mul_left' (hcol x) _
+        exact mul_le_mul_right (hcol x) _
       _ = (∫⁻ x, (A x : ENNReal) ^ 2 ∂μ) * M := by
         exact lintegral_mul_const' M _ hM
   calc

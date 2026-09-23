@@ -66,7 +66,7 @@ theorem norm_ambientLFunction_imaginary_le_clean
   have hsqrtCond : Real.rpow (chi.conductor : ℝ) (1 / 2) ≤
       Real.sqrt (q : ℝ) := by
     have h := Real.sqrt_le_sqrt hcond
-    simpa only [Real.sqrt_eq_rpow] using h
+    simpa only [Real.sqrt_eq_rpow] using! h
   have hheight0 : 0 ≤ Real.rpow (1 + |t|) (1 / 2) :=
     Real.rpow_nonneg (by positivity) _
   have hcondHalf0 : 0 ≤ Real.rpow (chi.conductor : ℝ) (1 / 2) :=
@@ -304,7 +304,7 @@ theorem norm_ambientLFunction_le_wide_interp
         Complex.differentiable_exp.comp
           ((differentiable_id.sub_const ((u : ℂ) * I)).pow 2)
       have hmul := hL.smul hg.diffContOnCl
-      simpa only [gaussianTwist, smul_eq_mul] using hmul)
+      simpa only [gaussianTwist, smul_eq_mul] using! hmul)
     (gaussianTwist_bddAbove_wide chi hchi u rWidth hr0 hrHalf)
     (ambientGaussian_leftBoundary hkappa hkappaHalf chi hchi u)
     (ambientGaussian_rightBoundary_wide chi rWidth hr0 u)

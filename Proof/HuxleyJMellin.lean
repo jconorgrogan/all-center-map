@@ -151,7 +151,7 @@ theorem mellinConvergent_huxleyJWeight {s : ℂ} (hs : 0 < s.re) :
   have hsn' := (hasMellin_const_smul hnc (1 / 4 : ℂ)).1
   have hsub1 := (hasMellin_sub hs0 hsp').1
   have hsub2 := (hasMellin_sub hsub1 hsn').1
-  simpa only [huxleyJWeight, smul_eq_mul] using hsub2
+  simpa only [huxleyJWeight, smul_eq_mul] using! hsub2
 
 /-- The transform itself is vertically integrable on the inversion line,
 by the exact transform identity and the rational-kernel majorant. -/
@@ -196,7 +196,7 @@ private theorem continuous_boundarySurrogate : Continuous boundarySurrogate := b
       exact lt_of_lt_of_le (by norm_num : 0 < (1 / 2 : ℝ)) (le_max_right _ _)
     have houter := Complex.continuousAt_ofReal_cpow_const
       (positiveBase x) a (Or.inr hbpos.ne')
-    simpa only [Function.comp_apply] using houter.comp hbase.continuousAt
+    simpa only [Function.comp_apply] using! houter.comp hbase.continuousAt
   unfold boundarySurrogate
   fun_prop
 
@@ -334,7 +334,7 @@ theorem inverseMellin_integral_huxleyJ {x : ℝ} (hx : 0 < x) :
         ∫ t : ℝ, (x : ℂ) ^ (-((2 : ℂ) + t * I)) •
           MAPHuxleyReflectionKernelAlgebra.huxleyJ ((2 : ℂ) + t * I) =
       huxleyJSourceWeight x := by
-  simpa only [mellinInv] using mellinInv_huxleyJ_eq_sourceWeight hx
+  simpa only [mellinInv, Complex.ofReal_ofNat] using mellinInv_huxleyJ_eq_sourceWeight hx
 
 end
 

@@ -79,7 +79,7 @@ theorem eventually_log_le_scaled_weakGap_power
     _ ≤ 1 * Real.rpow X (a * omega) :=
       mul_le_mul_of_nonneg_right (by
         simpa only [omega', show -(12 * a * omega / 12) =
-          -(a * omega) by ring] using hprod) hpow0
+          -(a * omega) by ring] using! hprod) hpow0
     _ = Real.rpow X (a * omega) := one_mul _
 
 /-- Scaled weak-gap absorption for an arbitrary fixed logarithmic power.
@@ -127,7 +127,7 @@ theorem eventually_log_rpow_le_scaled_weakGap_power
     _ ≤ 1 * Real.rpow X (a * omega) :=
       mul_le_mul_of_nonneg_right (by
         simpa only [omega', show -(12 * a * omega / 12) =
-          -(a * omega) by ring] using hprod) hpow0
+          -(a * omega) by ring] using! hprod) hpow0
     _ = Real.rpow X (a * omega) := one_mul _
 
 /-- The exact eventual regular-near estimate used by the CGL-v2 primary
@@ -184,7 +184,7 @@ theorem apRegularNearOneRangeMass_logSaving_of_cglv2_gappedCumulative_and_high_g
     (mul_pos htauPosGlobal (by norm_num [a5FiberGapBudget])) hc
   have hJutilaHeight : ∀ᶠ X : ℝ in atTop,
       RJ ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually (eventually_ge_atTop RJ)
   let Cfinal : ℝ := (fineCellCount epsilon : ℝ) * CC + CJ
   have hCfinal : 0 < Cfinal := by
@@ -521,7 +521,7 @@ theorem apRegularNearOneRangeMass_logSaving_of_cglv2_gappedCumulative_and_high_g
               ((fineCellCount epsilon : ℝ) *
                   (CC * Real.rpow X (-(epsilon / 400))) +
                 CJ * Real.rpow X (-(omega / 12)))) := by
-          simpa only [T] using hfamily
+          simpa only [T] using! hfamily
         _ = ((fineCellCount epsilon : ℝ) * CC) *
               (((Q : ℝ) ^ 2 * Real.log X) *
                 Real.rpow X (-(epsilon / 400))) +

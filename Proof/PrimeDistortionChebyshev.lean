@@ -50,8 +50,12 @@ theorem primeLogRpowSum_eq_theta_mul_add_integral
     apply Finset.sum_congr rfl
     intro n hn
     by_cases h : n.Prime
-    · simp [a, h, mul_comm]
-    · simp [a, h]
+    · have ha : a n = Real.log n :=
+        Set.indicator_of_mem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_pos h, ha, mul_comm]
+    · have ha : a n = 0 :=
+        Set.indicator_of_notMem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_neg h, ha, mul_zero]
   have hdiff : ∀ t ∈ Set.Icc (2 : ℝ) y,
       DifferentiableAt ℝ (fun z : ℝ => z ^ (-δ)) t := by
     intro t ht
@@ -78,7 +82,13 @@ theorem primeLogRpowSum_eq_theta_mul_add_integral
     rw [Chebyshev.theta_eq_sum_Icc, Finset.sum_filter]
     apply Finset.sum_congr rfl
     intro n hn
-    by_cases h : n.Prime <;> simp [a, h]
+    by_cases h : n.Prime
+    · have ha : a n = Real.log n :=
+        Set.indicator_of_mem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_pos h, ha]
+    · have ha : a n = 0 :=
+        Set.indicator_of_notMem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_neg h, ha]
   have hsumy : (∑ k ∈ Finset.Icc 0 y, a k) = Chebyshev.theta (y : ℝ) := by
     simpa using hsum (y : ℝ)
   rw [habel, hsumy, ← intervalIntegral.integral_of_le (by exact_mod_cast hy)]

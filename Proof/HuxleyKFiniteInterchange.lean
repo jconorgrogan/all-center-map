@@ -71,7 +71,7 @@ theorem finite_huxleyKernel_interchange
           ∫ t : ℝ, (x i : ℂ) ^ (-verticalPoint t) *
             MAPHuxleyReflectionKernelAlgebra.huxleyK (verticalPoint t) =
         MAPHuxleyKMellin.huxleyKWeight (x i) := by
-    simpa only [verticalPoint, smul_eq_mul, mul_comm] using hInv
+    simpa only [verticalPoint, Complex.ofReal_ofNat, smul_eq_mul, mul_comm] using hInv
   calc
     (1 / (2 * Real.pi)) •
         ∫ t : ℝ, c i * ((x i : ℂ) ^ (-verticalPoint t) *
@@ -127,7 +127,7 @@ theorem countable_huxleyKernel_interchange_of_summable_integral_norm
               ∫ t : ℝ, (x i : ℂ) ^ (-verticalPoint t) *
                 MAPHuxleyReflectionKernelAlgebra.huxleyK (verticalPoint t) =
             MAPHuxleyKMellin.huxleyKWeight (x i) := by
-        simpa only [verticalPoint, Complex.real_smul, smul_eq_mul] using hInv
+        simpa only [verticalPoint, Complex.ofReal_ofNat, Complex.real_smul, smul_eq_mul] using hInv
       unfold F
       rw [integral_const_mul]
       rw [← hInv']

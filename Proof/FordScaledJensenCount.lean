@@ -109,7 +109,7 @@ theorem finite_analyticMultiplicity_le
       have horder : analyticOrderAt F z = analyticOrderAt f z := by
         have hmul' :
             analyticOrderAt (fun w ↦ f w * (f c)⁻¹) z = analyticOrderAt f z := by
-          simpa only [Pi.mul_apply] using hmul.trans (by rw [hconst, add_zero])
+          convert hmul.trans (by rw [hconst, add_zero])
         rw [hFeq, hmul']
       have hnat := Nat.cast_analyticOrderNatAt htop
       dsimp [analyticMultiplicity, D]

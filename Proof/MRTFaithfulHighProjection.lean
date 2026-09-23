@@ -320,10 +320,12 @@ theorem faithfulTranslatedCriticalSum_hasDerivAt
         sourceDualIntegrandDerivative X H beta faithfulCutoff faithfulCutoffDeriv g
           (Real.log n - Real.log X - z) x)) z := by
     have hi : HasDerivAt (fun y : ℝ ↦ Real.log n - Real.log X - y) (-1) z := by
-      simpa using (hasDerivAt_const z (Real.log n - Real.log X)).sub (hasDerivAt_id z)
+      simpa only [Pi.sub_apply, id_eq, zero_sub] using!
+        (hasDerivAt_const z (Real.log n - Real.log X)).sub (hasDerivAt_id z)
     have hcomp := (hG (Real.log n - Real.log X - z)).scomp z hi
     simpa [Function.comp_def] using hcomp.const_mul (f n * (Real.sqrt n : ℂ)⁻¹)
-  simpa [faithfulTranslatedCriticalSum, faithfulTranslatedCriticalDerivative] using
+  unfold faithfulTranslatedCriticalSum faithfulTranslatedCriticalDerivative
+  simpa using!
     (HasDerivAt.fun_sum (u := Finset.Ioc ⌊X⌋₊ ⌊2 * X⌋₊) (fun n hn ↦ ht n))
 
 theorem faithfulTranslatedCriticalSum_sub_le

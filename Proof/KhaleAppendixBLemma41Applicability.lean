@@ -42,7 +42,7 @@ theorem khaleEta_lower_196
   have hetaCube : (khaleEta B gamma) ^ (3 : ℕ) = base ^ (2 : ℕ) := by
     have hpow := Real.rpow_mul_natCast hbase.le (2 / 3 : ℝ) 3
     norm_num at hpow
-    simpa only [khaleEta, base, L, ell] using hpow.symm
+    simpa only [khaleEta, base, L, ell] using! hpow.symm
   have hLCube :
       (Real.rpow L (-2 / 3 : ℝ)) ^ (3 : ℕ) =
         Real.rpow L (-2 : ℝ) := by
@@ -56,7 +56,7 @@ theorem khaleEta_lower_196
   have hLpow : Real.rpow L (-2 : ℝ) = 1 / L ^ (2 : ℕ) := by
     calc
       Real.rpow L (-2 : ℝ) = (Real.rpow L (2 : ℝ))⁻¹ := by
-        simpa only using Real.rpow_neg hL'.le 2
+        exact Real.rpow_neg hL'.le 2
       _ = (L ^ (2 : ℕ))⁻¹ := by
         congr 1
         exact Real.rpow_natCast L 2
@@ -202,7 +202,7 @@ theorem collar_rpow_192_le_194
             (Real.rpow_mul_natCast hd.le (-2 / 3 : ℝ) 3).symm
       _ = Real.rpow d (-2 : ℝ) := by congr 1 <;> norm_num
       _ = (Real.rpow d (2 : ℝ))⁻¹ := by
-        simpa only using Real.rpow_neg hd.le 2
+        exact Real.rpow_neg hd.le 2
       _ = (d ^ (2 : ℕ))⁻¹ := by congr 1; exact Real.rpow_natCast d 2
       _ = 1 / d ^ (2 : ℕ) := by rw [one_div]
   have hLCube : (Real.rpow L (-2 / 3 : ℝ)) ^ (3 : ℕ) =
@@ -213,7 +213,7 @@ theorem collar_rpow_192_le_194
             (Real.rpow_mul_natCast hL.le (-2 / 3 : ℝ) 3).symm
       _ = Real.rpow L (-2 : ℝ) := by congr 1 <;> norm_num
       _ = (Real.rpow L (2 : ℝ))⁻¹ := by
-        simpa only using Real.rpow_neg hL.le 2
+        exact Real.rpow_neg hL.le 2
       _ = (L ^ (2 : ℕ))⁻¹ := by congr 1; exact Real.rpow_natCast L 2
       _ = 1 / L ^ (2 : ℕ) := by rw [one_div]
   rw [mul_pow, mul_pow, hdCube, hLCube]
@@ -253,7 +253,7 @@ theorem collar_rpow_mul_le_base
   have hlog : Real.log (gamma / 100) ≤
       Real.log ((j * gamma) / 100) :=
     Real.log_le_log (div_pos hgamma0 (by norm_num)) hratio
-  exact Real.rpow_le_rpow_of_exponent_nonpos hbase hlog (by norm_num)
+  exact Real.rpow_le_rpow_of_nonpos hbase hlog (by norm_num)
 
 /-- The exact Appendix-B auxiliary line satisfies the full `1.92` collar
 required by Khale Lemma 4.1. -/

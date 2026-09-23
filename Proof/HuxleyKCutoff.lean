@@ -144,11 +144,11 @@ theorem mellinInv_huxleyK_eq_shifted_sourceWeights
     verticalIntegrable_exp_mul hJ a
   have hE43 : Complex.VerticalIntegrable (fun s => E 4 s + E 3 s) 2 := by
     unfold Complex.VerticalIntegrable at hE ⊢
-    simpa only [Pi.add_apply] using (hE 4).add (hE 3)
+    simpa only [Pi.add_apply] using! (hE 4).add (hE 3)
   have hE431 : Complex.VerticalIntegrable
       (fun s => E 4 s + E 3 s - E 1 s) 2 := by
     unfold Complex.VerticalIntegrable at hE hE43 ⊢
-    simpa only [Pi.sub_apply] using hE43.sub (hE 1)
+    simpa only [Pi.sub_apply] using! hE43.sub (hE 1)
   have hkernel : MAPHuxleyReflectionKernelAlgebra.huxleyK =
       fun s => (E 4 s + E 3 s - E 1 s) - J s := by
     funext s
@@ -359,7 +359,7 @@ theorem inverseMellin_integral_huxleyK_eq_cutoff
         ∫ t : ℝ, ((m / U : ℝ) : ℂ) ^ (-((2 : ℂ) + t * I)) •
           MAPHuxleyReflectionKernelAlgebra.huxleyK ((2 : ℂ) + t * I) =
       (MAPHuxleyHalaszFront.huxleyCutoffWeight m U : ℂ) := by
-  simpa only [mellinInv] using mellinInv_huxleyK_eq_cutoff hm hU
+  simpa only [mellinInv, Complex.ofReal_ofNat] using mellinInv_huxleyK_eq_cutoff hm hU
 
 end
 

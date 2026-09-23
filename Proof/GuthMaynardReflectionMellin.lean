@@ -64,7 +64,7 @@ theorem mellin_inversion_line_one
             mellin f ((1 : ℂ) + r * Complex.I) := by
   have h := mellinInv_mellin_eq 1 f hx hconv hvertical hcontinuous
   rw [mellinInv] at h
-  simpa only [Complex.real_smul] using h.symm
+  simpa only [Complex.real_smul, Complex.ofReal_one, smul_eq_mul] using h.symm
 
 /-- The collected positive-frequency sum factors exactly after the source
 change of variables makes the kernel independent of `m`.  This is the finite

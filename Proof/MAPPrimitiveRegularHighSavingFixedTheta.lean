@@ -137,7 +137,7 @@ theorem logRpow_le_scaledWeakGapPower_fixedTheta
     _ ≤ 1 * Real.rpow X (a * omega) :=
       mul_le_mul_of_nonneg_right (by
         simpa only [omega', show -(12 * a * omega / 12) =
-          -(a * omega) by ring] using hprod) hpow0
+          -(a * omega) by ring] using! hprod) hpow0
     _ = Real.rpow X (a * omega) := one_mul _
 
 /-- The old `3/4` gap implies the new fixed-theta leaf, choosing

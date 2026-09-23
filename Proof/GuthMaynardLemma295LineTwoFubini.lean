@@ -84,7 +84,7 @@ theorem integrable_lineTwoTerm
     Integrable (lineTwoTerm N g n) := by
   have hmellin : Integrable (fun r : ℝ =>
       mellin sourceHZero (lineTwoPoint r)) := by
-    simpa [lineTwoPoint] using sourceHZero_verticalIntegrable_two
+    simpa [lineTwoPoint, Complex.VerticalIntegrable] using sourceHZero_verticalIntegrable_two
   have hdom : Integrable (fun r : ℝ =>
       (N ^ 2 / (n + 1 : ℝ) ^ 2) *
         ‖mellin sourceHZero (lineTwoPoint r)‖) :=
@@ -210,7 +210,8 @@ theorem normalized_integral_lineTwoTerm_eq_sourceHPlus
       sourceHZero x = (((1 / (2 * Real.pi) : ℝ) : ℂ) *
         ∫ r : ℝ, (x : ℂ) ^ (-lineTwoPoint r) *
           mellin sourceHZero (lineTwoPoint r)) := by
-    simpa only [Complex.real_smul, lineTwoPoint] using hinv.symm
+    simpa only [Complex.real_smul, lineTwoPoint, Complex.ofReal_ofNat,
+      smul_eq_mul] using hinv.symm
   rw [show (fun r : ℝ => lineTwoTerm N g n r) =
       (fun r : ℝ => ((x : ℂ) ^ (g * Complex.I)) *
         ((x : ℂ) ^ (-lineTwoPoint r) *

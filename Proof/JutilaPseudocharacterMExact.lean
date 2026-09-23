@@ -110,7 +110,7 @@ theorem norm_jutilaLocalEulerProduct_le
         ∏ p ∈ n.primeFactors, ‖jutilaLocalEulerFactor chi t p‖ := by
       simpa [jutilaLocalEulerProduct, n] using hprodNorm
     _ ≤ ∏ p ∈ n.primeFactors, ((p : ℝ) + 1) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro p hp
         exact norm_nonneg _
       · intro p hp

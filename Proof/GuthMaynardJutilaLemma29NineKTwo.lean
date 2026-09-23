@@ -107,7 +107,7 @@ theorem collectedAbsoluteCoefficient_productMultiplicity_le
               (((primeRealIcc (kTwoPrimeLower N P)
                 (2 * kTwoPrimeLower N P)).product (productIoc N)).filter
                   (fun q => q.1 * q.2 = l)).card) := by
-    simpa [productIoc, natRealIoc] using
+    simpa [productIoc, natRealIoc] using!
       (Finset.le_sup
         (f := fun l : ℕ =>
           (((primeRealIcc (kTwoPrimeLower N P)

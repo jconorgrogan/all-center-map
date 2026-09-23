@@ -40,7 +40,7 @@ theorem norm_regularized_principal_one_le_one
   simp only [DirichletCharacter.LFunctionTrivChar₁, Function.update_self]
   change ‖∏ p ∈ q.primeFactors, ((1 : ℂ) - (p : ℂ)⁻¹)‖ ≤ 1
   rw [norm_prod]
-  apply Finset.prod_le_one
+  apply Finset.prod_le_one₀
   · intro p hp
     exact norm_nonneg _
   · intro p hp

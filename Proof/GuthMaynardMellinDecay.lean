@@ -53,7 +53,8 @@ theorem hasDerivAt_mellinInverseDerivative
     HasDerivAt (mellinInverseDerivative r)
       (mellinInverseDerivativeDeriv r x) x := by
   unfold mellinInverseDerivative mellinInverseDerivativeDeriv
-  convert (hasDerivAt_id x).ofReal_comp.div_const (Complex.I * r) using 1
+  simpa only [id_eq, Complex.ofReal_one] using!
+    (hasDerivAt_id x).ofReal_comp.div_const (Complex.I * r)
 
 theorem hasDerivAt_mellinInverseDerivativeDeriv
     {r x : ℝ} :

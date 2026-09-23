@@ -164,7 +164,7 @@ theorem integral_zeroPairKernel_eq_div
   have hz : z ≠ -1 := by
     intro heq
     have hi : ρ.im - ρ'.im = 0 := by
-      simpa [z] using congrArg Complex.im heq
+      simpa [z, sub_eq_add_neg] using congrArg Complex.im heq
     exact him (by linarith)
   have hzero : (0 : ℝ) ∉ Set.uIcc a b := by
     intro h
@@ -181,7 +181,7 @@ theorem ordinate_gap_le_pairDenominator (ρ ρ' : ℂ) :
     |ρ.im - ρ'.im| ≤ ‖ρ + conj ρ' - 1‖ := by
   have h := Complex.abs_im_le_norm (ρ + conj ρ' - 1)
   simpa only [Complex.sub_im, Complex.add_im, Complex.conj_im,
-    Complex.one_im, sub_zero] using h
+    Complex.one_im, Complex.neg_im, sub_zero, sub_eq_add_neg, neg_zero, add_zero] using h
 
 /-- The exact antiderivative gives a numerator consisting only of the two
 endpoint powers.  This form deliberately retains the full complex

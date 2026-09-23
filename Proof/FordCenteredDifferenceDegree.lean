@@ -33,7 +33,9 @@ theorem centered_difference_degree_leadingCoeff
   have hrcoeff : r.coeff (n + 1) =
       ((n + 2 : ℕ) : ℤ) * p.leadingCoeff * y := by
     dsimp [r]
-    simpa using coeff_translated_sub p (n + 1) y (by omega)
+    convert coeff_translated_sub p (n + 1) y (by omega)
+    push_cast
+    ring
   have hfac0 : ((n + 2 : ℕ) : ℤ) * p.leadingCoeff * y ≠ 0 := by
     apply mul_ne_zero
     · apply mul_ne_zero

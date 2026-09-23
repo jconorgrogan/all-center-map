@@ -24,7 +24,7 @@ lemma class_energy_integrand_expand
   have hIcast : (realI g cls alpha : ℂ) =
       ∑ q : classPairCarrier cls,
         fordIntegerCharTerm alpha (classPairFrequency g cls q) := by
-    simpa [realI, pairBlock, pairFrequency] using hI.symm
+    simpa [realI, pairBlock, pairFrequency] using! hI.symm
   have hf2 := hf
   simp_rw [char_term_neg] at hf2
   rw [show ((‖fordBoundaryBlock f alpha‖ ^ 2 : ℝ) : ℂ) =

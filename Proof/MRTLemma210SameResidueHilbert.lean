@@ -371,7 +371,7 @@ theorem norm_sameResidueLogHilbertForm_le
                 Real.pi * (2 * Real.sqrt E) * (2 * Real.sqrt E) =
                     4 * Real.pi * Real.sqrt E ^ 2 := by ring
                 _ = 4 * Real.pi * E := by rw [Real.sq_sqrt hE]
-        · exact intervalIntegral.intervalIntegrable_const
+        · exact intervalIntegrable_const
       _ = 4 * Real.pi * E := by simp
   have hqR : (0 : ℝ) < q := by exact_mod_cast hq
   have hscale : ‖(N : ℂ) / (q : ℂ)‖ = (N : ℝ) / (q : ℝ) := by

@@ -56,7 +56,7 @@ theorem integrable_polynomial_kernel (d : ℕ) :
         (pow_nonneg (abs_nonneg t) (d + 4))))).aestronglyMeasurable
   · filter_upwards with t
     rw [Real.norm_eq_abs, abs_of_nonneg (div_nonneg (by positivity) (by positivity))]
-    simpa [mul_div_assoc] using
+    simpa [mul_div_assoc, div_eq_mul_inv] using
       polynomial_over_higher_power_le_inv_sq d (abs_nonneg t)
 
 theorem integral_polynomial_kernel_le (d : ℕ) :
@@ -68,7 +68,7 @@ theorem integral_polynomial_kernel_le (d : ℕ) :
       apply integral_mono (integrable_polynomial_kernel d)
         (integrable_inv_one_add_sq.const_mul ((2 : ℝ)^(d+1)))
       intro t
-      simpa [mul_div_assoc] using
+      simpa [mul_div_assoc, div_eq_mul_inv] using
         polynomial_over_higher_power_le_inv_sq d (abs_nonneg t)
     _ = (2 : ℝ) ^ (d + 1) * Real.pi := by
       rw [integral_const_mul, integral_univ_inv_one_add_sq]

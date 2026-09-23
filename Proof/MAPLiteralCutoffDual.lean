@@ -63,7 +63,7 @@ theorem literalCutoff_one {y : ℝ} (hy : |y| ≤ 1 / 2) :
 theorem literalCutoff_zero {y : ℝ} (hy : 1 ≤ |y|) :
     literalCutoff y = 0 := by
   apply literalCutoffBump.zero_of_le_dist
-  simpa [Real.dist_eq] using hy
+  simpa [Real.dist_eq, literalCutoffBump] using hy
 
 theorem literalCutoff_nonneg (y : ℝ) : 0 ≤ literalCutoff y :=
   literalCutoffBump.nonneg
@@ -96,7 +96,7 @@ theorem literalCutoffDeriv_zero {y : ℝ} (hy : 1 < |y|) :
     have := abs_sub_abs_le_abs_sub y z
     rw [abs_sub_comm] at this
     linarith
-  simpa using heq.deriv_eq
+  simpa using! heq.deriv_eq
 
 /-- The source's concrete logarithmic function `G`. -/
 def literalLogarithmicDualFunction
@@ -242,6 +242,10 @@ theorem literalCutoffFourierKernel_continuous :
       (fun v : ℝ ↦ (𝓕 literalCutoffSchwartz) v) :=
     (𝓕 literalCutoffSchwartz).continuous
   convert hcontinuous using 1
+  funext v
+  unfold cutoffFourierKernel
+  rw [SchwartzMap.fourier_coe]
+  rfl
 
 /-- This is the exact Fubini legality needed by the one-scale Equation (79)
 transform, with no additional regularity assumption on `G` beyond `L¹`. -/

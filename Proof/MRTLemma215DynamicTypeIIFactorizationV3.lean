@@ -109,7 +109,7 @@ theorem typeIIPrefix_lowerProduct_eq_scalePrefixProduct
     (fun l : List ℝ => (l.take (s + 1)).prod) hlengths
   unfold typeIIPrefixFactorList factorLowerProduct scalePrefixProduct
   rw [Nat.cast_list_prod]
-  simpa only [List.map_map, Function.comp_apply, List.map_take] using htake
+  simpa only [List.map_map, Function.comp_def, List.map_take] using! htake
 
 /-- Exact Type-II geometry and factorization of the active convolution.
 The dyadic re-splitting of the two collected factors is deliberately kept as

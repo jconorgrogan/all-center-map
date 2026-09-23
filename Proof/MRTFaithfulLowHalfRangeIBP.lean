@@ -20,7 +20,9 @@ theorem halfRangeCutoff_hasDerivAt (y : ℝ) :
     HasDerivAt halfRangeCutoff (halfRangeCutoffDeriv y) y := by
   convert (faithfulCutoff_hasDerivAt (y / 2)).comp y
     ((hasDerivAt_id y).div_const 2) using 1 <;>
-    simp [halfRangeCutoff, halfRangeCutoffDeriv] <;> ring
+    simp [halfRangeCutoff, halfRangeCutoffDeriv, Function.comp_def, div_eq_mul_inv] <;> ring
+  funext x
+  simp only [halfRangeCutoff, div_eq_mul_inv, one_mul]
 
 theorem halfRangeCutoff_zero (y : ℝ) (hy : 1 ≤ |y|) :
     halfRangeCutoff y = 0 := by
@@ -141,7 +143,7 @@ theorem faithfulLowFrequencyProjection_half_range_eq
       (by linarith : H / 2 ≤ X / 4) hbeta heta hg hgSupport
       halfRangeCutoff_zero (fun y ↦ abs_faithfulCutoff_le_one (y / 2))
       hc faithfulCutoffFourierKernel_integrable faithfulCutoffFourierKernel_continuous
-    simpa only [halfRangeAmplitude_eq, lowProjectionSourceKernel] using hi
+    simpa only [halfRangeAmplitude_eq, lowProjectionSourceKernel] using! hi
   have hscale : 0 < lowProjectionScale X beta eta := by
     unfold lowProjectionScale
     positivity
@@ -316,7 +318,7 @@ theorem norm_faithfulLowProjectionAmplitude_le_localizedDecay_half_range
       hX hH.le hHquarter hxLower hxUpper hw
     unfold faithfulLocalizedDecay
     rw [if_pos hp]
-    simpa [lowKernelArgument] using hb
+    simpa [lowKernelArgument, div_eq_mul_inv] using hb
   · have hz := faithfulLowProjectionAmplitude_eq_zero_of_outside
       (X := X) (beta := beta) (eta := eta) (u := u) hH
       (lt_of_not_ge hp)
@@ -355,7 +357,7 @@ theorem norm_faithfulLowProjectionAmplitudeDeriv_le_localizedDecay_half_range
       hX hH hHquarter hxLower hxUpper hw
     unfold faithfulLocalizedDecay
     rw [if_pos hp]
-    simpa [lowKernelArgument] using hb
+    simpa [lowKernelArgument, div_eq_mul_inv] using hb
   · have hz := faithfulLowProjectionAmplitudeDeriv_eq_zero_of_outside
       (X := X) (beta := beta) (eta := eta) (u := u) hH
       (lt_of_not_ge hp)

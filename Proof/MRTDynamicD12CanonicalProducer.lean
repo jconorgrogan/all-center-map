@@ -106,14 +106,14 @@ theorem exists_d12_canonical_perbag
   have hbetaNe : p.beta ≠ 0 := by
     intro hz
     have hfar0 : 2 * (Real.log X) ^ Cc <
-        stationaryWidth p.beta p.H := by simpa [p, H] using hfar
+        stationaryWidth p.beta p.H := by simpa [p, H] using! hfar
     rw [hz] at hfar0
     simp [stationaryWidth] at hfar0
     have hCc0 : 0 ≤ (Real.log X) ^ Cc := by positivity
     linarith
   letI : NeZero p.q := ⟨hq₀⟩
   have hXp : 2 ≤ p.X := by
-    simpa [p] using (show 2 ≤ X by linarith)
+    simpa [p] using! (show 2 ≤ X by linarith)
   let reserve : ℝ := apertureReserve epsilon
   have hr0 : 0 ≤ reserve := by
     dsimp [reserve]
@@ -131,7 +131,7 @@ theorem exists_d12_canonical_perbag
   obtain ⟨pack⟩ := hpackX p hp hpX reserve hr0 hr hHdef heta hqQ hbeta hfar hXp
   have hUone : 1 ≤ stationaryWidth p.beta p.H := by
     have hfar' : 2 * (Real.log p.X) ^ Cc <
-        stationaryWidth p.beta p.H := by simpa [p, H] using hfar
+        stationaryWidth p.beta p.H := by simpa [p, H] using! hfar
     have hpowCc : 1 ≤ (Real.log p.X) ^ Cc := by
       exact one_le_pow₀ (by simpa [hpX] using hlog)
     linarith
@@ -146,7 +146,7 @@ theorem exists_d12_canonical_perbag
   have hPle : pack.P ≤ X := by
     rw [pack.hP]
     have hpow : Real.rpow X (23 / 24 : ℝ) ≤ X := by
-      simpa only [Real.rpow_one] using
+      simpa only [Real.rpow_one] using!
         Real.rpow_le_rpow_of_exponent_le (by linarith)
           (by norm_num : (23 / 24 : ℝ) ≤ 1)
     have hden1 : (1 : ℝ) ≤ (p.q : ℝ) * Q := by
@@ -164,7 +164,7 @@ theorem exists_d12_canonical_perbag
     have heta1 : p.eta ≤ 1 := by
       have hsq : 1 ≤ Real.sqrt Q := Real.one_le_sqrt.2 hQ
       have := (div_le_one (Real.sqrt_pos.2 (by positivity))).2 hsq
-      simpa [eta, p] using this
+      simpa [eta, p] using! this
     have hprod : 0 ≤ |p.beta| * p.X :=
       mul_nonneg (abs_nonneg _) (by linarith [hXp])
     have hsqeta : p.eta * p.eta ≤ 1 := by
@@ -265,14 +265,14 @@ theorem exists_d12_canonical_perbag
         (hpX := hpX) (hX := by linarith [hXp])
         (hlog := by simpa [hpX] using hlog)
         (hQ := by simpa [hQpack] using pack.hQone)
-        (hqQ := by simpa [hQpack] using hqQ)
+        (hqQ := by simpa [hQpack] using! hqQ)
         (hbeta := rfl) (hlambda := abs_pos.mpr hbetaNe)
         (hH := hHdef) (hreserve0 := hr0) (hreserve := hr)
         (hUstat := hUeq) (hUlambda := by simpa [hUeq])
         (hHid := rfl) (hUone := hUone)
-        (heta := by simpa [pack.hpeta, hQpack] using heta)
-        (hP := by simpa [hQpack] using pack.hP)
-        (hT := by simpa [hQpack] using pack.hTmom)
+        (heta := by simpa [pack.hpeta, hQpack] using! heta)
+        (hP := by simpa [hQpack] using! pack.hP)
+        (hT := by simpa [hQpack] using! pack.hTmom)
         (hPone := pack.hPone) (hP_le_X := hPle)
         (hBcoeff := rfl) (hD := hD) (hkappa := hkappa) (hCm := hCm)
         (hD4 := hD4) (hCd := le_of_lt hCd)
@@ -285,7 +285,7 @@ theorem exists_d12_canonical_perbag
           exact hDelta')
         (hXdeltaH := hXdeltaH') (hHupper := hHupper')
       simpa [dynamicLowNormalizationV3, hQpack, hUeq,
-        d12ThreeTermEnvelope, p, Q, H, eta] using hs
+        d12ThreeTermEnvelope, p, Q, H, eta] using! hs
     have hs1 := hcommon kappa1 Cm1 Em1 hk1 hCm1
     have hs2 := hcommon kappa2 Cm2 Em2 hk2 hCm2
     have hR1 : 0 ≤ rawLedger p pack.P pack.Tmom
@@ -398,7 +398,7 @@ theorem exists_d12_canonical_perbag
       (E₁ := Em1 + 2) (E₂ := Em2 + 2)
       hN hI' hR1 hR2 hL hW (by positivity) (by positivity) hN1 hN2
     simpa [p, Q, H, eta, C, E, C₁, C₂, d12ThreeTermEnvelope,
-      hpX, hQpack] using hbound
+      hpX, hQpack] using! hbound
 
 end
 end MRTDynamicD12CanonicalProducer

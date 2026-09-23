@@ -68,12 +68,12 @@ theorem differentiableAt_lemma295ReflectedFiniteIntegrand
   have htheta : DifferentiableAt ℂ
       (fun w : ℂ => sourceZetaTheta (w - g * I)) s :=
     by
-      simpa only [Function.comp_apply] using
+      simpa only [Function.comp_def] using!
         (differentiableAt_sourceZetaTheta_of_re_lt_one hz).comp s hinner
   have hpartial : DifferentiableAt ℂ
       (fun w : ℂ => sourceDualPartialNat K (w - g * I)) s :=
     by
-      simpa only [Function.comp_apply] using
+      simpa only [Function.comp_def] using!
         (differentiable_sourceDualPartialNat K).differentiableAt.comp s hinner
   have hscale : DifferentiableAt ℂ
       (fun w : ℂ => (N : ℂ) ^ (w - g * I)) s :=

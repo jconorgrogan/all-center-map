@@ -222,6 +222,7 @@ noncomputable def primitiveSigmaMoment
     ⟨Nat.ne_of_gt (Nat.pos_of_mem_divisors hdmem)⟩
   exact ∫ t in (-T)..T, shiftedStripLFourth psi sigma t
 
+set_option backward.isDefEq.respectTransparency.types false in
 /-- The dependent conductor partition is fully deterministic and requires no
 analytic input. -/
 theorem ramachandraConductorPartitionIdentity :

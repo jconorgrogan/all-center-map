@@ -190,11 +190,12 @@ theorem norm_weightedBlock_le
   have hw0 : ∀ i, 0 ≤ w i := fun i ↦ Real.rpow_nonneg (by positivity) _
   have hw : Antitone w := by
     intro i j hij
+    have hi : w i = ((N + i + 1 : ℝ) + u) ^ (-σ) := rfl
+    have hj : w j = ((N + j + 1 : ℝ) + u) ^ (-σ) := rfl
+    rw [hi, hj]
     apply Real.rpow_le_rpow_of_nonpos
-    · dsimp [w]
-      positivity
-    · dsimp [w]
-      have hnat : N + i + 1 ≤ N + j + 1 := by omega
+    · positivity
+    · have hnat : N + i + 1 ≤ N + j + 1 := by omega
       have hcast : (N + i + 1 : ℕ) ≤ N + j + 1 := hnat
       have hreal : ((N + i + 1 : ℕ) : ℝ) ≤ ((N + j + 1 : ℕ) : ℝ) := by
         exact_mod_cast hcast
@@ -211,9 +212,10 @@ theorem norm_weightedBlock_le
   apply mul_le_mul_of_nonneg_right _ hM
   apply Real.rpow_le_rpow_of_nonpos
   · exact_mod_cast (show 0 < N from Nat.zero_lt_of_lt hN)
-  · dsimp [w]
-    push_cast
-    linarith
+  · have : (N : ℝ) ≤ (N : ℝ) + (0 : ℕ) + 1 + u := by
+      push_cast
+      linarith
+    exact this
   · linarith
 
 /-- Source-shaped version of `norm_weightedBlock_le`, with the summand written

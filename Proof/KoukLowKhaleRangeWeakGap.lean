@@ -70,7 +70,7 @@ theorem eventually_weakGap_le_koukGap_of_not_khale_high_range
   have hqpow : Real.rpow (q : ℝ) (1 / 100000 : ℝ) ≤ (q : ℝ) := by
     have := Real.rpow_le_rpow_of_exponent_le hqone
       (show (1 / 100000 : ℝ) ≤ 1 by norm_num)
-    simpa only [Real.rpow_one] using this
+    simpa only [Real.rpow_one] using! this
   have ht : |t| ≤ E + (q : ℝ) := by
     by_cases hheight : E ≤ |t|
     · have hqheight : ¬ Real.rpow (q : ℝ) (1 / 100000 : ℝ) ≤ |t| :=
@@ -135,7 +135,7 @@ theorem eventually_weakGap_le_koukGap_of_not_khale_high_range
     exact hlogScale.trans (by
       dsimp [C]
       rw [add_mul]
-      simpa only [mul_assoc] using hsum)
+      simpa only [mul_assoc] using! hsum)
   have hscalePos : 0 < arithmeticScale q t := by
     unfold arithmeticScale
     positivity

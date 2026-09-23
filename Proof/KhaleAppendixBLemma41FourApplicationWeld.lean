@@ -81,21 +81,21 @@ theorem naturalScaleConclusion_of_four_applications
       (1 / (2 * eta)) * lemma41Envelope A B q sigma eta (2 * gamma) -
       (1 / (4 * eta)) * appendixBLogIntegral chi 2 sigma eta gamma +
       e2 * Real.exp (-1937) := by
-    simpa only [emptyApplicationBound, Nat.cast_ofNat] using hempty2
+    simpa only [emptyApplicationBound, Nat.cast_ofNat, Complex.ofReal_ofNat] using hempty2
   have h3 :
       (-logDeriv (DirichletCharacter.LFunction (chi ^ 3))
         ((sigma : ℂ) + Complex.I * (3 * gamma))).re ≤
       (1 / (2 * eta)) * lemma41Envelope A B q sigma eta (3 * gamma) -
       (1 / (4 * eta)) * appendixBLogIntegral chi 3 sigma eta gamma +
       e3 * Real.exp (-1937) := by
-    simpa only [emptyApplicationBound, Nat.cast_ofNat] using hempty3
+    simpa only [emptyApplicationBound, Nat.cast_ofNat, Complex.ofReal_ofNat] using hempty3
   have h4 :
       (-logDeriv (DirichletCharacter.LFunction (chi ^ 4))
         ((sigma : ℂ) + Complex.I * (4 * gamma))).re ≤
       (1 / (2 * eta)) * lemma41Envelope A B q sigma eta (4 * gamma) -
       (1 / (4 * eta)) * appendixBLogIntegral chi 4 sigma eta gamma +
       e4 * Real.exp (-1937) := by
-    simpa only [emptyApplicationBound, Nat.cast_ofNat] using hempty4
+    simpa only [emptyApplicationBound, Nat.cast_ofNat, Complex.ofReal_ofNat] using hempty4
   unfold selectedApplicationBound at hselected
   unfold appendixBIntegralCombination
   have hetaInv : 0 < 1 / eta := one_div_pos.mpr heta

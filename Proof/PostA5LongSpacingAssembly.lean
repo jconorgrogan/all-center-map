@@ -47,7 +47,7 @@ theorem floorBin_gap_of_same_residue
     (Int.natAbs_pos.mpr (sub_ne_zero.mpr hnk))
   have hleNat : m ≤ (n - k).natAbs := Nat.le_of_dvd hdiffpos hdvdNat
   have hleReal : (m : ℝ) ≤ ((n - k).natAbs : ℝ) := by exact_mod_cast hleNat
-  simpa [Int.cast_natAbs] using hleReal
+  simpa [Nat.cast_natAbs, Int.cast_abs] using hleReal
 
 /-- One residue class contains at least a `1/m` fraction of any finite set. -/
 theorem exists_large_residue_fiber

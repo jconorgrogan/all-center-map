@@ -29,7 +29,7 @@ theorem sub_translate_eq_intervalIntegral_deriv
         (-((s : ℂ) * G' (u - a * s))) a := by
     intro a
     have hinner : HasDerivAt (fun z : ℝ ↦ u - z * s) (-s) a := by
-      simpa using (hasDerivAt_const a u).sub ((hasDerivAt_id a).mul_const s)
+      simpa using! (hasDerivAt_const a u).sub ((hasDerivAt_id a).mul_const s)
     simpa [Function.comp_def, mul_comm] using
       HasDerivAt.scomp a (hderiv (u - a * s)) hinner
   have hnegint : IntervalIntegrable

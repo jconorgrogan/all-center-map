@@ -86,7 +86,7 @@ theorem radial_fourier_uniform {v1 v2 : ℝ} (h1 : |v1|≤2) (h2 : |v2|≤2) (xi
   have hb := integral_radialWeight_derivative_le h1 h2 0
   have hh' : ‖FourierTransform.fourier (fun r => radialWeight r v1 v2) xi‖ ≤
       ∫ r : ℝ,‖iteratedDeriv 0 (fun r => radialWeight r v1 v2) r‖ := by
-    simpa only [pow_zero,one_mul,SchwartzMap.fourier_coe] using hh
+    simpa only [pow_zero,one_mul,SchwartzMap.fourier_coe] using! hh
   exact hh'.trans hb
 
 set_option maxHeartbeats 700000 in

@@ -220,13 +220,12 @@ theorem differentiableOn_patchedEndpointContourIntegrand
     intro z hz
     have hz' := Complex.mem_reProdIm.mp hz
     apply Complex.mem_reProdIm.mpr
-    dsimp only [U]
     rw [uIcc_of_le hsigmac, uIcc_of_le (by linarith : -T ≤ T)]
     exact ⟨⟨hz'.1.1.le, hz'.1.2.le⟩,
       ⟨hz'.2.1.le, hz'.2.2.le⟩⟩
   have hDiff : DifferentiableOn ℂ g (U \ (↑S : Set ℂ)) := by
     simpa only [g, U, S, residue, f, endpointPrincipalPartsRemoved,
-      principalPartsRemoved, principalPartSum] using
+      principalPartsRemoved, principalPartSum] using!
       differentiableOn_endpointPrincipalPartsRemoved_off_support
         chi hx hsigmac hT.le
   have hLittle : ∀ rho ∈ S,
@@ -242,7 +241,7 @@ theorem differentiableOn_patchedEndpointContourIntegrand
     (S := S) U g hInterior hDiff hLittle
   simpa only [patchedEndpointContourIntegrand, finiteRemovableExtension,
     endpointPrincipalPartsRemoved, principalPartsRemoved, principalPartSum,
-    S, residue, f, g, U] using hfinal
+    S, residue, f, g, U] using! hfinal
 
 /-- The normalized boundary of the endpoint-regularized rectangle. -/
 def normalizedEndpointRectangleBoundary {q : ℕ} [NeZero q]

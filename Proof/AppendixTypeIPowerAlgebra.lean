@@ -45,11 +45,12 @@ theorem product_tuple_mem_power_interval
   have huniv : (Finset.univ : Finset (Fin k)).Nonempty := by
     simpa using (Finset.univ_nonempty_iff.mpr (Fin.pos_iff_nonempty.mp hk))
   constructor
-  · simpa using Finset.prod_lt_prod_of_nonempty
+  · simpa using Finset.prod_lt_prod_of_nonempty₀
       (s := (Finset.univ : Finset (Fin k)))
       (fun _ _ ↦ hN) (fun i _ ↦ hlow i) huniv
-  · simpa using Finset.prod_le_prod'
-      (s := (Finset.univ : Finset (Fin k))) (fun i _ ↦ hhigh i)
+  · simpa using Finset.prod_le_prod₀
+      (s := (Finset.univ : Finset (Fin k)))
+      (fun _ _ ↦ Nat.zero_le _) (fun i _ ↦ hhigh i)
 
 /-! ## Coefficient normalization -/
 

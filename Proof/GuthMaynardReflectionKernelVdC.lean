@@ -45,7 +45,8 @@ theorem hasDerivAt_reflectionPhase
     HasDerivAt (reflectionPhase τ) (reflectionPhaseDeriv τ v) v := by
   unfold reflectionPhase reflectionPhaseDeriv
   convert (Real.hasDerivAt_log hv).const_mul (τ / (2 * Real.pi)) |>.sub
-    (hasDerivAt_id v) using 1 <;> field_simp [Real.pi_ne_zero] <;> ring
+    (hasDerivAt_id v) using 1 <;>
+    first | rfl | (field_simp [Real.pi_ne_zero] <;> ring)
 
 theorem hasDerivAt_reflectionPhaseDeriv
     {τ v : ℝ} (hv : v ≠ 0) :

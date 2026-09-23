@@ -116,7 +116,7 @@ theorem analyticOrderAt_LFunction_eq_completedLFunction
         (χ.gammaFactor z)⁻¹) s =
       analyticOrderAt (DirichletCharacter.completedLFunction χ) s +
         analyticOrderAt (fun z => (χ.gammaFactor z)⁻¹) s by
-    simpa only [Pi.mul_apply] using hmul]
+    simpa only [Pi.mul_apply] using! hmul]
   have hzero : analyticOrderAt (fun z => (χ.gammaFactor z)⁻¹) s = 0 :=
     (analyticAt_gammaFactor_inv χ s).analyticOrderAt_eq_zero.mpr
       (gammaFactor_inv_ne_zero_of_re_pos χ hs)
@@ -146,7 +146,7 @@ theorem analyticOrderAt_one_sub_comp (f : ℂ → ℂ) (ρ : ℂ) :
     dsimp [g]
     rw [deriv_const_sub]
     have hid : deriv (fun z : ℂ => z) (1 - ρ) = 1 := by
-      simpa only [id_eq] using (deriv_id (1 - ρ : ℂ))
+      simpa only [id_eq] using! (deriv_id (1 - ρ : ℂ))
     rw [hid]
   have hcomp := analyticOrderAt_comp_of_deriv_ne_zero
     (f := f) hg (by rw [hderiv]; norm_num)

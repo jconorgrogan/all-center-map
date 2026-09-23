@@ -17,7 +17,7 @@ private theorem cross_fibre_sum {α β : Type*} [DecidableEq α] [DecidableEq β
   have hpart := Finset.sum_fiberwise_of_maps_to' hf (fibre S g)
   have hsum : (∑ j ∈ U, fibre S f j * fibre S g j) =
       ∑ x ∈ S, fibre S g (f x) := by
-    simpa only [Finset.sum_const, nsmul_eq_mul, fibre] using hpart
+    simpa only [Finset.sum_const, nsmul_eq_mul, Nat.cast_id, fibre] using! hpart
   rw [hsum]
   simp only [fibre, Finset.card_filter, Finset.product_eq_sprod, Finset.sum_product]
   apply Finset.sum_congr rfl

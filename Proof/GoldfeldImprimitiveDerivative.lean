@@ -167,7 +167,7 @@ theorem nonprincipal_deriv_LFunction_t0_le
   have hXpos : (0 : ℝ) < ((K + 1 : ℕ) : ℝ) := by positivity
   have hpowNeg : Real.rpow ((K + 1 : ℕ) : ℝ) (-sigma) ≤
       Real.rpow (N : ℝ) (-sigma) :=
-    Real.rpow_le_rpow_of_exponent_nonpos hNpos hNlower (by linarith)
+    Real.rpow_le_rpow_of_nonpos hNpos hNlower (by linarith)
   have hlogSucc : Real.log ((K + 1 : ℕ) : ℝ) ≤
       9 * (1 + Real.log N) := by
     have hupper : (((K + 1 : ℕ) : ℝ)) ≤ 10 * (N : ℝ) := by

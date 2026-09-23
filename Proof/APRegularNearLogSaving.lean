@@ -251,7 +251,7 @@ theorem apRegularNearOneRangeMass_logSaving_of_oneTenth_eventual_source
   have htauPosGlobal : 0 < tau epsilon := tau_pos hepsilonCap
   have hsourceHeight : ∀ᶠ X : ℝ in atTop,
       Rsource ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually
         (eventually_ge_atTop Rsource)
   have hevent : ∀ᶠ X : ℝ in atTop,

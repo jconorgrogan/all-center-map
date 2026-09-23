@@ -93,7 +93,7 @@ theorem summable_norm_sourceHhat_scaled
     intro a b hab
     exact (mul_right_cancel₀ (by exact_mod_cast hN.ne') hab)
   have hsub : Summable fun m : ℤ => F ((m * (N : ℤ) : ℤ) : ℝ) := by
-    simpa only [Function.comp_apply] using hfull.comp_injective hinj
+    simpa only [Function.comp_def] using! hfull.comp_injective hinj
   have hnorm := hsub.norm
   apply hnorm.congr
   intro m

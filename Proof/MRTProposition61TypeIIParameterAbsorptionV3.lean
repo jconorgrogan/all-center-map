@@ -26,7 +26,7 @@ theorem eventually_const_polylog_mul_neg_rpow_le_log_decay
   have hlog : 0 < Real.log X := Real.log_pos hX
   have hb : C * Real.rpow (Real.log X) (k + A) ≤ Real.rpow X a := by
     simpa only [Real.norm_of_nonneg (mul_nonneg hC (Real.rpow_nonneg hlog.le _)),
-      Real.norm_of_nonneg (Real.rpow_nonneg hX0.le _)] using hsmall
+      Real.norm_of_nonneg (Real.rpow_nonneg hX0.le _)] using! hsmall
   calc
     _ = (C * Real.rpow (Real.log X) (k + A) / Real.rpow X a) *
         Real.rpow (Real.log X) (-A) := by

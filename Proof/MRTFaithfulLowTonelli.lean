@@ -103,7 +103,7 @@ theorem norm_faithfulLowProjectionAmplitude_le_localizedDecay
       hX hH.le hHquarter hxLower hxUpper hw
     unfold faithfulLocalizedDecay
     rw [if_pos hp]
-    simpa [lowKernelArgument] using hb
+    simpa [lowKernelArgument, div_eq_mul_inv] using hb
   · have hz := faithfulLowProjectionAmplitude_eq_zero_of_outside
       (X := X) (beta := beta) (eta := eta) (u := u) hH
       (lt_of_not_ge hp)
@@ -142,7 +142,7 @@ theorem norm_faithfulLowProjectionAmplitudeDeriv_le_localizedDecay
       hX hH hHquarter hxLower hxUpper hw
     unfold faithfulLocalizedDecay
     rw [if_pos hp]
-    simpa [lowKernelArgument] using hb
+    simpa [lowKernelArgument, div_eq_mul_inv] using hb
   · have hz := faithfulLowProjectionAmplitudeDeriv_eq_zero_of_outside
       (X := X) (beta := beta) (eta := eta) (u := u) hH
       (lt_of_not_ge hp)

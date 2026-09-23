@@ -45,8 +45,8 @@ theorem hasDerivAt_sourcePacketAmplitudeDeriv
         outer outer' outer'' w) w := by
   have he : HasDerivAt (fun y : ℝ ↦ Real.exp (y / 2))
       (Real.exp (w / 2) / 2) w := by
-    convert Real.hasDerivAt_exp (w / 2) |>.scomp w
-      ((hasDerivAt_id w).div_const 2) using 1 <;> ring
+    simpa only [Function.comp_def, id_eq, div_eq_mul_inv, one_div, one_mul] using!
+      (Real.hasDerivAt_exp (w / 2)).comp w ((hasDerivAt_id w).div_const 2)
   have hz : HasDerivAt (fun y : ℝ ↦ (X * Real.exp y - x) / H)
       (X * Real.exp w / H) w := by
     convert ((Real.hasDerivAt_exp w).const_mul X).sub_const x |>.div_const H
@@ -55,7 +55,7 @@ theorem hasDerivAt_sourcePacketAmplitudeDeriv
       (X * Real.exp w / H) w := by
     convert (Real.hasDerivAt_exp w).const_mul X |>.div_const H using 1 <;> ring
   have hoarg : HasDerivAt (fun y : ℝ ↦ y / 100) (1 / 100) w := by
-    convert (hasDerivAt_id w).div_const 100 using 1 <;> ring
+    simpa only [id_eq] using! (hasDerivAt_id w).div_const 100
   have hc := (hcutoff _).scomp w hz
   have hc' := (hcutoff' _).scomp w hz
   have ho := (houter _).scomp w hoarg

@@ -63,7 +63,7 @@ theorem norm_eulerCorrection_le_two_pow_card
         ‖(1 - chi.primitiveCharacter p * (p : ℂ) ^ (-s))‖ :=
       Finset.norm_prod_le _ _
     _ ≤ ∏ _p ∈ q.primeFactors, (2 : ℝ) := by
-      exact Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+      exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
         (fun p hp => norm_eulerFactor_le_two chi hp hs)
     _ = (2 : ℝ) ^ q.primeFactors.card := by simp
 

@@ -56,6 +56,7 @@ private lemma trace_one_norm_le
       field_simp [hNpos.ne']
     norm_num at htail
     rw [hratio] at htail
+    unfold sourceTraceMainOne
     convert htail using 1 <;> ring
   calc
     ‖sourceTraceOne W N‖ ≤

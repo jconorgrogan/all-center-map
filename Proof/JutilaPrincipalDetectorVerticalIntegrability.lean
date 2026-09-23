@@ -507,7 +507,7 @@ theorem continuous_principal_detector_right
       have hre := congrArg Complex.re h
       simp at hre
     exact jutilaDetectorExtension_eq_raw chiOne xi D S X hLrho hz
-  simpa [hfun, rho] using ((hG.mul hL).mul hpow).mul hMc
+  simpa [hfun, rho] using! ((hG.mul hL).mul hpow).mul hMc
 
 theorem integrable_principal_detector_left
     {beta t : ℝ} (xi : ℕ → ℂ) {D : Finset ℕ}

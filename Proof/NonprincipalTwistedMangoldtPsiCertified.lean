@@ -165,7 +165,7 @@ theorem primitiveNonprincipalTwistedMangoldtPsi :
         _ ≤ CZero * X * Real.rpow (Real.log X) (-(A : ℝ)) := by
           apply mul_le_mul_of_nonneg_left _ (by positivity)
           rw [← Real.rpow_natCast]
-          simpa only [Nat.cast_mul, Nat.cast_ofNat] using hdecayGap
+          simpa only [Nat.cast_mul, Nat.cast_ofNat] using! hdecayGap
         _ = CZero * (X / (Real.log X) ^ A) := by
           rw [MAPKoukExercise12TwoFinalScalarTrades.rpow_neg_nat_eq_one_div_pow hlogPos]
           ring

@@ -104,7 +104,7 @@ theorem faithful_packetCorrelation_le_equation81Kernel
   have h := MAPMRTFaithfulEquation82.faithful_source_packet_correlation_equation82
     (X := X) (H := H) (beta := beta) (t := t) (t' := t') hH hHalf hhard
   dsimp only at h
-  simpa [faithfulEquation82D0, faithfulEquation82D1,
+  simpa [div_eq_mul_inv, faithfulEquation82D0, faithfulEquation82D1,
     faithfulEquation82D2, faithfulEquation82Constant,
     faithfulEquation82Scale, equation81Kernel] using h
 

@@ -30,7 +30,7 @@ theorem mellinLogLift_contDiff
     Real.contDiff_exp.comp hneg
   have hexpC : ContDiff ℝ (⊤ : ℕ∞)
       (fun u : ℝ => (Real.exp (-u) : ℂ)) := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_def, Complex.ofRealCLM_apply] using!
       Complex.ofRealCLM.contDiff.comp hexpR
   unfold mellinLogLift
   exact hexpC.mul (hf.comp hexpR)

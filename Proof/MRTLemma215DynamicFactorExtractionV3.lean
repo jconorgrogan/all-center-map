@@ -418,7 +418,6 @@ theorem dynamicPreliminaryComponent_some_eq_factorConvolution
   simp only [shellChoice]
   rw [factorConvolution_dynamicComponentFactorList]
   unfold dynamicZetaBagProduct dynamicMoebiusBagProduct
-  simp only [shellChoice]
   ring
 
 /-- The full preliminary branch after deleting the identically zero log-unit

@@ -140,7 +140,7 @@ theorem continuous_integral_longTailShellIntegrand_of_envelope
   · filter_upwards with v
     have hcont := (continuous_uncurry_longTailShellIntegrand psi hX hcLo hcHi j).comp
       (continuous_id.prodMk (continuous_const : Continuous (fun _t : ℝ => v)))
-    simpa only [Function.uncurry_apply_pair] using hcont.continuousAt
+    simpa only [Function.uncurry_apply_pair] using! hcont.continuousAt
 
 /-- Primitive wrapper for the envelope-parametrized shell continuity result. -/
 theorem continuous_integral_longTailShellIntegrand

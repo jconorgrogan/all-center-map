@@ -252,8 +252,9 @@ theorem rightHalfPlaneDigammaLogBound_of_gaussSeries
   have hzpos : 0 < z.re := lt_of_lt_of_le (by norm_num) hz
   have hsum : HasSum (gaussTerm z)
       (Complex.digamma z + (Real.eulerMascheroniConstant : ℂ)) := by
-    convert hGauss z hzpos using 1 <;>
-      simp [gaussTerm, Nat.cast_add, Nat.cast_one]
+    convert hGauss z hzpos using 1
+    funext n
+    simp [gaussTerm, Nat.cast_add, Nat.cast_one]
   have hlimit :
       ‖Complex.digamma z + (Real.eulerMascheroniConstant : ℂ)‖ ≤
         2 * (1 + Real.log (‖z‖ + 2)) + 2 := by

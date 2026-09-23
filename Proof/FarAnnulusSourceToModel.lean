@@ -260,7 +260,7 @@ theorem continuous_longCharacterEnergy
 theorem continuous_shortCharacterEnergy
     {q : ℕ} (M : ℕ) (beta : Fin q → ℕ → ℂ) (chi : Fin q) :
     Continuous (shortCharacterEnergy M beta chi) := by
-  simpa [shortCharacterEnergy, add_zero] using
+  simpa [shortCharacterEnergy, add_zero] using!
     continuous_sq_norm_shortFactor M
       (MixedMeanMajorantWeld.invSqrtCoeff (beta chi)) 0
 

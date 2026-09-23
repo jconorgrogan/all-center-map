@@ -383,9 +383,10 @@ theorem fourierInv_triangular_formula {v : ℝ} (hv : v ≠ 0) :
   have hcont : Continuous (fun x : ℝ ↦
       Complex.exp (↑(2 * Real.pi * inner ℝ x v) * Complex.I) •
         triangularProfile x) := by
-    apply Continuous.smul
-    · fun_prop
-    · exact triangularProfile_continuous
+    have hphase : Continuous (fun x : ℝ ↦
+        Complex.exp (↑(2 * Real.pi * inner ℝ x v) * Complex.I)) := by
+      fun_prop
+    convert hphase.smul triangularProfile_continuous
   rw [← intervalIntegral.integral_add_adjacent_intervals
     (a := (-(1 / 4 : ℝ))) (b := 0) (c := (1 / 4 : ℝ))
     (f := fun x : ℝ ↦

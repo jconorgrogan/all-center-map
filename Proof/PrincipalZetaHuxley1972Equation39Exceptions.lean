@@ -200,7 +200,7 @@ theorem eventually_equation39ExceptionalSet_card_le_log_sq :
       gcongr
     _ ≤ 700000 * Real.rpow (Real.log T) 2 := by
       have hpow : Real.rpow (Real.log T) 2 = (Real.log T) ^ 2 := by
-        simpa only [Real.rpow_def] using Real.rpow_natCast (Real.log T) 2
+        simpa only [Real.rpow_def] using! Real.rpow_natCast (Real.log T) 2
       rw [hpow]
       nlinarith [sq_nonneg (Real.log T)]
 

@@ -58,7 +58,7 @@ lemma tensorToFiber_injective {s k P Q p q r : ℕ} {phi : Fin k → Polynomial 
       (Q := Q) (p := p) (q := q) (r := r) (phi := phi) hm) := by
   intro x y h
   have hh := congrArg (fiberToTensor hm) h
-  simpa [fiberToTensor, fiberToTensor_left_inverse] using hh
+  simpa only [fiberToTensor_left_inverse] using hh
 
 lemma fiberToTensor_injective {s k P Q p q r : ℕ} {phi : Fin k → Polynomial ℤ}
     (hm : 0 < Modulus p r) : Function.Injective (fiberToTensor (s := s) (k := k) (P := P)

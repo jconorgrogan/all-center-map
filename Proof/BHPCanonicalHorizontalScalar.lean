@@ -499,7 +499,7 @@ theorem ambientHorizontalGeneralEndpointNumerator_canonical_le
     have hQr : 1 ≤ Real.rpow Q (d + 1) := by
       exact Real.one_le_rpow hQ (by linarith)
     dsimp [A]
-    simpa only [one_mul] using
+    simpa only [one_mul] using!
       (mul_le_mul hp48 hQr (by norm_num : (0 : ℝ) ≤ 1)
         (by positivity : 0 ≤ 48 * P))
   have hA0 : 0 ≤ A := zero_le_one.trans hA
@@ -615,7 +615,7 @@ theorem ambientHorizontalGeneralEndpointNumerator_canonical_le
   have hleft : Real.rpow A theta * Real.rpow B phi * Real.rpow X d ≤
       19200 * (1 + L) ^ 2 * Real.exp 9 * Real.sqrt Q := by
     have hXd' : Real.rpow X d ≤ Real.exp (1 / 400 : ℝ) := by
-      simpa only [d] using hXd
+      simpa only [d] using! hXd
     have hmulAB : Real.rpow A theta * Real.rpow B phi ≤
         (48 * P * (Real.sqrt Q * Real.exp 4)) *
           ((1 + L) * Real.exp 4) := by

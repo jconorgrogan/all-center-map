@@ -391,7 +391,7 @@ theorem exists_uniform_sourceMediumLocalizedPairCard_nonzeroEll
       exact hM1T.trans hTM3
     have hBleT : B ≤ T := by
       dsimp only [B]
-      simpa only [Real.rpow_one] using
+      simpa only [Real.rpow_one] using!
         (Real.rpow_le_rpow_of_exponent_le hT heta1)
     have hWle : W ≤ 2 * T ^ 2 := by
       dsimp only [W]

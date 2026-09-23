@@ -77,7 +77,7 @@ theorem intervalIntegral_weighted_product_fourth_le
         (∫ x in a..b, w x * g x^2)^2 := by
   have hfirst := intervalIntegral_weighted_product_sq_le hw hf hg hab hw0
   have hsecond := intervalIntegral_weighted_sq_le hw (hf.pow 2) hab hw0 hW
-  simp only [← pow_mul] at hsecond
+  simp only [Pi.pow_apply, ← pow_mul] at hsecond
   have hsquare := pow_le_pow_left₀ (sq_nonneg _) hfirst 2
   have hmul := mul_le_mul_of_nonneg_right hsecond
     (sq_nonneg (∫ x in a..b, w x * g x^2))

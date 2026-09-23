@@ -1002,6 +1002,8 @@ theorem prefixDyadicTransferenceFixedLogPower_five
   refine ⟨h.C, h.M₀, h.C_pos, h.M₀_ge_two, ?_⟩
   intro M G hM
   have hbound := h.bound M G hM
+  have hK : h.K = 5 := rfl
+  rw [hK] at hbound
   simpa only [jutilaReflectedPrefixMoment,
     GuthMaynardJutilaReflection2941.jutilaReflectedPrefixMoment] using hbound
 

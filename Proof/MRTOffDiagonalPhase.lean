@@ -28,7 +28,8 @@ theorem hasDerivAt_offDiagonalPhase
   unfold offDiagonalPhase offDiagonalPhaseDeriv
   convert (hasDerivAt_stationaryPacketPhase X beta s w).sub
     ((hasDerivAt_stationaryPacketPhase X beta s' (w + h)).scomp w
-      ((hasDerivAt_id w).add_const h)) using 1 <;> ring
+      ((hasDerivAt_id w).add_const h)) using 1 <;>
+    (try funext y) <;> simp only [Function.comp_def, Pi.sub_apply, id_eq, smul_eq_mul] <;> ring
 
 theorem hasDerivAt_offDiagonalPhaseDeriv
     (X beta s s' h w : ℝ) :
@@ -38,7 +39,8 @@ theorem hasDerivAt_offDiagonalPhaseDeriv
   convert (((Real.hasDerivAt_exp w).sub
     ((Real.hasDerivAt_exp (w + h)).scomp w
       ((hasDerivAt_id w).add_const h))).const_mul (beta * X)).add_const
-        ((s - s') / (2 * Real.pi)) using 1 <;> ring
+        ((s - s') / (2 * Real.pi)) using 1 <;>
+    (try funext y) <;> simp only [Function.comp_def, Pi.sub_apply, id_eq, smul_eq_mul] <;> ring
 
 theorem hasDerivAt_offDiagonalPhaseSecond
     (X beta h w : ℝ) :
@@ -47,7 +49,8 @@ theorem hasDerivAt_offDiagonalPhaseSecond
   unfold offDiagonalPhaseSecond
   convert ((Real.hasDerivAt_exp w).sub
     ((Real.hasDerivAt_exp (w + h)).scomp w
-      ((hasDerivAt_id w).add_const h))).const_mul (beta * X) using 1 <;> ring
+      ((hasDerivAt_id w).add_const h))).const_mul (beta * X) using 1 <;>
+    (try funext y) <;> simp only [Function.comp_def, Pi.sub_apply, id_eq, smul_eq_mul] <;> ring
 
 /-- The two source cutoffs force the two exponential centers to be within
 `2H`, independently of the sharp `x` restriction. -/

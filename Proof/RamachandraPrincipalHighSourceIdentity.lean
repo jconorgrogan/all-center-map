@@ -319,7 +319,7 @@ theorem LFunction_sq_eq_sourcePieces_principal
   have hnearZHi : sigma - (Real.log T)⁻¹ ≤ 1 / 2 := by
     have hupper := (abs_le.mp hstrip).2
     linarith
-  simpa [primitiveShiftedDirect, primitiveShiftedLongContour,
+  simpa [sub_eq_add_neg, primitiveShiftedDirect, primitiveShiftedLongContour,
     primitiveShiftedShortContour, primitiveShiftedScale,
     principalShiftedSourceRemainder] using
     (LFunction_sq_eq_shiftedDirect_sub_long_sub_short_add_principalResidue

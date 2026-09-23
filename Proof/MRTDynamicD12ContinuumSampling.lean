@@ -101,7 +101,6 @@ theorem integral_eq_sum {a b : ℝ} (hab : a ≤ b) (f : ℝ → ℝ)
   have hend : min b (a + (⌈b-a⌉₊ : ℝ)) = b :=
     min_eq_left (by linarith [Nat.le_ceil (b-a)])
   have hstart : min b (a + (0 : ℕ)) = a := by simp [min_eq_right hab]
-  dsimp only at h
   rw [hstart, hend] at h
   rw [← h, ← Fin.sum_univ_eq_sum_range]
   apply Finset.sum_congr rfl

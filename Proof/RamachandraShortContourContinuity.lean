@@ -69,7 +69,7 @@ theorem continuous_uncurry_shortContourIntegrand
     have h := (continuous_uncurry_shortReflectedHead psi hX.le sigma).comp
       continuous_swap
     simpa only [Function.uncurry_apply_pair, Function.comp_apply,
-      Prod.swap_prod_mk] using h.continuousAt
+      Prod.swap_prod_mk] using! h.continuousAt
   have hwinner : ContinuousAt (fun y : ℝ × ℝ =>
       (((-(Real.log X)⁻¹ : ℝ) : ℂ) + (y.2 : ℂ) * I)) p := by fun_prop
   have hGammaDiff : DifferentiableAt ℂ Complex.Gamma w := by
@@ -109,7 +109,7 @@ theorem continuous_uncurry_shortContourIntegrand
       (g := fun a : ℂ => (X : ℂ) ^ a) hcpowDiff.continuousAt hwinner
   unfold Function.uncurry ramachandraShiftedContourIntegrand
   simp only [Bool.false_eq_true, ↓reduceIte]
-  simpa [shortReflectedHead, shortFunctionalPoint, add_assoc] using
+  simpa [shortReflectedHead, shortFunctionalPoint, add_assoc] using!
     (((hfac.pow 2).mul hhead).mul hGamma).mul hcpow
 
 /-- A global integrable-weight majorant, uniform in the external ordinate
@@ -313,7 +313,7 @@ theorem continuous_primitiveShiftedShortContour
       have hcont := (continuous_uncurry_shortContourIntegrand psi
         (by dsimp [X]; linarith) hcLo hcHi hrlo hrhi).comp
         (continuous_id.prodMk (continuous_const : Continuous (fun _t : ℝ => v)))
-      simpa only [Function.uncurry_apply_pair] using hcont.continuousAt
+      simpa only [Function.uncurry_apply_pair] using! hcont.continuousAt
   unfold primitiveShiftedShortContour ramachandraShiftedContourPiece
   exact continuous_const.mul hintCont
 

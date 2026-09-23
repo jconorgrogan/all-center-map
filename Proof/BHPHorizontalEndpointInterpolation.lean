@@ -391,7 +391,7 @@ theorem norm_bhpHorizontalBoundaryIntegral_le_general_endpoints
       ‖bhpPerronIntegrand chi X t ((x : ℂ) + Complex.I * (-H))‖ ≤
           ambientRademacherMajorant q kappa rWidth
             ((1 / 2 : ℝ) + x) (t - H) *
-              (Real.rpow X x / H) := by simpa using hraw
+              (Real.rpow X x / H) := by simpa [sub_eq_add_neg] using hraw
       _ = (ambientRademacherMajorant q kappa rWidth
             ((1 / 2 : ℝ) + x) (t - H) * Real.rpow X x) / H := by ring
       _ ≤ ambientHorizontalGeneralEndpointNumerator q kappa rWidth delta
@@ -503,7 +503,7 @@ theorem norm_bhpHorizontalBoundaryIntegral_le_exact_endpoints
       ‖bhpPerronIntegrand chi X t ((x : ℂ) + Complex.I * (-H))‖ ≤
           ambientRademacherMajorant q delta delta
             ((1 / 2 : ℝ) + x) (t - H) *
-              (Real.rpow X x / H) := by simpa using hraw
+              (Real.rpow X x / H) := by simpa [sub_eq_add_neg] using hraw
       _ = (ambientRademacherMajorant q delta delta
             ((1 / 2 : ℝ) + x) (t - H) * Real.rpow X x) / H := by ring
       _ ≤ ambientHorizontalEndpointNumerator q delta X (t - H) / H := by

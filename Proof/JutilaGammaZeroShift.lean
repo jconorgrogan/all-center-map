@@ -176,7 +176,7 @@ private theorem even_gammaR_zero_shift_sq_le (t : ℝ) (ht : t ≠ 0) :
           (|x| * ‖Complex.Gamma ((x : ℂ) * I)‖ ^ 2) *
           (‖Complex.Gamma ((x : ℂ) * I)‖ ^ 2)⁻¹ := by
       gcongr
-      convert hgamma using 1
+      simpa only [div_eq_mul_inv] using! hgamma
     _ = (2 * |x|) * (2 * Real.pi)⁻¹ := by
       field_simp
 

@@ -49,10 +49,10 @@ lemma sum_over_targets_eq_sum_over_tuples {p s d : ℕ} [NeZero p]
       (∑ x : allTargetSigma (p := p) (s := s) (d := d), f x.2.1) =
         ∑ t : Fin d → ZMod p,
           ∑ c : powerFiberTruncated (p := p) (s := s) (d := d) t, f c.1 := by
-    simpa using
+    simpa using!
       (Fintype.sum_sigma (fun x : allTargetSigma (p := p) (s := s) (d := d) => f x.2.1))
   rw [← hsigma]
-  simpa [e] using (Equiv.sum_comp e f)
+  simpa [e] using! (Equiv.sum_comp e f)
 
 lemma sum_coordinate_weights {p s : ℕ} [NeZero p] (hs : 0 < s) (h : ZMod p → ℝ) :
     ∑ c : Fin s → ZMod p, ∑ i : Fin s, h (c i) =
@@ -65,7 +65,7 @@ lemma sum_coordinate_weights {p s : ℕ} [NeZero p] (hs : 0 < s) (h : ZMod p →
         simp only [Nat.zero_add, Nat.cast_one, Nat.add_sub_cancel, pow_zero, one_mul]
         let E := Fin.consEquiv (fun _ : Fin 1 => ZMod p)
         rw [← E.sum_comp]
-        simpa using (Fintype.sum_prod_type'
+        simpa [E] using! (Fintype.sum_prod_type'
           (fun x : ZMod p => fun _y : Fin 0 → ZMod p => h x))
       · have hspos : 0 < s := Nat.pos_of_ne_zero hs0
         have htail := ih hspos

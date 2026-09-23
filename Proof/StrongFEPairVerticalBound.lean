@@ -39,13 +39,13 @@ private lemma rpow_middle_le_endpoint_sum {a b σ t : ℝ}
 /-- A strong functional-equation pair is uniformly bounded on every closed
 vertical strip.  The proof is the literal Mellin integral estimate; no
 Phragmen--Lindelof or number-theoretic growth input is used. -/
-theorem StrongFEPair.exists_norm_Λ_le_on_re_Icc
-    (P : StrongFEPair E) (a b : ℝ) (hab : a ≤ b) :
+theorem IsStrongFEPair.exists_norm_Λ_le_on_re_Icc
+    {P : WeakFEPair E} (hP : IsStrongFEPair P) (a b : ℝ) (hab : a ≤ b) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ s : ℂ, a ≤ s.re → s.re ≤ b → ‖P.Λ s‖ ≤ C := by
   let ga : ℝ → ℝ := fun t => t ^ (a - 1) * ‖P.f t‖
   let gb : ℝ → ℝ := fun t => t ^ (b - 1) * ‖P.f t‖
-  have hma := (P.hasMellin (a : ℂ)).1
-  have hmb := (P.hasMellin (b : ℂ)).1
+  have hma := (hP.hasMellin (a : ℂ)).1
+  have hmb := (hP.hasMellin (b : ℂ)).1
   have hmeas : AEStronglyMeasurable P.f (volume.restrict (Ioi 0)) :=
     P.hf_int.aestronglyMeasurable
   have hga : IntegrableOn ga (Ioi 0) := by
@@ -63,12 +63,14 @@ theorem StrongFEPair.exists_norm_Λ_le_on_re_Icc
     exact add_nonneg (mul_nonneg (Real.rpow_nonneg ht.le _) (norm_nonneg _))
       (mul_nonneg (Real.rpow_nonneg ht.le _) (norm_nonneg _))
   · intro s hsa hsb
-    have hms := (P.hasMellin s).1
+    have hms := (hP.hasMellin s).1
+    rw [hP.Λ_eq]
     refine (norm_mellin_le_real_mellin_norm P.f s hms).trans ?_
     change (∫ t : ℝ in Ioi 0, t ^ (s.re - 1) * ‖P.f t‖) ≤ C
     apply integral_mono_ae
     · exact (mellin_convergent_iff_norm Subset.rfl measurableSet_Ioi hmeas).mp hms
-    · simpa only [Pi.add_apply] using hga.add hgb
+    · convert hga.add hgb
+      rfl
     · filter_upwards [ae_restrict_mem measurableSet_Ioi] with t ht
       dsimp [ga, gb]
       simpa [add_mul] using mul_le_mul_of_nonneg_right
@@ -79,4 +81,4 @@ end
 
 end PLInteriorGrowth
 
-#print axioms PLInteriorGrowth.StrongFEPair.exists_norm_Λ_le_on_re_Icc
+#print axioms PLInteriorGrowth.IsStrongFEPair.exists_norm_Λ_le_on_re_Icc

@@ -950,7 +950,7 @@ theorem interiorSignedSlidingEnergy_le_APMax
           simultaneousAPMax (B : ℝ) epsilonAP X x) := by
         exact lintegral_const_mul' c _ hcTop
       _ ≤ c * apMaxIntegral B epsilonAP X := by
-        exact mul_le_mul_left' (lintegral_mono_set hsubset) c
+        exact mul_le_mul_right (lintegral_mono_set hsubset) c
   have hapTop := apMaxIntegral_ne_top (B := B) (epsilonAP := epsilonAP)
     hXone hepsilonAP
   have hrhsTop : c * apMaxIntegral B epsilonAP X ≠ ∞ :=
@@ -1110,14 +1110,13 @@ theorem minorContinuousModelEnergy_le
       rw [abs_of_nonneg hnonneg] at this
       exact this
   have hg : Integrable g := by
-    simpa only [g, dyadicContinuousAmplitude] using
+    simpa only [g] using!
       MAPContinuousOverlap.integrable_sq_norm_dyadicAmplitude hX
   have hmOn : IntegrableOn m s := by
     have hmcont : Continuous m := by
       dsimp [m]
       exact (continuous_const.mul
-        (by simpa only [dyadicContinuousAmplitude] using
-          MAPContinuousOverlap.continuous_dyadicAmplitude X)).norm.pow 2
+        (MAPContinuousOverlap.continuous_dyadicAmplitude X)).norm.pow 2
     exact hmcont.integrableOn_Icc.mono_set Set.inter_subset_left
   have hgOn : IntegrableOn g s := hg.integrableOn
   have hcoeff := MAPMajorArcIntegratedError.norm_primeMajorCoefficient_le_one hq
@@ -1268,8 +1267,7 @@ theorem perRationalNearCollar_raw_bound
     have hmcont : Continuous m := by
       dsimp [m]
       exact (continuous_const.mul
-        (by simpa only [dyadicContinuousAmplitude] using
-          MAPContinuousOverlap.continuous_dyadicAmplitude X)).norm.pow 2
+        (MAPContinuousOverlap.continuous_dyadicAmplitude X)).norm.pow 2
     exact hmcont.integrableOn_Icc.mono_set Set.inter_subset_left
   have hsplitPoint : ∀ β ∈ s, p β ≤ 2 * d β + 2 * m β := by
     intro β hβ

@@ -224,7 +224,7 @@ theorem primitivePrincipalOneTwistedMangoldtPsi_of_localFormulaSourceAt
         (1 - c * Real.rpow (Real.log X) (-theta)) ≤
         3 * X * Real.rpow X
           (-((c * Real.rpow (Real.log X) (-theta)) / 12)) := by
-      simpa only [x] using
+      simpa only [x] using!
         MAPKoukExercise12TwoEndpointScalars.halfIntegerPoint_rpow_one_sub_le_weakFactor
           (by linarith) ht (mul_nonneg hc.le (Real.rpow_nonneg hLpos.le _))
     have hdecayNow : (Real.log X) ^ (6 * D) *
@@ -470,7 +470,7 @@ theorem primitivePrincipalOneTwistedMangoldtPsi_of_localFormulaSourceAt
           dsimp only [C]
           ring
     exact hpoint.trans (by simpa only [x, dLeft, dHorizontal, dCorner,
-      LH, RLeft, RHorizontal, RCorner] using hsum)
+      LH, RLeft, RHorizontal, RCorner] using! hsum)
   rcases eventually_atTop.1 hall with ⟨X1, hX1⟩
   let X0 := max 2 X1
   refine ⟨C, X0, ?_, le_max_left 2 X1, ?_⟩

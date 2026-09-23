@@ -80,10 +80,10 @@ theorem exists_d12_parameter_package :
   refine ⟨0, ?_⟩
   intro Cc hCc
   have hloglog : Tendsto (fun z : ℝ => Real.log (Real.log z)) atTop atTop := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_def] using!
       Real.tendsto_log_atTop.comp Real.tendsto_log_atTop
   have hloglog8 : Tendsto (fun z : ℝ => Real.log (Real.log (8 * z))) atTop atTop := by
-    simpa only [Function.comp_apply, mul_comm] using
+    simpa only [Function.comp_def, id_eq, mul_comm] using!
       hloglog.comp (tendsto_id.const_mul_atTop (by norm_num : (0 : ℝ) < 8))
   have hBEvent : ∀ᶠ X : ℝ in atTop,
       (B : ℝ) ≤ Real.log (Real.log (8 * X)) :=
@@ -290,7 +290,7 @@ theorem exists_d12_parameter_package :
     have houterP : |p.beta| * Real.rpow X (23 / 24 : ℝ) ≤
         2 * |p.beta| * X * Real.sqrt ((Real.log X) ^ B) / 2 := by
       have hXpow : Real.rpow X (23 / 24 : ℝ) ≤ X := by
-        simpa only [Real.rpow_one] using
+        simpa only [Real.rpow_one] using!
           Real.rpow_le_rpow_of_exponent_le (show 1 ≤ X by linarith)
             (by norm_num : (23 / 24 : ℝ) ≤ 1)
       have hsqrtQone : 1 ≤ Real.sqrt ((Real.log X) ^ B) :=

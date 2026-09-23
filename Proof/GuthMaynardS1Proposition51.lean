@@ -215,11 +215,11 @@ theorem sourceFiniteOuterFactor_le
       have hTpos : 0 < T := by linarith
       have h33 : Real.rpow T (3 : ℝ) * Real.rpow T (3 : ℝ) =
           Real.rpow T (6 : ℝ) := by
-        simpa only [show (3 : ℝ) + 3 = 6 by norm_num] using
+        simpa only [show (3 : ℝ) + 3 = 6 by norm_num] using!
           (Real.rpow_add hTpos (3 : ℝ) (3 : ℝ)).symm
       have h61 : Real.rpow T (6 : ℝ) * Real.rpow T (1 + epsilon) =
           Real.rpow T (7 + epsilon) := by
-        simpa only [show (6 : ℝ) + (1 + epsilon) = 7 + epsilon by ring] using
+        simpa only [show (6 : ℝ) + (1 + epsilon) = 7 + epsilon by ring] using!
           (Real.rpow_add hTpos (6 : ℝ) (1 + epsilon)).symm
       rw [h33, h61]
 

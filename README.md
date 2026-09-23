@@ -1,12 +1,14 @@
 # Uniform Minor-Arc Cancellation for Primes at the `X^(2/15+ε)` Scale
 
-A formally verified local Fourier estimate for the von Mangoldt function.
+A formally verified improvement from the `8/33` local Fourier scale to `2/15`.
+
+We prove a uniform local minor-arc $L^2$ estimate for the von Mangoldt exponential sum on every frequency interval of length $1/H$, valid for $H\ge X^{2/15+\varepsilon}$. This improves the $8/33$ scale in the Matomäki–Radziwiłł–Tao machinery for averaged shifted-prime correlations. The integral covers the minor-arc portion of each interval, and its center may lie anywhere on the circle.
 
 **Paper:** [Prime Pairs at the Prime Number Theorem Threshold](paper/prime-pairs-pnt-threshold.pdf) ([TeX](paper/prime-pairs-pnt-threshold.tex)). This repository formalizes Theorem 1.1 of that paper.
 
 - **Previous relevant scale:** `8/33 ≈ 0.2424`
 - **New scale:** `2/15 ≈ 0.1333`
-- **Status:** Lean proof of [`AllCenterMAP.map_two_fifteenths`](STATEMENT.md). Comparator, NanoDa, and Lean kernel checks passed. Public replay: [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml).
+- **Verification:** Lean `v4.35.0-rc2` build and standard-axiom audit passed for [`AllCenterMAP.map_two_fifteenths`](Challenge.lean). [Records](VERIFICATION.md) · [Public checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml).
 
 ## The estimate
 
@@ -60,11 +62,13 @@ The $2/15$ threshold is the local scale that the Guth–Maynard large-value esti
 
 ## Formal verification
 
-The MAP endpoint — 1,861 Lean modules, 100,596 declarations, about 18.7 MB of source — has been replayed into an empty Lean kernel environment. A fresh Linux build (10,255 jobs), Comparator statement identity, independent NanoDa replay, source/dependency scanning, and an axiom audit all passed.
+The development contains 1,861 Lean modules. The current Lean `v4.35.0-rc2` build of `Challenge`, `Solution` and `SolutionAxiomAudit` passed on macOS ARM, completing a 10,797-job build graph. The [build and axiom evidence](VERIFICATION.md#lean-435-build) records the exact toolchain and result.
+
+The Linux verification pipeline compares the proof with the independently stated [Challenge](Challenge.lean), then checks the exported proof with Lean's kernel and the independent NanoDa and con-ron kernels. The official Palomar preflight also compiles the Challenge against protected, canonical dependencies.
 
 The proof uses only Lean's standard axioms: `propext`, `Quot.sound`, and `Classical.choice`.
 
-The public hosted replay of those checks is the GitHub Actions workflow [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml). See [VERIFICATION.md](VERIFICATION.md) and [RELEASE_STATUS.md](RELEASE_STATUS.md).
+The September 20, 2026 Lean 4.30 release passed a fresh Linux build, Comparator and NanoDa checks. Its MAP closure of 100,596 declarations passed a fresh Lean kernel replay. Those records retain their original toolchain and source hashes in [VERIFICATION.md](VERIFICATION.md). The current Lean 4.35 checks run at each public commit in [Palomar release checks](https://github.com/jconorgrogan/prime-minor-arcs-2-15/actions/workflows/release.yml); [RELEASE_STATUS.md](RELEASE_STATUS.md) identifies the release evidence.
 
 ## Guth–Maynard large-value theorem
 
@@ -87,7 +91,7 @@ C T^\eta
 \Bigr).
 ```
 
-Its dependency closure of 75,874 declarations passed the same kernel replay with the same three axioms. Details are in [GUTH_MAYNARD.md](GUTH_MAYNARD.md).
+Its September 20, 2026 Lean 4.30 dependency closure of 75,874 declarations passed the same kernel replay with the same three axioms. Details are in [GUTH_MAYNARD.md](GUTH_MAYNARD.md).
 
 ## Mathematical context
 
@@ -116,4 +120,4 @@ See [PROVENANCE.md](PROVENANCE.md) for the source map.
 
 ## Reproducibility
 
-The project uses Lean `v4.30.0-rc2` and Mathlib commit `0f9072dd907c6e2e4264ab241a049cab50137f7c`. Verification artifacts are under `evidence/`. Released under Apache-2.0.
+The project uses Lean `v4.35.0-rc2` and Mathlib commit `065356127b1dc0016f66b7283ce0ce2c4055aa55`. Verification artifacts are under `evidence/`. Released under Apache-2.0.

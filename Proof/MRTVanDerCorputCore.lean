@@ -298,7 +298,7 @@ theorem weightedSecondDerivativeVanDerCorputC1
   have hiAbsPhase : IntervalIntegrable
       (fun w ↦ |phase'' w| / (phase' w ^ 2 + m ^ 2)) volume a b := by
     apply ContinuousOn.intervalIntegrable
-    simpa [Set.uIcc_of_le hab] using
+    simpa [Set.uIcc_of_le hab] using!
       hphase''Cont.abs.div
         ((hphase'Cont.pow 2).add continuousOn_const)
         (fun w hw ↦ by

@@ -54,7 +54,7 @@ theorem outerRationalCollars_eq_biUnion_reducedRationalPairs
     have hp : (q, a) ∈ reducedRationalPairs X B :=
       (mem_reducedRationalPairs_iff).2 ⟨hq1, hqN, haq, hcop⟩
     refine Set.mem_iUnion.2 ⟨(q, a), Set.mem_iUnion.2 ⟨hp, ?_⟩⟩
-    simpa [rationalCollar, Metric.mem_closedBall] using hdist
+    simpa [rationalCollar, collarR, Metric.mem_closedBall] using hdist
   · rintro halpha
     rcases Set.mem_iUnion.1 halpha with ⟨qa, halpha⟩
     rcases Set.mem_iUnion.1 halpha with ⟨hqa, halpha⟩
@@ -62,7 +62,7 @@ theorem outerRationalCollars_eq_biUnion_reducedRationalPairs
       ⟨hq1, hqN, haq, hcop⟩
     refine ⟨qa.1, qa.2, hq1, ?_, haq, hcop, ?_⟩
     · exact (Nat.cast_le.mpr hqN).trans (Nat.floor_le hQ)
-    · simpa [rationalCollar, Metric.mem_closedBall] using halpha
+    · simpa [rationalCollar, collarR, Metric.mem_closedBall] using halpha
 
 /-- The paper's `4R/H_*` collar is exactly the closed ball at Gallagher's
 real-line radius `1/(8y)`. -/

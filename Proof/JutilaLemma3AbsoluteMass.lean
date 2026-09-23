@@ -39,7 +39,7 @@ theorem lemmaThreeAbsoluteMass_le
   let f : ℕ → ℕ := fun p => p + 1
   let c : ℕ → ℕ := fun p => 1 + p * (p - 2)
   have hcommon : (∏ p ∈ I, c p) ≤ ∏ p ∈ I, (f p * f p) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro p hp
       exact Nat.zero_le _
     · intro p hp

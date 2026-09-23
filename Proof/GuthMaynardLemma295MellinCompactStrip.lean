@@ -77,7 +77,7 @@ theorem iteratedDeriv_sigmaLogLift (q : ℕ) (sigma u : ℝ) :
       (fun y : ℝ => Real.exp (-sigma * y)) := by fun_prop
   have hweightC : ContDiff ℝ (q : ℕ∞)
       (fun y : ℝ => (Real.exp (-sigma * y) : ℂ)) := by
-    simpa only [Function.comp_apply] using Complex.ofRealCLM.contDiff.comp hweightR
+    simpa only [Function.comp_apply] using! Complex.ofRealCLM.contDiff.comp hweightR
   have hweight : ContDiffAt ℝ (q : ℕ∞)
       (fun y : ℝ => (Real.exp (-sigma * y) : ℂ)) u := hweightC.contDiffAt
   have hbase : ContDiffAt ℝ (q : ℕ∞)
@@ -252,7 +252,7 @@ theorem integral_norm_iteratedDeriv_sigmaLogLift_le
       ‖iteratedDeriv q (sigmaLogLift sigma sourceHZero) u‖) := by
     have h := (schwartzIteratedDerivative q f).integrable
       (μ := (volume : Measure ℝ)) |>.norm
-    simpa [f, schwartzIteratedDerivative_apply] using h
+    simpa [f, schwartzIteratedDerivative_apply] using! h
   have hterm : ∀ r ∈ Finset.range (q + 1), Integrable (fun u : ℝ =>
       stripExponentialBudget n upper * (q.choose r : ℝ) *
         stripPowerRadius n upper ^ r *
@@ -305,7 +305,7 @@ theorem absPow_mul_norm_mellin_sourceHZero_uniform_strip_le
   rw [hFourier]
   exact (absPow_mul_norm_fourier_le_integral_iteratedDerivative
     f q (t / (2 * Real.pi))).trans
-      (by simpa [f] using integral_norm_iteratedDeriv_sigmaLogLift_le hsigma q)
+      (by simpa [f] using! integral_norm_iteratedDeriv_sigmaLogLift_le hsigma q)
 
 def uniformStripMellinDecayConstant (n k : ℕ) (upper : ℝ) : ℝ :=
   stripDerivativeL1Constant n 0 upper +

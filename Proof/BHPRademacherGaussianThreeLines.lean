@@ -53,7 +53,10 @@ private theorem gaussianTwist_diffContOnCl
     Complex.differentiable_exp.comp
       ((differentiable_id.sub_const ((u : ℂ) * I)).pow 2)
   have hmul := hL.smul hg.diffContOnCl
-  simpa only [gaussianTwist, smul_eq_mul] using hmul
+  change DiffContOnCl ℂ
+    (fun z : ℂ => DirichletCharacter.LFunction chi z *
+      Complex.exp ((z - (u : ℂ) * I) ^ 2)) (verticalStrip 0 1)
+  simpa only [smul_eq_mul] using! hmul
 
 private theorem four_add_abs_le_center_mul (u v : ℝ) :
     4 + |v| ≤ (4 + |u|) * (1 + |v - u|) := by
@@ -600,7 +603,10 @@ theorem norm_gaussianTwist_le_wide_interp
         Complex.differentiable_exp.comp
           ((differentiable_id.sub_const ((u : ℂ) * I)).pow 2)
       have hmul := hL.smul hg.diffContOnCl
-      simpa only [gaussianTwist, smul_eq_mul] using hmul)
+      change DiffContOnCl ℂ
+        (fun z : ℂ => DirichletCharacter.LFunction chi z *
+          Complex.exp ((z - (u : ℂ) * I) ^ 2)) (verticalStrip 0 (1 + rWidth))
+      simpa only [smul_eq_mul] using! hmul)
     (gaussianTwist_bddAbove_wide chi hchi u rWidth hr0 hrHalf)
     (gaussianTwist_leftBoundary hkappa hkappaHalf chi hprim hchi u)
     (gaussianTwist_rightBoundary_wide chi rWidth hr0 u)

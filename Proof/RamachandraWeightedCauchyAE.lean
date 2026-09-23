@@ -62,7 +62,7 @@ theorem norm_integral_sq_le_integral_mul_integral_ae
       ‖∫ x, f x‖ ≤ ∫ x, ‖f x‖ := norm_integral_le_integral_norm _
       _ ≤ ∫ x, sw x * sg x := by
         apply integral_mono_ae hf.norm hprodInt
-        simpa [sw, sg] using hfg
+        simpa [sw, sg, Pi.mul_def] using! hfg
   have hholder := integral_mul_norm_le_Lp_mul_Lq
     (μ := volume) (f := sw) (g := sg)
     (p := (2 : ℝ)) (q := (2 : ℝ))

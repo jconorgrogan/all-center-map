@@ -304,7 +304,7 @@ theorem primitiveFamilyDirectSecondMoment_le_log200
       2 * (4 * X + 2 * (J : ℝ) *
         ∑ j : Fin J, directSourceShellCost d M T Y delta j) +
           400 * X * y ^ 200 := by
-    simpa [M, Y, J, y] using hraw
+    simpa [M, Y, J, y, X, primitiveShiftedScale] using! hraw
   exact hraw'.trans (by
     simpa [X, y, primitiveShiftedScale] using hsumBound)
 

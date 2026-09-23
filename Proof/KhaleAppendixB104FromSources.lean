@@ -125,7 +125,7 @@ private theorem high_positive_ordinate_nonvanishing
   have hDlt : D₁ < D₂ := by
     dsimp [D₁, D₂]
     have hc := appendixBHeightCoefficient_mul_rpow_lt_104
-    simpa only [add_comm] using
+    simpa only [add_comm] using!
       add_lt_add_left (mul_lt_mul_of_pos_right hc hFpos) (18 * Real.log q)
   have hboundary : 1 - 1 / D₁ < 1 - 1 / D₂ := by
     have hinv := one_div_lt_one_div_of_lt hD₁pos hDlt

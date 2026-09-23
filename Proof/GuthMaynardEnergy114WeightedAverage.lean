@@ -86,7 +86,7 @@ theorem triple_weighted_average_le
       apply integral_mono hIntAll (inv_one_add_sq_integrable.mul_const M)
       intro s
       have hh := mul_le_mul_of_nonneg_left (hpoint s) (inv_one_add_sq_nonneg s)
-      simpa only [Finset.mul_sum] using hh
+      simpa only [Finset.mul_sum, energy114Weight] using! hh
     _ = (∫ s : ℝ, energy114Weight s)*M := integral_mul_const _ _
 
 end GuthMaynardEnergy114WeightedAverage

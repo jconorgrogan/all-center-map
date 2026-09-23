@@ -59,6 +59,7 @@ theorem continuous_uncurry_ramachandraDyadicBlock
   | false =>
       unfold Function.uncurry ramachandraDyadicBlock
         twistedFinitePolynomial twistedPhase
+      simp only [Bool.false_eq_true, ↓reduceIte]
       apply continuous_finsetSum
       intro n hn
       exact ((((hb n).comp continuous_snd).mul continuous_const).mul
@@ -66,6 +67,7 @@ theorem continuous_uncurry_ramachandraDyadicBlock
   | true =>
       unfold Function.uncurry ramachandraDyadicBlock
         twistedFinitePolynomial twistedPhase
+      simp only [↓reduceIte]
       apply continuous_finsetSum
       intro n hn
       exact ((((hb n).comp continuous_snd).mul continuous_const).mul
@@ -159,7 +161,7 @@ theorem allCharacter_doubleIntegral_weightedBlock_le
       change Continuous (fun p : ℝ × ℝ =>
         weight p.1 *
           ‖ramachandraDyadicBlock q N (b p.1) dual chi p.2‖ ^ 2)
-      simpa only [Function.uncurry, Function.comp_apply, Prod.swap_prod_mk] using
+      simpa only [Function.uncurry, Function.comp_apply, Prod.swap_prod_mk] using!
         (continuous_uncurry_weightedBlock q N dual b weight hb hweight chi).comp
           continuous_swap
     exact hparam.intervalIntegrable _ _

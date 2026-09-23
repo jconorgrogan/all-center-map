@@ -319,7 +319,7 @@ theorem principalHorizontalEndpointNumerator_le_scaled_ambient
       _ ≤ A₀ := by
         dsimp [A₀]
         have hp : 0 ≤ 48 * (1 + d⁻¹) := by positivity
-        simpa only [mul_one] using mul_le_mul_of_nonneg_left hQr hp
+        simpa only [mul_one] using! mul_le_mul_of_nonneg_left hQr hp
   have hK : 0 < principalHorizontalScale := by
     unfold principalHorizontalScale
     positivity

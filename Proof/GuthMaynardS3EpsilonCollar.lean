@@ -23,7 +23,7 @@ theorem eventually_fixed_collar
   have hTdelta : Real.rpow T delta ≤ T := by
     have h := Real.rpow_le_rpow_of_exponent_le hT1
       (show delta ≤ (1 : ℝ) by linarith)
-    simpa only [Real.rpow_one] using h
+    simpa only [Real.rpow_one] using! h
   have hpow_nonneg : 0 ≤ Real.rpow T (1 - delta) :=
     Real.rpow_nonneg hTpos.le _
   have hdelta_nonneg : 0 ≤ Real.rpow T delta :=

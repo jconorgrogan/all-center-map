@@ -418,7 +418,7 @@ theorem interval_integral_le_mul_const
     (hC : ∀ x ∈ Icc a b, f x ≤ C) :
     ∫ x in a..b, f x ≤ (b - a) * C := by
   have hc : IntervalIntegrable (fun _ : ℝ ↦ C) volume a b :=
-    intervalIntegral.intervalIntegrable_const (μ := volume)
+    intervalIntegrable_const (μ := volume)
   have hmono :
       (∫ x in a..b, f x) ≤ ∫ x in a..b, C :=
     intervalIntegral.integral_mono_on (μ := volume) hab hf hc hC
@@ -452,7 +452,7 @@ theorem characterWindow_map_le
     have hc : IntervalIntegrable
         (fun _ : ℝ ↦ smallRemainderPolyBound X) volume
         (t - |beta| * H) (t + |beta| * H) :=
-      intervalIntegral.intervalIntegrable_const (μ := volume)
+      intervalIntegrable_const (μ := volume)
     have hint :
         (∫ t' in (t - |beta| * H)..(t + |beta| * H),
           ‖criticalDirichletPolynomial X q₀ q₁

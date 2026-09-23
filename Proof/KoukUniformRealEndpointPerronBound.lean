@@ -599,8 +599,6 @@ theorem norm_outside_safe_term_le_halfIntegerMajorant
         ((t / (n : ℝ)) ^ (1 + (Real.log t)⁻¹) *
           ((n : ℝ) / ((n : ℝ) - t))) := by
       gcongr
-      exact div_nonneg ArithmeticFunction.vonMangoldt_nonneg
-        (mul_pos Real.pi_pos hT).le
     _ = (Real.exp 1 * t / (Real.pi * T)) *
         (ArithmeticFunction.vonMangoldt n /
           ((n : ℝ) ^ (Real.log t)⁻¹ * ((n : ℝ) - t))) := by

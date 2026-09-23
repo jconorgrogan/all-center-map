@@ -41,6 +41,7 @@ theorem reducePrimePowerSolution_injective
   intro a b hab
   exact reducePoint_injective_on_nonsingular hp hR (congrArg Subtype.val hab)
 
+open scoped Classical in
 theorem card_nonsingularPrimePowerSolution_le_card_primeSolution
     {p R d : ℕ} (hp : p.Prime) (hR : 1 ≤ R)
     (f : Fin d → MvPolynomial (Fin d) ℤ) :

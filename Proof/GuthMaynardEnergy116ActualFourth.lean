@@ -30,7 +30,6 @@ private theorem dyadic_class_shape_le_source
     (floorDifferenceMultiplicity W) B).card
   by_cases hU : U = 0
   · have hcard : (floorDifferenceDyadicRealClass W B).card = 0 := by
-      dsimp [U]
       rw [card_floorDifferenceDyadicRealClass]
       simpa [U] using hU
     unfold heathBrownShape

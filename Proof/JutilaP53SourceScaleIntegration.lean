@@ -51,11 +51,11 @@ theorem sourceRectangle_integral_le_const
         (∫ _upsilon in Real.log x..(1 + epsilon) * Real.log x, K) := by
       apply intervalIntegral.integral_mono_on hout
       · exact hOuterInt
-      · exact intervalIntegral.intervalIntegrable_const
+      · exact intervalIntegrable_const
       · intro xi hxi
         apply intervalIntegral.integral_mono_on hin
         · exact hFint xi hxi
-        · exact intervalIntegral.intervalIntegrable_const
+        · exact intervalIntegrable_const
         · intro upsilon hups
           exact hF xi hxi upsilon hups
     _ = _ := sourceRectangle_integral_const epsilon z1 x K

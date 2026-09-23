@@ -17,7 +17,8 @@ private theorem sin_le_fifth_envelope
   have habound : |x| ≤ 1 := by rw [habs]; exact hx1
   have h := le_of_abs_le (Real.sin_bound habound)
   rw [habs] at h
-  linarith
+  have hpow := mul_le_mul_of_nonneg_left hx1 (pow_nonneg hx0 4)
+  nlinarith [pow_nonneg hx0 4]
 
 private theorem polynomial_margin
     {x : ℝ} (hx0 : 0 ≤ x) (hxTop : x ≤ 0.0188496) :

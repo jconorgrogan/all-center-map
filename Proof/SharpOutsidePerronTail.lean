@@ -130,7 +130,7 @@ theorem norm_coefficientTail_le_sharp_outside
     apply summable_norm_iff.mpr
     exact ArithmeticFunction.LSeriesSummable_vonMangoldt (by norm_num)
   have hg : Summable g := by
-    simpa only [g, Function.comp_apply] using
+    simpa only [g, Function.comp_apply] using!
       hgBase.subtype {n : ℕ | n ∉ Finset.Icc 1 N}
   have hmajor : Summable fun n => K * g n := hg.mul_left K
   have hbound : ∀ n, ‖f n‖ ≤ K * g n := by
@@ -164,7 +164,7 @@ theorem norm_coefficientTail_le_sharp_outside_global
   have hsub : Summable fun n : {n // n ∉ Finset.Icc 1 N} =>
       ‖LSeries.term (fun k : ℕ =>
         (ArithmeticFunction.vonMangoldt k : ℂ)) (2 : ℂ) n‖ := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       hsum.subtype {n : ℕ | n ∉ Finset.Icc 1 N}
   have hsuble :
       (∑' n : {n // n ∉ Finset.Icc 1 N},

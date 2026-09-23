@@ -179,7 +179,8 @@ theorem norm_lemma295ReflectedFiniteIntegrand_horizontal_uniform_le
 theorem tendsto_reflectedHorizontalEnvelope_zero
     (N g : ℝ) (K n : ℕ) :
     Tendsto (reflectedHorizontalEnvelope N g K n) atTop (𝓝 0) := by
-  simpa [reflectedHorizontalEnvelope] using
+  unfold reflectedHorizontalEnvelope
+  simpa only [mul_zero] using!
     (tendsto_horizontalThetaMellinRatio_zero n g).const_mul
       (reflectedHorizontalConstant N K n)
 

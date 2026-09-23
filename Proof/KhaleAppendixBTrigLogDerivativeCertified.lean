@@ -111,22 +111,22 @@ theorem appendixB_LSeries_re_nonneg {q : ℕ}
     ArithmeticFunction.LSeriesSummable_vonMangoldt (by simpa using hsigma)
   have h1 : LSeriesSummable (twistedMangoldtCoeff chi)
       (sigma + Complex.I * t) := by
-    simpa only [twistedMangoldtCoeff] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt chi
         (by simpa using hsigma))
   have h2 : LSeriesSummable (twistedMangoldtCoeff (chi ^ 2))
       (sigma + Complex.I * (2 * t)) := by
-    simpa only [twistedMangoldtCoeff] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt (chi ^ 2)
         (by simpa using hsigma))
   have h3 : LSeriesSummable (twistedMangoldtCoeff (chi ^ 3))
       (sigma + Complex.I * (3 * t)) := by
-    simpa only [twistedMangoldtCoeff] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt (chi ^ 3)
         (by simpa using hsigma))
   have h4 : LSeriesSummable (twistedMangoldtCoeff (chi ^ 4))
       (sigma + Complex.I * (4 * t)) := by
-    simpa only [twistedMangoldtCoeff] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt (chi ^ 4)
         (by simpa using hsigma))
   have h0r := (Complex.hasSum_re h0.hasSum).summable.mul_left 10.01055

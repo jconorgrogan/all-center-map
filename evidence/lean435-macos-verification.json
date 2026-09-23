@@ -1,0 +1,38 @@
+{
+  "verified_at_utc": "2026-09-23T23:17:02.877669+00:00",
+  "platform": {
+    "system": "Darwin",
+    "release": "24.1.0",
+    "machine": "arm64"
+  },
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "lean_version": "Lean (version 4.35.0-rc2, arm64-apple-darwin24.6.0, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)",
+  "mathlib_revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "source_snapshot": {
+    "path": "proof-snapshot.json",
+    "sha256": "892b6c1e2451a55cabcaa319b23c29f1bc322fd53ea50e098dc0307ebb3ea53e",
+    "proof_modules": 1861,
+    "proof_source_bytes": 18756256
+  },
+  "checks": [
+    {
+      "command": "lake build Challenge Solution SolutionAxiomAudit",
+      "exit_code": 0,
+      "jobs": 10797,
+      "log": "evidence/lean435-macos-build.log",
+      "log_sha256": "856a92d996c1cbb2d167be4e95bf6003fa52d9e161610a8d5ab1eff58a9ba9f6"
+    },
+    {
+      "command": "lake env lean SolutionAxiomAudit.lean",
+      "exit_code": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": "evidence/lean435-macos-axioms.log",
+      "log_sha256": "47d1066d39cd7623b17af78f8155cb630e4a3c8eb7c237d799d69ba2d049e4d2"
+    }
+  ],
+  "scope": "Author macOS build and axiom audit. Linux, independent kernels and official Palomar preflight have separate run records."
+}

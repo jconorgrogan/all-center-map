@@ -509,7 +509,7 @@ theorem firstDerivativeWeight_goldfeldCutoff_le
     hRlower.trans (by exact_mod_cast (Nat.le_succ K))
   have hpow : Real.rpow ((K + 1 : ℕ) : ℝ) (-sigma) ≤
       Real.rpow (Real.sqrt N) (-sigma) :=
-    Real.rpow_le_rpow_of_exponent_nonpos hRpos hRlower' (by linarith)
+    Real.rpow_le_rpow_of_nonpos hRpos hRlower' (by linarith)
   have hlog0 : 0 ≤ Real.log ((K + 1 : ℕ) : ℝ) :=
     Real.log_nonneg (by exact_mod_cast (show 1 ≤ K + 1 by omega))
   have hNone : (1 : ℝ) ≤ N := by

@@ -30,7 +30,7 @@ theorem sigmaLogLift_contDiff
     Real.contDiff_exp.comp hlinear
   have hweightC : ContDiff ℝ (⊤ : ℕ∞)
       (fun u : ℝ => (Real.exp (-sigma * u) : ℂ)) := by
-    simpa only [Function.comp_apply] using Complex.ofRealCLM.contDiff.comp hweightR
+    simpa only [Function.comp_apply] using! Complex.ofRealCLM.contDiff.comp hweightR
   have hexp : ContDiff ℝ (⊤ : ℕ∞) (fun u : ℝ => Real.exp (-u)) :=
     Real.contDiff_exp.comp contDiff_neg
   exact hweightC.mul (hf.comp hexp)

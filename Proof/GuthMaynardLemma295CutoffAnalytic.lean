@@ -258,7 +258,7 @@ theorem sourceHZero_mellinConvergent_two :
     MellinConvergent sourceHZero (2 : ℂ) := by
   have hw : MellinConvergent
       (fun t : ℝ => (t : ℂ) ^ (1 : ℂ) • sourceHZero t) (1 : ℂ) := by
-    simpa only [Complex.cpow_one, one_smul] using
+    simpa only [Complex.cpow_one, smul_eq_mul, sourceHZeroTimesX] using!
       sourceHZeroTimesX_mellinConvergent_one
   have h := (MellinConvergent.cpow_smul
     (f := sourceHZero) (s := (1 : ℂ)) (a := (1 : ℂ))).mp hw

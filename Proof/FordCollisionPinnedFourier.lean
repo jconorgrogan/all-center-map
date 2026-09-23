@@ -29,7 +29,7 @@ theorem collisionPinned_count_le_cross_avg
           ‖fordBoundaryBlock (pinRightFreq f g s) alpha‖) / (L : ℝ)^k := by
   rw [collisionPinned_card_eq_pinCross f g s]
   have hc := cross_count_le (pinLeftFreq f g s) (pinRightFreq f g s) hbound
-  simpa [PinCross, pinLeftFreq, pinRightFreq, funext_iff] using hc
+  simpa [PinCross, pinLeftFreq, pinRightFreq, funext_iff] using! hc
 
 end FordCollisionPinnedFourier
 

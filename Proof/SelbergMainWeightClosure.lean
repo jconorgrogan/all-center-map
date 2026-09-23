@@ -772,7 +772,6 @@ theorem cofactor_pairProduct_injOn
     have hg₂ : (t₂ * s₂).gcd d = t₂ := by
       rw [mul_comm, hs₂cop.gcd_mul_left_cancel,
         Nat.gcd_eq_left_iff_dvd.mpr ht₂d]
-    dsimp at hg
     rwa [hg₁, hg₂] at hg
   subst t₂
   have htpos : 0 < t₁ := Nat.pos_of_dvd_of_pos ht₁d hdpos

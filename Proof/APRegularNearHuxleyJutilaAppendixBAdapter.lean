@@ -79,12 +79,12 @@ theorem apRegularNearOneRangeMass_logSaving_of_huxley_collar_and_high_gap
   have htauPosGlobal : 0 < tau epsilon := tau_pos hepsilonCap
   have hHuxleyHeight : ∀ᶠ X : ℝ in atTop,
       RH ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually
         (eventually_ge_atTop RH)
   have hJutilaHeight : ∀ᶠ X : ℝ in atTop,
       RJ ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually
         (eventually_ge_atTop RJ)
   have hevent : ∀ᶠ X : ℝ in atTop,
@@ -153,7 +153,7 @@ theorem apRegularNearOneRangeMass_logSaving_of_huxley_collar_and_high_gap
         Real.rpow_le_one_of_one_le_of_nonpos hlogOne.le (by norm_num)
       have homegaLe : omega ≤ c := by
         dsimp [omega]
-        simpa only [mul_one] using
+        simpa only [mul_one] using!
           (mul_le_mul_of_nonneg_left hrpowLe hc.le)
       dsimp [cCap] at hc_le_cap
       linarith

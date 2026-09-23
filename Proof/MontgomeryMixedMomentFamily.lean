@@ -68,7 +68,7 @@ theorem integral_family_mixed_count
     exact (pow_le_pow_left₀ hV (hlarge i hi) 2).trans
       (intervalIntegral_weighted_product_sq_le hw (hL i hi) (hM i hi) hab hw0)
   · intro i hi
-    simpa only [← pow_mul] using
+    simpa only [Pi.pow_apply, ← pow_mul] using
       intervalIntegral_weighted_sq_le hw ((hL i hi).pow 2) hab hw0 hW
 /-- Uniform detector normalization can be retained outside the mixed moments. -/
 theorem integral_family_mixed_count_scaled

@@ -38,8 +38,9 @@ theorem LSeries_twistedMangoldtCoeff_eq_neg_logDeriv_LFunction
       -logDeriv (DirichletCharacter.LFunction χ) s := by
   rw [logDeriv_apply, DirichletCharacter.deriv_LFunction_eq_deriv_LSeries χ hs,
     DirichletCharacter.LFunction_eq_LSeries χ hs]
-  simpa only [twistedMangoldtCoeff, Pi.mul_apply, neg_div] using
-    DirichletCharacter.LSeries_twist_vonMangoldt_eq χ hs
+  convert DirichletCharacter.LSeries_twist_vonMangoldt_eq χ hs
+  · ext n; simp [twistedMangoldtCoeff]
+  · simp [neg_div]
 
 /-- Each twisted Mangoldt coefficient is bounded by the untwisted Mangoldt
 coefficient, uniformly in the level and character. -/
@@ -138,16 +139,15 @@ theorem tendsto_mul_logDeriv_of_analyticOrder
     have hdiffPow : DifferentiableAt ℂ (fun z : ℂ => (z - x) ^ n) w := by
       fun_prop
     rw [show model = fun z => (z - x) ^ n * g z by rfl,
-      logDeriv_mul w hpow hgw hdiffPow hga.differentiableAt,
+      logDeriv_fun_mul w hpow hgw hdiffPow hga.differentiableAt,
       logDeriv_fun_pow (by fun_prop)]
     have hderivSub : deriv (fun z : ℂ => z - x) w = 1 := by
       rw [deriv_sub_const]
-      simpa only [id_eq] using deriv_id w
+      simpa using congrArg (fun f => f w) deriv_id'
     simp only [logDeriv_apply, hderivSub]
     field_simp
-  have hlog_cont : ContinuousAt (logDeriv g) x := by
-    simpa only [logDeriv_apply] using
-      hg.deriv.continuousAt.div hg.continuousAt hg_ne
+  have hlog_cont : ContinuousAt (logDeriv g) x :=
+    hg.deriv.continuousAt.div hg.continuousAt hg_ne
   have htail :
       Tendsto (fun w => (w - x) * logDeriv g w)
         (𝓝[≠] x) (𝓝 0) := by
@@ -155,8 +155,9 @@ theorem tendsto_mul_logDeriv_of_analyticOrder
         Tendsto (fun w : ℂ => w - x) (𝓝[≠] x) (𝓝 0) := by
       have hid : ContinuousAt (fun w : ℂ => w) x := continuousAt_id
       have hc : ContinuousAt (fun _ : ℂ => x) x := continuousAt_const
-      simpa using ((hid.sub hc).tendsto.mono_left
-        (show 𝓝[≠] x ≤ 𝓝 x from nhdsWithin_le_nhds))
+      convert (hid.sub hc).tendsto.mono_left
+        (show 𝓝[≠] x ≤ 𝓝 x from nhdsWithin_le_nhds)
+      simp
     have hglog :
         Tendsto (logDeriv g) (𝓝[≠] x) (𝓝 (logDeriv g x)) := by
       exact hlog_cont.tendsto.mono_left
@@ -305,15 +306,15 @@ theorem tendsto_mul_neg_logDeriv_LFunctionTrivChar_one
     simp only [logDeriv_apply, hRderiv, hRrel]
     field_simp
     ring
-  have hRlogcont : ContinuousAt (logDeriv regularizedLF) 1 := by
-    simpa only [logDeriv_apply] using
-      hRanalytic.deriv.continuousAt.div hRanalytic.continuousAt hRone
+  have hRlogcont : ContinuousAt (logDeriv regularizedLF) 1 :=
+    hRanalytic.deriv.continuousAt.div hRanalytic.continuousAt hRone
   have hsubzero :
       Tendsto (fun s : ℂ => s - 1) (𝓝[≠] (1 : ℂ)) (𝓝 0) := by
     have hid : ContinuousAt (fun s : ℂ => s) 1 := continuousAt_id
     have hc : ContinuousAt (fun _ : ℂ => (1 : ℂ)) 1 := continuousAt_const
-    simpa using ((hid.sub hc).tendsto.mono_left
-      (show 𝓝[≠] (1 : ℂ) ≤ 𝓝 (1 : ℂ) from nhdsWithin_le_nhds))
+    convert (hid.sub hc).tendsto.mono_left
+      (show 𝓝[≠] (1 : ℂ) ≤ 𝓝 (1 : ℂ) from nhdsWithin_le_nhds)
+    simp
   have hRlog :
       Tendsto (logDeriv regularizedLF) (𝓝[≠] (1 : ℂ))
         (𝓝 (logDeriv regularizedLF 1)) :=
@@ -366,13 +367,13 @@ theorem logDeriv_zeroFactorProduct
   rw [show zeroFactorProduct χ σ T =
       fun z => ∏ ρ ∈ zeroSupport χ σ T,
         (z - ρ) ^ zeroMultiplicity χ σ T ρ by rfl]
-  rw [logDeriv_prod]
+  rw [logDeriv_fun_prod]
   · apply Finset.sum_congr rfl
     intro ρ hρ
     rw [logDeriv_fun_pow (by fun_prop)]
     simp only [logDeriv_apply, deriv_sub_const]
     have hderiv : deriv (fun y : ℂ => y) s = 1 := by
-      simpa only [id_eq] using deriv_id s
+      simpa using congrArg (fun f => f s) deriv_id'
     rw [hderiv]
     ring
   · intro ρ hρ

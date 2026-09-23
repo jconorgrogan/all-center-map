@@ -113,6 +113,8 @@ theorem tsum_poissonStrictLocalizedIntegral_le_sourceAffineSmoothing
     · exact Filter.Eventually.of_forall fun u' => mul_nonneg hT0 (hf0 u')
     · apply Filter.Eventually.of_forall
       intro u' hu'
+      change |(j : ℝ) - m2' * u' + m2 * u| < (M2 / T) * B at hu'
+      change |(j : ℝ) - m2' * u' + m2 * u| ≤ (M2 / T) * B
       exact le_of_lt hu'
   have hstrictSum : Summable (fun j : ℤ => ∫ u' in strict j, T * f u') :=
     hclosedSum.of_nonneg_of_le hstrict0 hstrict_le

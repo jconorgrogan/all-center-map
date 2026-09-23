@@ -89,7 +89,7 @@ theorem ratioCutoff_fourier_decay (q : ℕ) (xi : ℝ) :
   have hden : 0 < (1 + |xi|) ^ q := by positivity
   apply (le_div_iff₀ hden).2
   rw [mul_comm]
-  simpa only [bhat, ratioCutoffFourierConstant] using hseminorm'
+  simpa only [bhat, ratioCutoffFourierConstant, SchwartzMap.fourier_coe] using! hseminorm'
 
 /-! ## `L¹` Fourier envelope of the actual ratio profile -/
 
@@ -143,7 +143,7 @@ theorem fourier_smoothedRatioSquare
       FourierTransform.fourier (ratioProfileC W) xi *
         FourierTransform.fourier
           (fun z : ℝ => (sourceBump 1 zero_lt_one z : ℂ)) (xi / B) := by
-  simpa [smoothedRatioSquare, ratioProfileC] using
+  simpa [smoothedRatioSquare, ratioProfileC] using!
     fourier_ofReal_affineSmoothing hB (fun z => sourceBump 1 zero_lt_one z)
       (ratioProfile W) (sourceBump 1 zero_lt_one).integrable
       (ratioProfile_integrable W) (sourceBump_contDiff 1 zero_lt_one).continuous

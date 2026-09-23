@@ -105,7 +105,7 @@ theorem exists_active_sharp_bound_of_unscaled
       rw [hm]
       have hx : Real.rpow X (theta / 2) * Real.rpow X (theta / 2) = Real.rpow X theta := by
         have hadd : theta / 2 + theta / 2 = theta := by ring
-        simpa only [hadd] using (Real.rpow_add hXpos (theta / 2) (theta / 2)).symm
+        simpa only [hadd] using! (Real.rpow_add hXpos (theta / 2) (theta / 2)).symm
       calc
         _ = (C * Real.rpow 8 (theta / 2)) *
           (Real.rpow X (theta / 2) * Real.rpow X (theta / 2)) := by ring

@@ -66,7 +66,7 @@ theorem differentiableAt_endpointPrincipalPoleIntegrand
   classical
   by_cases hchi : chi = 1
   · unfold endpointPrincipalPoleIntegrand
-    simpa only [hchi, if_true] using
+    simpa only [hchi, if_true] using!
       (differentiable_endpointPerronKernel hx s).div
         (differentiableAt_id.sub_const 1) (sub_ne_zero.mpr hs1)
   · unfold endpointPrincipalPoleIntegrand
@@ -162,7 +162,7 @@ theorem tendsto_sub_mul_endpointPrincipalPoleIntegrand_at_other
       nhdsWithin_le_nhds)
   have hquot := hker.div hden (sub_ne_zero.mpr hrho1)
   have hmul := hsub.mul hquot
-  simpa only [endpointPrincipalPoleIntegrand, if_pos rfl, zero_mul] using hmul
+  simpa [endpointPrincipalPoleIntegrand] using! hmul
 
 /-- Multiplying a holomorphic regularized summand by `s-rho` gives zero. -/
 theorem tendsto_sub_mul_endpointRegularizedContourIntegrand_of_nonzero

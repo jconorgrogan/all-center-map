@@ -49,9 +49,9 @@ theorem rectangleBoundaryIntegral_sub_inv_sq_eq_zero
     have he : HasDerivAt e
         (-((((x : ℂ) + (y : ℂ) * I) - p)⁻¹ ^ 2)) (x : ℂ) := by
       dsimp [e, g]
-      convert (((hasDerivAt_id (x : ℂ)).add_const
-          ((y : ℂ) * I)).sub_const p).inv hden using 1 <;>
-        simp [div_eq_mul_inv, inv_pow]
+      simpa [div_eq_mul_inv, inv_pow] using!
+        (((hasDerivAt_id (x : ℂ)).add_const
+          ((y : ℂ) * I)).sub_const p).inv hden
     simpa [e, g] using he.comp_ofReal
   have vertical_deriv (x y : ℝ) (hx : x ≠ p.re) :
       HasDerivAt (fun r : ℝ => g ((x : ℂ) + (r : ℂ) * I))
@@ -66,10 +66,9 @@ theorem rectangleBoundaryIntegral_sub_inv_sq_eq_zero
         (-I * ((((x : ℂ) + (y : ℂ) * I) - p)⁻¹ ^ 2)) (y : ℂ) := by
       dsimp [e, g]
       have hinner : HasDerivAt (fun z : ℂ => (x : ℂ) + z * I) I (y : ℂ) := by
-        convert (hasDerivAt_id (y : ℂ)).mul_const I |>.const_add (x : ℂ)
-        simp
-      convert ((hinner.sub_const p).inv hden) using 1 <;>
-        simp [div_eq_mul_inv, inv_pow, mul_comm]
+        simpa using! ((hasDerivAt_id (y : ℂ)).mul_const I).const_add (x : ℂ)
+      simpa [div_eq_mul_inv, inv_pow, mul_comm] using!
+        (hinner.sub_const p).inv hden
     simpa [e, g] using he.comp_ofReal
   have hbottom :
       (∫ x in a..b, ((((x : ℂ) + (u : ℂ) * I) - p)⁻¹ ^ 2)) =

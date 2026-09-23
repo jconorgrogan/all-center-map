@@ -30,7 +30,7 @@ theorem integrable_lineTwoZetaIntegrand
     have h := (Real.summable_one_div_nat_add_rpow 1 2).2 (by norm_num)
     simpa [abs_of_nonneg, Real.rpow_two] using h
   have hm : Integrable (fun r : ℝ => mellin sourceHZero (lineTwoPoint r)) := by
-    simpa [lineTwoPoint] using sourceHZero_verticalIntegrable_two
+    simpa [lineTwoPoint, Complex.VerticalIntegrable] using sourceHZero_verticalIntegrable_two
   have hnormsum (r : ℝ) : Summable fun n : ℕ => ‖lineTwoTerm N g n r‖ := by
     have h := (hs.mul_left (N ^ 2)).mul_right ‖mellin sourceHZero (lineTwoPoint r)‖
     exact h.congr (fun n => by rw [norm_lineTwoTerm hN]; ring)
@@ -80,7 +80,7 @@ theorem integrable_raw_lineTwo
     {N : ℝ} (hN : 0 < N) (g : ℝ) :
     Integrable (fun t : ℝ => lemma295RawIntegrand N g ((2 : ℂ) + t * I)) := by
   simpa only [lemma295RawIntegrand, lineTwoZetaIntegrand,
-    shiftedLineTwoPoint, lineTwoPoint] using integrable_lineTwoZetaIntegrand hN g
+    shiftedLineTwoPoint, lineTwoPoint] using! integrable_lineTwoZetaIntegrand hN g
 
 theorem integrable_reflectedFinite_critical_neg
     {N : ℝ} (hN : 0 < N) (g : ℝ) (K : ℕ) :

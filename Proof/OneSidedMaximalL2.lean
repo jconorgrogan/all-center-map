@@ -88,7 +88,7 @@ theorem rightAverage_sq_le_rightSquareAverage
   rw [mul_pow]
   calc
     y⁻¹ ^ 2 * A ^ 2 ≤ y⁻¹ ^ 2 * (B * y) :=
-      mul_le_mul_left' hsq _
+      mul_le_mul_right hsq _
     _ = y⁻¹ * B := by
       rw [pow_two]
       calc
@@ -226,8 +226,8 @@ theorem rightAverage_le_two_of_le_scale
     exact h
   change y⁻¹ * AY ≤ 2 * (d⁻¹ * AD)
   calc
-    y⁻¹ * AY ≤ y⁻¹ * AD := mul_le_mul_left' hA _
-    _ ≤ (2 * d⁻¹) * AD := mul_le_mul_right' hinv _
+    y⁻¹ * AY ≤ y⁻¹ * AD := mul_le_mul_right hA _
+    _ ≤ (2 * d⁻¹) * AD := mul_le_mul_left hinv _
     _ = 2 * (d⁻¹ * AD) := by ac_rfl
 
 /-- Geometric right-moving scales.  Index `j` represents `2^(j+1) H`, so
@@ -289,7 +289,7 @@ theorem rightMaxSqBetween_le_dyadic
     _ = 4 * (rightAverage f (dyadicRightScales H N j) x) ^ 2 := by
       ring
     _ ≤ 4 * finiteRightMaxSq f (dyadicRightScales H N) x := by
-      apply mul_le_mul_left'
+      apply mul_le_mul_right
       exact le_iSup (fun i : Fin (N + 1) =>
         (rightAverage f (dyadicRightScales H N i) x) ^ 2) j
 
@@ -316,7 +316,7 @@ theorem lintegral_rightMaxSqBetween_le_dyadic
       rw [lintegral_const_mul 4 (measurable_finiteRightMaxSq f hf D)]
     _ ≤ 4 * ((N + 1 : ℝ≥0∞) * ∫⁻ x : ℝ, (f x) ^ 2) := by
       have hfinite := lintegral_finiteRightMaxSq_le f hf D hD
-      have hmul := mul_le_mul_left' hfinite (4 : ℝ≥0∞)
+      have hmul := mul_le_mul_right hfinite (4 : ℝ≥0∞)
       simpa using hmul
     _ = 4 * (N + 1 : ℝ≥0∞) * ∫⁻ x : ℝ, (f x) ^ 2 := by
       rw [mul_assoc]
@@ -358,7 +358,7 @@ theorem lintegral_sum_rightMaxSqBetween_le_dyadic
       apply Finset.sum_le_sum
       intro i _
       have hfinite := lintegral_finiteRightMaxSq_le (f i) (hf i) D hD
-      have hmul := mul_le_mul_left' hfinite (4 : ℝ≥0∞)
+      have hmul := mul_le_mul_right hfinite (4 : ℝ≥0∞)
       simpa using hmul
     _ = 4 * (N + 1 : ℝ≥0∞) *
         ∑ i : ι, ∫⁻ x : ℝ, (f i x) ^ 2 := by

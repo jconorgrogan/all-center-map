@@ -134,7 +134,6 @@ theorem exists_eventually_nonprincipal_formula
     MAPKoukExercise12TwoPointwiseLocalZeroSplit.exists_norm_primitivePrefix_sub_characterMain_le_local_regular_add_exceptional
       chi hprim hchi ht0 hN hHone
   refine ⟨sigma, hsigma, T, hT, ?_⟩
-  dsimp only
   refine ⟨hpoint.1, ?_, ?_⟩
   · simpa only [c] using hweakX q T hq hT
   let E := (6 * 40000016) * X *

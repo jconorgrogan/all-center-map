@@ -24,8 +24,7 @@ def twoPoint (t : ℝ) : ℂ := (2 : ℂ) + (t : ℂ) * I
 theorem norm_Gamma_onePoint_sq (t : ℝ) (ht : t ≠ 0) :
     ‖Complex.Gamma (onePoint t)‖ ^ 2 =
       Real.pi * |t| / |Real.sinh (Real.pi * t)| := by
-  simpa [onePoint] using
-    MAPDirichletLQuantitative.norm_Gamma_one_add_mul_I_sq t ht
+  exact MAPDirichletLQuantitative.norm_Gamma_one_add_mul_I_sq t ht
 
 /-- Sharp square-root polynomial bound for `Gamma(1+it)` at large height. -/
 theorem norm_Gamma_onePoint_le_sqrt

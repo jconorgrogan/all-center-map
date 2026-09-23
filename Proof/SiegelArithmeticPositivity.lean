@@ -20,8 +20,8 @@ theorem one_le_zetaMul_prime_pow_two_mul
     {N : ℕ} {chi : DirichletCharacter ℂ N} (hchi : chi ^ 2 = 1)
     {p : ℕ} (hp : p.Prime) (k : ℕ) :
     1 ≤ zetaMul chi (p ^ (2 * k)) := by
-  simp only [zetaMul, toArithmeticFunction, ArithmeticFunction.coe_zeta_mul_apply,
-    ArithmeticFunction.coe_mk, Nat.sum_divisors_prime_pow hp,
+  rw [zetaMul, ArithmeticFunction.coe_zeta_mul_apply, Nat.sum_divisors_prime_pow hp]
+  simp only [toArithmeticFunction, ArithmeticFunction.coe_mk,
     pow_eq_zero_iff', hp.ne_zero, ne_eq, false_and, ↓reduceIte,
     Nat.cast_pow, map_pow]
   rcases MulChar.isQuadratic_iff_sq_eq_one.mpr hchi p with h | h | h
@@ -37,7 +37,7 @@ theorem one_le_zetaMul_sq
     (hchi : chi ^ 2 = 1) {n : ℕ} (hn : n ≠ 0) :
     1 ≤ zetaMul chi (n ^ 2) := by
   rw [chi.isMultiplicative_zetaMul.multiplicative_factorization _ (pow_ne_zero 2 hn)]
-  refine Finset.one_le_prod (fun p hp => ?_)
+  refine Finset.one_le_prod₀ (fun p hp => ?_)
   have hpPrime : p.Prime := Nat.prime_of_mem_primeFactors hp
   simpa [Nat.factorization_pow, mul_comm] using
     one_le_zetaMul_prime_pow_two_mul hchi hpPrime (n.factorization p)

@@ -34,7 +34,12 @@ private lemma expMap_injective : Function.Injective expMap := by
 
 private lemma expMap_hasDerivAt (u : ℝ) :
     HasDerivAt expMap (2 * Real.exp (2 * u)) u := by
-  simpa [expMap, mul_comm] using (Real.hasDerivAt_exp (2 * u)).comp u (hasDerivAt_const_mul 2)
+  have h : HasDerivAt (fun x : ℝ => Real.exp (2 * x))
+      (Real.exp (2 * u) * 2) u :=
+    (Real.hasDerivAt_exp (2 * u)).comp u (hasDerivAt_const_mul 2)
+  rw [mul_comm (Real.exp (2 * u)) 2] at h
+  change HasDerivAt (fun x : ℝ => Real.exp (2 * x)) (2 * Real.exp (2 * u)) u
+  exact h
 
 private lemma exp_substitution (y : ℝ) :
     (∫ x : ℝ in Set.Ioi 0, expKernel y x) = complexCoshSqFourier y := by
@@ -119,10 +124,14 @@ private lemma mobius_hasDerivWithinAt (t : ℝ) (ht : t ∈ Set.Ioo (0:ℝ) 1) :
   apply HasDerivAt.hasDerivWithinAt
   have hnum := hasDerivAt_id t
   have hden := (hasDerivAt_const t (1:ℝ)).sub (hasDerivAt_id t)
-  convert hnum.div hden hne using 1
-  simp only [Function.id_def, Pi.sub_apply]
-  field_simp [hne]
-  ring
+  have h : HasDerivAt (fun x : ℝ => x / (1 - x))
+      ((1 * (1 - t) - t * (0 - 1)) / (1 - t)^2) t :=
+    hnum.div hden hne
+  have hscalar : (1 * (1 - t) - t * (0 - 1)) / (1 - t)^2 =
+      1 / (1 - t)^2 := by ring
+  rw [hscalar] at h
+  change HasDerivAt (fun x : ℝ => x / (1 - x)) (1 / (1 - t)^2) t
+  exact h
 
 end
 end MAPFordCoshSqFourierCertified
@@ -369,7 +378,7 @@ theorem fordCoshSqFourierIdentity (y : ℝ) :
             filter_upwards with u
             exact (complex_integrand_re y u).symm
     _ = (complexCoshSqFourier y).re := by
-          simpa only [complexCoshSqFourier] using integral_re hi
+          simpa only [complexCoshSqFourier, RCLike.re_eq_complex_re] using integral_re hi
     _ = (if y = 0 then 2 else (Real.pi * y / Real.sinh (Real.pi*y/2) : ℝ)) := by
           rw [complex_transform y]
           split_ifs with hy

@@ -40,7 +40,7 @@ theorem final_seam_cubic_parameters
       _ ≤ (N : ℝ)^(6/5 : ℝ) :=
         Real.rpow_le_rpow_of_exponent_le hN1 (by norm_num)
   have hrT : s3Rho T eta ≤ T := by
-    simpa only [s3Rho, Real.rpow_one] using
+    simpa only [s3Rho, Real.rpow_one] using!
       Real.rpow_le_rpow_of_exponent_le hT (show eta ≤ 1 by linarith)
   have hK : (2 : ℝ)^k ≤ T^2 := by linarith [hp.2.2.1]
   have h23 : T^2 ≤ T^3 := pow_le_pow_right₀ hT (by norm_num : (2 : ℕ) ≤ 3)

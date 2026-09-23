@@ -93,7 +93,7 @@ theorem norm_actualLiftedRationalArc_sub_modeled_le_variation
   apply norm_interval_normSq_phase_sub_le_variation hR
   · exact continuous_primePolynomial_lift X q a
   · exact continuous_const.mul (by
-      simpa only [dyadicContinuousAmplitude] using
+      simpa only [dyadicContinuousAmplitude] using!
         MAPContinuousOverlap.continuous_dyadicAmplitude X)
   · fun_prop
   · intro beta

@@ -45,6 +45,7 @@ theorem hasDerivAt_negativeFrequencyPhase
   unfold negativeFrequencyPhase negativeFrequencyPhaseDeriv
   convert (Real.hasDerivAt_log hu).const_mul (t / (2 * Real.pi)) |>.add
     ((hasDerivAt_id u).const_mul xi) using 1 <;>
+    (try funext y) <;> (try simp only [Pi.add_apply, id_eq]) <;>
     field_simp [Real.pi_ne_zero, hu]
 
 theorem hasDerivAt_negativeFrequencyPhaseDeriv

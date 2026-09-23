@@ -1,29 +1,38 @@
-# Current requirements checked on 2026-09-20
+# Verification requirements
 
-Official sources:
+Requirements checked on September 23, 2026 against
+[PalomarSubmission at `1703d7babd984ccc3831cdf89c28221abe34808f`](https://github.com/PalomarRegistry/PalomarSubmission/tree/1703d7babd984ccc3831cdf89c28221abe34808f)
+and [PalomarPolicy at `792c7c0b9e798bd02719e795ef11fa2b5929e067`](https://github.com/PalomarRegistry/PalomarPolicy/tree/792c7c0b9e798bd02719e795ef11fa2b5929e067).
 
-- https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md
-- https://github.com/PalomarRegistry/PalomarSubmission#required-source-layout
-- https://raw.githubusercontent.com/PalomarRegistry/PalomarSubmission/main/toolchains.json
+The project pins Lean `v4.35.0-rc2`, the current minimum in Palomar's
+[toolchain contract](https://github.com/PalomarRegistry/PalomarSubmission/blob/1703d7babd984ccc3831cdf89c28221abe34808f/toolchains.json),
+and Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
+The Lean release resolves to commit
+`11acb17ec6b07a8f9e9173e6845197929540936b`.
 
-The verifier accepts released and RC Lean versions at or above v4.28.0, with
-Mathlib pinned to the exact matching toolchain. Stable v4.32.0 is the template's
-choice, not a mandatory migration for this proof. This release retains the
-verified v4.30.0-rc2/Mathlib 0f9072dd907c6e2e4264ab241a049cab50137f7c pair.
-`git ls-remote` resolved lean4export's v4.30.0-rc2 tag to
-12581a6b680d8478175596338eb2d53383a323e3 and Verso's matching tag to
-0bce2769d753e69fe092f4f2b02cb1428d6287a6.
+Comparator, `leanexport`, Lean's checker, NanoDa and con-ron are bundled with
+that Lean toolchain. Palomar records the toolchain commit and the binary
+digests; it no longer selects separate Comparator or exporter revisions.
+The sandbox is bubblewrap `v0.12.0`. The standard verification profile uses
+x86_64 Ubuntu 24.04, at least 14 GiB host memory, 20 GiB free workspace and a
+19,800-second execution budget.
 
-The public repository is `https://github.com/jconorgrogan/prime-minor-arcs-2-15`.
-The author Linux Comparator, Lean kernel, and NanoDa results are in
-[VERIFICATION.md](VERIFICATION.md). The hosted public replay is the GitHub
-Actions workflow `Palomar release checks`.
+The [public workflow](.github/workflows/release.yml) invokes Palomar's complete
+reusable verifier at the pinned commit above, with `mode: full` and the exact
+source SHA. Its `mechanical-report-map435preflight` artifact contains
+`mechanical-report.json`. A successful full report has `status: pass` and
+`stage: complete`, and binds the source repository, commit and
+`comparator.json` path. This report is the required preflight evidence for
+submission under the [current intake protocol](https://submit.palomar-registry.org/llms.txt).
 
-The PalomarSubmission source was pinned during this audit at
-3561d237dcc4b28482558ad28a64d767d7cc8615. Its verification-profile.json pins
-Comparator 575674928e239f5bc452aab72d1dd7b0f1326494,
-Landrun 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4, and
-NanoDa 68d5ca9db226849b41a6fff59d796ff19d0a8840. The Linux release run used
-these pins and the matching exporter commit. The official standard runner is
-x86_64 Ubuntu 24.04 with at least 14 GiB memory and 20 GiB free workspace. The
-local ARM Linux run is additional evidence.
+The selected layout is the repository root: `lean-toolchain`,
+`lakefile.toml`, `lake-manifest.json`, `formalization.yaml`,
+`comparator.json`, `Challenge.lean`, `Solution.lean` and `LICENSE`.
+The Challenge uses the permitted Mathlib statement surface; the proof is in
+`Proof/`. Submitted dependencies use public GitHub repositories and full
+commit pins.
+
+The current three-target Lean `v4.35.0-rc2` build and standard-axiom audit
+passed on macOS ARM (10,797 jobs). [VERIFICATION.md](VERIFICATION.md) links
+that evidence and distinguishes it from the historical Linux runs and the
+official hosted mechanical report required for submission.

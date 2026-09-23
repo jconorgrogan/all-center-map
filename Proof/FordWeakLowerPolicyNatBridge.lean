@@ -95,7 +95,7 @@ theorem lower_policy_nat_bridge
           (lowerPolicyA kNat Delta : ℝ) +
         2 / (lowerPolicyR kNat Delta : ℝ) ≤ (9 / 10 : ℝ) := by
     rw [hAcast, hRcast]
-    simpa [k, A, r] using hagap
+    simpa [k, A, r, div_eq_mul_inv] using hagap
   exact ⟨hAcast_nat, hRcast_nat, hRnat2, hRnat_le, ha1nat, ha2nat, hagapnat⟩
 
 /-- On the same natural policy cell, one J2 update drops `Delta` by at most

@@ -6,7 +6,7 @@ cd "$root"
 mkdir -p .cache
 
 if [ "$(uname -s)" != Linux ]; then
-  echo "error: authoritative release verification requires Linux/Landlock" >&2
+  echo "error: authoritative release verification requires Linux with bubblewrap" >&2
   exit 1
 fi
 

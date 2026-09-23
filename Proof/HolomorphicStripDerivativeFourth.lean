@@ -251,8 +251,8 @@ theorem sum_verticalTrace_fourth_le_of_circleSlices
         volume 0 (2 * Real.pi) := by
       rw [intervalIntegrable_iff,
         Set.uIoc_of_le (show (0 : ℝ) ≤ 2 * Real.pi by positivity)]
-      simpa [g, intervalIntegral.integral_of_le (by linarith : A ≤ B + 1)]
-        using hinnerInt
+      simp_rw [intervalIntegral.integral_of_le (by linarith : A ≤ B + 1)]
+      exact hinnerInt
     have hconst : Continuous (fun _theta : ℝ => M) := continuous_const
     calc
       (∫ theta in 0..2 * Real.pi,
@@ -319,7 +319,10 @@ theorem sum_verticalTrace_fourth_le_of_circleSlices_on
   have hderiv := verticalDerivFourthIntegral_le_circleSlices_on
     (F := F) (sigma := sigma) (A := A) (B := B + 1) (R := R)
     (by linarith) hR hcircle
-    (by simpa only [norm_mul, Complex.norm_I, mul_one] using htraceDeriv.norm.pow 4)
+    (by
+      have hc : Continuous (fun t : ℝ =>
+          ‖deriv F ((sigma : ℂ) + t * I) * I‖ ^ 4) := htraceDeriv.norm.pow 4
+      simpa only [norm_mul, Complex.norm_I, mul_one] using hc)
     hdisk
   have htheta :
       (∫ theta in 0..2 * Real.pi,
@@ -355,8 +358,8 @@ theorem sum_verticalTrace_fourth_le_of_circleSlices_on
         volume 0 (2 * Real.pi) := by
       rw [intervalIntegrable_iff,
         Set.uIoc_of_le (show (0 : ℝ) ≤ 2 * Real.pi by positivity)]
-      simpa [g, intervalIntegral.integral_of_le (by linarith : A ≤ B + 1)]
-        using hinnerInt
+      simp_rw [intervalIntegral.integral_of_le (by linarith : A ≤ B + 1)]
+      exact hinnerInt
     calc
       _ ≤ ∫ _theta in 0..2 * Real.pi, M := by
         exact intervalIntegral.integral_mono_on

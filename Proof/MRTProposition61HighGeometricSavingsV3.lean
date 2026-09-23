@@ -34,7 +34,7 @@ theorem high_free_core_le_three_losses
       _ ≤ Real.rpow X (1 - delta) := Real.rpow_le_rpow_of_exponent_le hX ha
       _ = X * R := by
         have he := Real.rpow_add hX0 1 (-delta)
-        simpa only [Real.rpow_one, sub_eq_add_neg] using he
+        simpa only [Real.rpow_one, sub_eq_add_neg] using! he
   have hHpow : H ≤ X * R := by
     rw [hH]
     have hh := hp (2 / 15 + reserve) (by linarith)

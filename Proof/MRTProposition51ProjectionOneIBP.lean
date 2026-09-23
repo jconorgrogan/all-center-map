@@ -105,9 +105,9 @@ theorem norm_integral_le_one_ibp_budgets
   have hmajorInt : IntervalIntegrable
       (fun w ↦ Q0 * ‖amplitude' w‖ + Q1 * ‖amplitude w‖) volume a b := by
     apply ContinuousOn.intervalIntegrable
-    simpa [Set.uIcc_of_le hab] using
-      (continuousOn_const.mul ha'Cont.norm).add
-        (continuousOn_const.mul haCont.norm)
+    rw [Set.uIcc_of_le hab]
+    exact (continuousOn_const.mul ha'Cont.norm).add
+      (continuousOn_const.mul haCont.norm)
   calc
     ‖∫ w : ℝ in a..b, integrand w‖ ≤
         ∫ w : ℝ in a..b, ‖integrand w‖ :=
@@ -130,9 +130,13 @@ theorem norm_integral_le_one_ibp_budgets
           Q1 * (∫ w : ℝ in a..b, ‖amplitude w‖) := by
       rw [intervalIntegral.integral_add
         (by exact (ContinuousOn.intervalIntegrable
-          (by simpa [Set.uIcc_of_le hab] using continuousOn_const.mul ha'Cont.norm)))
+          (by
+            rw [Set.uIcc_of_le hab]
+            exact continuousOn_const.mul ha'Cont.norm)))
         (by exact (ContinuousOn.intervalIntegrable
-          (by simpa [Set.uIcc_of_le hab] using continuousOn_const.mul haCont.norm))),
+          (by
+            rw [Set.uIcc_of_le hab]
+            exact continuousOn_const.mul haCont.norm))),
         intervalIntegral.integral_const_mul,
         intervalIntegral.integral_const_mul]
     _ ≤ Q0 * A1 + Q1 * A0 := by

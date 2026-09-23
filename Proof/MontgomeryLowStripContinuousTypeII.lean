@@ -237,7 +237,7 @@ theorem centralGammaIntegral_fourth_le_localFourth
         (∫ s in (rho.im - B)..(rho.im + B), criticalLineLFourth chi s)) := by
       apply mul_le_mul_of_nonneg_left
       apply mul_le_mul_of_nonneg_left
-      · simpa [criticalLineLFourth] using hl
+      · simpa [criticalLineLFourth] using! hl
       · exact pow_nonneg (intervalIntegral.integral_nonneg (by linarith)
           (fun u hu => (perronWeight_pos u).le)) 3
       · exact pow_nonneg hA 4

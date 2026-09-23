@@ -396,7 +396,7 @@ theorem apCompactRangeMass_logSaving_of_polylogConductorDensity
             (densityCoeff * (1 - sigma) + etaZD epsilon) := by
       simpa [apZeroHeight, tau, eta, delta,
         ZeroDensityArithmetic.uniformCoeff, densityCoeff] using hd
-    simpa only [sigma] using
+    simpa only [sigma] using!
       (chosen_densityAtHeight_mul_weight_le hepsilon hepsilonCap hsigmaHigh
         hXone hCd.le hd')
   calc

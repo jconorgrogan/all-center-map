@@ -243,7 +243,7 @@ theorem scaledWideOrbit_positive_energy_shifted_bound
     have hidx : r + (N - r) = N := by omega
     dsimp [f]
     rw [hidx]
-    simpa [Q0, Nat.mul_comm] using hcap
+    simpa [Q0, Nat.mul_comm] using! hcap
   have hMleT : (M : ℝ) ≤ T := by nlinarith [hMT]
   have hM2leT2 : (M : ℝ) ^ 2 ≤ T ^ 2 :=
     pow_le_pow_left₀ hMreal.le hMleT 2

@@ -31,12 +31,10 @@ theorem valueExponent_spec
     Real.log_rpow hNpos _
   have hloσ : (7 / 10 : ℝ) ≤ valueExponent N V := by
     apply (le_div_iff₀ hlogN).2
-    dsimp [valueExponent]
     rw [hloglo'] at hloglo
     exact hloglo
   have hhiσ : valueExponent N V ≤ (4 / 5 : ℝ) := by
     apply (div_le_iff₀ hlogN).2
-    dsimp [valueExponent]
     rw [hloghi'] at hloghi
     exact hloghi
   have hrepr : V = Real.rpow N (valueExponent N V) := by

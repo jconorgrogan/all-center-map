@@ -65,7 +65,7 @@ theorem sourceJacobian_det_formula
     intro j hj
     rw [psiNatSucc_tail_leadingCoeff psi hpsi hdk j]
   rw [hprod] at hdet
-  simpa [f, xInt, MAPFordCoarseP18Jacobian.sourceJacobian] using hdet
+  simpa [f, xInt, MAPFordCoarseP18Jacobian.sourceJacobian] using! hdet
 
 end
 end FordTypeJacobian

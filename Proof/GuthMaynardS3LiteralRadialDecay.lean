@@ -90,7 +90,7 @@ theorem radialWeight_derivative_le {v1 v2 : ℝ} (h1 : |v1| ≤ 2) (h2 : |v2| �
   have hh := norm_iteratedDeriv_mul_le (radialBase_contDiff.mul hc1) hc2
     (norm_iteratedDeriv_mul_le radialBase_contDiff hc1 radialBaseDerivative_le
       (scaledCutoffDerivative_le h1)) (scaledCutoffDerivative_le h2) q r
-  simpa only [Pi.mul_apply,radialBase,radialWeight,mul_comm] using hh
+  simpa only [Pi.mul_apply,radialBase,radialWeight,mul_comm] using! hh
 
 theorem radialWeight_hasCompactSupport (v1 v2 : ℝ) :
     HasCompactSupport (fun r => radialWeight r v1 v2) := by
@@ -143,7 +143,7 @@ theorem radialWeight_fourier_decay {v1 v2 xi : ℝ}
       radialDerivativeBudget q / |xi|^q := by
   have hh := norm_fourier_le_derivativeBudget_div_absPow (radialWeightSchwartz v1 v2) q hxi
     (integral_radialWeight_derivative_le h1 h2 q)
-  simpa only [SchwartzMap.fourier_coe] using hh
+  simpa only [SchwartzMap.fourier_coe] using! hh
 
 end
 end GuthMaynardS3LiteralRadialDecay

@@ -100,7 +100,7 @@ theorem high_positive_three_nonvanishing
   have hDlt : D1 < D2 := by
     dsimp [D1, D2, P]
     have hc := appendixBHeightCoefficient_mul_rpow_lt_104
-    simpa only [add_comm, mul_assoc] using
+    simpa only [add_comm, mul_assoc] using!
       add_lt_add_left (mul_lt_mul_of_pos_right hc hFpos) (18 * Real.log 3)
   have hD2pos : 0 < D2 := hD1pos.trans hDlt
   have hdeltaLeD2 : 1 - beta ≤ 1 / D2 := by
@@ -117,7 +117,7 @@ theorem high_positive_three_nonvanishing
     (Real.exp_le_exp.mpr (by norm_num : (10650 : ℝ) ≤ 11450))
     startup_ratio startup_loglog 3 (1 : DirichletCharacter ℂ 3)
     u beta (by norm_num) hu hqheight (by
-      simpa only [D1, P, F, mul_assoc] using hdeltaLeD1) hzero
+      simpa only [D1, P, F, mul_assoc, Nat.cast_ofNat] using! hdeltaLeD1) hzero
   have hcorr := appendixBFinalCorrection_le_heightMax
     (A := (76.2 : ℝ)) (T₀ := Real.exp 11450) (t := u)
     (by norm_num) (Real.exp_le_exp.mpr (by norm_num : (10650 : ℝ) ≤ 11450)) hu
@@ -135,7 +135,7 @@ theorem high_positive_three_nonvanishing
   have hrecip' : 1 / (1 - beta) ≤
       (31.76 + appendixBFinalCorrection 76.2 u) * P +
         17.49 * Real.log 3 := by
-    simpa only [P, F, mul_assoc] using hrecip.2
+    simpa only [P, F, mul_assoc, Nat.cast_ofNat] using! hrecip.2
   exact (not_lt_of_ge (hD2LeInv.trans (hrecip'.trans hRhsLeD1))) hDlt
 
 /-- Sign-symmetric version of the preceding high theorem. -/

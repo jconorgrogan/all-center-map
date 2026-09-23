@@ -124,7 +124,7 @@ theorem eventually_primePowerCorrection_upper :
         (1 / 32 : ℝ) * Real.rpow X (1 / 2 : ℝ) := by
       rw [Real.norm_eq_abs, Real.norm_eq_abs,
         abs_of_nonneg (by positivity), abs_of_nonneg (by positivity)] at hlog
-      simpa only [] using hlog
+      simpa only [] using! hlog
     simpa [Real.rpow_one, Real.sqrt_eq_rpow] using hraw
   have hsqrtTwo : Real.sqrt (2 * X) ≤ 2 * Real.sqrt X := by
     rw [Real.sqrt_mul (by norm_num : (0 : ℝ) ≤ 2)]

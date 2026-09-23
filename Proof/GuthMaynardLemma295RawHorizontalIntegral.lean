@@ -150,7 +150,7 @@ theorem norm_lemma295RawIntegrand_horizontal_uniform_le
 
 theorem tendsto_rawHorizontalEnvelope_zero (N g : ℝ) (n : ℕ) :
     Tendsto (rawHorizontalEnvelope N g n) atTop (𝓝 0) := by
-  simpa [rawHorizontalEnvelope] using
+  simpa [rawHorizontalEnvelope] using!
     (tendsto_rawZetaMellinRatio_zero n g).const_mul (rawHorizontalConstant N n)
 
 /-- The upper side of the raw rectangle tends to zero. -/

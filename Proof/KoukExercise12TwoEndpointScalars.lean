@@ -70,7 +70,7 @@ theorem halfIntegerPoint_rpow_one_sub_le_weakFactor
     calc
       Real.rpow x (-omega) ≤
           Real.rpow (Real.rpow X (1 / 12 : ℝ)) (-omega) :=
-        Real.rpow_le_rpow_of_exponent_nonpos
+        Real.rpow_le_rpow_of_nonpos
           (Real.rpow_pos_of_pos hXpos _) hroot (by linarith)
       _ = Real.rpow X ((1 / 12 : ℝ) * (-omega)) :=
         (Real.rpow_mul hXpos.le (1 / 12 : ℝ) (-omega)).symm

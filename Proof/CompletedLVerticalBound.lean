@@ -15,9 +15,11 @@ theorem exists_norm_completedHurwitzZetaEven₀_le_fixedStrip
     ∃ C : ℝ, 0 ≤ C ∧ ∀ s : ℂ, -1 ≤ s.re → s.re ≤ 2 →
       ‖completedHurwitzZetaEven₀ a s‖ ≤ C := by
   let P := (hurwitzEvenFEPair a).toStrongFEPair
+  have hP : IsStrongFEPair P :=
+    (hurwitzEvenFEPair a).isStrongFEPair_toStrongFEPair
   obtain ⟨C, hC, hbound⟩ :=
-    PLInteriorGrowth.StrongFEPair.exists_norm_Λ_le_on_re_Icc
-      P (-(1 / 2 : ℝ)) 1 (by norm_num)
+    PLInteriorGrowth.IsStrongFEPair.exists_norm_Λ_le_on_re_Icc
+      hP (-(1 / 2 : ℝ)) 1 (by norm_num)
   refine ⟨C / 2, div_nonneg hC (by norm_num), ?_⟩
   intro s hlo hhi
   have hlo' : -(1 / 2 : ℝ) ≤ (s / 2).re := by
@@ -28,7 +30,9 @@ theorem exists_norm_completedHurwitzZetaEven₀_le_fixedStrip
     linarith
   have h := hbound (s / 2) hlo' hhi'
   have h' : ‖(hurwitzEvenFEPair a).Λ₀ (s / 2)‖ ≤ C := by
-    simpa [P, WeakFEPair.toStrongFEPair, StrongFEPair.Λ, WeakFEPair.Λ₀] using h
+    convert h
+    rw [hP.Λ_eq]
+    rfl
   change ‖((hurwitzEvenFEPair a).Λ₀ (s / 2)) / 2‖ ≤ C / 2
   rw [norm_div, Complex.norm_ofNat]
   exact div_le_div_of_nonneg_right h' (by norm_num)
@@ -39,9 +43,10 @@ theorem exists_norm_completedHurwitzZetaOdd_le_fixedStrip
     ∃ C : ℝ, 0 ≤ C ∧ ∀ s : ℂ, -1 ≤ s.re → s.re ≤ 2 →
       ‖completedHurwitzZetaOdd a s‖ ≤ C := by
   let P := hurwitzOddFEPair a
+  have hP : IsStrongFEPair P := isStrong_hurwitzOddFEPair a
   obtain ⟨C, hC, hbound⟩ :=
-    PLInteriorGrowth.StrongFEPair.exists_norm_Λ_le_on_re_Icc
-      P 0 (3 / 2 : ℝ) (by norm_num)
+    PLInteriorGrowth.IsStrongFEPair.exists_norm_Λ_le_on_re_Icc
+      hP 0 (3 / 2 : ℝ) (by norm_num)
   refine ⟨C / 2, div_nonneg hC (by norm_num), ?_⟩
   intro s hlo hhi
   have hlo' : 0 ≤ ((s + 1) / 2).re := by

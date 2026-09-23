@@ -63,8 +63,8 @@ theorem tsum_vonMangoldt_div_rpow_le
   have hs : 1 < 1 + delta / 2 := by linarith
   have hseries : Summable fun n : ℕ =>
       (n : ℝ) ^ (-(1 + delta / 2)) := by
-    simpa only [MAPMertensAnalyticLeaf.realRpowSummandHom_apply] using
-      (MAPMertensAnalyticLeaf.summable_realRpowSummandHom hs)
+    change Summable (MAPMertensAnalyticLeaf.realRpowSummandHom (1 + delta / 2) (by linarith))
+    exact MAPMertensAnalyticLeaf.summable_realRpowSummandHom hs
   have ha : Summable a := hseries.mul_left (2 / delta)
   have hpa : ∀ n, p n ≤ a n := fun n =>
     vonMangoldt_div_rpow_le hdelta n

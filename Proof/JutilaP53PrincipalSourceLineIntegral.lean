@@ -129,7 +129,7 @@ theorem exists_principal_sourceLine_integrable_and_norm_integral_le
       (DirichletCharacter.differentiableAt_LFunction
         (1 : DirichletCharacter ℂ q) _ (Or.inl hz1)).continuousAt hinner
   have hcont : Continuous F := by
-    simpa [F, p53TwoScaleContourIntegrand] using (hcontGamma.mul hcontQ).mul hcontL
+    simpa [F, p53TwoScaleContourIntegrand] using! (hcontGamma.mul hcontQ).mul hcontL
   have hmajor : Integrable (fun t : ℝ => (A * B * D) * f t) := hf.const_mul _
   have hInt : Integrable F := hmajor.mono' hcont.aestronglyMeasurable
     (Filter.Eventually.of_forall hbound)

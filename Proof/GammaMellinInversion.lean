@@ -166,7 +166,8 @@ theorem exp_neg_eq_gamma_vertical_integral
           (x : ℂ) ^ (-((sigma : ℂ) + t * Complex.I))) := by
   have h := (mellinInv_Gamma_eq_exp_neg hsigma hx).symm
   rw [mellinInv] at h
-  simpa only [smul_eq_mul, mul_comm] using h
+  convert h
+  simp [smul_eq_mul, mul_comm]
 
 /-- Reversing a positive real quotient turns the negative Mellin exponent
 into the positive exponent used in Appendix (A.4). -/

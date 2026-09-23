@@ -347,7 +347,8 @@ theorem pointMassFourierKernel_localConstancy_explicit
       ‖(𝓕 (sourceBumpSchwartz 1 zero_lt_one) : 𝓢(ℝ, ℂ)) xi‖ ≤
         sourceBumpFourierConstant 1 zero_lt_one 0 := by
     intro xi
-    simpa using sourceBump_fourier_decay 1 zero_lt_one 0 xi
+    rw [SchwartzMap.fourier_coe]
+    simpa only [pow_zero, div_one] using! sourceBump_fourier_decay 1 zero_lt_one 0 xi
   have hcentral :
       (∫ xi in Set.Icc (-A) A,
         ‖(𝓕 (sourceBumpSchwartz 1 zero_lt_one)) xi‖ *

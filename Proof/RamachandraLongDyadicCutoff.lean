@@ -84,7 +84,7 @@ theorem cutoff_geometric_le_four_mul_rpow
     have h := X_lt_four_mul_pow_cutoff hX
     dsimp [K]
     linarith
-  have hneg := Real.rpow_lt_rpow_of_exponent_neg hquarter hbase
+  have hneg := Real.rpow_lt_rpow_of_neg hquarter hbase
     (by norm_num : (-(1 / 4 : ℝ)) < 0)
   have hdyadic : Real.rpow (((2 ^ K : ℕ) : ℝ)) (-(1 / 4 : ℝ)) =
       (Real.rpow 2 (-(1 / 4 : ℝ))) ^ K := by
@@ -112,7 +112,7 @@ theorem cutoff_geometric_le_four_mul_rpow
       · have h := Real.rpow_le_rpow_of_exponent_le
           (by norm_num : (1 : ℝ) ≤ 4)
           (by norm_num : (1 / 4 : ℝ) ≤ 1)
-        simpa only [Real.rpow_one] using h
+        simpa only [Real.rpow_one] using! h
       · exact Real.rpow_nonneg hXpos.le _
     _ = 4 * Real.rpow X (-(1 / 4 : ℝ)) := by ring
 

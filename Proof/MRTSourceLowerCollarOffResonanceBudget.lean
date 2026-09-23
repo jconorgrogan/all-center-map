@@ -22,7 +22,8 @@ theorem intervalIntegral_exp_half_mul_le
     intro w
     unfold F
     convert (Real.hasDerivAt_exp (w / 2) |>.scomp w
-      ((hasDerivAt_id w).div_const 2)).const_mul (2 * C) using 1 <;> ring
+      ((hasDerivAt_id w).div_const 2)).const_mul (2 * C) using 1 <;>
+      (try funext z) <;> simp only [Function.comp_def, id_eq, smul_eq_mul] <;> ring
   have hderiv : deriv F = fun w ↦ Real.exp (w / 2) * C := by
     funext w
     exact (hD w).deriv

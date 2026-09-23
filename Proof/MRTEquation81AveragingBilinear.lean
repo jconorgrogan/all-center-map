@@ -86,7 +86,9 @@ theorem averagedEquation81Kernel_eq_boxes
     ((measurable_symmetricBoxWeight R).comp
       (measurable_const.prodMk measurable_snd))
   unfold averagedEquation81Kernel
-  rw [lintegral_prod _ ((hw₁.mul hw₂).mul hk).aemeasurable]
+  have hm : AEMeasurable (fun z : ℝ × ℝ => symmetricBoxWeight R u z.1 * symmetricBoxWeight R v z.2 * k z.1 z.2) (volume.prod volume) := by
+    exact ((hw₁.mul hw₂).mul hk).aemeasurable
+  rw [lintegral_prod _ hm]
   simp only [Prod.fst, Prod.snd]
   have hinner (x : ℝ) :
       (∫⁻ y : ℝ, symmetricBoxWeight R u x * symmetricBoxWeight R v y * k x y) =
@@ -253,7 +255,7 @@ theorem equation81_bilinear_averaging
   have hpoint (z : ℝ × ℝ) :
       F z.1 * F z.2 * (s * K z) ≤
         F z.1 * F z.2 * (9 * KA z) := by
-    apply mul_le_mul_left'
+    apply mul_le_mul_right
     exact averagedEquation81Kernel_lower hR
   have hmono :
       (∫⁻ z : ℝ × ℝ, F z.1 * F z.2 * (s * K z)

@@ -176,7 +176,8 @@ theorem tauSquareCoprimeHarmonicSum_le_localEulerProduct
   let embedFun : (↥source) → (x + 1).smoothNumbers := fun n =>
     ⟨n.1, by
       apply Nat.mem_smoothNumbers_of_lt
-      · simpa [source] using (Finset.mem_Icc.mp n.2).1
+      · have : 1 ≤ n.1 := by simpa [source] using (Finset.mem_Icc.mp n.2).1
+        exact Nat.lt_of_lt_of_le (by norm_num) this
       · have hnle := (Finset.mem_Icc.mp n.2).2
         omega⟩
   let embed : (↥source) ↪ (x + 1).smoothNumbers :=
@@ -196,14 +197,14 @@ theorem tauSquareCoprimeHarmonicSum_le_localEulerProduct
     · intro m hm
       exact tauCoprimeHarmonicWeight_nonneg r modulus m
     · intro n
-      dsimp [embed, f]
+      change (if n.1.Coprime modulus then (tauAF k n.1 ^ 2 : ℝ) / (n.1 : ℝ)
+        else 0) ≤ tauCoprimeHarmonicWeight r modulus n.1
       by_cases hcop : n.1.Coprime modulus
       · rw [if_pos hcop, tauCoprimeHarmonicWeight, if_pos hcop]
         exact div_le_div_of_nonneg_right
           (by exact_mod_cast tauAF_square_le_tauAF_mul k n.1)
           (by positivity)
       · simp [hcop, tauCoprimeHarmonicWeight]
-        exact tauCoprimeHarmonicWeight_nonneg r modulus (embedFun n)
     · exact hsource
     · exact hsmooth
   rw [← hprod]
@@ -321,7 +322,7 @@ theorem localEulerProduct_le_exp_omittedPrimeSum
           ∏ p ∈ (x + 1).primesBelow,
             Real.exp (if p ∣ modulus then 0 else
               (r : ℝ) * ((p : ℝ)⁻¹ + 2 * (p : ℝ)⁻¹ ^ 2)) := by
-        apply Finset.prod_le_prod
+        apply Finset.prod_le_prod₀
         · intro p hp
           have hpp := Nat.prime_of_mem_primesBelow hp
           have hpR : (0 : ℝ) < p := by exact_mod_cast hpp.pos

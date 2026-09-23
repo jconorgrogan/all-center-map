@@ -354,8 +354,7 @@ theorem setIntegral_norm_sourceFirstPoissonLocalizedPairSum_sq_le_affine
     apply mul_le_mul
     · exact hcard xi hxi
     · exact le_rfl
-    · dsimp only [G, H]
-      positivity
+    · positivity
     · exact hP
   have hregion :
       (∫ xi in S,

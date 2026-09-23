@@ -362,7 +362,7 @@ theorem card_parityFloorRepresentatives (Z : Finset ℂ) :
 theorem chosenParityFloorBins_large (Z : Finset ℂ) :
     (occupiedFloorBins Z).card ≤ 2 * (chosenParityFloorBins Z).card := by
   classical
-  have hsplit := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsplit := Finset.card_filter_add_card_filter_not
     (s := occupiedFloorBins Z) (fun n : ℤ => n % 2 = 0)
   change (evenOccupiedFloorBins Z).card + (oddOccupiedFloorBins Z).card =
     (occupiedFloorBins Z).card at hsplit

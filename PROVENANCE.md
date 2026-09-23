@@ -1,9 +1,18 @@
 # Provenance
 
 `proof-snapshot.json` records the 1,861 source modules and their SHA-256 hashes.
-The release preserves 1,860 modules from the isolated verified development
-byte-for-byte. One algebraic proof has a recorded, checked optimization with
-the same statement; see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md).
+The development originated in an isolated verified snapshot. The current
+sources include compatibility changes for Lean `v4.35.0-rc2` and Mathlib
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`, together with an earlier algebraic
+proof-term optimization; see [PROOF_OPTIMIZATION.md](PROOF_OPTIMIZATION.md).
+Historical verification records retain the source hashes and toolchain of
+the run they document. The release Git commit identifies the submitted source.
+
+The current Lean 4.35 sources passed the `Challenge`, `Solution` and
+`SolutionAxiomAudit` build on macOS ARM. The
+[verification record](evidence/lean435-macos-verification.json) identifies that
+run; [VERIFICATION.md](VERIFICATION.md) separates it from the earlier Lean 4.30
+Linux and proof-closure records.
 
 The original release scaffold is under `evidence/historical_scaffold`.
 Author, maintainer, and Apache-2.0 licensing were confirmed on 2026-09-20.

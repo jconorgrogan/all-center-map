@@ -236,7 +236,7 @@ theorem perronConvolution_sq_le_weightMass_mul
       exact (perronWeight_pos u).le
     · refine ⟨0, ?_, perronWeight_pos 0⟩
       constructor <;> linarith
-  simpa only [perronConvolution] using
+  simpa only [perronConvolution, Function.comp_apply, Pi.add_apply, id_eq] using!
     (intervalIntegral_weighted_sq_le continuous_perronWeight
       (hG.comp (continuous_const.add continuous_id)) (by linarith)
       (fun u ↦ (perronWeight_pos u).le) hW)
@@ -267,8 +267,8 @@ theorem perronConvolution_fourth_le_cubeWeightMass_mul
     convert hsquare using 1 <;> ring
   have hsecond : P₂ ^ 2 ≤ W * P₄ := by
     have hs := perronConvolution_sq_le_weightMass_mul
-      (t := t) (hG.pow 2) hV
-    simpa [W, P₂, P₄, ← pow_mul] using hs
+      (G := fun x => G x ^ 2) (t := t) (hG.pow 2) hV
+    simpa [W, P₂, P₄, ← pow_mul] using! hs
   calc
     (perronConvolution G V t) ^ 4 ≤ (W * P₂) ^ 2 := hfirstSq
     _ = W ^ 2 * P₂ ^ 2 := by ring
@@ -448,9 +448,11 @@ theorem component_square_transfer_of_pointwise_cutoff
         ((∫ t in a..b, (perronConvolution G V t) ^ 2) +
           (b - a) * E ^ 2) := by
       rw [intervalIntegral.integral_const_mul]
+      have hi : IntervalIntegrable
+          (fun t : ℝ => perronConvolution G V t ^ 2) volume a b :=
+        ((continuous_perronConvolution hG hV.le).pow 2).intervalIntegrable _ _
       rw [intervalIntegral.integral_add
-        ((continuous_perronConvolution hG hV.le).pow 2 |>.intervalIntegrable _ _)
-        intervalIntegrable_const]
+        hi intervalIntegrable_const]
       simp only [intervalIntegral.integral_const, smul_eq_mul]
     _ ≤ 2 * K ^ 2 *
         ((∫ u in (-V)..V, perronWeight u) ^ 2 *

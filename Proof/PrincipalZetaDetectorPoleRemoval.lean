@@ -60,7 +60,7 @@ theorem analyticAt_principalShiftedZeroQuotient (rho z : ℂ) :
       ⟨p.fslope, hp.has_fpower_series_dslope_fslope⟩
     have hds' : AnalyticAt ℂ (dslope principalF rho) (rho + 0) := by
       simpa using hds
-    simpa [principalShiftedZeroQuotient, Function.comp_def] using
+    simpa [principalShiftedZeroQuotient, Function.comp_def] using!
       hds'.comp (by fun_prop : AnalyticAt ℂ (fun w : ℂ => rho + w) 0)
   · have hdiv : AnalyticAt ℂ
         (fun w : ℂ => (principalF (rho + w) - principalF rho) / w) z := by

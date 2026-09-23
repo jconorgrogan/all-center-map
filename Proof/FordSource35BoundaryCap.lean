@@ -57,11 +57,11 @@ def source35InteriorEquivInterior
     rcases i with ⟨b, idx⟩
     cases b with
     | false =>
-      simpa [coord, E, source35EquivEnergy] using
+      simpa [coord, E, e, source35EquivEnergy] using!
         ((shiftedU_ne_endpoint_iff_le (p := p) (Q := Q) c hboundary
           (r.1.1.1.1.2 idx)).2 (r.2.1 idx))
     | true =>
-      simpa [coord, E, source35EquivEnergy] using
+      simpa [coord, E, e, source35EquivEnergy] using!
         ((shiftedU_ne_endpoint_iff_le (p := p) (Q := Q) c hboundary
           (r.1.1.1.2 idx)).2 (r.2.2 idx))
   · have hcoord := r.2
@@ -71,7 +71,7 @@ def source35InteriorEquivInterior
       have hne' : (E.symm r.1).1.1.1.2 i ≠ e := by
         intro hbad
         apply hne
-        simpa [coord, E, source35EquivEnergy] using hbad
+        simpa [coord, E, e, source35EquivEnergy] using! hbad
       exact (shiftedU_ne_endpoint_iff_le (p := p) (Q := Q) c hboundary
         ((E.symm r.1).1.1.1.2 i)).1 hne'
     · intro i
@@ -79,7 +79,7 @@ def source35InteriorEquivInterior
       have hne' : (E.symm r.1).1.1.2 i ≠ e := by
         intro hbad
         apply hne
-        simpa [coord, E, source35EquivEnergy] using hbad
+        simpa [coord, E, e, source35EquivEnergy] using! hbad
       exact (shiftedU_ne_endpoint_iff_le (p := p) (Q := Q) c hboundary
         ((E.symm r.1).1.1.2 i)).1 hne'
   · intro r

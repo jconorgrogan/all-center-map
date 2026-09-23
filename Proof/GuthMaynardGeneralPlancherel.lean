@@ -46,7 +46,7 @@ theorem integral_norm_sq_fourier_eq_of_integrable_fourier
         conj (FourierTransform.fourier f xi)) =
       ∫ x : ℝ, FourierTransform.fourierInv
         (FourierTransform.fourier f) x * conj (f x) := by
-    simpa [RCLike.inner_apply] using hsesq
+    simpa only [innerSL_apply_apply, RCLike.inner_apply, FourierTransform.fourier] using! hsesq
   have hinv : FourierTransform.fourierInv
       (FourierTransform.fourier f) = f :=
     hc.fourierInv_fourier_eq hf hfh

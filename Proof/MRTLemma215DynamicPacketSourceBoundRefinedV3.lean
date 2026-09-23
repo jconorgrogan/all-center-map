@@ -129,7 +129,7 @@ theorem componentIntegral_dynamicHBBranch_le_twoStageV3
             (intervalCutoff (openSourceLeft X) (2 * X)
               (branchHighPacketConvolutionV3 packet))
             beta eta component := by
-    simpa [dynamicBranchHighSumCoeffV3] using hhigh
+    simpa [dynamicBranchHighSumCoeffV3] using! hhigh
   calc
     componentIntegral X H 1 q
         (fun n => dynamicBranchCombinedRemainderCoeffV3 X delta H₀ branch n +

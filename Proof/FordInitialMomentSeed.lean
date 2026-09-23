@@ -28,9 +28,8 @@ theorem psum_eval {k : ℕ} (x : Fin k → ℕ) (j : ℕ) :
 
 theorem esymm_eval {k : ℕ} (x : Fin k → ℕ) (n : ℕ) :
     eVal x n = (xMulti x).esymm n := by
-  rw [eVal, MvPolynomial.aeval_esymm_eq_multiset_esymm]
-  congr 1
-  simp [xMulti, qTuple, List.ofFn_eq_map]
+  rw [eVal, MvPolynomial.aeval_esymm_eq_multiset_esymm, Fin.univ_val_map]
+  rfl
 
 lemma eval_mul_esymm {k : ℕ} (x : Fin k → ℕ) (n : ℕ) :
     (n : ℚ) * eVal x n =
@@ -186,7 +185,9 @@ theorem solutionFinset_eq_completeMoment (k P : ℕ) :
     (solutionFinset k P).card =
       MAPFordCompleteSystemMoment.completeMoment k k P := by
   classical
-  simp [solutionFinset, matching, MAPFordCompleteSystemMoment.completeMoment]
+  apply congrArg Finset.card
+  ext xy
+  simp [solutionFinset, matching, Finset.mem_filter, Finset.mem_univ, Finset.mem_Icc]
 
 lemma solution_sorted_map_injective {k P : ℕ} :
     Function.Injective

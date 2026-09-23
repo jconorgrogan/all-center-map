@@ -104,7 +104,7 @@ theorem continuous_longTailShell
       (-(sigma + 1 / 4)) v)
     (fun n => continuous_reflectedTailInfiniteShellCoeff
       X sigma (-(sigma + 1 / 4)) n) psi
-  simpa only [Function.uncurry_apply_pair] using
+  simpa only [Function.uncurry_apply_pair] using!
     hjoint.comp (continuous_const.prodMk continuous_id)
 
 /-- Joint continuity in the source ordinate `t` and Mellin ordinate `v`.

@@ -224,7 +224,6 @@ theorem mem_orderedBalancedBlock_of_sorted_balanced
   have hw3' :
       (2 ^ (k + d) : ℝ) ≤ |(p.2 : ℝ)| ∧ |(p.2 : ℝ)| ≤
         2 * (2 ^ (k + d) : ℝ) := by
-    dsimp [j]
     rw [abs_cast_natAbs]
     rw [hthird]
     exact hw3

@@ -37,7 +37,13 @@ inductive HBRemainderKind where
   | typeD2
   | unitScale
   | smallTerm
-deriving DecidableEq, Fintype
+deriving DecidableEq
+
+instance : Fintype HBRemainderKind where
+  elems := {.typeII, .typeD1, .typeD2, .unitScale, .smallTerm}
+  complete := by
+    intro kind
+    cases kind <;> simp
 
 def scaleNatCoefficient (c : ℝ) (f : ℕ → ℂ) : ℕ → ℂ :=
   fun n => (c : ℂ) * f n

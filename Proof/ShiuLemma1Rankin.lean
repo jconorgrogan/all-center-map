@@ -127,7 +127,7 @@ theorem finiteEulerProduct_le_exp_primeInvLogSum
         (1 - MAPMertensAnalyticLeaf.realRpowSummandHom δ hδ.ne' p)⁻¹ ≤
       Real.exp (δ⁻¹ * primeInvLogSum y) := by
   rw [primeInvLogSum, Finset.mul_sum, Real.exp_sum]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro p hp
     have hpprime : p.Prime := (Finset.mem_filter.mp hp).2
     have hpone : (1 : ℝ) < p := by exact_mod_cast hpprime.one_lt
@@ -176,11 +176,19 @@ theorem smoothCount_le_rankinEulerProduct
         (((n : ℕ) : ℝ) ^ (-δ))).summable
     have hg : Summable g := by
       exact hEuler.2.summable
-    have hinj := Summable.tsum_le_tsum_of_inj e e.injective
-      (fun m _ => Real.rpow_nonneg (Nat.cast_nonneg (m : ℕ)) (-δ))
-      (fun n => le_rfl) hfinite hg
-    simpa [e, g, smoothEmbedding,
-      MAPMertensAnalyticLeaf.realRpowSummandHom_apply] using hinj
+    have hge (n : {n // n ∈ smoothFinset x y}) :
+        g (e n) = ((n : ℕ) : ℝ) ^ (-δ) := by
+      change MAPMertensAnalyticLeaf.realRpowSummandHom δ hδ.ne' (n : ℕ) = _
+      exact MAPMertensAnalyticLeaf.realRpowSummandHom_apply δ hδ.ne' (n : ℕ)
+    have hinj : (∑' n : {n // n ∈ smoothFinset x y},
+        ((n : ℕ) : ℝ) ^ (-δ)) ≤ ∑' m, g m :=
+      Summable.tsum_le_tsum_of_inj e e.injective
+        (fun m _ => by
+          change 0 ≤ MAPMertensAnalyticLeaf.realRpowSummandHom δ hδ.ne' (m : ℕ)
+          rw [MAPMertensAnalyticLeaf.realRpowSummandHom_apply]
+          exact Real.rpow_nonneg (Nat.cast_nonneg (m : ℕ)) (-δ))
+        (fun n => (hge n).symm.le) hfinite hg
+    simpa only [tsum_fintype] using hinj
   have hpoint (n : {n // n ∈ smoothFinset x y}) :
       (1 : ℝ) ≤ (x : ℝ) ^ δ * (((n : ℕ) : ℝ) ^ (-δ)) := by
     have hnmem := (Finset.mem_filter.mp n.property).1
@@ -197,7 +205,8 @@ theorem smoothCount_le_rankinEulerProduct
         exact mul_le_mul_of_nonneg_right hpow (Real.rpow_nonneg (by positivity) _)
   have hcard : (smoothCount x y : ℝ) =
       ∑ n : {n // n ∈ smoothFinset x y}, (1 : ℝ) := by
-    simp [smoothCount, smoothFinset]
+    rw [Finset.sum_const, nsmul_eq_mul, mul_one, Finset.card_univ, Fintype.card_coe]
+    rfl
   rw [hcard]
   calc
     (∑ n : {n // n ∈ smoothFinset x y}, (1 : ℝ)) ≤

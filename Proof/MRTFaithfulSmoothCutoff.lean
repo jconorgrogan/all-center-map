@@ -88,7 +88,7 @@ theorem integrable_sq_norm_faithfulCutoffFourierKernel :
     Integrable (fun xi : ℝ ↦
       ‖cutoffFourierKernel faithfulCutoff xi‖ ^ 2) := by
   exact (memLp_two_iff_integrable_sq_norm
-    faithfulCutoffFourierKernel_memLp_two.1).1
+    faithfulCutoffFourierKernel_memLp_two.aestronglyMeasurable).1
       faithfulCutoffFourierKernel_memLp_two
 
 theorem faithfulCutoff_integral_lower :

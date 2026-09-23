@@ -418,7 +418,7 @@ theorem norm_eulerCorrection_le_exp_mass
         ‖1 - chi.primitiveCharacter p *
           (p : ℂ) ^ (-((sigma : ℂ) + t * Complex.I))‖) ≤
       ∏ p ∈ q.primeFactors, (1 + (p : ℝ) ^ (-sigma)) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro p hp
         positivity
       · intro p hp

@@ -372,7 +372,7 @@ theorem certified_tauFourSquare_shortInterval :
       have hI' :
           (ShiuEndToEnd.classMass 4 X Y 1 0 Z cutoff FourClass.I : ℝ) ≤
             KI * (Y : ℝ) * Real.log (X : ℝ) ^ 16 := by
-        simpa [KI] using hI
+        simpa [KI] using! hI
       have hIV' :
           (ShiuEndToEnd.classMass 4 X Y 1 0 Z cutoff FourClass.IV : ℝ) ≤
             KIV * (Y : ℝ) * Real.log (X : ℝ) ^ 16 := by

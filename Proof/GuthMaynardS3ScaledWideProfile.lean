@@ -135,9 +135,9 @@ theorem scaledWideProfile_sourceAdmissibleProfile
   have hcont : Continuous (scaledWideProfile B W) := by
     exact hwide.continuous.comp (continuous_const.mul continuous_id)
   have hInt : Integrable (scaledWideProfile B W) := by
-    convert hwide.integrable.comp_mul_left' (by norm_num : (4 : ℝ) ≠ 0) using 1
+    exact hwide.integrable.comp_mul_left' (by norm_num : (4 : ℝ) ≠ 0)
   have hsq : Integrable (fun u : ℝ => scaledWideProfile B W u ^ 2) := by
-    convert hwide.squareIntegrable.comp_mul_left' (by norm_num : (4 : ℝ) ≠ 0) using 1
+    exact hwide.squareIntegrable.comp_mul_left' (by norm_num : (4 : ℝ) ≠ 0)
   have hdec : SourceFourierRapidDecay
       (FourierTransform.fourier
         (fun u : ℝ => (scaledWideProfile B W u : ℂ))) T

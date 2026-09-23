@@ -888,7 +888,7 @@ theorem eventually_project_scale_geometry
     have hxone : 1 ≤ Real.rpow T kOut := by
       calc
         (1 : ℝ) ≤ 3 := by norm_num
-        _ ≤ Real.rpow T kOut := by simpa only using hgrowT
+        _ ≤ Real.rpow T kOut := by simpa only using! hgrowT
     have hxlin : 2 * Real.rpow T kOut + 1 ≤
         3 * Real.rpow T kOut := by
       linarith
@@ -1153,7 +1153,7 @@ theorem postA5HighStripStructuredSplitReduction_of_nonprincipalFourthMoment
     have hYle : Real.rpow T (1 / 2) ≤ T := by
       have hraw := Real.rpow_le_rpow_of_exponent_le hTone
         (by norm_num : (1 / 2 : ℝ) ≤ 1)
-      simpa only [Real.rpow_one] using hraw
+      simpa only [Real.rpow_one] using! hraw
     have hlogSqY : (Real.log T) ^ 2 ≤ Real.rpow T (1 / 2) := by
       simpa [Real.rpow_natCast] using hlogSqT
     exact hlogSqY.trans hYle

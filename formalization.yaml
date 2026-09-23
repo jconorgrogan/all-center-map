@@ -2,24 +2,23 @@ version: "v0.4"
 project:
   name: "Uniform Minor-Arc Cancellation for Primes at the X^{2/15+ε} Scale"
   description: >-
-    Prime numbers leave a signal in exponential sums. Away from the simple
-    rational frequencies called major arcs, the squared von Mangoldt exponential
-    sum over X < n <= 2X has total mass at most C X (log X)^(-A) inside every
-    centered arc of radius 1/(2H), once H >= X^(2/15+epsilon) and X is large
-    enough. On the minor-arc part of every centered arc, the center itself may
-    lie anywhere on the circle.
+    We prove uniform cancellation in prime-weighted exponential sums at the
+    2/15 scale, improving the 8/33 local Fourier scale in the
+    Matomäki–Radziwiłł–Tao machinery for averaged prime-pair correlations.
+    On the minor-arc part of every centered arc of radius 1/(2H), the squared
+    von Mangoldt exponential sum over X < n <= 2X has integral at most
+    C X (log X)^(-A), for every A > 0 and epsilon > 0, once H >= X^(2/15+epsilon) and X is
+    large enough. The center may lie anywhere on the circle.
     The same cutoffs and constants work for every center and are chosen before
     X and H. This gives uniform minor-arc cancellation at the 2/15 threshold.
-    The estimate is part of the analytic machinery behind
-    Matomäki–Radziwiłł–Tao's work on divisor correlations and averaged prime
-    pairs, including their 8/33 scale. Since 2/15 < 8/33, the admissible H is
+    Since 2/15 < 8/33, the admissible H is
     smaller, so the frequency windows of length 1/H are wider and the
     shift-averaging intervals are shorter. The constants C and X0 are ineffective
     because the proof uses Siegel's theorem. The development also contains an
     internal proof of the epsilon-form of Guth–Maynard's large-value estimate
-    for Dirichlet polynomials. The MAP proof closure contains 100,596
-    declarations, and the Guth–Maynard closure contains 75,874 declarations;
-    both passed fresh Lean kernel replay with standard axioms. The formal statement is
+    for Dirichlet polynomials. The recorded 20 September Lean 4.30 kernel
+    replays checked 100,596 declarations for MAP and 75,874 for Guth–Maynard,
+    using only standard axioms. The formal statement is
     AllCenterMAP.map_two_fifteenths, manuscript Theorem 1.1.
   authors: ["Conor Grogan"]
   license: "Apache-2.0"
@@ -109,19 +108,21 @@ fidelity:
     identity and independent kernel verification of the release are recorded in
     VERIFICATION.md.
 review:
-  status: "mechanical Lean, Comparator, NanoDa, and Landrun checks"
+  status: "mechanical verification; versioned evidence in VERIFICATION.md"
   notes: >-
-    The authoring baseline zero-argument MAP endpoint passed the pinned Lean
-    build, trust-zero source check, and fresh complete proof-closure replay.
-    The release has one documented, checked algebraic proof-term optimization.
-    The optimized release passed the fresh Linux build, Comparator, NanoDa, and
-    Lean kernel checks. The hosted public replay is the GitHub Actions workflow
-    Palomar release checks. This field does not record a human referee report.
+    The 20 September Lean 4.30 baseline passed the Linux build, Comparator,
+    NanoDa, Lean kernel checks, and source and axiom audits. The current
+    reproducibility pin is Lean v4.35.0-rc2 with Mathlib
+    065356127b1dc0016f66b7283ce0ce2c4055aa55. The current author macOS ARM
+    build passed all 10,797 jobs and the standard-axiom audit. The Palomar release checks
+    workflow includes the official full verification pipeline, bound to the
+    checked Git commit. VERIFICATION.md distinguishes the historical records
+    from the current hosted report.
 alignment:
   namespace: "AllCenterMAP"
   statements:
     - source: "Theorem 1.1 (Uniform local minor-arc estimate)"
       lean: "AllCenterMAP.map_two_fifteenths"
       module: "Challenge"
-      status: "proved endpoint; release verification passed"
-acknowledgements: "Lean 4, Mathlib, Palomar, Comparator, lean4export, NanoDa, and Landrun."
+      status: "proved endpoint"
+acknowledgements: "Lean 4, Mathlib, Palomar, Comparator, leanexport, NanoDa, con-ron, and bubblewrap."

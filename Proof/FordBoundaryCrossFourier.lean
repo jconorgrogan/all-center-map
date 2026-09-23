@@ -46,7 +46,7 @@ theorem cross_count
       intro alpha ha
       exact hα alpha
     _ = _ := by
-      simpa only [sub_eq_zero] using (finite_masked_integer_character_count
+      simpa only [sub_eq_zero] using! (finite_masked_integer_character_count
         (freq := fun (r : A × B) (j : Fin k) => f r.1 j - g r.2 j) (by
           intro r j
           exact hbound r.1 r.2 j))

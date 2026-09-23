@@ -280,9 +280,8 @@ theorem norm_signedFourierDiscrepancy_le
             rw [norm_mul, fourier_apply, Circle.norm_coe, mul_one]
       · rw [norm_mul]
         gcongr
-        simpa only [dyadicContinuousAmplitude] using
-          MAPContinuousOverlap.norm_dyadicAmplitude_le_length
-            (X := X) (β := beta) hX
+        exact MAPContinuousOverlap.norm_dyadicAmplitude_le_length
+          (X := X) (β := beta) hX
 
 /-- Continuity of the real-frequency lift of the signed Fourier discrepancy. -/
 theorem continuous_signedFourierDiscrepancy_lift
@@ -293,8 +292,7 @@ theorem continuous_signedFourierDiscrepancy_lift
       (by fun_prop : Continuous (fun beta : ℝ =>
         rationalCenter q a + (beta : UnitAddCircle)))).sub
     (continuous_const.mul (by
-      simpa only [dyadicContinuousAmplitude] using
-        MAPContinuousOverlap.continuous_dyadicAmplitude X))
+      exact MAPContinuousOverlap.continuous_dyadicAmplitude X))
 
 /-- The exact frequency-side product is globally in `L²`. -/
 theorem memLp_two_signedFrequencyProduct
@@ -383,7 +381,7 @@ theorem signedMeasureGallagherInequality_constant_four :
   have hrightInt : Integrable (fun beta : ℝ =>
       ‖gallagherWindowKernel y beta *
         signedFourierDiscrepancy X q a (-beta)‖ ^ 2) :=
-    (memLp_two_iff_integrable_sq_norm hfreq2.1).1 hfreq2
+    (memLp_two_iff_integrable_sq_norm hfreq2.aestronglyMeasurable).1 hfreq2
   have hpoint : ∀ beta ∈ Set.Icc (-r) r,
       ‖signedFourierDiscrepancy X q a (-beta)‖ ^ 2 ≤
         4 / y ^ 2 *

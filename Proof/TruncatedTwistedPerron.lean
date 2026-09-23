@@ -57,7 +57,7 @@ theorem continuous_perronTerm {q : ℕ} (χ : DirichletCharacter ℂ q)
               (c : ℂ) + Complex.I * (u : ℂ))
             (g := fun z : ℂ => LSeries.term (twistedMangoldtCoeff χ) z n)
             houter hinner rfl
-        simpa only [Function.comp_apply] using hcomp
+        simpa [Function.comp_def] using hcomp
     · fun_prop
   · fun_prop
   · exact fun t => denominator_ne_zero hc
@@ -140,7 +140,7 @@ theorem summable_restricted_perronTerm {q : ℕ} (χ : DirichletCharacter ℂ q)
   let b : ℕ → ℝ := fun n =>
     ‖LSeries.term (twistedMangoldtCoeff χ) (c : ℂ) n‖ * (x ^ c / c)
   have hs : LSeriesSummable (twistedMangoldtCoeff χ) (c : ℂ) := by
-    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt χ
         (by simpa using hc1))
   have hb : Summable b := by
@@ -279,7 +279,7 @@ theorem norm_coefficientTail_le
   have htermSummable : Summable fun n : ℕ =>
       ‖LSeries.term (twistedMangoldtCoeff χ) (c : ℂ) n‖ := by
     apply summable_norm_iff.mpr
-    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt χ
         (by simpa using hc1))
   have htailSummable : Summable fun n : {n // n ∉ S} =>
@@ -355,12 +355,12 @@ theorem norm_coefficientTail_le_vonMangoldt_series
   have htwistedBase : Summable fun n : ℕ =>
       ‖LSeries.term (twistedMangoldtCoeff χ) (c : ℂ) n‖ := by
     apply summable_norm_iff.mpr
-    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using
+    simpa only [twistedMangoldtCoeff, Pi.mul_apply] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt χ
         (by simpa using hc1))
   have htwisted : Summable fun n : {n // n ∉ S} =>
       ‖LSeries.term (twistedMangoldtCoeff χ) (c : ℂ) n‖ := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       htwistedBase.subtype {n : ℕ | n ∉ S}
   have hplainBase : Summable fun n : ℕ =>
       ‖LSeries.term (fun k : ℕ =>
@@ -370,7 +370,7 @@ theorem norm_coefficientTail_le_vonMangoldt_series
   have hplain : Summable fun n : {n // n ∉ S} =>
       ‖LSeries.term (fun k : ℕ =>
         (ArithmeticFunction.vonMangoldt k : ℂ)) (c : ℂ) n‖ := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       hplainBase.subtype {n : ℕ | n ∉ S}
   have hsum :
       (∑' n : {n // n ∉ S},

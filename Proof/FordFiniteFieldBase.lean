@@ -106,8 +106,11 @@ lemma sorted_val_eq_of_xMulti_eq {k : ℕ} {x y : Fin k → R}
   have hxy : List.Perm (List.ofFn (fun i => val (x i)))
       (List.ofFn (fun i => val (y i))) := by
     apply Multiset.coe_eq_coe.mp
-    simpa [xMulti, List.map_ofFn]
-      using hmval
+    convert hmval
+    · simp [xMulti, List.map_ofFn]
+      rfl
+    · simp [xMulti, List.map_ofFn]
+      rfl
   have hpx := Equiv.Perm.ofFn_comp_perm (Tuple.sort (fun i => val (x i)))
     (fun i => val (x i))
   have hpy := Equiv.Perm.ofFn_comp_perm (Tuple.sort (fun i => val (y i)))

@@ -421,6 +421,7 @@ theorem finiteNatDiscreteHilbertBilinear
   let e : ℕ ↪ ℤ := ⟨fun n ↦ (n : ℤ), by
     intro n m h
     exact Int.ofNat_inj.mp h⟩
+  have he (n : ℕ) : e n = (n : ℤ) := rfl
   have hform :
       discreteHilbertForm (s.map e)
           (fun z ↦ a z.natAbs) (fun z ↦ b z.natAbs) =
@@ -432,13 +433,13 @@ theorem finiteNatDiscreteHilbertBilinear
     intro n hn
     rw [← Finset.map_erase]
     rw [Finset.sum_map]
-    simp [e]
+    simp only [he, Int.natAbs_natCast]
   have henergyA :
       (∑ z ∈ s.map e, ‖a z.natAbs‖ ^ 2) = ∑ n ∈ s, ‖a n‖ ^ 2 := by
-    simp [e]
+    simp only [Finset.sum_map, he, Int.natAbs_natCast]
   have henergyB :
       (∑ z ∈ s.map e, ‖b z.natAbs‖ ^ 2) = ∑ n ∈ s, ‖b n‖ ^ 2 := by
-    simp [e]
+    simp only [Finset.sum_map, he, Int.natAbs_natCast]
   have h := finiteDiscreteHilbertBilinear (s.map e)
     (fun z ↦ a z.natAbs) (fun z ↦ b z.natAbs)
   rw [hform, henergyA, henergyB] at h
@@ -673,7 +674,7 @@ theorem finiteLogHilbertInequality_via_integerHilbert :
         apply intervalIntegral.norm_integral_le_of_norm_le (by norm_num)
         · filter_upwards with t ht
           exact normalizedNatDiscreteHilbert_le_four_pi_energy N a hN ht
-        · exact intervalIntegral.intervalIntegrable_const
+        · exact intervalIntegrable_const
       _ = 4 * Real.pi * coefficientEnergy a N := by simp
   calc
     ‖(N : ℂ) * ∫ t in (0 : ℝ)..1,

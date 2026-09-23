@@ -29,7 +29,7 @@ theorem norm_principal_localEulerProduct_one_le (r d : ℕ) :
     ‖jutilaLocalEulerProductComplex chiOne r d 1‖ ≤ 1 := by
   unfold jutilaLocalEulerProductComplex
   apply (Finset.norm_prod_le _ _).trans
-  apply (Finset.prod_le_one (fun p hp => norm_nonneg _))
+  apply (Finset.prod_le_one₀ (fun p hp => norm_nonneg _))
   intro p hp
   rw [principal_localEulerFactor_one (Nat.prime_of_mem_primeFactors hp)]
   norm_num

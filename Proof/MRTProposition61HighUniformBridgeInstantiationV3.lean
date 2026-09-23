@@ -142,7 +142,7 @@ theorem uniform_high_mass_instantiation
           (selectedMapInput_admissible_one hlog hQ hHone hHX hq hcop hbeta hfar)
       letI : NeZero p.q := ⟨hq0⟩
       have hXp : 2 ≤ p.X := by
-        simpa [p] using (show 2 ≤ X by linarith [hX3])
+        simpa [p] using! (show 2 ≤ X by linarith [hX3])
       let reserve : ℝ := apertureReserve epsilon
       have hr0 : 0 ≤ reserve := by
         dsimp [reserve]
@@ -161,12 +161,12 @@ theorem uniform_high_mass_instantiation
       have hT : 1 ≤ selectedHighTruncation p := by
         have hfar' : 2 * (Real.log p.X) ^ Cc₀ <
             stationaryWidth p.beta p.H := by
-          simpa [p, H] using hfar
+          simpa [p, H] using! hfar
         have hlogp : 1 ≤ Real.log p.X := by simpa [hpX] using hlog
         have hU : 1 ≤ stationaryWidth p.beta p.H := by
           nlinarith [hfar',
             (one_le_pow₀ hlogp : 1 ≤ (Real.log p.X) ^ Cc₀)]
-        simpa [selectedHighTruncation, highFreeTruncation, p, H, reserve] using
+        simpa [selectedHighTruncation, highFreeTruncation, p, H, reserve] using!
           (highFreeTruncation_ge_one_of_H (by linarith : 1 ≤ X) hU hHdef hr)
       have h30 : activeCertificateHighSlot p delta hXp hdelta ≤
           X * Real.rpow (Real.log X) (-A) / 30 := by
@@ -176,9 +176,9 @@ theorem uniform_high_mass_instantiation
         h30.trans (thirtieth_scalar_le_fifth (by linarith : 0 ≤ X)
           (Real.rpow_nonneg (by linarith : 0 ≤ Real.log X) _))
       refine ⟨hq0, hp, hXp, ?_, ?_, hT, h30, h5⟩
-      · simpa [p, highClassifierH0, hpX] using hclassifier
+      · simpa [p, highClassifierH0, hpX] using! hclassifier
       · intro rawBranch logIndex zbag mbag
-        simpa [p] using hsize rawBranch logIndex zbag mbag
+        simpa [p] using! hsize rawBranch logIndex zbag mbag
 
 end
 end MRTProposition61HighUniformBridgeInstantiationV3

@@ -120,7 +120,7 @@ theorem kTwoTransferenceFiberCard_le_two_of_smallScale
         q.1 * q.2 = l := hqprod
         _ = r.1 * r.2 := hrprod.symm
         _ = q.1 * r.2 := by rw [heq]
-  simpa [F] using hcard
+  simpa [F] using! hcard
 
 /-- Hence the exact supremum fiber loss is at most two. -/
 theorem kTwoTransferenceFiberCap_le_two_of_smallScale

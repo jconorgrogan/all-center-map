@@ -579,7 +579,7 @@ theorem tendsto_shiftedGammaRaw_principal_lowerHorizontal_zero
           norm_shiftedGammaRaw_principal_lower_le_envelope s hX haLo hbHi
             hx'.1.le hx'.2 hLLo hLHi hB)
     simpa [sub_eq_add_neg] using hbound
-  · simpa using henv
+  · simpa [sub_eq_add_neg] using henv
 
 /-- Infinite principal contour displacement with both the Gamma residue and
 the translated zeta simple residue retained exactly. -/

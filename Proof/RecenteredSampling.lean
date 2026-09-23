@@ -39,7 +39,7 @@ theorem norm_sq_le_unit_interval_energy
     apply Continuous.intervalIntegrable
     exact (hfcont.inner hf').const_mul 2
   have hgint : IntervalIntegrable g volume a (a + 1) := by
-    simpa [g] using (hfcont.norm.pow 2).intervalIntegrable a (a + 1)
+    exact (hfcont.norm.pow 2).intervalIntegrable a (a + 1)
   have hf'int : IntervalIntegrable (fun x => ‖f' x‖ ^ 2) volume a (a + 1) := by
     exact (hf'.norm.pow 2).intervalIntegrable a (a + 1)
   have henergyInt : IntervalIntegrable energy volume a (a + 1) := by

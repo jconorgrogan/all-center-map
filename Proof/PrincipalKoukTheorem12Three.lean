@@ -273,7 +273,7 @@ theorem high_principal_nearOne_zero_absent
     norm_num [arithmeticScale] at hzeta0'
     have hzeta0Base : (-logDeriv riemannZeta (u : ℂ)).re ≤
         1 / delta + 100000 * Real.log 2 := by
-      simpa only [one_div] using hzeta0'
+      simpa only [one_div, Complex.neg_re] using hzeta0'
     have hmul : 100000 * Real.log 2 ≤ 100000 * L :=
       mul_le_mul_of_nonneg_left hlogTwoLe (by norm_num)
     exact hzeta0Base.trans (by

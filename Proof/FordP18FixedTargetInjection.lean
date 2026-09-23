@@ -14,6 +14,7 @@ def fixedInterval (p r d : ℕ) : Type :=
     MAPFordCoarseP18Fiber.intervalPositive h}
 
 instance fixedIntervalFintype (p r d : ℕ) : Fintype (fixedInterval p r d) := by
+  classical
   dsimp [fixedInterval]
   infer_instance
 

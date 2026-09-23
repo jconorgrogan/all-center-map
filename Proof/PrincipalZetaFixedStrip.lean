@@ -42,7 +42,7 @@ private theorem normalized_diffContOnCl :
     hd.diffContOnCl.inv hdne
   have hF : DiffContOnCl ℂ principalRegularized (re ⁻¹' Ioo (-1 : ℝ) 2) :=
     (DirichletCharacter.differentiable_LFunctionTrivChar₁ 1).diffContOnCl
-  simpa [normalizedPrincipal, d, div_eq_inv_mul, mul_comm] using hinv.smul hF
+  simpa [normalizedPrincipal, d, div_eq_inv_mul, mul_comm] using! hinv.smul hF
 
 private theorem norm_completedZeta_le
     {C : ℝ}

@@ -56,8 +56,9 @@ theorem hasDerivAt_lowKernelArgument
     HasDerivAt (lowKernelArgument X beta eta u)
       (-(lowProjectionScale X beta eta / (2 * Real.pi))) w := by
   unfold lowKernelArgument
-  convert ((hasDerivAt_const w u).sub (hasDerivAt_id w)).const_mul
-    (lowProjectionScale X beta eta / (2 * Real.pi)) using 1 <;> ring
+  simpa only [Pi.sub_apply, id_eq, zero_sub, mul_neg, mul_one] using!
+    ((hasDerivAt_const w u).sub (hasDerivAt_id w)).const_mul
+      (lowProjectionScale X beta eta / (2 * Real.pi))
 
 theorem hasDerivAt_physicalCutoffArgument
     {X H x w : ℝ} (hH : H ≠ 0) :
@@ -80,15 +81,18 @@ theorem hasDerivAt_lowProjectionAmplitude
         cutoff cutoff' kernel kernel' w) w := by
   have hexp : HasDerivAt (fun z : ℝ ↦ (Real.exp (z / 2) : ℂ))
       (((Real.exp (w / 2) / 2 : ℝ) : ℂ)) w := by
-    have hr := (Real.hasDerivAt_exp (w / 2)).comp w
-      ((hasDerivAt_id w).div_const 2)
-    convert hr.ofReal_comp using 1 <;> push_cast <;> ring
+    have hr : HasDerivAt (fun z : ℝ => Real.exp (z / 2))
+        (Real.exp (w / 2) * (1 / 2)) w := by
+      simpa only [Function.comp_def, id_eq] using!
+        (Real.hasDerivAt_exp (w / 2)).comp w ((hasDerivAt_id w).div_const 2)
+    simpa only [div_eq_mul_inv, one_div, one_mul] using! hr.ofReal_comp
   have hkarg := hasDerivAt_lowKernelArgument X beta eta u w
   have hk : HasDerivAt
       (fun z ↦ kernel (lowKernelArgument X beta eta u z))
       (((-(lowProjectionScale X beta eta / (2 * Real.pi)) : ℝ) : ℂ) *
         kernel' (lowKernelArgument X beta eta u w)) w := by
-    convert HasDerivAt.scomp w (hkernel _) hkarg using 1 <;> push_cast <;> ring
+    simpa only [Function.comp_def, Complex.real_smul] using!
+      HasDerivAt.scomp w (hkernel _) hkarg
   have hcarg := hasDerivAt_physicalCutoffArgument (X := X) (x := x)
     (w := w) hH
   have hcReal := (hcutoff _).comp w hcarg

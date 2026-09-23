@@ -42,7 +42,7 @@ private theorem rat_cast_circle_eq_rationalCenter (r : ℚ) :
   have hdenR : (r.den : ℝ) ≠ 0 := by exact_mod_cast r.den_ne_zero
   have hrem0 : 0 ≤ rem := Int.emod_nonneg _ hdenZ
   have hnum : rem + (r.den : ℤ) * quot = r.num := by
-    exact Int.emod_add_ediv _ _
+    exact Int.emod_add_mul_ediv _ _
   have hdiff : (r : ℝ) - (rem.natAbs : ℝ) / r.den = (quot : ℝ) := by
     rw [Rat.cast_def]
     have hremCast : (rem.natAbs : ℝ) = (rem : ℝ) := by

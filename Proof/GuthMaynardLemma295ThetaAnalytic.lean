@@ -48,7 +48,7 @@ theorem differentiableAt_sourceZetaTheta_of_re_lt_one
         (Real.pi : ℂ) ^ (w - 1 / 2) by
     funext w
     exact sourceZetaTheta_eq_printed w]
-  simpa only [div_eq_mul_inv] using (hnum.mul hdenInv).mul hpow
+  simpa only [div_eq_mul_inv] using! (hnum.mul hdenInv).mul hpow
 
 end
 

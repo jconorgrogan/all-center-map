@@ -70,7 +70,6 @@ theorem integrable_norm_sq_primitiveLongRawField
     hscale hX hT hcLo hcHi
   have hmem : MemLp (primitiveLongRawField d X sigma) 2
       (primitiveLongFamilyMeasure d T) := by
-    refine ⟨hsm.aestronglyMeasurable, ?_⟩
     exact lt_of_le_of_lt (by simpa [longSourceCutoffMajorant] using hbound)
       ENNReal.ofReal_lt_top
   exact (memLp_two_iff_integrable_sq_norm hsm.aestronglyMeasurable).1 hmem

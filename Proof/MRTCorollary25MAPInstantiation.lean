@@ -51,7 +51,11 @@ inductive CutoffBranch where
   | typeD6
   | typeD7
   | typeII
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype CutoffBranch where
+  elems := {.typeD1, .typeD2, .typeD3, .typeD4, .typeD5, .typeD6, .typeD7, .typeII}
+  complete := by intro b; cases b <;> simp
 
 /-- All source branches, including the two branches which are not inputs to
 Corollary 2.5. -/

@@ -335,7 +335,8 @@ theorem componentIntegral_map_le_hbBranches
       ∑ branch : CutoffBranch, hbBranchCoeff X branch n by
     funext n
     exact mapMangoldtCoeff_eq_sum_hbBranchCoeff hX n]
-  simpa using componentIntegral_finset_sum_le
+  have hcard : Fintype.card CutoffBranch = 8 := by decide
+  simpa [hcard] using componentIntegral_finset_sum_le
     (Finset.univ : Finset CutoffBranch)
     (fun branch ↦ hbBranchCoeff X branch)
     hX hH heta hetaOne component

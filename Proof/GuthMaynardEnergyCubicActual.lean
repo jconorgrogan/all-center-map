@@ -42,7 +42,7 @@ theorem exists_actual_cubic_moment_bound {eps : ℝ} (heps : 0 < eps) :
         ‖ratioDirichletKernel W ((p.1 : ℝ)/(p.2 : ℝ))‖^3) ≤
       Cs*Real.rpow T eps*cubicMomentShape T N W := by
     apply hs.trans
-    simpa only [mul_assoc] using mul_le_mul_of_nonneg_left
+    simpa only [mul_assoc] using! mul_le_mul_of_nonneg_left
       (cubicMomentShape_ge_tail hT0 N W)
       (mul_nonneg hCs.le (Real.rpow_nonneg hT0 _))
   have hsplit := Finset.sum_filter_add_sum_filter_not (dyadicPairs N)

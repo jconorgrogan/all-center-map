@@ -507,7 +507,7 @@ theorem norm_principalRawDetector_lower_le_envelope
     have hg := GammaCompactStripScratch.norm_Gamma_compactStrip_le_exp
       (a := x) (t := -B) (by linarith [hx'.1]) hx'.2
       (by simpa [abs_of_nonneg hB0] using hB1)
-    simpa [GammaCompactStripScratch.stripPoint, abs_of_nonneg hB0] using hg
+    simpa [GammaCompactStripScratch.stripPoint, abs_of_nonneg hB0, sub_eq_add_neg] using hg
   have hYpow : ‖(Y : ℂ) ^ ((x : ℂ) - B * I)‖ ≤ Y ^ (1 / 2 : ℝ) := by
     rw [Complex.norm_cpow_eq_rpow_re_of_pos hYpos]
     simp only [Complex.sub_re, Complex.ofReal_re, Complex.mul_re,

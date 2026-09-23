@@ -87,7 +87,8 @@ theorem norm_actualLiftedRationalArc_sub_modeled_le
   apply norm_interval_normSq_phase_sub_le hR
   · exact continuous_primePolynomial_lift X q a
   · exact continuous_const.mul (by
-      simpa only [dyadicContinuousAmplitude] using continuous_dyadicAmplitude X)
+      convert continuous_dyadicAmplitude X
+      ext; simp [dyadicContinuousAmplitude, dyadicAmplitude])
   · fun_prop
   · intro β
     rw [fourier_apply, Circle.norm_coe]

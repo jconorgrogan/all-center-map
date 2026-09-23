@@ -130,7 +130,7 @@ theorem eventually_lemmaSixDirectTailEnvelope_lt_one (hδ : 0 ≤ δ) :
     have hexp : (1 : ℝ) ≤ 1 + 12 * δ := by linarith
     have hpow := Real.rpow_le_rpow_of_exponent_le hDone' hexp
     have hbase : D ≤ Real.rpow D (1 + 12 * δ) := by
-      simpa only [Real.rpow_one] using hpow
+      simpa only [Real.rpow_one] using! hpow
     exact hD3.trans hbase
   have hcut := lemmaSix_cutoff_succ_le hδ hDe
   have hgeom := lemmaSix_geometric_power_le (δ := δ) hDpos

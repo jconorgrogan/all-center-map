@@ -59,7 +59,6 @@ theorem badF_lhs : finiteCriticalPolynomial 2 (additiveTwist 2 1 badF) 0 =
     rw [← QuotientAddGroup.mk_nsmul]
     norm_num]
   simp
-  rfl
 
 
 end

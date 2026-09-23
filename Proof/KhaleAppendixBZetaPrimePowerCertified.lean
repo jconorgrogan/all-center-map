@@ -47,7 +47,7 @@ private theorem primePowerTerm_as_complex_re
   · calc
       (Real.rpow (p : ℝ) (-x)) ^ (n + 1) =
           Real.rpow (p : ℝ) (-x * (n + 1 : ℝ)) := by
-            simpa only [Nat.cast_add, Nat.cast_one] using hpow.symm
+            simpa only [Nat.cast_add, Nat.cast_one] using! hpow.symm
       _ = Real.rpow (p : ℝ) (-((n + 1 : ℝ) * x)) := by
         congr 1 <;> ring
   · norm_num

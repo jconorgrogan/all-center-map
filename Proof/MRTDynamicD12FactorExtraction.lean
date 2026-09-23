@@ -111,7 +111,7 @@ theorem smallPrefix_upperProduct_le
     rw [Nat.cast_list_prod]
     have h := congrArg (fun l : List ℝ => (l.take s).prod)
       (sortedComponent_realLengths_eq_scaleList logIndex zbag mbag)
-    simpa only [List.map_map, Function.comp_apply, List.map_take] using h
+    simpa only [List.map_map, Function.comp_def, List.map_take] using! h
   have hsmall : (factorLowerProduct (factors.take s) : ℝ) ≤ Real.rpow X delta := by
     rw [heq]
     exact largestSmallPrefix_spec (Real.one_le_rpow hX hdelta)

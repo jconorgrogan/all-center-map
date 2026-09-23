@@ -16,7 +16,7 @@ lemma sourceFreq_difference_eq_translated_sub_centering
     FordKPointEnergy.sourceFreq (differencePsi psi h) z =
       fun j => pointTranslatedDifferenceFrequency psi h z j -
         pointCenteringFrequency psi h j := by
-  simpa [FordKPointEnergy.sourceFreq, pointSourceFrequency] using
+  simpa [FordKPointEnergy.sourceFreq, pointSourceFrequency] using!
     (centeredDifferencePointFrequency_eq_translated_sub_centering psi h z)
 
 def translated_energy_property_of_difference

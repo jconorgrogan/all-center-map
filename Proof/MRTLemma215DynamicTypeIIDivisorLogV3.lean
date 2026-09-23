@@ -252,7 +252,7 @@ theorem exists_actualTypeIICell_convolution_bound
       (supportedDyadic_coe_of_supportedNatDyadic hgammaSupport)
       (by simpa [A] using halpha) (by simpa [D] using hgamma)
   refine ⟨C, hC, ?_⟩
-  simpa [N, M, left, suffix] using hbound
+  simpa [N, M, left, suffix] using! hbound
 
 end
 end MRTLemma215DynamicTypeIIDivisorLogV3

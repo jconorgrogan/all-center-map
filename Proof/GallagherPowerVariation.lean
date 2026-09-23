@@ -106,8 +106,7 @@ theorem rationalArcPowerVariation_le_rpow_half_energy
     exact (MAPHarmonicEndpoint.primeExponentialSum_continuous X).comp (by fun_prop)
   have hmodel : Continuous model := by
     exact continuous_const.mul (by
-      simpa only [dyadicContinuousAmplitude] using
-        MAPContinuousOverlap.continuous_dyadicAmplitude X)
+      exact MAPContinuousOverlap.continuous_dyadicAmplitude X)
   have hD : Continuous D := continuous_signedFourierDiscrepancy_lift X q a
   have hmodelBound : ∀ beta, ‖model beta‖ ≤ X := by
     intro beta
@@ -115,9 +114,8 @@ theorem rationalArcPowerVariation_le_rpow_half_energy
     rw [norm_mul]
     have hc := MAPMajorArcIntegratedError.norm_primeMajorCoefficient_le_one hq
     have hv : ‖dyadicContinuousAmplitude X beta‖ ≤ X := by
-      simpa only [dyadicContinuousAmplitude] using
-        MAPContinuousOverlap.norm_dyadicAmplitude_le_length
-          (X := X) (β := beta) hX
+      exact MAPContinuousOverlap.norm_dyadicAmplitude_le_length
+        (X := X) (β := beta) hX
     nlinarith [norm_nonneg (primeMajorCoefficient q),
       norm_nonneg (dyadicContinuousAmplitude X beta)]
   have hDBound : ∀ beta, ‖D beta‖ ≤ atomicSlidingBound X + X := by

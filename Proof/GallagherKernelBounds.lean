@@ -85,7 +85,7 @@ theorem half_window_le_re_gallagherWindowKernel
     convert Complex.exp_ofReal_mul_I_re (2 * Real.pi * beta * u) using 1 <;>
       push_cast <;> ring
   rw [hre]
-  simpa [intervalIntegral.integral_const] using hmono
+  simpa [intervalIntegral.integral_const, div_eq_mul_inv] using hmono
 
 /-- Exact multiplier lower bound used by Gallagher--Plancherel. -/
 theorem half_window_le_norm_gallagherWindowKernel

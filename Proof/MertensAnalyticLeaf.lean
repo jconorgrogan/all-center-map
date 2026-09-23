@@ -158,8 +158,12 @@ theorem primeLogReciprocalSum_eq_theta_div_add_integral
     apply Finset.sum_congr rfl
     intro n hn
     by_cases h : n.Prime
-    · simp [a, h, div_eq_mul_inv, mul_comm]
-    · simp [a, h]
+    · have ha : a n = Real.log n :=
+        Set.indicator_of_mem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_pos h, ha, div_eq_mul_inv, mul_comm]
+    · have ha : a n = 0 :=
+        Set.indicator_of_notMem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_neg h, ha, mul_zero]
   have hdiff : ∀ t ∈ Set.Icc (2 : ℝ) x,
       DifferentiableAt ℝ (fun z : ℝ => z⁻¹) t := by
     intro t ht
@@ -183,7 +187,13 @@ theorem primeLogReciprocalSum_eq_theta_div_add_integral
     rw [Chebyshev.theta_eq_sum_Icc, Finset.sum_filter]
     apply Finset.sum_congr rfl
     intro n hn
-    by_cases h : n.Prime <;> simp [a, h]
+    by_cases h : n.Prime
+    · have ha : a n = Real.log n :=
+        Set.indicator_of_mem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_pos h, ha]
+    · have ha : a n = 0 :=
+        Set.indicator_of_notMem (s := setOf Nat.Prime) (f := fun m => Real.log m) h
+      rw [if_neg h, ha]
   have hsumx : (∑ k ∈ Finset.Icc 0 x, a k) = Chebyshev.theta (x : ℝ) := by
     simpa using hsum (x : ℝ)
   rw [habel, hsumx, ← intervalIntegral.integral_of_le (by exact_mod_cast hx)]
@@ -289,7 +299,7 @@ theorem exp_primeRpowSum_le_finiteEulerProduct
       ∏ p ∈ Finset.range (x + 1) with p.Prime,
         (1 - realRpowSummandHom s (by linarith) p)⁻¹ := by
   rw [primeRpowSum, Real.exp_sum]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro p hp
     exact (Real.exp_pos _).le
   · intro p hp

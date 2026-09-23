@@ -60,7 +60,7 @@ theorem sourceLemma92_secondPoissonBudget_scaled_uniform
         _ = _ := by
           have hadd : Real.rpow T eta * T ^ 107 =
               Real.rpow T (eta + (107 : ℝ)) := by
-            simpa only [Real.rpow_natCast] using
+            simpa only [Nat.cast_ofNat] using!
               (Real.rpow_add_natCast hTpos.ne' eta 107).symm
           rw [hadd]
     _ ≤ (25 * c * sourceLemma92Decay q * integerQuadraticMass) *
@@ -154,7 +154,7 @@ theorem sigmaIIFinite_selectedPositiveDyadic_scaledRadius_unequalScale_normalize
             (((∫ u : ℝ, |f u|) ^ 2 * (2 * Ctau)) *
               ((25 * c * sourceLemma92Decay q * integerQuadraticMass) /
                 T ^ 100)) := by
-    simpa only [hBscale] using hraw
+    simpa only [hBscale] using! hraw
   have hJscale := sourceAffineJ_sourceBump_eq_scale_normalized hTpos hBpos
     (sourcePositiveDyadicRange M)
     (sourceLemma92JRange M T F (2 * B)) f

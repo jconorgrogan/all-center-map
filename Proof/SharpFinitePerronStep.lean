@@ -195,7 +195,7 @@ theorem tendsto_leftRemoteVertical_atTop_zero {a T : ℝ}
       (fun R : ℝ => 2 * T * (Real.exp (-a * R) / R))
       Filter.atTop (nhds 0) := by
     convert (tendsto_const_nhds.mul (hexp.mul hinv)) using 1
-    all_goals simp
+    all_goals first | rfl | simp
   apply squeeze_zero'
   · exact Filter.Eventually.of_forall fun R => norm_nonneg _
   · filter_upwards [eventually_gt_atTop (0 : ℝ)] with R hR
@@ -219,7 +219,7 @@ theorem tendsto_rightRemoteVertical_atTop_zero {a T : ℝ}
       (fun R : ℝ => 2 * T * (Real.exp (a * R) / R))
       Filter.atTop (nhds 0) := by
     convert (tendsto_const_nhds.mul (hexp.mul hinv)) using 1
-    all_goals simp
+    all_goals first | rfl | simp
   apply squeeze_zero'
   · exact Filter.Eventually.of_forall fun R => norm_nonneg _
   · filter_upwards [eventually_gt_atTop (0 : ℝ)] with R hR

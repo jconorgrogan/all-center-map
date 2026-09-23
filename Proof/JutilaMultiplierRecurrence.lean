@@ -236,7 +236,7 @@ theorem evenStepProduct_le (q : ℕ) (z : ℂ) (n : ℕ) :
     (∏ j ∈ Finset.range n, ‖evenStep q (shiftTwo z j)‖) ≤
         ∏ _j ∈ Finset.range n,
           ((q : ℝ) ^ 2 * (1 + ‖z‖ + 2 * n) ^ 2) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j hj
         exact norm_nonneg _
       · intro j hj
@@ -256,7 +256,7 @@ theorem oddStepProduct_le (q : ℕ) (z : ℂ) (n : ℕ) :
     (∏ j ∈ Finset.range n, ‖oddStep q (shiftTwo z j)‖) ≤
         ∏ _j ∈ Finset.range n,
           ((q : ℝ) ^ 2 * (1 + ‖z‖ + 2 * n) ^ 2) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j hj
         exact norm_nonneg _
       · intro j hj

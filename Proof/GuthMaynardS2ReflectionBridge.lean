@@ -60,9 +60,9 @@ private theorem tsum_nonzero_eq_prefix_and_tails
   have hp0 := hg.comp_injective hpi
   have hn0 := hg.comp_injective hni
   have hp : Summable fun n : ℕ => g ((n : ℤ) + 1) := by
-    simpa only [Function.comp_apply] using hp0
+    simpa only [Function.comp_apply] using! hp0
   have hn : Summable fun n : ℕ => g (-((n : ℤ) + 1)) := by
-    simpa only [Function.comp_apply] using hn0
+    simpa only [Function.comp_apply] using! hn0
   have hpos (n : ℕ) : g ((n : ℤ) + 1) = f ((n + 1 : ℕ) : ℤ) := by
     have hh : (n : ℤ) + 1 ≠ 0 := by positivity
     simp [g, hh]

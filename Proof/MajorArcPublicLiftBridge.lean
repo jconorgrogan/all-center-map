@@ -176,7 +176,8 @@ theorem indexedRationalArcs_pairwiseDisjoint_of_growth
     apply hij
     apply Subtype.ext
     exact Sigma.ext hn.1 (by simpa [hn.1] using hn.2)
-  simpa [indexedRationalArc] using
+  change Disjoint (indexedRationalArc X B D i) (indexedRationalArc X B D j)
+  exact
     disjoint_paper_rationalArcs_of_growth hX hi.1 hj.1 hiq hjq
       hi.2.2.1 hj.2.2.1 hi.2.2.2 hj.2.2.2 hidx hgrowth
 

@@ -14,12 +14,11 @@ theorem integral_fourier_mul_schwartz
     {f : ℝ → ℂ} (hf : Integrable f) (g : 𝓢(ℝ, ℂ)) :
     (∫ xi : ℝ, (𝓕 f) xi * g xi) =
       ∫ x : ℝ, f x * (𝓕 g) x := by
-  simpa using
-    (VectorFourier.integral_bilin_fourierIntegral_eq_flip
-      (ContinuousLinearMap.mul ℂ ℂ)
-      Real.continuous_fourierChar
-      (by fun_prop : Continuous (fun p : ℝ × ℝ => (innerₗ ℝ p.1) p.2))
-      hf g.integrable)
+  simpa using!
+    VectorFourier.integral_bilin_fourierIntegral_eq_flip
+      (ContinuousLinearMap.mul ℂ ℂ) (L := innerₗ ℝ)
+      Real.continuous_fourierChar continuous_inner
+      hf g.integrable
 
 /-- Compatibility of Mathlib's `L²` Fourier extension with the classical
 Fourier integral for an `L¹ ∩ L²` function whose classical transform is also

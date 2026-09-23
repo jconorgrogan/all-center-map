@@ -36,7 +36,7 @@ theorem lemma84Profile_pointwise_le_scale
     (integral_sourceBump_le_four_mul zero_lt_one)
     (sourceBump 1 zero_lt_one).integrable (ratioProfile_continuous W) u
   exact (lemma84Profile_le_smoothedRatioSquare hB W u).trans
-    (by simpa [lemma84ProfileScale] using hsm)
+    (by simpa [lemma84ProfileScale, smoothedRatioSquare] using! hsm)
 
 theorem lemma84ProfileScale_nonneg (W : Finset ℝ) :
     0 ≤ lemma84ProfileScale W := by

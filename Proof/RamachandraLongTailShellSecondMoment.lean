@@ -138,7 +138,7 @@ theorem primitiveLongTailShellSecondMoment_le
       IntervalIntegrable (fun t => ∫ v : ℝ, Kpsi psi (t, v))
         volume (-T) T := by
     rw [intervalIntegrable_iff]
-    simpa only [muT] using (hterm psi).integral_prod_left
+    simpa only [muT] using! (hterm psi).integral_prod_left
   have hcontourMeas (psi : DirichletCharacter ℂ d) :
       StronglyMeasurable (fun t =>
         ∫ v : ℝ, longTailShellIntegrand psi X sigma t j v) :=

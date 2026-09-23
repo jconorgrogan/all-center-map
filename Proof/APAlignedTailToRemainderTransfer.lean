@@ -182,7 +182,7 @@ theorem fixedModulusAPMax_le_alignedZeroTailMajorant
         dsimp only [z]
         rw [ENNReal.ofReal_mul (by norm_num : (0 : ℝ) ≤ 2)]
         norm_num only [ENNReal.ofReal_ofNat, mul_pow]
-        apply mul_le_mul_left'
+        apply mul_le_mul_right
         letI : NeZero chi.conductor := ⟨chi.conductor_ne_zero⟩
         exact ofReal_alignedZeroAverage_sq_le_rightMax
           chi hXtwo hx hYone hYhigh hYlow
@@ -321,7 +321,7 @@ theorem simultaneousAPMax_le_alignedDyadicZero_add_tail
           have hq0 : q ≠ 0 := Nat.ne_of_gt hqpos
           simp only [dif_neg hq0]
           letI : NeZero q := ⟨hq0⟩
-          apply mul_le_mul_left'
+          apply mul_le_mul_right
           apply Finset.sum_le_sum
           intro chi hchi
           have hmax := rightMaxSqBetween_le_dyadic
@@ -335,7 +335,7 @@ theorem simultaneousAPMax_le_alignedDyadicZero_add_tail
               4 * (4 * finiteRightMaxSq
                 (truncatedZeroNormField chi (sigma q chi) X T)
                 (dyadicRightScales (H + 1) N) (x - 1 / 2)) := by
-                  apply mul_le_mul_left'
+                  apply mul_le_mul_right
                   simpa [hH] using hmax
             _ = 16 * finiteRightMaxSq
                 (truncatedZeroNormField chi (sigma q chi) X T)
@@ -459,7 +459,7 @@ theorem lintegral_familyAlignedDyadicZeroMajorant_le
                     (truncatedZeroNormField chi (sigma q chi) X T x) ^ 2) := by
             have hinv : (q.totient : ℝ≥0∞)⁻¹ ≤ 1 :=
               ENNReal.inv_le_one.mpr hphiOne
-            exact (mul_le_mul_right' hinv _).trans_eq (one_mul _)
+            exact (mul_le_mul_left hinv _).trans_eq (one_mul _)
           _ = 16 * (N + 1 : ℝ≥0∞) *
               ∑ chi : DirichletCharacter ℂ q,
                 ∫⁻ x : ℝ,
@@ -671,7 +671,7 @@ theorem alignedCommonHeightRemainderTransfer_of_tailFamilySquare
             truncatedAPZeroFieldEnergy Q sigma X T +
           ENNReal.ofReal
             (Ct * X * Real.rpow (Real.log X) (-A))) := by
-      apply mul_le_mul_left'
+      apply mul_le_mul_right
       exact add_le_add hzero htailBound
     _ = (32 * (N + 1 : ℝ≥0∞)) *
           truncatedAPZeroFieldEnergy Q sigma X T +
@@ -681,7 +681,7 @@ theorem alignedCommonHeightRemainderTransfer_of_tailFamilySquare
           truncatedAPZeroFieldEnergy Q sigma X T +
         ENNReal.ofReal
           (C * X * Real.rpow (Real.log X) (-A)) := by
-      exact add_le_add (mul_le_mul_right' hscale _) htailCoeff
+      exact add_le_add (mul_le_mul_left hscale _) htailCoeff
 
 end
 end MAPAPAlignedTailToRemainderTransfer

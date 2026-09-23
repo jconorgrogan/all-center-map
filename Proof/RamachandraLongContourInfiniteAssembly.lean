@@ -187,7 +187,7 @@ theorem summable_longTailShellUniformNormBound
   have hf : Summable f := by
     have hi : Summable (fun n : ℕ =>
         if X < n then ramachandraReflectedTerm psi z n else 0) := by
-      simpa [Set.indicator] using
+      simpa [Set.indicator] using!
         hfull.indicator ({n : ℕ | X < (n : ℝ)} : Set ℕ)
     simpa [f] using hi.norm
   have hcompl : Summable

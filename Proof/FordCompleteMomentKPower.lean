@@ -59,6 +59,7 @@ lemma baseFreq_split
   rw [Fin.sum_univ_add]
   simp [splitPowerWord]
 
+set_option backward.isDefEq.respectTransparency.types false in
 def baseZeroToKPoint {s k P : ℕ} :
     BaseZero (FordKPointEnergy.baseFreq (s := s + k) (k := k) (Q := P) (q := 1)) ≃
       KPoint s k P P (powerFamily (k := k)) 1 := by

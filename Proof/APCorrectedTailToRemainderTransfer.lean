@@ -275,7 +275,6 @@ theorem commonHeightRemainderTransfer_of_correctedTailFamilySquare
   have hHpos : 0 < H := Real.rpow_pos_of_pos hXpos _
   have hHone : 1 ≤ H := by
     apply Real.one_le_rpow hXone
-    dsimp [H]
     linarith
   have hreach : X / H < (2 : ℝ) ^ (N + 1) := by
     have hdiv : X / H ≤ X := by
@@ -343,7 +342,7 @@ theorem commonHeightRemainderTransfer_of_correctedTailFamilySquare
     _ ≤ 2 * (4 * (N + 1 : ℝ≥0∞) * apZeroFieldEnergy Q X T +
           ENNReal.ofReal
             (Ct * X * Real.rpow (Real.log X) (-A))) := by
-      apply mul_le_mul_left'
+      apply mul_le_mul_right
       apply add_le_add hzero
       simpa [familyPaperEdgeTailMajorant, reserve, H0, Q] using htailBound
     _ = (8 * (N + 1 : ℝ≥0∞)) * apZeroFieldEnergy Q X T +
@@ -353,7 +352,7 @@ theorem commonHeightRemainderTransfer_of_correctedTailFamilySquare
           apZeroFieldEnergy Q X T +
         ENNReal.ofReal
           (C * X * Real.rpow (Real.log X) (-A)) := by
-      exact add_le_add (mul_le_mul_right' hscale _) htailCoeff
+      exact add_le_add (mul_le_mul_left hscale _) htailCoeff
 
 end
 end MAPAPCorrectedTailToRemainderTransfer

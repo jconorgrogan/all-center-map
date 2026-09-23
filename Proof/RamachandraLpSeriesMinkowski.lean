@@ -34,7 +34,7 @@ private theorem eLpNorm_finset_sum_le_sum
       simp only [Finset.sum_insert hn]
       have hsumMeas : AEStronglyMeasurable (fun x => ∑ i ∈ s, f i x) μ := by
         fun_prop
-      refine (eLpNorm_add_le (hf n) hsumMeas hp).trans ?_
+      refine (eLpNorm_add_le hp).trans ?_
       exact add_le_add_right ih _
 
 /-- Infinite Minkowski for a literal pointwise series.  The conclusion is
@@ -76,6 +76,7 @@ theorem eLpNorm_le_tsum_of_ae_hasSum
         rw [ENNReal.ofReal_le_ofReal_iff htotal0]
         exact ha.sum_le_tsum (Finset.range N) (fun n hn => ha0 n)
   · exact hFmeas
+  · exact aestronglyMeasurable_of_tendsto_ae _ hFmeas hFtendsto
   · exact hFtendsto
 
 /-- Convenience specialization for the square-integrable shell assembly. -/

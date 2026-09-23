@@ -145,7 +145,7 @@ theorem norm_logDeriv_eulerCorrection_le
   have heq : logDeriv (eulerCorrection chi) s =
       ∑ p ∈ q.primeFactors, logDeriv (eulerFactor chi p) s := by
     unfold eulerCorrection eulerFactor
-    rw [logDeriv_prod]
+    rw [logDeriv_fun_prod]
     · intro p hp
       exact PrimitiveEulerZeroTransport.eulerFactor_ne_zero chi hp (by linarith)
     · intro p hp

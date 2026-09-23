@@ -163,7 +163,7 @@ theorem ofReal_integral_norm_sq_packetSuperposition_le_bilinear
   unfold packetCorrelationBilinear
   have hqInt : Integrable (fun z : ℝ × ℝ ↦
       ‖A z.1‖ * ‖A z.2‖ * ‖packetCorrelation J z.1 z.2‖) := by
-    simpa [Function.uncurry] using hCorr.norm
+    simpa [Function.uncurry] using! hCorr.norm
   calc
     ENNReal.ofReal (∫ x : ℝ, ‖packetSuperposition A J x‖ ^ 2) ≤
         ENNReal.ofReal (∫ z : ℝ × ℝ,

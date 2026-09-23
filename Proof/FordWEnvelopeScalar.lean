@@ -108,11 +108,16 @@ theorem envelope_lipschitz_one :
   have hq : LipschitzWith 1 (fun z : ℝ => 1 - (1 - mu2) * z) := by
     convert (affine_lipschitz_one (c := -(1 - mu2)) (d := 1) (by norm_num [mu2])) using 1 <;> ring
   have hr : LipschitzWith 1 (fun z : ℝ => (1 - mu1) * z - 1) := by
-    simpa using (affine_lipschitz_one (c := 1 - mu1) (d := -1) (by norm_num [mu1]))
+    convert affine_lipschitz_one (c := 1 - mu1) (d := -1) (by norm_num [mu1]) with z
   have hzero : LipschitzWith 0 (fun _ : ℝ => (0 : ℝ)) := LipschitzWith.const 0
   have hg : LipschitzWith 1 (fun z : ℝ => max 0 (max (1 - (1 - mu2) * z) ((1 - mu1) * z - 1))) := by
     simpa using hzero.max (hq.max hr)
-  simpa [envelope] using hmu.min hg
+  have hfun : envelope = fun z : ℝ =>
+      min (mu2 * z) (max 0 (max (1 - (1 - mu2) * z) ((1 - mu1) * z - 1))) :=
+    funext fun _ => rfl
+  rw [hfun]
+  convert hmu.min hg
+  simp
 
 abbrev quadA : ℝ := 17460190897 / 4720396875000
 abbrev quadD : ℝ := -4964602839001 / 9806341284000

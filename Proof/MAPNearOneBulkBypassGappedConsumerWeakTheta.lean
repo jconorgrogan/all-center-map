@@ -37,7 +37,7 @@ private theorem eventually_relativeDistance_floor_log_le_weakGap_fixedTheta
     have hnhds : Set.Iio (c / 24) ∈ nhds (0 : ℝ) :=
       Iio_mem_nhds (by positivity)
     have hneg : -(1 - theta) = theta - 1 := by ring
-    simpa only [hneg] using
+    simpa only [hneg] using!
       ((ht.eventually hnhds).mono fun _ h => h.le)
   have hsmallX : ∀ᶠ X : ℝ in atTop,
       Real.rpow (Real.log X) (theta - 1) ≤ c / 24 :=
@@ -168,7 +168,7 @@ theorem regularNear_logSaving_of_bulk_gappedCumulative_and_high_saving
     (mul_pos htauPosGlobal (by norm_num [a5FiberGapBudget])) hc
   have hJutilaHeight : ∀ᶠ X : ℝ in atTop,
       RJ ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually (eventually_ge_atTop RJ)
   let Cfinal : ℝ := (fineCellCount epsilon : ℝ) * CC + CJ
   have hCfinal : 0 < Cfinal := by
@@ -505,7 +505,7 @@ theorem regularNear_logSaving_of_bulk_gappedCumulative_and_high_saving
               ((fineCellCount epsilon : ℝ) *
                   (CC * Real.rpow X (-(epsilon / 400))) +
                 CJ * Real.rpow X (-(omega / 12)))) := by
-          simpa only [T] using hfamily
+          simpa only [T] using! hfamily
         _ = ((fineCellCount epsilon : ℝ) * CC) *
               (((Q : ℝ) ^ 2 * Real.log X) *
                 Real.rpow X (-(epsilon / 400))) +

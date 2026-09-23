@@ -405,7 +405,7 @@ theorem iteratedDeriv_detectorRealPartCutoff_base (n : ℕ) (a x : ℝ) :
         (fun y : ℝ => Real.exp (-a * y)) := by fun_prop
     have heC : ContDiff ℝ (n : ℕ)
         (fun y : ℝ => (Real.exp (-a * y) : ℂ)) := by
-      simpa only [Function.comp_apply] using Complex.ofRealCLM.contDiff.comp heR
+      simpa only [Function.comp_def] using! Complex.ofRealCLM.contDiff.comp heR
     exact heC.contDiffAt
   have hfun : (fun y : ℝ => detectorRealPartCutoff a 1 y) =
       (fun y : ℝ => detectorBaseCutoff y) *

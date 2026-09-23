@@ -774,7 +774,7 @@ theorem near_one_weighted_exponent_bound
         2 * (sigma - 1) ≤
       -(1 / 6) * (1 - sigma) := by
   have hgap : 1 / 6 ≤ 2 - (21 / 10) * (tau epsilon + u) := by
-    simpa only [tau] using
+    simpa [tau, heightExponent] using
       (nearOneExponent_bound (ε := epsilon) (u := u)
         hepsilon hu0 hu)
   have hone : 0 ≤ 1 - sigma := by linarith

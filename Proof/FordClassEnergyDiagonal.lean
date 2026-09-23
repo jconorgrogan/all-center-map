@@ -128,11 +128,11 @@ theorem alignedDiag_card_le
     have hbaseL : (classState f g cls r.1).1.1 =
         (classState f g cls t.1).1.1 := by
       have hh := congrArg (fun z => z.2.2.1.1.1.1) h
-      simpa [toCarrier, classState] using hh
+      exact hh
     have hbaseR : (classState f g cls r.1).2.1 =
         (classState f g cls t.1).2.1 := by
       have hh := congrArg (fun z => z.2.2.1.1.2.1) h
-      simpa [toCarrier, classState] using hh
+      exact hh
     apply Subtype.ext
     apply Subtype.ext
     apply Prod.ext

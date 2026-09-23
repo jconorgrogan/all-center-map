@@ -185,7 +185,7 @@ theorem uniform_active_bridge_of_d12_only
       simpa [p, Q, H, eta] using
         selectedMapInput_admissible_one hlog hQ hHone hHX hq hcop hbeta hfar
     have hXp : 2 ≤ p.X := by
-      simpa [p] using (show 2 ≤ X by linarith [hX3])
+      simpa [p] using! (show 2 ≤ X by linarith [hX3])
     have hpX : p.X = X := by rfl
     let reserve := apertureReserve epsilon
     have hreserve : 0 ≤ reserve := (apertureReserve_pos hepsilon).le
@@ -199,7 +199,7 @@ theorem uniform_active_bridge_of_d12_only
     have htype' := htype p hp hpX reserve hreserve hreserve' hHdef heta hqQ hbeta hfar hXp
     have hord' := hord p hp hpX heta hfar
     have hHalf : p.H ≤ p.X / 2 := by
-      simpa [p, H] using MAPMRTProposition51Supported.baseAperture_le_half_of_one_le
+      simpa [p, H] using! MAPMRTProposition51Supported.baseAperture_le_half_of_one_le
         (epsilon := epsilon) (by linarith : 1 ≤ X)
     have hsmall' := hsmall p hp hpX rfl hHalf heta hqQ hbeta hfar
     obtain ⟨_, _, _, hd12'⟩ := hd q a beta hq hqQ ha hcop hbeta hfar
@@ -208,16 +208,16 @@ theorem uniform_active_bridge_of_d12_only
           dynamicAllTypeIIMassRefinedV3 p delta
             (highClassifierH0 p.X delta) hXp hdelta component) ≤
         X * Real.rpow (Real.log X) (-A) / 30 := by
-      simpa [highClassifierH0] using htype'
+      simpa [highClassifierH0] using! htype'
     have hlow := dynamicV3_refined_low_types_of_typeII_and_d12_budgets
       hp hXp hdelta htype'' hd12'
     have hT : 1 ≤ selectedHighTruncation p := by
       have hfar' : 2 * (Real.log p.X)^Cc < stationaryWidth p.beta p.H := by
-        simpa [p, H] using hfar
-      have hlogp : 1 ≤ Real.log p.X := by simpa [p] using hlog
+        simpa [p, H] using! hfar
+      have hlogp : 1 ≤ Real.log p.X := by simpa [p] using! hlog
       have hU : 1 ≤ stationaryWidth p.beta p.H := by
         nlinarith [hfar', (one_le_pow₀ hlogp : 1 ≤ (Real.log p.X)^Cc)]
-      simpa [selectedHighTruncation, highFreeTruncation, p, H, reserve] using
+      simpa [selectedHighTruncation, highFreeTruncation, p, H, reserve] using!
         highFreeTruncation_ge_one_of_H (by linarith : 1 ≤ X) hU hHdef hreserve'
     have h30 : activeCertificateHighSlot p delta hXp hdelta ≤
         X * Real.rpow (Real.log X) (-A) / 30 := by
@@ -232,11 +232,11 @@ theorem uniform_active_bridge_of_d12_only
     refine ⟨hdelta, ?_, ?_, ?_, hT, ?_, (by simpa using hlow),
       (by simpa using h5), ?_⟩
     · rfl
-    · simpa [p, highClassifierH0] using hclassifier
-    · simpa [p] using hsize
+    · simpa [p, highClassifierH0] using! hclassifier
+    · simpa [p] using! hsize
     · simpa [MAPSmallRemainderMassBudgetV3.dynamicV3Normalization,
-        dynamicLowNormalizationV3] using hsmall'
-    · simpa [p] using hord'
+        dynamicLowNormalizationV3] using! hsmall'
+    · simpa [p] using! hord'
 
 end
 end MRTProposition61D12OnlyUniformCertificateV3

@@ -81,7 +81,10 @@ theorem principalCompactFourthIntegral_le_sourceBudget
       (6400 * 13 ^ 6 : ℝ) ^ 4 := by
     gcongr
   unfold primitiveFamilyShiftedFourthIntegral
-  simpa [hprim] using
+  have hdefault : (default : DirichletCharacter ℂ 1) = 1 := Subsingleton.elim _ _
+  have hprimOne : (1 : DirichletCharacter ℂ 1).IsPrimitive := by
+    simpa only [hdefault] using hprim
+  simpa [hprim, hdefault, hprimOne] using!
     (calc
       (∫ t in (-T)..T, shiftedStripLFourth chiOne sigma t) ≤
           2 * T * (6400 * (4 + T) ^ 6) ^ 4 := hraw

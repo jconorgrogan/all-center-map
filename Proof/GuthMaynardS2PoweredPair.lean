@@ -28,8 +28,9 @@ theorem dirichletPolynomial_sq_eq_two_blocks (M : ℕ) (a : ℕ → ℂ) (t : �
       dirichletPolynomial (squaredCoefficient M a) (2 * M ^ 2) t := by
   have h := dirichletPolynomial_pow_eq_sum_blocks
     (N := M) (k := 2) (a := a) (by norm_num) t
+  unfold squaredCoefficient
   simpa [Fin.sum_univ_two, poweredBlockPolynomial_eq_dirichletPolynomial,
-    squaredCoefficient, Nat.mul_comm] using h
+    Nat.mul_comm] using! h
 
 private theorem norm_add_sq_le (x y : ℂ) :
     ‖x + y‖ ^ 2 ≤ 2 * (‖x‖ ^ 2 + ‖y‖ ^ 2) := by

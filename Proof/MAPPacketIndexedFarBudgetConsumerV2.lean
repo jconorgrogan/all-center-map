@@ -74,7 +74,7 @@ theorem mapFarSourceReduction_one_of_uniformPacketIndexedPaddedFarBudget
   · have hcircle := centeredArc_primeEnergy_le_mapSourceEnergy
       (X := X) (H := H) (beta := beta) (eta := eta)
       (q := q) (a := a) hHone
-    simpa [H, hcenter] using hcircle
+    simpa [H, hcenter] using! hcircle
   · have hcert : Nonempty (PacketIndexedPaddedSourceCertificate p
         (Cred * X * Real.rpow (Real.log X) (-A))) := by
       simpa [p, Q, H, eta] using

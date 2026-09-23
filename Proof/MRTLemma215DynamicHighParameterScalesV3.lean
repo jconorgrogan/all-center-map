@@ -24,7 +24,7 @@ theorem highPacketShortLength_gt_tailThreshold
     (rawLogIndexV3 packet.1.1) (rawZetaBagV3 packet.1.1) (rawMoebiusBagV3 packet.1.1)
     (highTypeIndexV3 packet.1) (highTypeIndexV3_outcome packet.1)
   simpa only [highPacketShortLengthV3, highSelectedFactorV3, highFactorsV3,
-    highSelectedIndexV3, highScalesV3, one_div] using hbound
+    highSelectedIndexV3, highScalesV3, one_div, Nat.cast_ofNat] using! hbound
 
 /-- On an active source packet, the long factor retains the power saving
 `N<X^(7/8)`. The product hypothesis is exactly supplied by sharp-mask pruning. -/
@@ -50,7 +50,7 @@ theorem highPacketLongLength_lt_rpow
       _ = _ := by norm_num
   rw [← hrpow]
   apply (lt_div_iff₀ (Real.rpow_pos_of_pos hX0 (1 / 8 : ℝ))).2
-  simpa only [mul_comm] using hXN
+  simpa only [mul_comm] using! hXN
 
 end
 end MRTLemma215DynamicHighParameterScalesV3

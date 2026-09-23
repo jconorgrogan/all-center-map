@@ -143,7 +143,7 @@ theorem integrable_sincTupleIntegrand_u
     (q : LiteralTuple) (t : ℝ) :
     Integrable (fun u : ℝ ↦ sincTupleIntegrand β g center St Su q t u) := by
   have heta : Integrable (fun u : ℝ ↦ (eta (u / Su) : ℂ)) :=
-    by simpa using (eta_scaled_integrable hSu 0).ofReal
+    by simpa using! (eta_scaled_integrable hSu 0).ofReal
   have hbounded : ∀ᵐ u : ℝ,
       ‖tupleTerm β g q t u‖ ≤ ‖tupleCoefficient β g q‖ := by
     filter_upwards with u
@@ -634,7 +634,7 @@ theorem inner_weighted_continuous
       rfl
     · intro m hm
       have heta : Integrable (fun u : ℝ ↦ (eta (u / U) : ℂ)) :=
-        by simpa using (eta_scaled_integrable hU 0).ofReal
+        by simpa using! (eta_scaled_integrable hU 0).ofReal
       apply heta.mul_bdd (c := ‖β m.1 * star (β m.2)‖)
       · apply Continuous.aestronglyMeasurable
         rw [show (fun u : ℝ ↦ pairTerm β m.1 m.2 (t + u)) =
@@ -660,7 +660,7 @@ theorem inner_weighted_continuous
       ((∫ u : ℝ, eta (u / U) * ‖shortFactor M β (t + u)‖ ^ 2 : ℝ) : ℂ)) := by
     rw [hcomplex]
     exact hc
-  simpa using Complex.continuous_re.comp hofReal
+  simpa [Function.comp_def] using! Complex.continuous_re.comp hofReal
 
 /-- The compact short-energy integral varies continuously with the translated
 `t` clock. -/
@@ -773,7 +773,7 @@ theorem literalMixedMeanReal_le_sixteen_mul_wholeLine
       _ = 4 * ∫ t in (t₀ - T / 2)..(t₀ + T / 2), f t := by
         rw [intervalIntegral.integral_const_mul]
   have hfint : IntervalIntegrable f volume (t₀ - T / 2) (t₀ + T / 2) := by
-    simpa [f, innerWhole] using
+    simpa [f, innerWhole] using!
       (((continuous_sq_norm_longFactor N g).mul
         (inner_weighted_continuous M β hU.ne')).intervalIntegrable
           (t₀ - T / 2) (t₀ + T / 2))
@@ -1006,7 +1006,7 @@ theorem norm_paper_tupleCoefficient_le_tau_commonLog
           Real.log (2 * (M : ℝ) * (N : ℝ)) ^ (4 * a) /
         ((M : ℝ) * (N : ℝ)) := by
   simpa [tauTupleWeight, MAPNormalizedWrapper.paperTupleCoefficient,
-    MAPNormalizedWrapper.sqrtNormalizedCoeff, invSqrtCoeff] using
+    MAPNormalizedWrapper.sqrtNormalizedCoeff, invSqrtCoeff] using!
     (MAPNormalizedWrapper.norm_paperTupleCoefficient_le_commonLog_div
       (M := M) (N := N) (a := a) (k := k)
       (β := βraw) (g := graw) hM hN hq hcoeff)

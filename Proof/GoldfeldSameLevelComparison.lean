@@ -36,7 +36,7 @@ theorem norm_regularizedRieszKernel_fourteen_real_le_one
       (Nat.factorial 14 : ℝ) =
           ∏ j ∈ Finset.range 14, (((j + 1 : ℕ) : ℝ)) := by
         exact_mod_cast (Finset.prod_range_add_one_eq_factorial 14).symm
-      _ ≤ _ := Finset.prod_le_prod (fun j hj => by positivity) hfactor
+      _ ≤ _ := Finset.prod_le_prod₀ (fun j hj => by positivity) hfactor
   have hdenpos : 0 <
       ∏ j ∈ Finset.range 14, ‖(u : ℂ) + ((j + 1 : ℕ) : ℂ)‖ :=
     lt_of_lt_of_le (by positivity : (0 : ℝ) < Nat.factorial 14) hprod

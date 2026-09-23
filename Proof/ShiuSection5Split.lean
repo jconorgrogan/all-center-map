@@ -73,7 +73,8 @@ lemma primePowerBlocks_prod {n : ℕ} (hn : n ≠ 0) : (primePowerBlocks n).prod
 lemma admissiblePrefixLengths_nonempty {n z : ℕ} (hz : 1 ≤ z) :
     (admissiblePrefixLengths n z).Nonempty := by
   refine ⟨0, ?_⟩
-  simp [admissiblePrefixLengths, prefixProduct, hz]
+  apply Finset.mem_filter.mpr
+  exact ⟨Finset.mem_range.mpr (Nat.zero_lt_succ _), by simpa only [prefixProduct_zero] using hz⟩
 
 lemma canonicalIndex_mem {n z : ℕ} (hz : 1 ≤ z) :
     canonicalIndex n z ∈ admissiblePrefixLengths n z := by
@@ -177,7 +178,13 @@ def leastPrimeFactor (n : ℕ) : ℕ := if n = 1 then 1 else n.minFac
 
 inductive FourClass
   | I | II | III | IV
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype FourClass where
+  elems := {FourClass.I, FourClass.II, FourClass.III, FourClass.IV}
+  complete := by
+    intro c
+    cases c <;> simp
 
 /-- Exact integer classifier corresponding to page 166.  `q(d)>sqrt z` is
 encoded as `z < q(d)^2`; `b>sqrt z` as `z < b^2`.

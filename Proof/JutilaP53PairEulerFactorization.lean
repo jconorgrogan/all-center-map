@@ -85,7 +85,7 @@ theorem LSeriesSummable_p53TwistedDivisorKernel
     {r r' : ℕ} (hr : 0 < r) (hr' : 0 < r')
     {s : ℂ} (hs : 1 < s.re) :
     LSeriesSummable (p53TwistedDivisorKernel chi r r') s := by
-  simpa [p53TwistedDivisorKernel, Pi.mul_apply] using
+  simpa [p53TwistedDivisorKernel, Pi.mul_def] using!
     DirichletCharacter.LSeriesSummable_mul chi
       (LSeriesSummable_p53PairDivisorKernel hr hr' hs)
 

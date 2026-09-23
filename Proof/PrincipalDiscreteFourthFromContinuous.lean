@@ -40,7 +40,7 @@ private theorem continuous_principal_vertical_deriv :
   have hd := principal_analytic_off_one.deriv.continuousOn
   have hcomp : Continuous (fun t : ℝ =>
       deriv F (((1 / 2 : ℝ) : ℂ) + t * I)) := by
-    simpa only [Function.comp_apply] using hd.comp_continuous (by fun_prop)
+    simpa only [Function.comp_def] using! hd.comp_continuous (by fun_prop)
       (fun t => half_vertical_ne_one t)
   exact hcomp.mul continuous_const
 
@@ -51,7 +51,7 @@ private theorem principal_circle_ne_one
   have hre := congrArg Complex.re h
   rw [HolomorphicStripDerivativeFourth.circleMap_vertical_coordinates] at hre
   have hre' : (1 / 2 : ℝ) + R * Real.cos theta = 1 := by
-    simpa using hre
+    simpa [Complex.cos_ofReal_re] using hre
   have hc := Real.cos_le_one theta
   have hmul : R * Real.cos theta ≤ R :=
     mul_le_of_le_one_right hRpos hc
@@ -72,7 +72,7 @@ private theorem continuous_principal_circle {R : ℝ} (hRpos : 0 ≤ R)
   have hbase : Continuous (F ∘ phi) :=
     principal_analytic_off_one.continuousOn.comp_continuous hphi hrange
   change Continuous (fun p : ℝ × ℝ => ‖F (phi p)‖ ^ 4)
-  simpa only [Function.comp_apply] using hbase.norm.pow 4
+  exact hbase.norm.pow 4
 
 private theorem principal_differentiableOn_closedBall
     {R t : ℝ} (hRpos : 0 < R) (hR : R < 1 / 2) :
@@ -104,7 +104,7 @@ private theorem continuous_principal_shifted {sigma : ℝ} (hsigma : sigma < 1) 
   have hc : Continuous (F ∘ fun t : ℝ => (sigma : ℂ) + t * I) :=
     principal_analytic_off_one.continuousOn.comp_continuous hmap hrange
   unfold RamachandraTheorem6ShiftedStripSource.shiftedStripLFourth
-  simpa only [Function.comp_apply] using hc.norm.pow 4
+  exact hc.norm.pow 4
 
 /-- Raw principal discrete fourth moment, before absorbing the explicit
 Cauchy radius and logarithmic factors. -/

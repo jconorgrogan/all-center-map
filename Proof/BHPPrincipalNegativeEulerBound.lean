@@ -87,7 +87,7 @@ theorem norm_eulerCorrection_negative_le
         ‖1 - chi.primitiveCharacter p *
           (p : ℂ) ^ (-(((-delta : ℝ) : ℂ) + v * I))‖) ≤
       ∏ p ∈ q.primeFactors, (2 * (p : ℝ) ^ delta) := by
-        exact Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+        exact Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
           (fun p hp => norm_eulerFactor_negative_le chi hp hdelta)
     _ = (2 : ℝ) ^ q.primeFactors.card *
           (∏ p ∈ q.primeFactors, (p : ℝ)) ^ delta := by
@@ -157,7 +157,7 @@ theorem norm_trivialEulerCorrection_negative_le
     (∏ p ∈ q.primeFactors,
         ‖1 - (p : ℂ) ^ (-(((-delta : ℝ) : ℂ) + v * I))‖) ≤
       ∏ p ∈ q.primeFactors, (2 * (p : ℝ) ^ delta) := by
-        apply Finset.prod_le_prod (fun _ _ => norm_nonneg _)
+        apply Finset.prod_le_prod₀ (fun _ _ => norm_nonneg _)
         intro p hp
         have hpPrime : p.Prime := Nat.prime_of_mem_primeFactors hp
         have hpPos : 0 < (p : ℝ) := by exact_mod_cast hpPrime.pos

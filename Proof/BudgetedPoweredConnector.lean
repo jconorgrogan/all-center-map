@@ -103,7 +103,7 @@ theorem capped_logb_length_collar
       _ ≤ Real.log T := Real.log_le_log (Real.exp_pos 1) hT
   have hlogsq : 1 ≤ (Real.log T) ^ 2 := by nlinarith
   have hTN : Real.rpow T (Real.logb T (N : ℝ)) = (N : ℝ) := by
-    simpa only [Real.rpow_def] using
+    simpa only [Real.rpow_def] using!
       (Real.rpow_logb hTpos hTone.ne' hNpos)
   refine ⟨le_min hκlogb hκhalf, min_le_right _ _, ?_, ?_⟩
   · by_cases hlogb : Real.logb T N ≤ 1 / 2
@@ -145,7 +145,7 @@ theorem eventually_log_sq_lt_rpow {a : ℝ} (ha : 0 < a) :
     change ‖Real.rpow (Real.log T) 2‖ ≤
       (1 / 2 : ℝ) * ‖Real.rpow T a‖ at hraw
     have hlogpow : Real.rpow (Real.log T) 2 = (Real.log T) ^ 2 := by
-      simpa only [Real.rpow_def] using Real.rpow_natCast (Real.log T) 2
+      simpa only [Real.rpow_def] using! Real.rpow_natCast (Real.log T) 2
     have hnormpow : ‖Real.rpow T a‖ = Real.rpow T a :=
       Real.norm_of_nonneg (Real.rpow_nonneg hT0 a)
     rw [hlogpow, Real.norm_eq_abs, abs_of_nonneg (sq_nonneg _),

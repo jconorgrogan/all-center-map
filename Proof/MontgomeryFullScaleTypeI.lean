@@ -46,7 +46,7 @@ theorem detectorShell_direct_hybrid_count
   have hrpow : (D : ℝ)*Real.rpow D (1-2*sigma) = Real.rpow D (2*(1-sigma)) := by
     calc
       _ = Real.rpow D (1+(1-2*sigma)) := by
-        simpa only [Real.rpow_one] using (Real.rpow_add hp 1 (1-2*sigma)).symm
+        simpa only [Real.rpow_one] using! (Real.rpow_add hp 1 (1-2*sigma)).symm
       _ = _ := by congr 1; ring
   apply h.trans ((mul_le_mul_of_nonneg_left he hcoeff).trans (hscaled.trans_eq ?_))
   calc

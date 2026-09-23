@@ -245,7 +245,7 @@ theorem finiteEulerProduct_le_exp_linear_add_three_quadratic
           (if p ∣ modulus then 0 else
             (p : ℝ) ^ (-δ) +
               localQuadraticConstant * ((p : ℝ) ^ (-δ)) ^ 2)) := by
-        apply Finset.prod_le_prod hnonneg
+        apply Finset.prod_le_prod₀ hnonneg
         exact hpoint
     _ = Real.exp (∑ p ∈ (y + 1).primesBelow,
         (k * k : ℕ) *

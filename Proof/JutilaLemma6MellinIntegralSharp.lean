@@ -60,7 +60,7 @@ theorem conductor_height_rpow_le_sharp
   have hrpowBase := Real.rpow_le_rpow
     (mul_nonneg hq0 (by positivity)) hbase p48HeightExponent_nonneg
   have huPow : Real.rpow (1 + |u|) p48HeightExponent ≤ 1 + |u| := by
-    simpa only [Real.rpow_one] using
+    simpa only [Real.rpow_one] using!
       Real.rpow_le_rpow_of_exponent_le hu1 p48HeightExponent_le_one
   calc
     Real.rpow ((q : ℝ) * (1 + |t + u|)) p48HeightExponent ≤

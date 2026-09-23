@@ -157,7 +157,7 @@ private theorem one_le_norm_finiteBlaschkeProduct_center
     (hcS : c ∉ S ∨ m c = 0) :
     1 ≤ ‖finiteBlaschkeProduct c R S m c‖ := by
   simp only [finiteBlaschkeProduct, norm_prod, norm_pow]
-  apply Finset.one_le_prod
+  apply Finset.one_le_prod₀
   intro ρ hρ
   by_cases hρc : ρ = c
   · subst ρ

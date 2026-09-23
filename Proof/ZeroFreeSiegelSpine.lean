@@ -164,13 +164,13 @@ theorem threeCharacter_LSeries_re_nonneg {q : ℕ}
   have h1 : LSeriesSummable
       (PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff χ)
       (σ + Complex.I * t) := by
-    simpa only [PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff] using
+    simpa only [PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff, Pi.mul_def] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt χ
         (by simpa using hσ))
   have h2 : LSeriesSummable
       (PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff (χ ^ 2))
       (σ + Complex.I * (2 * t)) := by
-    simpa only [PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff] using
+    simpa only [PrimitiveExplicitFormulaSpine.twistedMangoldtCoeff, Pi.mul_def] using!
       (DirichletCharacter.LSeriesSummable_twist_vonMangoldt (χ ^ 2)
         (by simpa using hσ))
   have h0r := (hasSum_re h0.hasSum).summable.mul_left 3
@@ -297,13 +297,13 @@ theorem logDeriv_centeredZeroFactorProduct
       fun z => ∏ ρ ∈ centeredUnitWindowSupport χ (1 / 2) t,
         (z - ρ) ^ zeroMultiplicity χ (1 / 2)
           (windowHeight (t - 1 / 2)) ρ by rfl]
-  rw [logDeriv_prod]
+  rw [logDeriv_fun_prod]
   · apply Finset.sum_congr rfl
     intro ρ hρ
     rw [logDeriv_fun_pow (by fun_prop)]
     simp only [logDeriv_apply, deriv_sub_const]
     have hderiv : deriv (fun y : ℂ => y) s = 1 := by
-      simpa only [id_eq] using deriv_id s
+      exact (hasDerivAt_id s).deriv
     rw [hderiv]
     ring
   · intro ρ hρ
@@ -374,7 +374,7 @@ theorem neg_logDeriv_LFunction_eq_centeredZeroSum_add_remainder
         (u + Complex.I * t) =
       -centeredZeroPoleSum χ t (u + Complex.I * t) +
         primitiveLogDerivativeRemainder χ u t := by
-  simpa [primitiveLogDerivativeRemainder] using
+  simpa [primitiveLogDerivativeRemainder, sub_eq_add_neg] using
     neg_logDeriv_LFunction_eq_centeredZeroSum_add_deflated χ hχ t
       (s := u + Complex.I * t) (by simpa using hu)
 
@@ -751,7 +751,7 @@ theorem norm_LFunction_one_le_gap_mul_of_deriv_bound
     exact hderiv x hx
   have hmv := norm_image_sub_le_of_norm_deriv_le_segment' hf hbound
     1 (Set.right_mem_Icc.mpr hβ)
-  simpa only [f, f', hzero, sub_zero] using hmv
+  simpa only [f, f', hzero, sub_zero, Complex.ofReal_one] using hmv
 
 /-- A Siegel-type lower bound for `L(1, chi)`, together with a derivative
 majorant, gives a literal lower bound for the exceptional zero gap. -/

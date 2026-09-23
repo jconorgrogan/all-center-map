@@ -41,7 +41,7 @@ theorem goldfeldRieszTerm_one
     goldfeldRieszTerm (fun m => goldfeldFourfoldCoeff chi psi m)
       beta k X 1 = rieszWeight k (1 / X) := by
   unfold goldfeldRieszTerm
-  simp [goldfeldFourfoldCoeff, toArithmeticFunction]
+  simp [(isMultiplicative_goldfeldFourfoldCoeff chi psi).map_one]
 
 /-- The source lower bound survives with mass `1/2` for the compact Riesz
 replacement once `X ≥ 2k`. -/

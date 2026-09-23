@@ -388,7 +388,7 @@ theorem familyAlignedDeterministicMajorant_le
                 alignedDeterministicWindowMaxSq chi T epsilon X x ≤
             (q.totient : ℝ≥0∞)⁻¹ *
               ∑ _chi : DirichletCharacter ℂ q, B :=
-                mul_le_mul_left' hchars _
+                mul_le_mul_right hchars _
           _ = B := by
             rw [Finset.sum_const]
             have hcard : Fintype.card (DirichletCharacter ℂ q) = q.totient := by

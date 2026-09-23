@@ -155,7 +155,7 @@ theorem sum_intervalIntegral_integral_shortHead_eq
   have hwcont : Continuous w := continuous_gammaPolynomialWeight hcLo hcHi
   have hw0 (v : ℝ) : 0 ≤ w v := gammaPolynomialWeight_nonneg _ _
   have hprod : Integrable K (muT.prod volume) := by
-    simpa only [K, w, muT, Function.uncurry] using
+    simpa only [K, w, muT, Function.uncurry] using!
       integrable_uncurry_allCharacter_shortHead d hT hX hline
   have hterm (psi : DirichletCharacter ℂ d) :
       Integrable (Kpsi psi) (muT.prod volume) := by
@@ -182,7 +182,7 @@ theorem sum_intervalIntegral_integral_shortHead_eq
       IntervalIntegrable (fun t => ∫ v : ℝ, Kpsi psi (t, v))
         volume (-T) T := by
     rw [intervalIntegrable_iff]
-    simpa only [muT] using (hterm psi).integral_prod_left
+    simpa only [muT] using! (hterm psi).integral_prod_left
   have hswap :
       (∫ t in (-T)..T, ∫ v : ℝ, K (t, v)) =
         ∫ v : ℝ, w v *
@@ -269,7 +269,7 @@ theorem primitiveFamilyShortContourSecondMoment_le_headMoment
       gammaPolynomialWeight (-(Real.log X)⁻¹) z.2 *
         ‖shortReflectedHead psi X sigma z.1 z.2‖ ^ 2
     have hprod : Integrable Kprod (muT.prod volume) := by
-      simpa only [Kprod, muT, Function.uncurry] using
+      simpa only [Kprod, muT, Function.uncurry] using!
         integrable_uncurry_allCharacter_shortHead d (by linarith)
           (by simpa [X] using hX) (by simpa [X] using hline)
     have hterm : Integrable KprodPsi (muT.prod volume) := by
@@ -309,7 +309,7 @@ theorem primitiveFamilyShortContourSecondMoment_le_headMoment
       have hsec : IntervalIntegrable (Kpsi psi) volume (-T) T := by
         rw [intervalIntegrable_iff]
         have hleftSec := hterm.integral_prod_left
-        simpa only [KprodPsi, Kpsi, muT] using hleftSec
+        simpa only [KprodPsi, Kpsi, muT] using! hleftSec
       exact hsec.const_mul _
     have hmono : (∫ t in (-T)..T,
         ‖primitiveShiftedShortContour psi T sigma t‖ ^ 2) ≤

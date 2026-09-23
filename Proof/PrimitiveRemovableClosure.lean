@@ -66,7 +66,7 @@ private theorem differentiableAt_regularizedPerronContourIntegrand
   have hpow : DifferentiableAt ℂ (fun s : ℂ => (x : ℂ) ^ s) z :=
     (differentiable_id.const_cpow
       (.inl (Complex.ofReal_ne_zero.mpr hx.ne'))) z
-  simpa only [regularizedPerronContourIntegrand] using
+  simpa only [regularizedPerronContourIntegrand] using!
     (hlog.neg.mul hpow).div differentiableAt_id hz0
 
 private theorem differentiableAt_principalPoleIntegrand
@@ -80,7 +80,7 @@ private theorem differentiableAt_principalPoleIntegrand
     have hpow : DifferentiableAt ℂ (fun s : ℂ => (x : ℂ) ^ s) z :=
       (differentiable_id.const_cpow
         (.inl (Complex.ofReal_ne_zero.mpr hx.ne'))) z
-    simpa only [hχ, if_true] using hpow.div
+    simpa only [hχ, if_true] using! hpow.div
         (differentiableAt_id.mul (differentiableAt_id.sub_const 1))
         (mul_ne_zero hz0 (sub_ne_zero.mpr hz1))
   · unfold principalPoleIntegrand
@@ -216,12 +216,11 @@ theorem differentiableOn_patchedSourcePerronIntegrand
     intro z hz
     have hz' := Complex.mem_reProdIm.mp hz
     apply Complex.mem_reProdIm.mpr
-    dsimp only [U]
     rw [uIcc_of_le hσc, uIcc_of_le (by linarith : -T ≤ T)]
     exact ⟨⟨hz'.1.1.le, hz'.1.2.le⟩, ⟨hz'.2.1.le, hz'.2.2.le⟩⟩
   have hDiff : DifferentiableOn ℂ g (U \ (↑S : Set ℂ)) := by
     simpa only [g, U, S, residue, f, principalPartsRemoved,
-      principalPartSum, sourcePrincipalPartRemoved] using
+      principalPartSum, sourcePrincipalPartRemoved] using!
       differentiableOn_sourcePrincipalPartRemoved_off_support
         χ hx hσ0 hσc hT.le
   have hLittle : ∀ ρ ∈ S,
@@ -235,7 +234,7 @@ theorem differentiableOn_patchedSourcePerronIntegrand
     (S := S) U g hInterior hDiff hLittle
   simpa only [patchedSourcePerronIntegrand, finiteRemovableExtension,
     sourcePrincipalPartRemoved, principalPartsRemoved, principalPartSum,
-    S, residue, f, g, U] using hfinal
+    S, residue, f, g, U] using! hfinal
 
 /-- Premise-free finite-pole rectangle equality: the removable-extension
 holomorphy required by the geometric specialization is now derived above. -/

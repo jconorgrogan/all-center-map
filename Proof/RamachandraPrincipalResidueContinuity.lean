@@ -64,16 +64,16 @@ theorem principalTranslatedFirstDifference_self_eq
     have hfirst := hAderiv.div (hasDerivAt_id p) hp
     have hquot : HasDerivAt (fun w : ℂ => A 0 / (w * p ^ 2))
         (-A 0 * p ^ 2 / (p * p ^ 2) ^ 2) p := by
-      convert (hasDerivAt_const p (A 0)).div
+      simpa only [id_eq, zero_mul, one_mul, zero_sub, neg_mul] using!
+        (hasDerivAt_const p (A 0)).div
         ((hasDerivAt_id p).mul_const (p ^ 2))
-        (mul_ne_zero hp (pow_ne_zero 2 hp)) using 1 <;>
-          simp only [id_eq] <;> field_simp [hp] <;> ring
+        (mul_ne_zero hp (pow_ne_zero 2 hp))
     have hsecond := (((hasDerivAt_id p).sub_const p).pow 2).mul hquot
     have hsecond0 : HasDerivAt
         (fun w : ℂ => (w - p) ^ 2 * (A 0 / (w * p ^ 2))) 0 p := by
-      convert hsecond using 1 <;> simp
+      simpa using! hsecond
     convert hfirst.sub hsecond0 using 1 <;>
-      simp only [id_eq] <;> field_simp [hp] <;> ring
+      first | rfl | (simp only [id_eq]; field_simp [hp]; ring)
   unfold principalTranslatedFirstDifference
   rw [dslope_same, hderivAf, hfderiv.deriv]
 
@@ -104,8 +104,7 @@ theorem principalShiftedGammaCore_deriv_translatedPole_eq
       (deriv principalF 1) p := by
     have hFbase' : HasDerivAt principalF (deriv principalF 1) (s + p) := by
       simpa [hsp] using hFbase
-    convert hFbase'.comp p ((hasDerivAt_id p).const_add s) using 1 <;>
-      simp [add_comm]
+    simpa using! hFbase'.comp p ((hasDerivAt_id p).const_add s)
   have hGammaDiff : DifferentiableAt ℂ Complex.Gamma (p + 1) := by
     apply Complex.differentiableAt_Gamma
     intro m hm
@@ -114,8 +113,7 @@ theorem principalShiftedGammaCore_deriv_translatedPole_eq
     linarith
   have hGamma : HasDerivAt (fun w : ℂ => Complex.Gamma (w + 1))
       (deriv Complex.Gamma (p + 1)) p := by
-    convert hGammaDiff.hasDerivAt.comp p ((hasDerivAt_id p).add_const 1) using 1 <;>
-      simp
+    simpa using! hGammaDiff.hasDerivAt.comp p ((hasDerivAt_id p).add_const 1)
   have hpow : HasDerivAt (fun w : ℂ => (X : ℂ) ^ w)
       ((X : ℂ) ^ p * Complex.log (X : ℂ)) p :=
     (Complex.hasStrictDerivAt_const_cpow
@@ -132,7 +130,7 @@ theorem principalShiftedGammaCore_deriv_translatedPole_eq
           principalF (s + p) ^ 2 * Complex.Gamma (p + 1) *
             ((X : ℂ) ^ p * Complex.log (X : ℂ))) := by
     simpa only [Pi.mul_apply, Pi.pow_apply, Nat.cast_ofNat,
-      pow_one, Nat.reduceSubDiff] using hcoreDeriv
+      pow_one, Nat.reduceSubDiff] using! hcoreDeriv
   change deriv (fun w : ℂ =>
       principalF (s + w) ^ 2 * Complex.Gamma (w + 1) * (X : ℂ) ^ w) p = _
   rw [hcoreDeriv']
@@ -220,7 +218,7 @@ theorem continuous_principalTranslatedResidueClosedForm_comp
       have hre := congrArg Complex.re hm
       simp [p, principalTranslatedPole, ramachandraShiftedPoint] at hre
       linarith
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       (ContinuousAt.comp (f := fun u : ℝ => p u + 1) houter
         ((hpcont.continuousAt).add_const 1))
   have hGammaDeriv :
@@ -235,7 +233,7 @@ theorem continuous_principalTranslatedResidueClosedForm_comp
     have hlocal : ContinuousAt (deriv Complex.Gamma) (p t + 1) :=
       continuousOn_deriv_Gamma_rightHalfPlane.continuousAt
         (hopen.mem_nhds hmem)
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       (ContinuousAt.comp (f := fun u : ℝ => p u + 1) hlocal
         ((hpcont.continuousAt).add_const 1))
   have hpow : Continuous (fun t : ℝ => (T : ℂ) ^ p t) := by

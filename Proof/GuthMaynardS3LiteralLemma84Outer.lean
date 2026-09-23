@@ -126,7 +126,7 @@ theorem ratioCutoff_fourier_inversion (u : ℝ) :
   change 𝓕⁻ (𝓕 ratioCutoffSchwartz : 𝓢(ℝ, ℂ)) u = ratioCutoffSchwartz u at h
   rw [SchwartzMap.fourierInv_coe, SchwartzMap.fourier_coe, Real.fourierInv_eq'] at h
   have h' := h.symm
-  simpa [smul_eq_mul, mul_comm, mul_left_comm, mul_assoc] using h'
+  simpa [smul_eq_mul, mul_comm, mul_left_comm, mul_assoc] using! h'
 
 theorem fourier_eq_exp_mul (f : ℝ → ℂ) (xi : ℝ) :
     FourierTransform.fourier f xi =
@@ -751,7 +751,7 @@ theorem lemma84Profile_fourier_decay
               mul_le_mul_of_nonneg_left hxiB' htwoq
             have hmul' : 2 ^ q / (1 + |xi|) ^ q ≤
                 2 ^ q / (1 + |xi| / B) ^ q := by
-              simpa only [one_div] using hmul
+              simpa only [one_div, div_eq_mul_inv] using hmul
             have hprod := mul_le_mul_of_nonneg_right hmul' hnn
             exact mul_le_mul_of_nonneg_left hprod hC
           _ = _ := by ring

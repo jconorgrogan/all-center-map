@@ -60,7 +60,9 @@ theorem pinned_right_le_left (e : U) (i : Fin s) :
       Fintype.card (Pinned f g s e (false,i)) := by
   classical
   let tr : Pinned f g s e (true,i) → Pinned f g s e (false,i) :=
-    fun r => ⟨swapSides f g r.1, by simpa only [coord, swapSides, if_true, if_false] using r.2⟩
+    fun r => ⟨swapSides f g r.1, by
+      simp [coord, swapSides]
+      exact r.2⟩
   apply Fintype.card_le_of_injective tr
   intro r t h
   apply Subtype.ext

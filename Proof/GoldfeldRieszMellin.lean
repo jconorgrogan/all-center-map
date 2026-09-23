@@ -246,7 +246,7 @@ theorem normalized_integral_rieszRightTerm_eq
             ((((n : ℝ) / X : ℝ) : ℂ) ^ (-((c : ℂ) + t * I))) *
               rieszMellinKernel k ((c : ℂ) + t * I)) =
             rieszWeight k ((n : ℝ) / X) := by
-      simpa only [smul_eq_mul] using hMellin
+      simpa only [Complex.real_smul, smul_eq_mul] using hMellin
     calc
       _ = LSeries.term f rho n *
           ((((1 / (2 * Real.pi) : ℝ) : ℂ) *

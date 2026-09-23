@@ -62,7 +62,7 @@ theorem affineProfileIntegral_sq_le_restricted_energy
     (Filter.Eventually.of_forall (fun v => norm_nonneg (ratioDirichletKernel W v)))
     (Filter.Eventually.of_forall (fun v => by
       dsimp [g]
-      simpa [g] using (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
+      simpa [g, smoothedRatio] using! (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
         (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v))))))
     (by simpa using hfm) (by simpa using hgm)
   have hnonnegA : 0 ≤ ∫ v : ℝ, f v ^ (2 : ℝ) ∂μ :=
@@ -70,7 +70,7 @@ theorem affineProfileIntegral_sq_le_restricted_energy
   have hnonnegB : 0 ≤ ∫ v : ℝ, g v ^ (2 : ℝ) ∂μ :=
     integral_nonneg (fun v => by
       apply Real.rpow_nonneg
-      simpa [g] using (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
+      simpa [g, smoothedRatio] using! (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
         (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v)))))
   have hAroot : (∫ v : ℝ, f v ^ (2 : ℝ) ∂μ) ^ (1 / 2 : ℝ) =
       Real.sqrt (∫ v : ℝ, f v ^ (2 : ℝ) ∂μ) := by
@@ -87,7 +87,7 @@ theorem affineProfileIntegral_sq_le_restricted_energy
     have hsB := Real.sq_sqrt hnonnegB
     have hnonnegX : 0 ≤ ∫ v : ℝ, f v * g v ∂μ :=
       integral_nonneg (fun v => mul_nonneg (norm_nonneg _) (by
-        simpa [g] using (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
+        simpa [g, smoothedRatio] using! (mul_nonneg (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v / v)))
           (Real.sqrt_nonneg (smoothedRatioSquare B W (affineCenter m1 m2 m3 v))))))
     have hprod : 0 ≤ Real.sqrt (∫ v : ℝ, f v ^ (2 : ℝ) ∂μ) *
         Real.sqrt (∫ v : ℝ, g v ^ (2 : ℝ) ∂μ) := mul_nonneg (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)

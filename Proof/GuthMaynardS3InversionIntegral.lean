@@ -21,11 +21,13 @@ theorem integral_inversion_jacobian (G : ℝ → ℝ) (hG : Continuous G) :
       rw [uIcc_of_le (by norm_num : (1/2:ℝ)≤2)] at hv
       exact hv
     have hvne : v ≠ 0 := by linarith [hv'.1]
-    simpa [div_eq_mul_inv] using (hasDerivAt_id v).inv hvne
+    simpa [div_eq_mul_inv] using! (hasDerivAt_id v).inv hvne
   have hc : ContinuousOn (fun v : ℝ => -(v^2)⁻¹) (uIcc (1/2 : ℝ) 2) := by
     rw [uIcc_of_le (by norm_num : (1/2:ℝ)≤2)]
     have hi := inv_continuousOn_unit
-    simpa [inv_pow] using (hi.pow 2).neg
+    have hp := (hi.pow 2).neg
+    change ContinuousOn (fun v : ℝ => -((v⁻¹)^2)) (Icc (1/2 : ℝ) 2) at hp
+    simpa only [inv_pow] using hp
   have h := intervalIntegral.integral_comp_mul_deriv hd hc hG
   have he : (fun v : ℝ => (G ∘ (fun x : ℝ => x⁻¹)) v * (-(v^2)⁻¹)) =
       (fun v : ℝ => -(G v⁻¹ / v^2)) := by funext v; simp [Function.comp_def, div_eq_mul_inv]
@@ -43,7 +45,9 @@ theorem integral_inversion_le_four (G : ℝ → ℝ) (hG : Continuous G)
   have hcomp : ContinuousOn (fun v : ℝ => G v⁻¹) (Icc (1/2 : ℝ) 2) :=
     hG.comp_continuousOn hi
   have hw : ContinuousOn (fun v : ℝ => G v⁻¹ / v^2) (Icc (1/2 : ℝ) 2) := by
-    simpa [div_eq_mul_inv, inv_pow] using hcomp.mul (hi.pow 2)
+    have hp := hcomp.mul (hi.pow 2)
+    change ContinuousOn (fun v : ℝ => G v⁻¹ * (v⁻¹)^2) (Icc (1/2 : ℝ) 2) at hp
+    simpa only [div_eq_mul_inv, inv_pow] using hp
   have ha : IntervalIntegrable (fun v : ℝ => G v⁻¹) volume (1/2) 2 :=
     hcomp.intervalIntegrable_of_Icc (by norm_num)
   have hb : IntervalIntegrable (fun v : ℝ => 4 * (G v⁻¹ / v^2)) volume (1/2) 2 :=

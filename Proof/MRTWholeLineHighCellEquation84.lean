@@ -113,7 +113,8 @@ theorem hasDerivAt_shiftedOuter
   unfold shiftedOuter
   have harg : HasDerivAt (fun y : ℝ ↦ y + r / 100) 1 z := by
     simpa using (hasDerivAt_id z).add_const (r / 100)
-  simpa using (houter (z + r / 100)).scomp z harg
+  simpa only [Function.comp_def, one_smul] using!
+    (houter (z + r / 100)).scomp z harg
 
 theorem continuous_shiftedOuter
     {outer : ℝ → ℝ} (r : ℝ) (houter : Continuous outer) :

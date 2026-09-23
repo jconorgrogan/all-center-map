@@ -72,11 +72,11 @@ theorem ramachandraReflectedTail_add_head_eq_LFunction_sq
   have hsum := summable_ramachandraReflectedTerm psi hz
   have htail : Summable (fun n : ℕ =>
       if X < (n : ℝ) then ramachandraReflectedTerm psi z n else 0) := by
-    simpa [Set.indicator] using
+    simpa [Set.indicator] using!
       hsum.indicator ({n : ℕ | X < (n : ℝ)} : Set ℕ)
   have hhead : Summable (fun n : ℕ =>
       if (n : ℝ) ≤ X then ramachandraReflectedTerm psi z n else 0) := by
-    simpa [Set.indicator] using
+    simpa [Set.indicator] using!
       hsum.indicator ({n : ℕ | (n : ℝ) ≤ X} : Set ℕ)
   unfold ramachandraReflectedTail ramachandraReflectedHead
   rw [← htail.tsum_add hhead]

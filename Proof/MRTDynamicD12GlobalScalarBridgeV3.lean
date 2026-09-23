@@ -183,7 +183,7 @@ theorem uniformD12NormalizedBudget_of_canonical_perbag
         selectedMapInput_admissible_one hlog hQ hHone hHX
           hq hcop hbeta hfar
     have hXp : 2 ≤ p.X := by
-      simpa [p] using (show 2 ≤ X by linarith [hX3])
+      simpa [p] using! (show 2 ≤ X by linarith [hX3])
     have hbag : ∀ (branch : Fin (hbOrder delta))
         (logIndex : Fin (sourceDyadicCount (hbFactorCutoff p.X)))
         (zbag : Sym (Option (Fin (sourceDyadicCount (hbFactorCutoff p.X))))
@@ -200,7 +200,7 @@ theorem uniformD12NormalizedBudget_of_canonical_perbag
                 p.beta p.eta component
             else 0) ≤
           Cp * Real.log p.X ^ Ep * d12ThreeTermEnvelope delta B p.X := by
-      simpa [p, Q, H, eta] using
+      simpa [p, Q, H, eta] using!
         hsource q a beta hq hqQ ha hcop hbeta hfar
     let Ebag : ℝ := Cp * Real.log p.X ^ Ep *
       d12ThreeTermEnvelope delta B p.X
@@ -209,7 +209,7 @@ theorem uniformD12NormalizedBudget_of_canonical_perbag
       positivity
     have hglobal' := hglobal (p := p)
       (H₀ := Real.rpow p.X (delta + 1 / 8))
-      (Ebag := Ebag) hp (by simpa [p] using hX3) hEbag hbag
+      (Ebag := Ebag) hp (by simpa [p] using! hX3) hEbag hbag
     have hmass : dynamicLowNormalizationV3 p *
         (∑ component : OuterComponent,
           dynamicAllD12MassRefinedV3 p delta
@@ -297,7 +297,7 @@ theorem uniformD12NormalizedBudget_of_literal_perbag
           hHone hHX
           hq hcop hbeta hfar
     have hXp : 2 ≤ p.X := by
-      simpa [p] using (show 2 ≤ X by linarith [hX3])
+      simpa [p] using! (show 2 ≤ X by linarith [hX3])
     have hbag : ∀ (branch : Fin (hbOrder delta))
         (logIndex : Fin (sourceDyadicCount (hbFactorCutoff p.X)))
         (zbag : Sym (Option (Fin (sourceDyadicCount (hbFactorCutoff p.X))))
@@ -315,14 +315,14 @@ theorem uniformD12NormalizedBudget_of_literal_perbag
                 p.beta p.eta component
             else 0) ≤ d12ThreeTermEnvelope delta B p.X := by
         exact hperbag delta hdelta hdeltaUpper B hp
-          (by simpa [p] using hX3)
+          (by simpa [p] using! hX3)
     let Ebag : ℝ := d12ThreeTermEnvelope delta B p.X
     have hEbag : 0 ≤ Ebag := by
       dsimp [Ebag, d12ThreeTermEnvelope]
       positivity
     have hglobal' := hglobal (p := p)
       (H₀ := Real.rpow p.X (delta + 1 / 8))
-        (Ebag := Ebag) hp (by simpa [p] using hX3) hEbag hbag
+        (Ebag := Ebag) hp (by simpa [p] using! hX3) hEbag hbag
     have hmass : dynamicLowNormalizationV3 p *
         (∑ component : OuterComponent,
           dynamicAllD12MassRefinedV3 p delta
@@ -331,7 +331,7 @@ theorem uniformD12NormalizedBudget_of_literal_perbag
       calc
         _ ≤ 2 * C * Real.log p.X ^ E * Ebag := hglobal'
         _ ≤ X * Real.rpow (Real.log X) (-A) / 30 := by
-          simpa [Ebag, d12ThreeTermEnvelope, p, Q, H, eta] using hscalar
+          simpa [Ebag, d12ThreeTermEnvelope, p, Q, H, eta] using! hscalar
     refine ⟨hq₀, ?_, hXp, hmass⟩
     exact hp
 

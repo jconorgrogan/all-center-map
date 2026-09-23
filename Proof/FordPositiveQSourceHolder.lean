@@ -69,7 +69,7 @@ lemma fordFiniteRawFrequency_power_residue_eq_of_pos
         ∑ i : Fin s, ((r.1.2.2 i).1.val : ℤ) ^ (j.val + 1) :=
     mul_left_cancel₀ hqpow hqint
   have hcast := congrArg (fun z : ℤ => (z : ZMod p)) hsumInt
-  simpa [Int.cast_sum, Int.cast_pow] using hcast
+  simpa [fordFiniteRawPowerResidue, Int.cast_sum, Int.cast_pow] using! hcast
 
 def fordFiniteRawFrequencyToS3_of_pos
     {p s k d Q P q : ℕ} [NeZero p]

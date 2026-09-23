@@ -151,7 +151,7 @@ theorem sum_intervalIntegral_integral_weightedBlock_eq
     weight z.2 * ‖ramachandraDyadicBlock d N (b z.2) true psi z.1‖ ^ 2
   have horder : -T ≤ T := by linarith
   have hprod : Integrable K (μT.prod volume) := by
-    simpa only [K, μT, Function.uncurry] using
+    simpa only [K, μT, Function.uncurry_def] using!
       (integrable_uncurry_allCharacter_weightedBlock
         d N hN hT hE b hb henergy weight hweight hweightInt hweight0)
   have hterm (psi : DirichletCharacter ℂ d) :
@@ -178,7 +178,7 @@ theorem sum_intervalIntegral_integral_weightedBlock_eq
   have houterTerm (psi : DirichletCharacter ℂ d) :
       IntervalIntegrable (fun t => ∫ v : ℝ, Kpsi psi (t, v)) volume (-T) T := by
     rw [intervalIntegrable_iff]
-    simpa only [μT] using (hterm psi).integral_prod_left
+    exact (hterm psi).integral_prod_left
   have hsections : ∀ᵐ t ∂μT,
       ∀ psi : DirichletCharacter ℂ d,
         Integrable (fun v => Kpsi psi (t, v)) := by

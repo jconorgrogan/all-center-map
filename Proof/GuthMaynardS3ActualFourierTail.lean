@@ -186,7 +186,7 @@ theorem norm_sigmaII_affine_sum_tail_le
       ‖FourierTransform.fourier
           (fun u : ℝ => (lemma84Profile B W u : ℂ)) z‖ ≤
           lemma84OuterSupFourierConstant q * (T / |z|) ^ q * S := by
-        simpa only [lemma84ProfileC] using hraw
+        exact hraw
       _ ≤ lemma84OuterSupFourierConstant q * T ^ eta *
           (T / |z|) ^ q * S := by
         have hmul := mul_le_mul_of_nonneg_left hTeta hC0

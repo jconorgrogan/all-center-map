@@ -103,7 +103,7 @@ theorem weightedPointMassFourierKernel_local_L2
           intervalTranslationPhase x0 1 ξ *
             weightedPointMassFourierKernel P x a (u - ξ)) :=
         hphase.mul hTshift
-      simpa [f, mul_assoc] using (hfour.mul hphK).aestronglyMeasurable
+      simpa [f, mul_assoc, Pi.mul_def] using! (hfour.mul hphK).aestronglyMeasurable
     have hf : Integrable f := by
       apply hlin.mono' hfmeas
       filter_upwards [] with ξ

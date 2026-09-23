@@ -57,7 +57,7 @@ theorem norm_sum_sourcePhase_shift_le
       (Real.cot (gmIncrement t (base + k) / 2) -
         Real.cot (gmIncrement t base / 2)) / 2 := by
     simpa [a] using (le_of_eq hvar_eq)
-  simpa [z] using
+  simpa [z, a] using!
     (norm_sum_range_le_boundary_add_variation k z a hrec hz hvar)
 
 /-- Numeric small-step form: the literal source phase is bounded by the

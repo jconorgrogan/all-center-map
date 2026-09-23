@@ -22,7 +22,7 @@ theorem norm_localEulerProduct_le {q : ℕ} (chi : DirichletCharacter ℂ q)
     ‖jutilaLocalEulerProductComplex chi r d s‖ ≤ localEulerBudget chi r d := by
   unfold jutilaLocalEulerProductComplex localEulerBudget
   apply (Finset.norm_prod_le _ _).trans
-  apply Finset.prod_le_prod (fun p hp => norm_nonneg _)
+  apply Finset.prod_le_prod₀ (fun p hp => norm_nonneg _)
   intro p hp
   unfold jutilaLocalEulerFactorComplex
   calc

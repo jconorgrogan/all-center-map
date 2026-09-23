@@ -73,7 +73,11 @@ def outerUpper (X : ℝ) (beta eta : ℝ) : ℝ :=
 inductive OuterComponent where
   | negative
   | positive
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype OuterComponent where
+  elems := {.negative, .positive}
+  complete := by intro c; cases c <;> simp
 
 /-- Oriented endpoints of one component of MRT region (69). -/
 def componentEndpoints (X : ℝ) (beta eta : ℝ) :

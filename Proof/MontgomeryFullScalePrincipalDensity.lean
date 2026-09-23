@@ -78,7 +78,7 @@ theorem principal_fullScale_low_strip_density :
       simp only [Nat.cast_one,one_mul] at h
       exact h hz (by linarith) hβhi hγ
     have hfull : 2*(T+C)+1 ≤ (U : ℝ) := by
-      simpa only [Nat.cast_one,one_mul] using
+      simpa only [Nat.cast_one,one_mul] using!
         (fullScale_collar_and_mollifier_cover (q:=1) (by linarith) hTpi hkappahalf).2
     have htail' : 2*(detectorArithmeticCutoff Y T : ℝ)^2 *
         ((H^k)⁻¹ * MAPMontgomeryFullStripFourier.detectorFourierMomentConstant k) ≤

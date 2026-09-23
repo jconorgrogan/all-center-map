@@ -44,7 +44,7 @@ theorem normalizedAF_mul {q : ℕ} (chi : DirichletCharacter ℂ q) (t : ℝ)
       have hprod := (Nat.mem_divisorsAntidiagonal.mp hp).1
       symm
       simpa only [hprod] using normalizedTwistedTerm_mul
-        (fun m n => by simpa only [Nat.cast_mul] using chi.map_mul (m : ZMod q) (n : ZMod q))
+        (fun m n => by simpa only [Nat.cast_mul] using! chi.map_mul (m : ZMod q) (n : ZMod q))
         (alpha := (f : ℕ → ℂ)) (beta := (g : ℕ → ℂ))
         (Nat.pos_of_ne_zero hp0.1) (Nat.pos_of_ne_zero hp0.2) t
 

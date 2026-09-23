@@ -769,7 +769,7 @@ theorem principalPostA5StructuredSplitReduction_of_principalFourthMoment
     have hYle : Real.rpow T (1 / 2) ≤ T := by
       have hraw := Real.rpow_le_rpow_of_exponent_le hTone
         (by norm_num : (1 / 2 : ℝ) ≤ 1)
-      simpa only [Real.rpow_one] using hraw
+      simpa only [Real.rpow_one] using! hraw
     have hlogSqY : (Real.log T) ^ 2 ≤ Real.rpow T (1 / 2) := by
       simpa [Real.rpow_natCast] using hlogSqT
     exact hlogSqY.trans hYle

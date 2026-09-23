@@ -131,7 +131,7 @@ lemma source_factor_nonneg
         ((2 * (q j : ℝ) + 1) *
           sourceW (FordWeakBilinear.order k) (FordWeakBilinear.order k)
             M1 M2 (j.val + 1) N t) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro j hj
       dsimp [FordWeakBilinear.capFactor]
       positivity

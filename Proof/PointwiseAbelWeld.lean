@@ -91,7 +91,7 @@ theorem hasDerivAt_realFourierPhase (β t : ℝ) :
   let c : ℂ := 2 * Real.pi * Complex.I * (β : ℂ)
   have hlin : HasDerivAt (fun y : ℝ => c * (y : ℂ)) c t := by
     convert (hasDerivAt_id t).ofReal_comp.const_mul c using 1 <;> simp
-  simpa only [realFourierPhase, c] using hlin.cexp
+  simpa only [realFourierPhase, c] using! hlin.cexp
 
 theorem norm_realFourierPhase (β t : ℝ) :
     ‖realFourierPhase β t‖ = 1 := by

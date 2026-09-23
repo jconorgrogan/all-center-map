@@ -488,7 +488,7 @@ theorem classIII_card_le_raw
           ((Y : ℝ) /
             ((modulus : ℝ) * (Z : ℝ) ^ (1 / 2 : ℝ)) + 1) := by
   let S := classSet FourClass.III X Y modulus residue Z cutoff
-  have hsplit := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsplit := Finset.card_filter_add_card_filter_not
     (s := S) (fun n ↦ n ≤ Z)
   have hsmall := classIII_small_card_le_Z X Y modulus residue Z cutoff
   have hlarge := classIII_large_card_le hmod hcop hYX hZ hsmooth
@@ -1250,7 +1250,7 @@ theorem classII_card_le_raw_of_primePowerTail
             (Z : ℝ) ^ (-1 / 4 : ℝ) +
           (Z : ℝ) ^ (1 / 2 : ℝ)) := by
   let S := classSet FourClass.II X Y modulus residue Z cutoff
-  have hsplit := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsplit := Finset.card_filter_add_card_filter_not
     (s := S) (fun n ↦ n ≤ Z)
   have hsmall := classII_small_card_le_Z X Y modulus residue Z cutoff
   have hlarge := classII_large_card_le_of_primePowerTail

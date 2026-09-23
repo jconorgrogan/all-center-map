@@ -51,7 +51,7 @@ theorem equation81_averaging_schur
       equation81_bilinear_averaging hR hF
     _ ≤ 9 * (2 * ENNReal.ofReal (4 * R) *
         (∫⁻ x : ℝ, (equation81Average R F x) ^ 2)) :=
-      mul_le_mul_left' hschur' 9
+      mul_le_mul_right hschur' 9
     _ = 18 * ENNReal.ofReal (4 * R) *
         (∫⁻ x : ℝ, (equation81Average R F x) ^ 2) := by ring
 

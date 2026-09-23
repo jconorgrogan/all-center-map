@@ -235,7 +235,7 @@ theorem integral_abs_iteratedDeriv_scaledCutoff_le
       have hlin : ContDiff ℝ (↑(⊤ : ℕ∞)) (fun u : ℝ => L⁻¹ * u) := by fun_prop
       simpa [Function.comp_def, div_eq_inv_mul] using hζ.comp hlin
     have hg : ContDiff ℝ (↑(⊤ : ℕ∞)) (fun u : ℝ => Real.exp (-a * u)) := by fun_prop
-    simpa only [scaledCutoff] using hf.mul hg
+    simpa only [scaledCutoff] using! hf.mul hg
   have hcont : Continuous (fun u : ℝ =>
       |iteratedDeriv j (scaledCutoff ζ a L) u|) :=
     (hscaled.continuous_iteratedDeriv j
@@ -294,7 +294,8 @@ theorem fourier_inversion_pointwise (ψ : 𝓢(ℝ, ℂ)) (u : ℝ) :
     (FourierTransform.fourierInv_fourier_eq (F := 𝓢(ℝ, ℂ)) ψ)
   change 𝓕⁻ (𝓕 ψ : 𝓢(ℝ, ℂ)) u = ψ u at h
   rw [SchwartzMap.fourierInv_coe, SchwartzMap.fourier_coe, Real.fourierInv_eq'] at h
-  simpa [positiveFourierPhase, smul_eq_mul, mul_comm, mul_left_comm, mul_assoc] using h.symm
+  simpa [positiveFourierPhase, smul_eq_mul, mul_comm, mul_left_comm, mul_assoc,
+    SchwartzMap.fourier_coe] using h.symm
 
 private theorem integrable_phase_mul_fourier (ψ : 𝓢(ℝ, ℂ)) (a : ℂ) (u : ℝ) :
     Integrable (fun ξ : ℝ ↦ a * (positiveFourierPhase u ξ * (𝓕 ψ) ξ)) := by

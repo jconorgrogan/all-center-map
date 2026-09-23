@@ -131,7 +131,7 @@ theorem sourceScale_le_sourceY
       (by exact_mod_cast (Nat.zero_le q) : (0 : ℝ) ≤ q)]
   have hexp := (sourceY_exponent_mem hsigmaLow hsigmaHigh).1
   unfold sourceY
-  simpa only [Real.rpow_one] using
+  simpa only [Real.rpow_one] using!
     (Real.rpow_le_rpow_of_exponent_le hscaleOne hexp)
 
 /-- Exact terminal absorption of the hybrid-scale term.  This is the
@@ -161,7 +161,7 @@ theorem sourceScale_mul_sourceY_power_le
         sourceY q T sigma *
             Real.rpow (sourceY q T sigma) (1 - 2 * sigma) =
             Real.rpow (sourceY q T sigma) (1 + (1 - 2 * sigma)) := by
-          simpa only [Real.rpow_one] using
+          simpa only [Real.rpow_one] using!
             (Real.rpow_add hYpos 1 (1 - 2 * sigma)).symm
         _ = Real.rpow (sourceY q T sigma) (2 * (1 - sigma)) := by
           congr 1

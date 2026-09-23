@@ -51,7 +51,8 @@ theorem hasDerivAt_wholeLinePacketShift
   unfold wholeLinePacketShift
   convert (((Real.hasDerivAt_exp w).const_mul X).sub
     (((Real.hasDerivAt_exp (w + h)).scomp w
-      ((hasDerivAt_id w).add_const h)).const_mul X)).div_const H using 1 <;> ring
+      ((hasDerivAt_id w).add_const h)).const_mul X)).div_const H using 1 <;>
+    (try funext y) <;> simp only [Function.comp_def, Pi.sub_apply, id_eq, smul_eq_mul] <;> ring
 
 theorem hasDerivAt_wholeLineCutoffAutocorrelation
     {cutoff cutoff' : ℝ → ℝ} {B1 delta : ℝ}
@@ -90,7 +91,8 @@ theorem hasDerivAt_wholeLineCutoffAutocorrelation
   · exact ae_of_all _ fun y _hy z _hz ↦ by
       convert (hasDerivAt_const z (cutoff y)).mul
         ((hcutoffDeriv (y + z)).scomp z
-          ((hasDerivAt_const z y).add (hasDerivAt_id z))) using 1 <;> ring
+          ((hasDerivAt_const z y).add (hasDerivAt_id z))) using 1 <;>
+        (try funext v) <;> simp only [Function.comp_def, Pi.mul_apply, Pi.add_apply, id_eq, smul_eq_mul] <;> ring
 
 theorem hasDerivAt_wholeLineCutoffAutocorrelationDeriv
     {cutoff cutoff' cutoff'' : ℝ → ℝ} {B2 delta : ℝ}
@@ -130,7 +132,8 @@ theorem hasDerivAt_wholeLineCutoffAutocorrelationDeriv
   · exact ae_of_all _ fun y _hy z _hz ↦ by
       convert (hasDerivAt_const z (cutoff y)).mul
         ((hcutoffSecond (y + z)).scomp z
-          ((hasDerivAt_const z y).add (hasDerivAt_id z))) using 1 <;> ring
+          ((hasDerivAt_const z y).add (hasDerivAt_id z))) using 1 <;>
+        (try funext v) <;> simp only [Function.comp_def, Pi.mul_apply, Pi.add_apply, id_eq, smul_eq_mul] <;> ring
 
 /-! ## Exact whole-line change of variables -/
 

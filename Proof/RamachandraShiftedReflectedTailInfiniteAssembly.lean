@@ -149,7 +149,7 @@ theorem hasSum_ramachandraReflectedTailDyadicShell
     if X < n then ramachandraReflectedTerm psi z n else 0
   have hfull := summable_ramachandraReflectedTerm psi hz
   have hf : Summable f := by
-    simpa [f, Set.indicator] using
+    simpa [f, Set.indicator] using!
       hfull.indicator ({n : ℕ | X < (n : ℝ)} : Set ℕ)
   have hsplit := hf.sum_add_tsum_subtype_compl ({0, 1} : Finset ℕ)
   have hfzero : ∑ n ∈ ({0, 1} : Finset ℕ), f n = 0 := by

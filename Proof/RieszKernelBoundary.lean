@@ -57,7 +57,7 @@ theorem abs_height_pow_le_regularized_denominator_norm
       ‖∏ j ∈ Finset.range k,
         (((sigma : ℂ) + t * I) + ((j + 1 : ℕ) : ℂ))‖ := by
   rw [norm_prod]
-  have hprod := Finset.prod_le_prod
+  have hprod := Finset.prod_le_prod₀
     (fun _ _ => abs_nonneg t)
     (fun j (_ : j ∈ Finset.range k) =>
       abs_height_le_shifted_factor_norm sigma t j)
@@ -107,7 +107,7 @@ theorem regularized_denominator_lower_bound
       simp
     _ ≤ ∏ j ∈ Finset.range k,
         ‖((sigma : ℂ) + t * I) + ((j + 1 : ℕ) : ℂ)‖ := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j hj
         positivity
       · intro j hj

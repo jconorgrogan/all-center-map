@@ -56,7 +56,6 @@ theorem summable_far_power
       (B := B) (by norm_num) hB 0).mul_left _
   apply hg.of_nonneg_of_le
   · intro m
-    dsimp [f]
     split_ifs <;> positivity
   · intro m
     dsimp [f, g]

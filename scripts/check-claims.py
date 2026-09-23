@@ -80,10 +80,12 @@ def main() -> int:
                         errors.append(
                             f"axiom log contains non-Palomar dependencies: {sorted(reported - ALLOWED)}"
                         )
-                if "Your solution is okay!" not in comparator_text:
+                comparator_lines = set(comparator_text.splitlines())
+                if "Your solution is okay!" not in comparator_lines:
                     errors.append("Comparator success marker is absent")
-                for marker in ["nanoda kernel accepts the solution", "Lean default kernel accepts the solution"]:
-                    if marker not in comparator_text:
+                for marker in ["nanoda kernel accepts the solution", "con-ron kernel accepts the solution",
+                               "Lean default kernel accepts the solution"]:
+                    if marker not in comparator_lines:
                         errors.append(f"independent-checker log is missing: {marker}")
 
     if errors:

@@ -357,7 +357,7 @@ theorem pairRB_eq_twistedKernel_innerTwoScale_pnat
   have hfactor := summable_p53FactorPairTerm_pnat chi hM hMN hs hr hr'
   have hfactorSwap : Summable (fun p : ℕ+ × ℕ+ =>
       p53FactorPairTerm chi M N s r r' p.2 p.1) := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_def, Equiv.prodComm_apply] using!
       (Equiv.prodComm ℕ+ ℕ+).summable_iff.mpr hfactor
   have hzero : jutilaP53PairRTerm M N s chi r r' 0 = 0 := by
     simp [jutilaP53PairRTerm]
@@ -433,7 +433,7 @@ theorem pairRB_eq_twistedKernel_innerTwoScale_pnat
                 innerTerm m := by
           apply tsum_congr
           intro m
-          simpa only [innerTerm] using
+          simpa only [innerTerm] using!
             (p53FactorPairTerm_eq_outer_mul_innerTerm (M := M) (N := N)
               chi hM hMN s r r' d.2 m.2)
         _ = LSeries.term (p53TwistedDivisorKernel chi r r') (1 + s) d *

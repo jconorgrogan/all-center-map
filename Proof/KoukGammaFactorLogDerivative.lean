@@ -26,7 +26,8 @@ private theorem logDeriv_piPower (s : ℂ) :
   have hexp : DifferentiableAt ℂ (fun z : ℂ => -z / 2) s := by fun_prop
   rw [logDeriv_apply, Complex.deriv_const_cpow hexp]
   have hderiv : deriv (fun z : ℂ => -z / 2) s = -(1 / 2 : ℂ) := by
-    convert ((hasDerivAt_id s).neg.div_const (2 : ℂ)).deriv using 1 <;> ring
+    simpa only [Pi.neg_apply, id_eq, neg_div] using!
+      ((hasDerivAt_id s).neg.div_const (2 : ℂ)).deriv
   rw [hderiv]
   have hpow := piPower_ne_zero s
   field_simp [hpow]
@@ -62,7 +63,7 @@ theorem logDeriv_GammaR
       (Complex.differentiableAt_Gamma (s / 2) hpole)
       hinner, hderivInner, Complex.digamma_def]
     ring
-  change logDeriv (fun z => A z * B z) s = _
+  change logDeriv (A * B) s = _
   rw [hmul, hAlog, hBlog]
 
 /-- Even-character specialization of the exact Gamma-factor formula. -/

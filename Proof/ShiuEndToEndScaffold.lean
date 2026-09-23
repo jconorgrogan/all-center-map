@@ -65,10 +65,9 @@ theorem certifiedLemmaOneClassIII : LemmaOneClassIII := by
   refine ⟨max Z₀ 3, by omega, ?_⟩
   intro X Z hZ hZX hXZ
   have hZ₀Z : Z₀ ≤ Z := (le_max_left Z₀ 3).trans hZ
-  simpa [smoothCount, smoothCutoff,
-    ShiuLemma1Rankin.smoothCount,
-    ShiuLemma1ClassIII.classIIICutoff] using
-      hbound X Z hZ₀Z hZX hXZ
+  change ShiuLemma1Rankin.smoothCount Z
+    (ShiuLemma1ClassIII.classIIICutoff X) ^ 4 ≤ Z
+  exact hbound X Z hZ₀Z hZX hXZ
 
 /-! ## Lemma 3: exact harmonic mean surface -/
 
@@ -190,7 +189,7 @@ theorem omittedEulerProduct_mono_cutoff
     intro p hp
     rw [Nat.mem_primesBelow] at hp ⊢
     exact ⟨by omega, hp.2⟩
-  apply Finset.prod_le_prod_of_subset_of_one_le hsubset
+  apply Finset.prod_le_prod_of_subset_of_one_le₀ hsubset
   · intro p hp
     by_cases hpd : p ∣ modulus
     · simp [hpd]
@@ -227,7 +226,7 @@ theorem modulusTotient_omittedEulerProduct_le_fullEulerProduct
   have hsmall :
       (∏ p ∈ T, eulerInvFactor p) ≤
         ∏ p ∈ T, eulerInvFactor p ^ (k * k) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro p hp
       have hpS : p ∈ S := (Finset.mem_filter.mp hp).1
       exact (one_le_eulerInvFactor

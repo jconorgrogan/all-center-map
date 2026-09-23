@@ -42,7 +42,7 @@ theorem prefactor_le {R k : ℕ} (hR : 1 ≤ R) :
     exact hc'.trans (hmid.trans (htop.trans (by rfl)))
   have hprod : prefactor R k ≤ C ^ k := by
     unfold prefactor
-    have hp := Finset.prod_le_prod (s := (Finset.univ : Finset (Fin k)))
+    have hp := Finset.prod_le_prod₀ (s := (Finset.univ : Finset (Fin k)))
       (fun j hj => by
         unfold coeff
         positivity)

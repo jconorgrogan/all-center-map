@@ -86,8 +86,8 @@ theorem typeD_selected_gt_tailThreshold
     change (factors.map (fun f => (f.length : ℝ)))[s]? = scales[s]? at hget
     rw [List.getElem?_eq_getElem hsMap,
       List.getElem?_eq_getElem hsScale] at hget
-    simpa using hget.symm
-  exact ⟨hs, by simpa [hscaleAt] using hfirst⟩
+    simpa using! hget.symm
+  exact ⟨hs, by simpa [hscaleAt] using! hfirst⟩
 
 theorem tailThreshold_gt_smallScale
     {X delta : ℝ} (hX : 2 ≤ X) {m : ℕ} (hmone : 1 ≤ m)

@@ -180,8 +180,8 @@ theorem principalTwoScaleIntegrand_residue_one
   · funext z
     unfold principalTwoScaleIntegrandInLArgument A
     ring
-  · rw [hAt]
-    ring
+  · rfl
+  · simp only [hAt, mul_one]
 
 theorem oneScaleSpectralIntegrand_sub_factor
     {q : ℕ} (chi : DirichletCharacter ℂ q) (s : ℂ)

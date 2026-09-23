@@ -121,7 +121,7 @@ theorem integrable_sq_sourceFiniteAffineSum
     ((continuous_sourceFiniteAffineSum m1Range m2Range jRange f hfCont).pow 2).aestronglyMeasurable
   filter_upwards with u
   rw [Real.norm_eq_abs, abs_of_nonneg (sq_nonneg _)]
-  simpa only [ranges, G] using
+  simpa only [ranges, G] using!
     sourceFiniteAffineSum_sq_le m1Range m2Range jRange f u
 
 /-- Crude finite-branch energy bound.  The ratio factor is still exact; dyadic

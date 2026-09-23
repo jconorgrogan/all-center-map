@@ -51,7 +51,7 @@ theorem orderedDivisorCount_subpolynomial (k : ℕ) (hk : 1 ≤ k) :
     have hkpos : 0 < k := Nat.zero_lt_of_lt hk
     have hn0 : n ≠ 0 := Nat.ne_of_gt hn
     rw [ShiuFoundation.tauAF_eq_factorization_prod k n hn0]
-    exact Finset.one_le_prod (fun p hp => by
+    exact Finset.one_le_prod₀ (fun p hp => by
       change 1 ≤ k.multichoose (n.factorization p)
       rw [Nat.multichoose_eq]
       exact Nat.choose_pos (by omega))

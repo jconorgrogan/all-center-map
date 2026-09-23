@@ -29,7 +29,7 @@ theorem norm_packetCorrelation_le_average_energy
     ‖packetCorrelation J t t'‖ ≤
       ((∫ x : ℝ, ‖J t x‖ ^ 2) + (∫ x : ℝ, ‖J t' x‖ ^ 2)) / 2 := by
   have ht'ConjMeas : AEStronglyMeasurable (fun x ↦ star (J t' x)) :=
-    Complex.continuous_conj.comp_aestronglyMeasurable ht'.1
+    Complex.continuous_conj.comp_aestronglyMeasurable ht'.aestronglyMeasurable
   have ht'Conj : MemLp (fun x ↦ star (J t' x)) 2 :=
     ht'.congr_norm ht'ConjMeas (Filter.Eventually.of_forall (fun x ↦ by simp))
   have hprod : Integrable (fun x ↦ J t x * star (J t' x)) := by

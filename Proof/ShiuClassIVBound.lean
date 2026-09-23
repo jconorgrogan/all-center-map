@@ -40,7 +40,7 @@ theorem summable_classIVSeriesTerm (A : ℝ) (hA : 0 < A) :
   have hlog :
       Filter.Tendsto (fun n : ℕ => Real.log (n : ℝ))
         Filter.atTop Filter.atTop := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_def] using
       Real.tendsto_log_atTop.comp
         (tendsto_natCast_atTop_atTop (R := ℝ))
   have hevent : ∀ᶠ n : ℕ in Filter.atTop,

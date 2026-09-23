@@ -156,7 +156,7 @@ theorem norm_regularized_lower_le_envelope
     have hg := GammaCompactStripScratch.norm_Gamma_compactStrip_le_exp
       (a := x) (t := -B) (by linarith [hx'.1, hbetaHigh]) hx'.2
       (by simpa [abs_of_nonneg (le_trans zero_le_one hB)] using hB)
-    simpa [GammaCompactStripScratch.stripPoint,
+    simpa [GammaCompactStripScratch.stripPoint, sub_eq_add_neg,
       abs_of_nonneg (le_trans zero_le_one hB)] using hg
   have hYpow : ‖(Y : ℂ) ^ ((x : ℂ) - B * I)‖ ≤ Y ^ (1 / 2 : ℝ) := by
     rw [Complex.norm_cpow_eq_rpow_re_of_pos hYpos]

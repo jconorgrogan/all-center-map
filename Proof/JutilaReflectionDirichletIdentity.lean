@@ -60,7 +60,7 @@ theorem summable_weighted_dirichletCoefficient
   have hnat : Summable fun n : ℕ => Real.rpow (n : ℝ) p :=
     Real.summable_nat_rpow.mpr hp
   have hsub : Summable fun n : PositiveNat => Real.rpow (n : ℝ) p := by
-    simpa only [Function.comp_apply] using hnat.subtype {n : ℕ | 0 < n}
+    simpa only [Function.comp_apply] using! hnat.subtype {n : ℕ | 0 < n}
   have hmajor : Summable fun n : PositiveNat =>
       U ^ 2 * Real.rpow (n : ℝ) p := hsub.mul_left (U ^ 2)
   refine Summable.of_nonneg_of_le

@@ -180,7 +180,7 @@ theorem summable_outsideShiftedHarmonic_standardEdge
     apply summable_norm_iff.mpr
     exact ArithmeticFunction.LSeriesSummable_vonMangoldt (by simpa using hc)
   have ha : Summable a := by
-    simpa only [a, Function.comp_apply] using
+    simpa only [a, Function.comp_apply] using!
       haBase.subtype {n : ℕ | n ∉ Finset.Icc 1 N}
   have hK : 0 ≤ K := by
     dsimp only [K]
@@ -407,7 +407,7 @@ theorem tsum_outsideShiftedHarmonic_standardEdge_le
     have hs : 1 < 1 + δ / 2 := by linarith
     have hseries : Summable fun n : ℕ =>
         (n : ℝ) ^ (-(1 + δ / 2)) := by
-      simpa only [MAPMertensAnalyticLeaf.realRpowSummandHom_apply] using
+      simpa only [MAPMertensAnalyticLeaf.realRpowSummandHom_apply] using!
         (MAPMertensAnalyticLeaf.summable_realRpowSummandHom hs)
     have ha : Summable a := hseries.mul_left (2 / δ)
     exact Summable.of_nonneg_of_le

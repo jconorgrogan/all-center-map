@@ -51,7 +51,7 @@ theorem packetCorrelationBilinear_le_equation81Bilinear
         F z.1 * F z.2 * ENNReal.ofReal ‖packetCorrelation J z.1 z.2‖ ≤
             F z.1 * F z.2 *
               ENNReal.ofReal (M * equation81Kernel R z.1 z.2) :=
-          mul_le_mul_left' hz _
+          mul_le_mul_right hz _
         _ = ENNReal.ofReal M *
             (F z.1 * F z.2 * ENNReal.ofReal (equation81Kernel R z.1 z.2)) := by
           rw [ENNReal.ofReal_mul hM]
@@ -80,12 +80,12 @@ theorem packetCorrelationBilinear_source_scale
     ENNReal.ofReal R * packetCorrelationBilinear J F ≤
         ENNReal.ofReal R *
           (ENNReal.ofReal M * equation81Bilinear R F) :=
-      mul_le_mul_left' hbil _
+      mul_le_mul_right hbil _
     _ = ENNReal.ofReal M *
         (ENNReal.ofReal R * equation81Bilinear R F) := by ring
     _ ≤ ENNReal.ofReal M *
         (18 * (∫⁻ x : ℝ, (equation81Average R F x) ^ 2)) :=
-      mul_le_mul_left' hschur _
+      mul_le_mul_right hschur _
     _ = 18 * ENNReal.ofReal M *
         (∫⁻ x : ℝ, (equation81Average R F x) ^ 2) := by ring
 

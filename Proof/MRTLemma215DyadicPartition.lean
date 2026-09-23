@@ -235,7 +235,7 @@ theorem complexifyArithmetic_add (f g : ArithmeticFunction ℝ) :
     complexifyArithmetic (f + g) =
       complexifyArithmetic f + complexifyArithmetic g := by
   ext n
-  simp [complexifyArithmetic, ArithmeticFunction.add_apply]
+  simp only [ArithmeticFunction.add_apply, complexifyArithmetic_apply, Complex.ofReal_add]
 
 theorem complexifyArithmetic_mul (f g : ArithmeticFunction ℝ) :
     complexifyArithmetic (f * g) =

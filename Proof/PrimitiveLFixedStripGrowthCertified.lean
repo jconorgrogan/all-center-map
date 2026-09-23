@@ -35,7 +35,7 @@ private theorem normalizedL_diffContOnCl
       (re ⁻¹' Ioo (-1 : ℝ) 2) :=
     (DirichletCharacter.differentiable_LFunction hχ).diffContOnCl
   have hmul := hinv.smul hL
-  simpa [normalizedL, d, div_eq_inv_mul, mul_comm] using hmul
+  simpa [normalizedL, d, div_eq_inv_mul, mul_comm] using! hmul
 
 private theorem one_le_norm_shift_sq {z : ℂ} (hz : -1 ≤ z.re) :
     1 ≤ ‖(z + 3) ^ 2‖ := by

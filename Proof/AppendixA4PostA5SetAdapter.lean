@@ -321,7 +321,7 @@ def detectorRealPartCutoff (a : ℝ) (D : ℕ) : 𝓢(ℝ, ℂ) := by
   let f : ℝ → ℂ := fun x =>
     (zeta x : ℂ) * (Real.exp (-a * x) : ℂ)
   have hzeta : HasCompactSupport (fun x : ℝ => (zeta x : ℂ)) := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_apply] using!
       zeta.hasCompactSupport.comp_left
         (show (fun x : ℝ => (x : ℂ)) 0 = 0 by norm_num)
   have hfcompact : HasCompactSupport f := by
@@ -331,12 +331,12 @@ def detectorRealPartCutoff (a : ℝ) (D : ℕ) : 𝓢(ℝ, ℂ) := by
     have hzR : ContDiff ℝ (↑(⊤ : ℕ∞)) (fun x : ℝ => zeta x) :=
       zeta.contDiff
     have hzC : ContDiff ℝ (↑(⊤ : ℕ∞)) (fun x : ℝ => (zeta x : ℂ)) := by
-      simpa only [Function.comp_apply] using Complex.ofRealCLM.contDiff.comp hzR
+      simpa only [Function.comp_apply] using! Complex.ofRealCLM.contDiff.comp hzR
     have heR : ContDiff ℝ (↑(⊤ : ℕ∞))
         (fun x : ℝ => Real.exp (-a * x)) := by fun_prop
     have heC : ContDiff ℝ (↑(⊤ : ℕ∞))
         (fun x : ℝ => (Real.exp (-a * x) : ℂ)) := by
-      simpa only [Function.comp_apply] using Complex.ofRealCLM.contDiff.comp heR
+      simpa only [Function.comp_apply] using! Complex.ofRealCLM.contDiff.comp heR
     exact hzC.mul heC
   exact hfcompact.toSchwartzMap hfsmooth
 

@@ -102,7 +102,7 @@ theorem eventually_log_le_A5_gap_power (c : ℝ) (hc : 0 < c) :
     _ ≤ 1 * Real.rpow X (a5FiberGapBudget * omega) :=
       mul_le_mul_of_nonneg_right (by
         simpa only [omega', show -(12 * a5FiberGapBudget * omega / 12) =
-          -(a5FiberGapBudget * omega) by ring] using hprod) hpow0
+          -(a5FiberGapBudget * omega) by ring] using! hprod) hpow0
     _ = Real.rpow X (a5FiberGapBudget * omega) := one_mul _
 
 /-- The same weak-gap reserve absorbs every fixed polylogarithmic loss, not
@@ -163,7 +163,7 @@ theorem eventually_log_rpow_le_A5_gap_power
     _ ≤ 1 * Real.rpow X (a5FiberGapBudget * omega) :=
       mul_le_mul_of_nonneg_right (by
         simpa only [omega', show -(12 * a5FiberGapBudget * omega / 12) =
-          -(a5FiberGapBudget * omega) by ring] using hprod) hpow0
+          -(a5FiberGapBudget * omega) by ring] using! hprod) hpow0
     _ = Real.rpow X (a5FiberGapBudget * omega) := one_mul _
 
 /-- Generic terminal weld for a finite nonnegative factor already shown to

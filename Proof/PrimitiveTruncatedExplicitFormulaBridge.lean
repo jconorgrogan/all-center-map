@@ -278,9 +278,8 @@ theorem perronContourIntegrand_eq_regularized_add_principal
       calc
         s - 1 = -1 + s := by ring
         _ = 0 := h
-    field_simp [hL, hs, hs0]
     have hsub : s - 1 ≠ 0 := sub_ne_zero.mpr hs
-    field_simp [hsub]
+    field_simp [hL, hs, hs0, hsub]
     ring
   · simp only [perronContourIntegrand, regularizedPerronContourIntegrand,
       principalPoleIntegrand, regularizedLFunction, if_neg hχ, add_zero]
@@ -307,7 +306,7 @@ theorem tendsto_mul_principalPoleIntegrand_one
     continuousAt_id.tendsto.mono_left nhdsWithin_le_nhds
   have hquot : Tendsto (fun s : ℂ => (x : ℂ) ^ s / s)
       (𝓝[≠] (1 : ℂ)) (𝓝 (x : ℂ)) := by
-    simpa using hpow.div hid (by norm_num)
+    simpa using! hpow.div hid (by norm_num)
   apply hquot.congr'
   filter_upwards [self_mem_nhdsWithin] with s hs
   rw [principalPoleIntegrand, if_pos rfl]

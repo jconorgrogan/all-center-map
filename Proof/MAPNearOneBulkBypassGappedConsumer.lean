@@ -77,7 +77,7 @@ theorem regularNear_logSaving_of_bulk_gappedCumulative_and_high_gap
     (mul_pos htauPosGlobal (by norm_num [a5FiberGapBudget])) hc
   have hJutilaHeight : ∀ᶠ X : ℝ in atTop,
       RJ ≤ apZeroHeight epsilon X := by
-    simpa only [apZeroHeight] using
+    simpa only [apZeroHeight] using!
       (tendsto_rpow_atTop htauPosGlobal).eventually (eventually_ge_atTop RJ)
   let Cfinal : ℝ := (fineCellCount epsilon : ℝ) * CC + CJ
   have hCfinal : 0 < Cfinal := by
@@ -414,7 +414,7 @@ theorem regularNear_logSaving_of_bulk_gappedCumulative_and_high_gap
               ((fineCellCount epsilon : ℝ) *
                   (CC * Real.rpow X (-(epsilon / 400))) +
                 CJ * Real.rpow X (-(omega / 12)))) := by
-          simpa only [T] using hfamily
+          simpa only [T] using! hfamily
         _ = ((fineCellCount epsilon : ℝ) * CC) *
               (((Q : ℝ) ^ 2 * Real.log X) *
                 Real.rpow X (-(epsilon / 400))) +

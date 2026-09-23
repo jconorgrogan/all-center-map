@@ -48,7 +48,7 @@ theorem continuous_bhpRightPerronTerm
               (fun v : ℝ =>
                 (((1 / 2 + c : ℝ) : ℂ) + (t + v) * Complex.I))) u :=
           ContinuousAt.comp_of_eq houter hinner rfl
-        simpa only [Function.comp_apply] using hcomp
+        simpa only [Function.comp_apply] using! hcomp
     · fun_prop
   · fun_prop
   · exact fun u => denominator_ne_zero hc

@@ -6,9 +6,10 @@ expanded large local expressions into a dense polynomial proof. The final
 theorem's compiled proof had 16,414,694 distinct expression nodes, while its
 three supporting declarations had 19,659, 5,312, and 2,233.
 
-The release replaces exactly those two tactic steps with `mul_pow` and `ac_rfl`.
-The theorem statements, names, hypotheses, constants, imports, and all other
-source text are unchanged. The pinned Lean compiler accepted the candidate and
+The September 20, 2026 Lean `v4.30.0-rc2` release replaced those two tactic
+steps with `mul_pow` and `ac_rfl`. Within this module, the theorem statements,
+names, hypotheses, constants, imports, and other source text were unchanged.
+That compiler accepted the candidate and
 reported only `propext`, `Classical.choice`, and `Quot.sound`.
 
 On the authoring machine the compiled module shrank from 526,211,976 bytes to
@@ -23,5 +24,6 @@ The optimized module subsequently compiled from source in the Linux build in
 - [Baseline proof-expression counts](evidence/proof-optimization/baseline-proof-size.txt)
 
 The original authoring development is untouched. `proof-snapshot.json` records
-both hashes for the changed module. The optimized module compiled from source
-in the Linux release build.
+both hashes for this optimization. These measurements describe the Lean 4.30
+release; the current sources additionally include Lean 4.35 API compatibility
+changes. The historical records above preserve their original bytes.

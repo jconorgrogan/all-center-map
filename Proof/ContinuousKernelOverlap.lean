@@ -542,7 +542,7 @@ theorem physicalAutocorrelation_dyadicIndicator_eq
           norm_num
     _ = (volume.real (dyadicOverlapSet X h) : ℂ) := by
       change (∫ x : ℝ,
-        (dyadicOverlapSet X h).indicator (1 : ℝ → ℂ) x) = _
+        (dyadicOverlapSet X h).indicator (fun _ => (1 : ℂ)) x) = _
       have hm : MeasurableSet (dyadicOverlapSet X h) := by
         rw [dyadicOverlapSet_eq_Ioc]
         exact measurableSet_Ioc

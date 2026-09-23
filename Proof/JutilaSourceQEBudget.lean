@@ -78,7 +78,7 @@ theorem sourceE_le
     apply Real.sqrt_le_iff.mpr
     exact ⟨by positivity,by nlinarith [Real.sq_sqrt hDp.le]⟩
   have hs : Real.sqrt ((q:ℝ)*(1+2*T)) ≤ 2*Real.rpow D (1/2) := by
-    simpa only [Real.sqrt_eq_rpow] using hsqrt.trans hsqrt'
+    simpa only [Real.sqrt_eq_rpow] using! hsqrt.trans hsqrt'
   have he : Real.exp (-((1-δ)^2)*Real.log (sourceZ1 δ D)) =
       Real.rpow D (-((1-δ)^2)*(1/2+7*δ)) := by
     unfold sourceZ1
@@ -154,7 +154,7 @@ theorem eventually_sourceQE_le_decay {δ : ℝ}
   have h := sourceQE_le_power_log hK hδlo hδhi hD hlog hgeo hT hscale hsigma
   have hpoly' : (2621440*K)*(Real.log D)^13 ≤ Real.rpow D δ := by
     have he13 : Real.rpow (Real.log D) (13:ℝ) = (Real.log D)^13 := by
-      simpa only [Real.rpow_eq_pow] using Real.rpow_natCast (Real.log D) 13
+      simpa only [Nat.cast_ofNat] using! Real.rpow_natCast (Real.log D) 13
     rwa [he13] at hpoly
   have hp := mul_le_mul_of_nonneg_right hpoly' (Real.rpow_nonneg hDp.le (-(3/2)*δ))
   have heq : Real.rpow D δ * Real.rpow D (-(3/2)*δ) = Real.rpow D (-δ/2) := by

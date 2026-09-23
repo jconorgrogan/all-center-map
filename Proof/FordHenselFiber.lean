@@ -64,6 +64,7 @@ theorem reducePoint_injective_on_nonsingular
   exact Fin.ext (by simpa [ZMod.val_natCast_of_lt (a.1 i).isLt,
     ZMod.val_natCast_of_lt (b.1 i).isLt] using hzv)
 
+open scoped Classical in
 theorem card_nonsingularPrimePowerSolution_le_p_pow_d
     {p R d : ℕ} (hp : p.Prime) (hR : 1 ≤ R)
     (f : Fin d → MvPolynomial (Fin d) ℤ) :

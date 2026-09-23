@@ -64,7 +64,7 @@ theorem subset_box_moment_bound (B : Finset ℕ) (s k M : ℕ)
         (6 + (4 * (q j : ℝ) + 2) * ((s * M ^ (j.val + 1) : ℕ) : ℝ) / L j +
           6 * ((s * M ^ (j.val + 1) : ℕ) : ℝ) * |gamma j| +
           (4 * (q j : ℝ) + 2) / ((L j : ℝ) * |gamma j|))) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro j hj
       positivity
     · intro j hj

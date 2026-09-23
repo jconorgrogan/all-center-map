@@ -41,7 +41,7 @@ theorem lemma11_9_scalar_factor_bound_three
     have hthree : Real.rpow 3 (3/4 : ℝ) ≤ 3 := by
       have hh := Real.rpow_le_rpow_of_exponent_le (by norm_num : (1 : ℝ) ≤ 3)
         (by norm_num : (3/4 : ℝ) ≤ 1)
-      simpa only [Real.rpow_one] using hh
+      simpa only [Real.rpow_one] using! hh
     calc
       _ ≤ Real.rpow (3*E0) (3/4 : ℝ) :=
         Real.rpow_le_rpow hE0 hscale (by norm_num)

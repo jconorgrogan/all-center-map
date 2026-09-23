@@ -76,6 +76,7 @@ theorem logDeriv_completedLFunction_one_sub
   have hrightLog :
       logDeriv (fun z => A z * W * C z) s =
         Complex.log (q : ℂ) + logDeriv C s := by
+    change logDeriv ((fun z => A z * W) * C) s = _
     rw [logDeriv_mul s hAWne hrightNe hAWdiff hrightDiff]
     rw [logDeriv_mul_const s W hWne]
     rw [show logDeriv A s = Complex.log (q : ℂ) by

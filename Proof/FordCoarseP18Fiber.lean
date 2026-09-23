@@ -144,7 +144,7 @@ lemma intervalToGeneric_mem
               (intervalToFin (Nat.pow_pos (n := r) (Nat.Prime.pos hp))
                 z.1.1 z.1.2)) =
           (∑ j : Fin n, (phi i).eval ((z.1.1 j).val : ℤ)) - target i := by
-      simpa [MAPFordHenselStep.pointInt, pointIntQ, intervalToFin] using hi
+      simpa [MAPFordHenselStep.pointInt, pointIntQ, intervalToFin] using! hi
     rw [hval]
     exact z.2.1 i
   · exact z.2.2

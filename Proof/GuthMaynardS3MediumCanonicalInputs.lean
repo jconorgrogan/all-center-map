@@ -146,7 +146,7 @@ theorem sourceGFinite_medium_canonical_inputs
   have hBT : Real.rpow T eta ≤ T ^ 6 := by
     have hpow := Real.rpow_le_rpow_of_exponent_le hT heta1
     calc
-      Real.rpow T eta ≤ T := by simpa only [Real.rpow_one] using hpow
+      Real.rpow T eta ≤ T := by simpa only [Real.rpow_one] using! hpow
       _ ≤ T ^ 6 := by
         simpa only [pow_one] using
           (pow_le_pow_right₀ hT (show (1 : ℕ) ≤ 6 by omega))

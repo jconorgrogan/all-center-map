@@ -12,7 +12,11 @@ lemma hasDerivAt_signedMixedDiff
   have hlog := hasDerivAt_log_mixedDiff hs hx hsteps
   have hconst := hlog.const_mul ((-1 : ℝ) ^ (hs.length + 1))
   convert hconst using 1
-  · unfold signedKernelDiff reciprocalKernel
+  · ext y; simp [signedMixedDiff]
+  · have hk : reciprocalKernel 1 = (fun y : ℝ => y⁻¹) := by
+      funext y
+      simp [reciprocalKernel]
+    simp only [signedKernelDiff, hk, one_div]
     rw [pow_succ]
     ring_nf
 

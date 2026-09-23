@@ -31,12 +31,12 @@ theorem eventually_classIIIScales :
       368640 * Real.log 4 ≤ Real.log (Real.log z) ∧
       180 * (512 : ℝ) ^ 2 * Real.log (Real.log z) ≤ Real.log z := by
   have hloglog : Tendsto (fun z : ℝ => Real.log (Real.log z)) atTop atTop := by
-    simpa only [Function.comp_apply] using
+    simpa only [Function.comp_def] using
       Real.tendsto_log_atTop.comp Real.tendsto_log_atTop
   have hlo :
       (fun z : ℝ => Real.log (Real.log z)) =o[atTop]
         (fun z : ℝ => Real.log z) := by
-    simpa only [Function.comp_apply, id_eq] using
+    simpa only [Function.comp_def, id_eq] using
       Real.isLittleO_log_id_atTop.comp_tendsto Real.tendsto_log_atTop
   have hslow :=
     (isLittleO_iff_nat_mul_le'.1 hlo (180 * 512 ^ 2))

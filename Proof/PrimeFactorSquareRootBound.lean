@@ -39,15 +39,15 @@ theorem four_pow_card_primeFactors_le (q : ℕ) (hq : q ≠ 0) :
     simpa [small] using card_small_primeFactors_le_two q
   have hcard : small.card + large.card = q.primeFactors.card := by
     simpa [small, large] using
-      (Finset.filter_card_add_filter_neg_card_eq_card
-        (s := q.primeFactors) (fun p => p < 5))
+      (Finset.card_filter_add_card_filter_not
+        (s := q.primeFactors) (p := fun p => p < 5))
   have hsmallPow : (4 : ℕ) ^ small.card ≤ 16 := by
     have h := pow_le_pow_right₀ (a := (4 : ℕ)) (by norm_num) hsmall
     norm_num at h ⊢
     exact h
   have hlargePow : (4 : ℕ) ^ large.card ≤ ∏ p ∈ large, p := by
     rw [← Finset.prod_const]
-    exact Finset.prod_le_prod (fun _ _ => Nat.zero_le _)
+    exact Finset.prod_le_prod₀ (fun _ _ => Nat.zero_le _)
       (fun p hp => by
         have hp' := (Finset.mem_filter.mp hp).2
         omega)

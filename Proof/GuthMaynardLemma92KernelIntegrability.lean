@@ -93,7 +93,7 @@ theorem aestronglyMeasurable_sigmaIIZPairTailKernel
       (volume.prod volume) :=
     (continuous_sigmaIIZ1_pair M3 Ctau
       (m2 : ℝ) (m2' : ℝ)).aestronglyMeasurable
-  simpa only [sigmaIIZPairTailKernel] using hpair.mul (hfirst.mul htail)
+  simpa only [sigmaIIZPairTailKernel] using! hpair.mul (hfirst.mul htail)
 
 /-- The pointwise `T^-100` tail majorant is a genuine integrability theorem,
 not merely an estimate for an integral whose integrand might be nonmeasurable. -/

@@ -28,7 +28,7 @@ theorem exp_omittedPrimeInvSum_le_omittedEulerProduct
           else ShiuEndToEnd.eulerInvFactor p ^ (k * k)) := by
   rw [ShiuLemma4EndpointWeld.omittedPrimeInvSum, Finset.mul_sum,
     Real.exp_sum]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro p hp
     exact (Real.exp_pos _).le
   · intro p hp

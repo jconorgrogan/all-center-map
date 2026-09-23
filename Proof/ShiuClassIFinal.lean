@@ -42,7 +42,7 @@ theorem classIOmittedEulerProduct_mono
     classIOmittedEulerProduct k z modulus ≤
       classIOmittedEulerProduct k x modulus := by
   unfold classIOmittedEulerProduct
-  apply Finset.prod_le_prod_of_subset_of_one_le
+  apply Finset.prod_le_prod_of_subset_of_one_le₀
   · intro p hp
     have hpdata := Nat.mem_primesBelow.mp hp
     exact Nat.mem_primesBelow.mpr ⟨by omega, hpdata.2⟩
@@ -337,7 +337,7 @@ theorem realLog_le_four_log_classISieveLevel
       _ = s ^ 4 := by ring
   have hZpowNat : Z ≤ s ^ 4 :=
     (Nat.lt_succ_sqrt Z).le.trans (by
-      simpa [s, pow_two] using hsuccPow)
+      simpa only [s, classISieveLevel, pow_two] using! hsuccPow)
   have hZpow : (Z : ℝ) ≤ (s : ℝ) ^ 4 := by exact_mod_cast hZpowNat
   calc
     Real.log (Z : ℝ) ≤ Real.log ((s : ℝ) ^ 4) :=

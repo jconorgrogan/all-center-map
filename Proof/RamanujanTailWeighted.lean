@@ -363,7 +363,7 @@ theorem sum_multiples_phase {q d : ℕ} (hq : q ≠ 0) (hd : d ∣ q) (hd0 : d �
   apply Finset.sum_bij (fun a _ => a / d)
   · intro a ha
     simp only [Finset.mem_filter, Finset.mem_range] at ha ⊢
-    exact (Nat.div_lt_div_right hd0 ha.2 hd).2 ha.1
+    exact (Nat.div_lt_div_right hd0 hd).mpr ha.1
   · intro a ha b hb hab
     simp only [Finset.mem_filter, Finset.mem_range] at ha hb
     calc
@@ -706,8 +706,8 @@ theorem twinPrimeFactor_hasProd_primes_complex :
       twinPrimeConstant :=
     (hasProd_subtype_iff_of_mulSupport_subset hsupp).2
       twinPrimeEulerProduct_hasProd
-  simpa only [Function.comp_apply] using
-    hr.map Complex.ofRealHom Complex.continuous_ofReal
+  convert hr.map Complex.ofRealHom Complex.continuous_ofReal
+  simp [Complex.ofRealHom]
 
 /-- The correction factors for primes dividing a fixed nonzero shift form a
 finite product, again transported to the complex coefficient field. -/
@@ -729,8 +729,8 @@ theorem singularLocalFactor_hasProd_primes_complex
       (∏ p ∈ h.1.natAbs.divisors, singularLocalFactor h p) := by
     rw [singularLocalFactor_tprod_eq_divisors_prod h] at hrAll
     exact (hasProd_subtype_iff_of_mulSupport_subset hsupp).2 hrAll
-  simpa only [Function.comp_apply] using
-    hr.map Complex.ofRealHom Complex.continuous_ofReal
+  convert hr.map Complex.ofRealHom Complex.continuous_ofReal
+  simp [Complex.ofRealHom]
 
 def primeTwo : Nat.Primes := ⟨2, Nat.prime_two⟩
 
@@ -759,8 +759,9 @@ theorem tprod_literalRamanujan_local_eq_singularSeries
         rw [one_add_literalRamanujanTerm_prime h hh p]
         by_cases hp2 : (p : ℕ) = 2
         · have hpEq : p = primeTwo := Subtype.ext hp2
-          simp [hpEq, heven, primeTwo, twinPrimeFactor,
-            singularLocalFactor]
+          subst hpEq
+          simp [heven, primeTwo, twinPrimeFactor, singularLocalFactor]
+          split_ifs <;> rfl
         · have hpNe : p ≠ primeTwo := by
             intro hpEq
             apply hp2
@@ -861,9 +862,8 @@ theorem weightedRamanujanPrime_eq_base_of_not_dvd
 
 theorem summable_weightedRamanujanPrime (h : ℤ) (hh : h ≠ 0) :
     Summable (weightedRamanujanPrime h) := by
-  have hbase : Summable (fun p : Nat.Primes => basePrimeWeight p) := by
-    simpa only [Function.comp_apply] using
-      summable_basePrimeWeight.subtype {p : ℕ | p.Prime}
+  have hbase : Summable (fun p : Nat.Primes => basePrimeWeight p) :=
+    summable_basePrimeWeight.subtype Nat.Prime
   have hfinite : Set.Finite {p : Nat.Primes | ((p : ℕ) : ℤ) ∣ h} := by
     have hpre : Set.Finite
         ((fun p : Nat.Primes => (p : ℕ)) ⁻¹'
@@ -1024,8 +1024,8 @@ theorem summable_sqrtWeightedRamanujan (h : ℤ) (hh : h ≠ 0) :
     summable_finsetProd_of_summable_nonneg
       (weightedPrimeOnNat_nonneg h) hlocal
   have hsource : Summable (fun s : primeFinsets =>
-      ∏ p ∈ (s : Finset ℕ), weightedPrimeOnNat h p) := by
-    simpa only [Function.comp_apply] using hfinset.subtype primeFinsets
+      ∏ p ∈ (s : Finset ℕ), weightedPrimeOnNat h p) :=
+    hfinset.subtype (· ∈ primeFinsets)
   have hsourceEq : (fun s : primeFinsets =>
       weightedRamanujanArithmetic h (primeFinsetSquarefreeEquiv s)) =
       (fun s : primeFinsets =>
@@ -1204,13 +1204,12 @@ theorem shiftPrimeCorrection_multipliable
   rw [shiftPrimeCorrection, if_neg]
   intro hd
   apply hp
-  simpa only [Set.Finite.mem_toFinset] using hd
+  simpa [Set.Finite.mem_toFinset, Set.mem_setOf] using hd
 
 theorem basePrimeMass_multipliable :
     Multipliable (fun p : Nat.Primes => 1 + basePrimeWeight p) := by
-  have hbase : Summable (fun p : Nat.Primes => basePrimeWeight p) := by
-    simpa only [Function.comp_apply] using
-      summable_basePrimeWeight.subtype {p : ℕ | p.Prime}
+  have hbase : Summable (fun p : Nat.Primes => basePrimeWeight p) :=
+    summable_basePrimeWeight.subtype Nat.Prime
   have hbaseNorm : Summable (fun p : Nat.Primes => ‖basePrimeWeight p‖) := by
     apply hbase.congr
     intro p
@@ -1257,10 +1256,9 @@ theorem sqrtWeightedRamanujanMass_le_divisorCorrection
         ∏' p : Nat.Primes,
           shiftPrimeCorrection h p * (1 + basePrimeWeight p) :=
       le_of_tendsto_of_tendsto' hactual.hasProd (hcorr.mul hbase).hasProd
-        (fun s => Finset.prod_le_prod
-          (fun p _ => by
-            have hw := weightedRamanujanPrime_nonneg h p
-            linarith)
+        (fun s => Finset.prod_le_prod₀
+          (fun p _ => add_nonneg (by norm_num : (0 : ℝ) ≤ 1)
+            (weightedRamanujanPrime_nonneg h p))
           (fun p _ => one_add_weightedPrime_le_correction_mul_base h p))
     _ = shiftPrimeCorrectionMass h * basePrimeMassConstant := by
       exact hcorr.tprod_mul hbase
@@ -1274,8 +1272,8 @@ theorem finite_prime_divisors_card_eq_primeFactors_card
     (t := h.natAbs.primeFactors)
     (fun (p : Nat.Primes) _ => (p : ℕ))
   · intro p hp
-    have hd : ((p : ℕ) : ℤ) ∣ h :=
-      (by simpa only [Set.Finite.mem_toFinset] using hp)
+    have hd : ((p : ℕ) : ℤ) ∣ h := by
+      simpa [Set.Finite.mem_toFinset, Set.mem_setOf] using hp
     exact Nat.mem_primeFactors.mpr ⟨p.property, Int.natCast_dvd.mp hd,
       Int.natAbs_ne_zero.mpr hh⟩
   · intro p hp q hq hpq
@@ -1285,7 +1283,8 @@ theorem finite_prime_divisors_card_eq_primeFactors_card
     have hdNat : p ∣ h.natAbs := Nat.dvd_of_mem_primeFactors hp
     let pp : Nat.Primes := ⟨p, hprime⟩
     refine ⟨pp, ?_, rfl⟩
-    simpa only [Set.Finite.mem_toFinset] using (Int.natCast_dvd.mpr hdNat)
+    simpa [Set.Finite.mem_toFinset, Set.mem_setOf] using
+      (Int.natCast_dvd.mpr hdNat)
 
 theorem shiftPrimeCorrectionMass_eq_four_pow
     (h : ℤ) (hh : h ≠ 0) :
@@ -1298,7 +1297,7 @@ theorem shiftPrimeCorrectionMass_eq_four_pow
     rw [shiftPrimeCorrection, if_neg]
     intro hd
     apply hp
-    simpa only [Set.Finite.mem_toFinset] using hd
+    simpa [Set.Finite.mem_toFinset, Set.mem_setOf] using hd
   rw [shiftPrimeCorrectionMass, tprod_eq_prod (s := s) hout]
   calc
     (∏ p ∈ s, shiftPrimeCorrection h p) = ∏ _p ∈ s, (4 : ℝ) := by
@@ -1306,7 +1305,7 @@ theorem shiftPrimeCorrectionMass_eq_four_pow
       intro p hp
       change p ∈ (finite_prime_divisors h hh).toFinset at hp
       rw [shiftPrimeCorrection, if_pos]
-      simpa only [Set.Finite.mem_toFinset] using hp
+      simpa [Set.Finite.mem_toFinset, Set.mem_setOf] using hp
     _ = (4 : ℝ) ^ s.card := Finset.prod_const 4
     _ = (4 : ℝ) ^ h.natAbs.primeFactors.card := by
       rw [finite_prime_divisors_card_eq_primeFactors_card h hh]
@@ -1320,13 +1319,11 @@ theorem two_pow_primeFactors_card_le_card_divisors
       rw [Finset.prod_const]
     _ ≤ ∏ p ∈ n.primeFactors, (n.factorization p + 1) := by
       apply Finset.prod_le_prod
-      · intro p hp
-        omega
-      · intro p hp
-        have hpprime : p.Prime := Nat.prime_of_mem_primeFactors hp
-        have hpdvd : p ∣ n := Nat.dvd_of_mem_primeFactors hp
-        have hpos := hpprime.factorization_pos_of_dvd hn hpdvd
-        omega
+      intro p hp
+      have hpprime : p.Prime := Nat.prime_of_mem_primeFactors hp
+      have hpdvd : p ∣ n := Nat.dvd_of_mem_primeFactors hp
+      have hpos := hpprime.factorization_pos_of_dvd hn hpdvd
+      omega
 
 theorem four_pow_primeFactors_card_le_card_divisors_sq
     (n : ℕ) (hn : n ≠ 0) :

@@ -23,7 +23,7 @@ theorem product_le {R M1 M2 N k : ℕ} {lam : ℝ}
   have hn0 : (0 : ℝ) < N := by positivity
   calc
     _ ≤ ∏ j : Fin k, (coeff R (j.val+1)*(N : ℝ)^(exponent (j.val+1) lam)) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j hj
         unfold sourceW sourceC
         positivity

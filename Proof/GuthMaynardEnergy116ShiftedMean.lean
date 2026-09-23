@@ -102,7 +102,7 @@ theorem weighted_difference_bound {eta : ℝ} (heta : 0 < eta) :
       intro s
       have hh := mul_le_mul_of_nonneg_left (hbound T N b W s hT hN hb hsep hcontained)
         (inv_one_add_sq_nonneg s)
-      simpa only [Finset.mul_sum] using hh
+      simpa only [Finset.mul_sum, energy114Weight, K] using! hh
     _ = A*K := integral_mul_const _ _
     _ ≤ (A+1)*K := mul_le_mul_of_nonneg_right (by linarith) hK
     _ = _ := by dsimp [K]; ring

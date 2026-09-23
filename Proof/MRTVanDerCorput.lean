@@ -105,17 +105,18 @@ theorem hasDerivAt_sourcePacketAmplitude
       (sourcePacketAmplitudeDeriv X H x cutoff cutoff' outerCutoff outerCutoff' w) w := by
   have hexpHalfReal : HasDerivAt (fun y : ℝ ↦ Real.exp (y / 2))
       (Real.exp (w / 2) / 2) w := by
-    convert Real.hasDerivAt_exp (w / 2) |>.scomp w
-      ((hasDerivAt_id w).div_const 2) using 1 <;> ring
+    simpa only [Function.comp_def, id_eq, div_eq_mul_inv, one_div, one_mul] using!
+      (Real.hasDerivAt_exp (w / 2)).comp w ((hasDerivAt_id w).div_const 2)
   have hz : HasDerivAt (fun y : ℝ ↦ (X * Real.exp y - x) / H)
       (X * Real.exp w / H) w := by
     convert ((Real.hasDerivAt_exp w).const_mul X).sub_const x |>.div_const H using 1 <;> ring
   have hcutReal := (hcutoff ((X * Real.exp w - x) / H)).scomp w hz
   have houterArg : HasDerivAt (fun y : ℝ ↦ y / 100) (1 / 100) w := by
-    convert (hasDerivAt_id w).div_const 100 using 1 <;> ring
+    simpa only [id_eq] using! (hasDerivAt_id w).div_const 100
   have houterReal := (houter (w / 100)).scomp w houterArg
   have hprod := (hexpHalfReal.ofReal_comp.mul hcutReal.ofReal_comp).mul
     houterReal.ofReal_comp
+  change HasDerivAt (sourcePacketAmplitude X H x cutoff outerCutoff) _ w at hprod
   convert hprod using 1
   simp only [sourcePacketAmplitudeDeriv, Function.comp_apply, Pi.mul_apply,
     one_div, smul_eq_mul]
@@ -187,7 +188,7 @@ theorem integral_norm_sourcePacketAmplitudeDeriv_le
   have hrDeriv : ∀ w, HasDerivAt r (rd w) w := by
     intro w
     unfold r rd
-    convert (hasDerivAt_id w).div_const 100 using 1 <;> ring
+    simpa only [id_eq] using! (hasDerivAt_id w).div_const 100
   have hrdNonneg : ∀ w, 0 ≤ rd w := by
     intro w
     unfold rd

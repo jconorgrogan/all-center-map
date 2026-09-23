@@ -44,7 +44,7 @@ theorem norm_logDeriv_le_of_log_norm_ratio_le
   have hld : DifferentiableOn ℂ (logDeriv g) (ball c (3 / 2 : ℝ)) := by
     intro z hz
     have hgz : AnalyticAt ℂ g z := hgan z hz
-    simpa only [logDeriv_apply] using
+    simpa only [logDeriv_apply] using!
       (hgz.deriv.div hgz (hgn z hz)).differentiableAt.differentiableWithinAt
   obtain ⟨H, hHc, hH⟩ :=
     hld.isExactOn_ball.with_val_at c (0 : ℂ)

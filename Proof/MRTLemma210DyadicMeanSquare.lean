@@ -211,7 +211,8 @@ theorem sum_character_norm_sq_eq_totient_mul_packet_sum
       residuePacketPolynomial (unitResiduePacket q S r) a t *
           star (residuePacketPolynomial (unitResiduePacket q S r) a t) =
         ((‖residuePacketPolynomial (unitResiduePacket q S r) a t‖ ^ 2 : ℝ) : ℂ) := by
-    simpa only [Complex.ofReal_pow] using
+    simpa only [RCLike.ofReal_eq_complex_ofReal, Complex.ofReal_pow,
+      RCLike.star_def] using!
       (RCLike.mul_conj
         (residuePacketPolynomial (unitResiduePacket q S r) a t))
   simp_rw [hpacket] at horth

@@ -93,7 +93,7 @@ theorem norm_logDeriv_shiftedCanonicalNumerator_le
     change deriv
       (fun z : ℂ => ((3 * a : ℝ) : ℂ) ^ 2 -
         conj (ρ - c) * (z - c)) s = _
-    simpa only [Pi.sub_apply, zero_sub] using (hconst.sub hmul).deriv
+    simpa only [Pi.sub_apply, zero_sub] using! (hconst.sub hmul).deriv
   rw [logDeriv_apply, hderiv, norm_div, norm_neg, norm_conj]
   have hratio : (3 * a) / (6 * a ^ 2) = 1 / (2 * a) := by
     field_simp

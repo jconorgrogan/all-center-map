@@ -129,7 +129,7 @@ theorem translatedSubdivisionFiber_mem_local_interval
   rw [Finset.mem_image] at hu
   obtain ⟨t, ht, rfl⟩ := hu
   obtain ⟨hlo, hhi⟩ := subdivisionFiber_mem_interval hL hT hheight hj ht
-  constructor <;> dsimp <;> linarith
+  constructor <;> linarith
 
 theorem subdivisionIndex_mem_range
     {W : Finset ℝ} {T L : ℝ} (hL : 0 < L) (hT : 0 ≤ T)

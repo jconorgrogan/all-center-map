@@ -50,7 +50,7 @@ private theorem principalNormalizedGaussian_diffContOnCl
     change DiffContOnCl ℂ
       (fun z => DirichletCharacter.LFunctionTrivChar₁ 1 z / (z + 1))
       (verticalStrip l r)
-    simpa only [div_eq_mul_inv, smul_eq_mul] using hF1.smul hInv
+    simpa only [div_eq_mul_inv, smul_eq_mul] using! hF1.smul hInv
   have hE : Differentiable ℂ (trivialEulerCorrection q) := by
     intro z
     apply AnalyticAt.differentiableAt
@@ -68,11 +68,11 @@ private theorem principalNormalizedGaussian_diffContOnCl
       exact hdiff.analyticAt z
     exact analyticAt_const.sub hpow
   have hAux : DiffContOnCl ℂ (principalAux q) (verticalStrip l r) := by
-    simpa [principalAux, smul_eq_mul] using hN.smul hE.diffContOnCl
+    simpa [principalAux, smul_eq_mul] using! hN.smul hE.diffContOnCl
   have hG : Differentiable ℂ
       (fun z : ℂ => Complex.exp (3 * (z - (u : ℂ) * I) ^ 2)) := by
     fun_prop
-  simpa [principalNormalizedGaussian, smul_eq_mul] using
+  simpa [principalNormalizedGaussian, smul_eq_mul] using!
     hAux.smul hG.diffContOnCl
 private theorem one_add_abs_mul_exp_cube_le_sixtyfour (r : ℝ) (hr : 0 ≤ r) :
     (1 + r) ^ 6 * Real.exp (-3 * r ^ 2) ≤ 64 := by
@@ -299,7 +299,7 @@ private theorem norm_functionalFactor_canonicalNegative_le
     ‖BHPRamachandraMeanValueFromDyadicAFE.ramachandraFunctionalFactor chiOne z‖ ≤
         4 * (Real.rpow 2000 (1 / 2 - delta) *
           Real.rpow (2000 * (1 + |v|)) (1 / 2 + delta)) := by
-      simpa [z] using hsharp
+      simpa [z, sub_eq_add_neg] using hsharp
     _ ≤ 4 * (2000 * (2000 * Real.rpow (1 + |v|) (1/2+delta))) := by
       apply mul_le_mul_of_nonneg_left _ (by norm_num)
       exact mul_le_mul hpow1 hpow2

@@ -178,25 +178,25 @@ theorem dynamicPacketIndexedCellsRefinedV3
           rfl
   | typeD1 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeD2 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeD4 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeD5 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeD6 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeD7 =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
   | typeII =>
       dsimp [dynamicPacketIndexedDataRefinedV3, dynamicV3CellErrorRefined, dynamicHBSourceMassV3]
-      simpa [dynamicPacketLiteralCellRefinedV3] using hnonneg
+      simpa [dynamicPacketLiteralCellRefinedV3] using! hnonneg
 
 end
 end MAPDynamicHBPacketIndexedDataRefinedV3

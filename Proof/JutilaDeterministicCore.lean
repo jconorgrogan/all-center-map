@@ -50,7 +50,7 @@ theorem occupied_le_two_mul_larger_color
     [DecidablePred color] [∀ b, Decidable (¬ color b)] :
     occupied.card ≤ 2 * max (occupied.filter color).card
       (occupied.filter fun b => ¬ color b).card := by
-  have hsplit := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsplit := Finset.card_filter_add_card_filter_not
     (s := occupied) color
   have hleft : (occupied.filter color).card ≤
       max (occupied.filter color).card

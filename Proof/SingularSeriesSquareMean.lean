@@ -68,7 +68,7 @@ theorem singularLocalProduct_le_primeExponentialProduct
     (h : {z : ℤ // z ≠ 0}) :
     (∏ p ∈ h.1.natAbs.divisors, singularLocalFactor h p) ≤
       ∏ p ∈ h.1.natAbs.divisors, primeExponentialFactor p := by
-  exact Finset.prod_le_prod (fun p hp => (singularLocalFactor_pos h p).le)
+  exact Finset.prod_le_prod₀ (fun p hp => (singularLocalFactor_pos h p).le)
     (fun p hp => singularLocalFactor_le_primeExponentialFactor h p)
 
 theorem primeExponentialProduct_eq_exp_primeDivisorSum

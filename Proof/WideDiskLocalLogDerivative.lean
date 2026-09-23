@@ -38,6 +38,8 @@ theorem logDeriv_shiftedCanonicalFactor_add_inv
   rw [shiftedCanonicalFactor_eq_num_div]
   have hden : (R : ℂ) * (s - ρ) ≠ 0 :=
     mul_ne_zero (ofReal_ne_zero.mpr hR) (sub_ne_zero.mpr hsρ)
+  change logDeriv (shiftedCanonicalNumerator c ρ R /
+    (fun z : ℂ => (R : ℂ) * (z - ρ))) s + 1 / (s - ρ) = _
   rw [logDeriv_div s hnum hden
     (by unfold shiftedCanonicalNumerator; fun_prop) (by fun_prop)]
   have hlinear :
@@ -79,7 +81,7 @@ theorem norm_logDeriv_shiftedCanonicalNumerator_le_one
       hasDerivAt_const s _
     change deriv
       (fun z : ℂ => (3 : ℂ) ^ 2 - conj (ρ - c) * (z - c)) s = _
-    simpa only [Pi.sub_apply, zero_sub] using (hconst.sub hmul).deriv
+    simpa only [Pi.sub_apply, zero_sub] using! (hconst.sub hmul).deriv
   rw [logDeriv_apply, hderiv, norm_div, norm_neg, norm_conj]
   exact (div_le_one (by positivity)).2 (hρn.le.trans (le_of_lt hdenLower))
 
@@ -192,7 +194,7 @@ theorem localDeflatedLogDeriv_eq_blaschke_sub_correction
   have hB := wideBlaschkeProduct_ne_zero_at χ hs hsF
   rw [logDeriv_analyticWide_eq_raw_at χ hs hsF]
   change logDeriv (regularizedLFunction χ) s - _ =
-    logDeriv (fun z => regularizedLFunction χ z * wideBlaschkeProduct χ t z) s - _
+    logDeriv (regularizedLFunction χ * wideBlaschkeProduct χ t) s - _
   rw [logDeriv_mul s hL hB
     (differentiable_regularizedLFunction χ).differentiableAt]
   · change logDeriv (regularizedLFunction χ) s - _ =
@@ -200,7 +202,7 @@ theorem localDeflatedLogDeriv_eq_blaschke_sub_correction
         logDeriv (fun z : ℂ => ∏ ρ ∈ wideZeroSupport χ t,
           shiftedCanonicalFactor (wideCenter t) wideRadius ρ z ^
             wideZeroMultiplicity χ t ρ) s) - _
-    rw [logDeriv_prod]
+    rw [logDeriv_fun_prod]
     ·
       have hfactor (ρ : ℂ) (hρ : ρ ∈ wideZeroSupport χ t) :
           logDeriv (shiftedCanonicalFactor (wideCenter t) wideRadius ρ) s +

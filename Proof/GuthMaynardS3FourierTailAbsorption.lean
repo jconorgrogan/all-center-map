@@ -15,12 +15,12 @@ theorem actualFourierTail_scalar_absorption
       256 * Ceta * K ^ 2 * D ^ 2 * Real.rpow T (-100 : ℝ) := by
   have hT0 : 0 < T := zero_lt_one.trans_le hT
   have heta : Real.rpow T eta ≤ T := by
-    simpa only [Real.rpow_one] using
+    simpa only [Real.rpow_one] using!
       Real.rpow_le_rpow_of_exponent_le hT heta1
   have h2eta : Real.rpow T (2 * eta) ≤ T ^ (2 : ℕ) := by
     have h := Real.rpow_le_rpow_of_exponent_le hT
       (show 2 * eta ≤ (2 : ℝ) by linarith)
-    simpa only [Real.rpow_two] using h
+    simpa only [Real.rpow_two] using! h
   have hsum : M1 + M3 ≤ 2 * T := by linarith
   have hpow : T ^ (4 : ℕ) * Real.rpow T (-229 : ℝ) =
       Real.rpow T (-225 : ℝ) := by

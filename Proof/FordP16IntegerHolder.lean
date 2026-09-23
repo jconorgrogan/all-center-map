@@ -306,15 +306,15 @@ theorem integer_target_holder
   have hgeneric := integer_target_holder_of_bounds (L := M) hp hd hds hs hdk psi
     (htarget := by
       intro r j
-      simpa [M, targetPairAtOne] using
+      simpa [M, targetPairAtOne] using!
         (target_alias_bound (p := p) (s := s) (k := k) (d := d)
           (Q := Q) (P := P) (q := q) hdk hp psi r j))
     (hfixed := by
       intro b r j
-      simpa [M, fixedPairAtOne] using
+      simpa [M, fixedPairAtOne] using!
         (fixed_alias_bound (p := p) (s := s) (k := k) (d := d)
           (Q := Q) (P := P) (q := q) hdk hp psi b r j))
-  simpa [M] using hgeneric
+  simpa [M] using! hgeneric
 
 end
 end MAPFordP16IntegerHolder

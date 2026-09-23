@@ -33,8 +33,8 @@
     {
       "module": "APAlignedTailToRemainderTransfer",
       "path": "Proof/APAlignedTailToRemainderTransfer.lean",
-      "sha256": "98e639c80bab419189a9b6d9557f97b55da5db6e5aae2bf4a679322d2f26ca09",
-      "bytes": 30301
+      "sha256": "6284474e63ddfe6698aa43dbc60915a5b4874f4a294742f9b570d98a50420cf4",
+      "bytes": 30297
     },
     {
       "module": "APConditionalShortIntervalConnector",
@@ -63,8 +63,8 @@
     {
       "module": "APCorrectedTailToRemainderTransfer",
       "path": "Proof/APCorrectedTailToRemainderTransfer.lean",
-      "sha256": "faf935bcf145fcc996c455df9beae566719f81c5749663c0309ded1e1d85b2d1",
-      "bytes": 15458
+      "sha256": "51915d47ae402e533efc13618a2f16b50ab9fd7dd0c7145fd7edd5050999dcc5",
+      "bytes": 15442
     },
     {
       "module": "APDirectAlignedShortInterval",
@@ -75,7 +75,7 @@
     {
       "module": "APDirectAlignedTailClosure",
       "path": "Proof/APDirectAlignedTailClosure.lean",
-      "sha256": "71f7bf4b69673a9885d69741257b2769d0fcc346494ed6c2679e1331bb8f98ec",
+      "sha256": "00131de8bd0bbb0bdab973b6fe4b43509e9fdef1f0d5cc44ca035754b6ce5c35",
       "bytes": 37285
     },
     {
@@ -177,8 +177,8 @@
     {
       "module": "APRegularNearAppendixBAdapter",
       "path": "Proof/APRegularNearAppendixBAdapter.lean",
-      "sha256": "dfbccd83d86df5d7b25bd6d698fc120277024c21c7eab048eb6e3e85b9d66aba",
-      "bytes": 16808
+      "sha256": "95ceda4c63f00f9d62b852a65d8069a5af928b38a65cd53150caa990b8245c93",
+      "bytes": 16809
     },
     {
       "module": "APRegularNearCGLGappedCollarRoute",
@@ -189,14 +189,14 @@
     {
       "module": "APRegularNearCGLGappedJutilaAppendixBAdapter",
       "path": "Proof/APRegularNearCGLGappedJutilaAppendixBAdapter.lean",
-      "sha256": "fcee8a89e7c98091e0e0aa21aaf0ec812ef172c1a2385f01fe645d73f17240af",
-      "bytes": 32071
+      "sha256": "e471b82f3bc2efdf179e74f77783791dac5a4a8c004cb7d20ea0c9fa6f5bb690",
+      "bytes": 32075
     },
     {
       "module": "APRegularNearCGLJutilaAppendixBAdapter",
       "path": "Proof/APRegularNearCGLJutilaAppendixBAdapter.lean",
-      "sha256": "a0b9fe1e2ac2eb39960c0f93cfa3cfead1a9cc6a86cee07456529da5dced4da2",
-      "bytes": 19125
+      "sha256": "f29c3b1393f686943eb0b0ceb307d925116931512540a64710208621dfc33cd8",
+      "bytes": 19127
     },
     {
       "module": "APRegularNearCGLJutilaFineMeshRoute",
@@ -213,8 +213,8 @@
     {
       "module": "APRegularNearHuxleyJutilaAppendixBAdapter",
       "path": "Proof/APRegularNearHuxleyJutilaAppendixBAdapter.lean",
-      "sha256": "25f5b427ab8b9b2ffb34c80310116337fec51590b8acf108fe1e7cb4279c759d",
-      "bytes": 18430
+      "sha256": "0f09f1f055fefe8f5eb4a0b7e2083de8f981acc85a07581fedbf275265114ba3",
+      "bytes": 18433
     },
     {
       "module": "APRegularNearHuxleyJutilaSourceAdapter",
@@ -225,8 +225,8 @@
     {
       "module": "APRegularNearLogSaving",
       "path": "Proof/APRegularNearLogSaving.lean",
-      "sha256": "db946b0223ae6dcad83521edad40194e0a4089a1a1dbd9ac1b0bf6ad3e131636",
-      "bytes": 27415
+      "sha256": "32cc7763bc33da7f2b920040d61c604a8ab8b95788e91739c5703264b9c31e19",
+      "bytes": 27416
     },
     {
       "module": "APRegularNearMeshRoute",
@@ -273,8 +273,8 @@
     {
       "module": "APTailToRemainderTransfer",
       "path": "Proof/APTailToRemainderTransfer.lean",
-      "sha256": "0090520cfa56a3e988e4eb72b7244ffb14e4897afacf234c35d76f8560a959c2",
-      "bytes": 26031
+      "sha256": "0a7432a2faef1efed45fb5a925e30c8aaf43cba121b1cb793bae47140daa8d0d",
+      "bytes": 26013
     },
     {
       "module": "APTruncatedZeroFieldEnergyCore",
@@ -327,8 +327,8 @@
     {
       "module": "APZeroFieldEnergy28Core",
       "path": "Proof/APZeroFieldEnergy28Core.lean",
-      "sha256": "436b3bb30442b01416f2b35b42b932ecf5119de883eb5e5672337cffaa14fc07",
-      "bytes": 18548
+      "sha256": "ce2bfa6b921b6427c437bc53daadb68bac39497d85fb0c53f341b5b3ed0554bd",
+      "bytes": 18616
     },
     {
       "module": "APZeroFieldEnergy28Grouping",
@@ -369,8 +369,8 @@
     {
       "module": "AppendixA4Detector",
       "path": "Proof/AppendixA4Detector.lean",
-      "sha256": "c213569715525656ceaaa30222e13b1ab3d2ee7357ec0c8666389ab8346a9a0d",
-      "bytes": 18364
+      "sha256": "aa31a8f8957bacf6eabe362a3ce29c4d6c65fcd879606ef6892764749aa788d7",
+      "bytes": 18429
     },
     {
       "module": "AppendixA4DetectorDichotomy",
@@ -393,8 +393,8 @@
     {
       "module": "AppendixA4GammaTails",
       "path": "Proof/AppendixA4GammaTails.lean",
-      "sha256": "86cb459ad25a4b3dd9056705af1411f4be0ba16127735a8ad812a405a5603897",
-      "bytes": 24105
+      "sha256": "800d76fd0b32da824bdce91557b3e1701f4bdf622aa3c1a70af6635395f182f4",
+      "bytes": 24121
     },
     {
       "module": "AppendixA4GammaWitness",
@@ -405,8 +405,8 @@
     {
       "module": "AppendixA4PostA5SetAdapter",
       "path": "Proof/AppendixA4PostA5SetAdapter.lean",
-      "sha256": "bf33de7234a11eda7cf1ed317cb89cf27f16ccd6be3638827cb3b5f51f6b81a9",
-      "bytes": 31866
+      "sha256": "c3527525d41301db5d817b17668ecfd0f0344701b3ef89ae97177c0995d08f45",
+      "bytes": 31869
     },
     {
       "module": "AppendixA4RecenteredGammaRepair",
@@ -423,26 +423,26 @@
     {
       "module": "AppendixA8A9Certified",
       "path": "Proof/AppendixA8A9Certified.lean",
-      "sha256": "9c5f2bc5e82bf53567f567ab3bbb46ed58fc793433eff14dc4f6e74380fefa06",
-      "bytes": 21412
+      "sha256": "17acd1cf7939bdb1fe984c66d2f5a36cfec65e57ba3af9122571ff87a06f82f7",
+      "bytes": 21442
     },
     {
       "module": "AppendixTypeIPowerAlgebra",
       "path": "Proof/AppendixTypeIPowerAlgebra.lean",
-      "sha256": "81995eaa1e58928a18e3c1690ac7d1358a81b56aaf22cfa156f673781a58a64f",
-      "bytes": 8687
+      "sha256": "396ae678312ba20da4da67fd80d8bd4b8763ee139122e9915411597aa917fd96",
+      "bytes": 8726
     },
     {
       "module": "BHPAllCharacterDyadicBudget",
       "path": "Proof/BHPAllCharacterDyadicBudget.lean",
-      "sha256": "44a2afd124c7ba3cd6a03301a378f3c8fc8a32dfacf23e9dd611d7574387b70c",
-      "bytes": 9044
+      "sha256": "a1c275a6593ccfbdb44661846a27e0c88b16ff30403c847e41559777604f2d3d",
+      "bytes": 9045
     },
     {
       "module": "BHPAmbientRademacherThreeLines",
       "path": "Proof/BHPAmbientRademacherThreeLines.lean",
-      "sha256": "6274924dc0170286cc5a5c242c7fb9e17a06f737a32c4d09a622920440ec5050",
-      "bytes": 15286
+      "sha256": "8ce1643fdde460f04994774f573e2001af7155fe43b1b22e0a8922dd0c94e9db",
+      "bytes": 15288
     },
     {
       "module": "BHPCanonicalAllCharacterFromPrincipal",
@@ -460,8 +460,8 @@
     {
       "module": "BHPCanonicalHorizontalScalar",
       "path": "Proof/BHPCanonicalHorizontalScalar.lean",
-      "sha256": "07b1c0ca29d4f812c6f679fa1f6771afadb6e3500c7d027e47d5891852c7f5b6",
-      "bytes": 39127
+      "sha256": "7effab56f874377caea4cafa1482b76ed1150163ae666f011ee2b13cce475c4d",
+      "bytes": 39129
     },
     {
       "module": "BHPCanonicalNonprincipalFourthMoment",
@@ -478,8 +478,8 @@
     {
       "module": "BHPCanonicalPrincipalHorizontalClosed",
       "path": "Proof/BHPCanonicalPrincipalHorizontalClosed.lean",
-      "sha256": "fb89190c4a548b3f745aa59d46e49805bea3ce2fba5fce7b88adf058abc4d171",
-      "bytes": 37959
+      "sha256": "f2029b399d33c1950527204fc141a37f6e1be6cf50ea98a88d2b914cc8b7d21f",
+      "bytes": 37960
     },
     {
       "module": "BHPCanonicalPrincipalPointwise",
@@ -496,8 +496,8 @@
     {
       "module": "BHPCorrectedContourShift",
       "path": "Proof/BHPCorrectedContourShift.lean",
-      "sha256": "5bb99c9bbaa29470bd6908500c583ec74b6141669285cb582f473f9a76b8014c",
-      "bytes": 19503
+      "sha256": "a0201e3148175ccaae5df3e18320f3afc12b3dc1ff191afa2dc0a36039bf3c31",
+      "bytes": 19519
     },
     {
       "module": "BHPCorrectedPerronKernel",
@@ -520,26 +520,26 @@
     {
       "module": "BHPHorizontalEndpointInterpolation",
       "path": "Proof/BHPHorizontalEndpointInterpolation.lean",
-      "sha256": "713e70367f1e4c4c4ae48ddb0158696132e20db94e9b4d60e24437fb02a0fd72",
-      "bytes": 22791
+      "sha256": "38bbffd32d687d37d1a5f469811a31a3b9e8be2aacca6e5fd21247f363bd57db",
+      "bytes": 22825
     },
     {
       "module": "BHPPrincipalNegativeEulerBound",
       "path": "Proof/BHPPrincipalNegativeEulerBound.lean",
-      "sha256": "886c46a5cbfd24658d03f35a29a737b82808650d951bb33a4f3cf65c552bd401",
-      "bytes": 10299
+      "sha256": "a53ceb0a8b0e02c9e96b021a560c35fd64acda7c78865245defaee1c34134130",
+      "bytes": 10305
     },
     {
       "module": "BHPPrincipalNormalizedGaussian",
       "path": "Proof/BHPPrincipalNormalizedGaussian.lean",
-      "sha256": "8985f1dc2da631a2c7a2cffdd0f2619cbf76927926b794270ae1051ab1c387c1",
-      "bytes": 36462
+      "sha256": "4658904a6cf1c33933d772da172508e2a0ec1c4b2e31ca83d5a1ffeebb4ea057",
+      "bytes": 36499
     },
     {
       "module": "BHPPrincipalResidueBound",
       "path": "Proof/BHPPrincipalResidueBound.lean",
-      "sha256": "633d18777f890a31a7d3f8bcd64cf1bf10750c8e2a38499e4aef84ce851006a1",
-      "bytes": 4771
+      "sha256": "d1a73258ad8f771237152269a7eb170d865413ca540a1b4c53cd461f9bfe6460",
+      "bytes": 4774
     },
     {
       "module": "BHPRademacherGaussianEnvelope",
@@ -550,8 +550,8 @@
     {
       "module": "BHPRademacherGaussianThreeLines",
       "path": "Proof/BHPRademacherGaussianThreeLines.lean",
-      "sha256": "637300a7639865768157f4d7bc1eec8e214514cd507b2f7237f192d1631336a5",
-      "bytes": 29032
+      "sha256": "2a83dcf0763b0b3fed13149b62ad835643a756b7b089580d0bd24c0bf5b7b5ef",
+      "bytes": 29323
     },
     {
       "module": "BHPRademacherTitchmarshSources",
@@ -574,8 +574,8 @@
     {
       "module": "BHPShiftedHolderReduction",
       "path": "Proof/BHPShiftedHolderReduction.lean",
-      "sha256": "dd051e573ba13f83d3d59c4c9c2a2bc3937123252286f477929513b0079694d5",
-      "bytes": 10289
+      "sha256": "58a13ed3bff66a82dd40e6f2198713053242e37f5c4148c0623f815ddb15e816",
+      "bytes": 10290
     },
     {
       "module": "BHPShiftedRamachandraWeld",
@@ -586,8 +586,8 @@
     {
       "module": "BHPTitchmarshPerronCore",
       "path": "Proof/BHPTitchmarshPerronCore.lean",
-      "sha256": "1cbe7e180fa5d860ce0488cec4ef1835d55fad38bbbace6ae942bb4141bf3a1e",
-      "bytes": 10767
+      "sha256": "80689ad52596ffbe1dc5d6dbd4ef68396b7762841d1731b9c1417b58ca4bca8d",
+      "bytes": 10768
     },
     {
       "module": "BHPTitchmarshTheorem319Proof",
@@ -616,8 +616,8 @@
     {
       "module": "BudgetedPoweredConnector",
       "path": "Proof/BudgetedPoweredConnector.lean",
-      "sha256": "b41a5d4f11e4f1bb4cfdc4dbfdbf29500f52cb754b6d4fe175cc266e6417ed7d",
-      "bytes": 12076
+      "sha256": "b96da5d3a7900954ee8c749c7726f11f3a2ff4cf2ab3583db6b5b5ac22834383",
+      "bytes": 12078
     },
     {
       "module": "BudgetedSelectedPoweredBlockAssembly",
@@ -652,8 +652,8 @@
     {
       "module": "CGLMeshFormalization",
       "path": "Proof/CGLMeshFormalization.lean",
-      "sha256": "8bc6894df32d6772d770d666d8dbc1ca7df0dc6da6f3354ad3b08249c9c002d3",
-      "bytes": 44389
+      "sha256": "85bdf84bc7598ab3550ec175f9736a0a18aaf24e5a988e6ae160c44730ac1ac8",
+      "bytes": 44400
     },
     {
       "module": "CGLNearFineMesh",
@@ -676,8 +676,8 @@
     {
       "module": "CGLProofDAG",
       "path": "Proof/CGLProofDAG.lean",
-      "sha256": "39ae889431e2b1219cd7f168772691091847260a83e75fdc74ab277ad4051923",
-      "bytes": 22129
+      "sha256": "6df4a7bfc9d5e45ba57fab9b7b9d1f291399d8d96b51550fb0ba6edb0d910b9f",
+      "bytes": 22460
     },
     {
       "module": "CGLv2PolylogConductorDensity",
@@ -712,8 +712,8 @@
     {
       "module": "CompletedLVerticalBound",
       "path": "Proof/CompletedLVerticalBound.lean",
-      "sha256": "7877820f7a9a81f239b90e1a5eadd29c8a44ff933bfa4d1e25779af640fbdd4f",
-      "bytes": 7182
+      "sha256": "536e0912ab44d6d579fed04afa398f827fcacbf0ac98166a98d99aabab5bc0dd",
+      "bytes": 7292
     },
     {
       "module": "ComplexMonomialAverage",
@@ -730,8 +730,8 @@
     {
       "module": "ContinuousKernelOverlap",
       "path": "Proof/ContinuousKernelOverlap.lean",
-      "sha256": "228b2db9638bde1a14dcfdf17ae4cea9ab31bc4de54f18affdf556c3c0bc7688",
-      "bytes": 25985
+      "sha256": "33a868e08f744b844fcdafd4ce19666845c22281a5b04267533f3d3db9d5b6f8",
+      "bytes": 25988
     },
     {
       "module": "ContinuousSlidingFourier",
@@ -832,14 +832,14 @@
     {
       "module": "FarAnnulusSourceToModel",
       "path": "Proof/FarAnnulusSourceToModel.lean",
-      "sha256": "f0f64e5ef01fc0d1a40b1e2565de262b8949d0cfae8e3697c04c7d09848b99f9",
-      "bytes": 34012
+      "sha256": "f41b136862f3636605d1ff63b96de78025e4462795eb5e9540375641253160eb",
+      "bytes": 34013
     },
     {
       "module": "FejerArcBridge",
       "path": "Proof/FejerArcBridge.lean",
-      "sha256": "01c58841d08ef7302d8b03a80fa5d5efb2dca67fadcbb6c8e8e5780dc3f5c5d7",
-      "bytes": 41954
+      "sha256": "de578ee3a501b4b6795139f792dadc530ba8475a8ff8f0cc43fc7c940abf114b",
+      "bytes": 42216
     },
     {
       "module": "FejerLocalMass",
@@ -862,20 +862,20 @@
     {
       "module": "FiniteBlaschkeAlgebra",
       "path": "Proof/FiniteBlaschkeAlgebra.lean",
-      "sha256": "b3360524e06cf815d7f87fee98acf3cf4b1fca39ba1b7b9890247410abb7ff13",
-      "bytes": 4176
+      "sha256": "b65ff11e252a96588413f306ec70a883930cc3911b3f254760dd190e2a86d6b4",
+      "bytes": 4179
     },
     {
       "module": "FiniteEulerDistortion",
       "path": "Proof/FiniteEulerDistortion.lean",
-      "sha256": "e179cec80924dd9fd6166f63bb580f053da50a7266961de0a5dc9d9495d50804",
-      "bytes": 17101
+      "sha256": "9b93d686d9fe94db5f23bed41d2aba6f680fd4b5da188cf33d5b8d8f1be774f2",
+      "bytes": 17104
     },
     {
       "module": "FiniteHilbertInequality",
       "path": "Proof/FiniteHilbertInequality.lean",
-      "sha256": "2b863847a2f005199c39a47e4f23e78dfb2e70f249e800cbe1ff7c5536b26a51",
-      "bytes": 27527
+      "sha256": "f1288387f74d05790cb1fc62c7ae730e67fd7687228b2449349deaf2189dba63",
+      "bytes": 27665
     },
     {
       "module": "FinitePoleRectangle",
@@ -910,8 +910,8 @@
     {
       "module": "FixedCharacterPoweredBridge",
       "path": "Proof/FixedCharacterPoweredBridge.lean",
-      "sha256": "e07ab30458d54c30649356086e4ba9caa4782ace07ef15fe89a73384df64a2c9",
-      "bytes": 32184
+      "sha256": "745a53c8ff6efaf5e21254a030721bd3b4943802660abb1e75acf2aff2235c7b",
+      "bytes": 32187
     },
     {
       "module": "FixedCharacterReduction",
@@ -1030,14 +1030,14 @@
     {
       "module": "FordBoundaryCrossFourier",
       "path": "Proof/FordBoundaryCrossFourier.lean",
-      "sha256": "4e1a03dfd5fc527a28c7ed8314e9d8e9f3f46b9a3f8eeb7e4f8dae53da8b94b2",
-      "bytes": 5790
+      "sha256": "7daad6399b8c161833d03b0137fc3916d9608d6eef620c8bb06c4065b35f7146",
+      "bytes": 5791
     },
     {
       "module": "FordBoundaryEnergyMoments",
       "path": "Proof/FordBoundaryEnergyMoments.lean",
-      "sha256": "b0a80a39c4954183f124eb702c39d7049d04c9c063875afe57cb31022b027282",
-      "bytes": 8231
+      "sha256": "351497b1f24fa87826a98282b25bff8d789d8eb1dcb7e842cf5cdc6c3c31f389",
+      "bytes": 8232
     },
     {
       "module": "FordBoundaryPinnedBound",
@@ -1060,8 +1060,8 @@
     {
       "module": "FordBoundarySlotSymmetry",
       "path": "Proof/FordBoundarySlotSymmetry.lean",
-      "sha256": "ac8fa76a4b93ed54333f147e841b63e05122adb94a6156286b9ad837f364dcc0",
-      "bytes": 3977
+      "sha256": "12507205ee76a062cc32989be8c77e62a4e42f9e19e5a49b9342aacb6530b7a4",
+      "bytes": 3964
     },
     {
       "module": "FordBoundaryWeightedHolder",
@@ -1084,8 +1084,8 @@
     {
       "module": "FordCenteredDifferenceDegree",
       "path": "Proof/FordCenteredDifferenceDegree.lean",
-      "sha256": "5f7ffe6fbdd1db93afe309aeacac22a674fbca84b5e16fb7e30868cf7e969e42",
-      "bytes": 2659
+      "sha256": "b4f840e2e0e61f97d39a60c5b746e3981a5faf120cce2ad1e7a94a30e304c33a",
+      "bytes": 2678
     },
     {
       "module": "FordClassEnergyCommonModulus",
@@ -1096,14 +1096,14 @@
     {
       "module": "FordClassEnergyDiagonal",
       "path": "Proof/FordClassEnergyDiagonal.lean",
-      "sha256": "1ae8d46b623b5f6ef446c8cc5a240c5a2ffa7d08f3a0c5aaf55ed3bfd1285a26",
-      "bytes": 6164
+      "sha256": "6156737b5feee99b573d376f222845adb95343427a39554466f9fd90ef6abd96",
+      "bytes": 6104
     },
     {
       "module": "FordClassEnergyFourier",
       "path": "Proof/FordClassEnergyFourier.lean",
-      "sha256": "7b88e1e94c52b02c5186a55f50a417e72b35bdfa5b36766f1effff0b94177ca9",
-      "bytes": 1879
+      "sha256": "58c493bcc6d9d66cc7e64c501daee824027ff8ea8fffb4814d5c0dddee01bc12",
+      "bytes": 1880
     },
     {
       "module": "FordClassEnergyFourierCount",
@@ -1144,8 +1144,8 @@
     {
       "module": "FordCoarseP18Fiber",
       "path": "Proof/FordCoarseP18Fiber.lean",
-      "sha256": "57f20162814ed57d1329aca94093847522402fc9e1afa00d1f4b71387975b6a8",
-      "bytes": 8088
+      "sha256": "84310709a6da107cfb2ee772794cea7c509e02a3a0cb77a6db2df9da89c8222f",
+      "bytes": 8089
     },
     {
       "module": "FordCoarseP18Jacobian",
@@ -1174,8 +1174,8 @@
     {
       "module": "FordCollisionPinnedFourier",
       "path": "Proof/FordCollisionPinnedFourier.lean",
-      "sha256": "4021966b72f5d9edaa3813ad3ac7bcf4c07296af5e04578675145e4f1f05a5f2",
-      "bytes": 5415
+      "sha256": "83315074e0546c6b68667db239bf886689889dfd359ac677d60c35ca30ec4801",
+      "bytes": 5416
     },
     {
       "module": "FordCollisionThreeHolder",
@@ -1264,8 +1264,8 @@
     {
       "module": "FordCompleteMomentKPower",
       "path": "Proof/FordCompleteMomentKPower.lean",
-      "sha256": "2c5804dfcdee4e1b508fa04c2279fc63f264f30320f160b55b07a8b1fdbf22be",
-      "bytes": 6473
+      "sha256": "e51ae38caaaceaf56605ab534b109230fb1b499937b3982ecdee03e34179c7bf",
+      "bytes": 6536
     },
     {
       "module": "FordCompleteMomentLift",
@@ -1294,8 +1294,8 @@
     {
       "module": "FordCoshSqFourierCertified",
       "path": "Proof/FordCoshSqFourierCertified.lean",
-      "sha256": "5a505f22aef61a671ebece7a8715937b715d9b7f562e8e85dd92b0243d9b0a43",
-      "bytes": 14079
+      "sha256": "90a25e893d1b8aa9d420e0046e8a7766ef9f4faca5c63528de64f2adf3cc90c9",
+      "bytes": 14503
     },
     {
       "module": "FordCubicGrowthOptimization",
@@ -1336,8 +1336,8 @@
     {
       "module": "FordDifferenceEnergyK",
       "path": "Proof/FordDifferenceEnergyK.lean",
-      "sha256": "a9dba31cfa4d6e055baa79817224f8b6eb75032c551cca51fed211f9119e8d4b",
-      "bytes": 6644
+      "sha256": "64a0801559692ed4cb360edd58eaab4ff919b38751f85f82c3d7df5d3e460eba",
+      "bytes": 6645
     },
     {
       "module": "FordDifferenceFamily",
@@ -1534,8 +1534,8 @@
     {
       "module": "FordEulerHurwitzContinuation",
       "path": "Proof/FordEulerHurwitzContinuation.lean",
-      "sha256": "af221ff1d0948ea91c32f51e1ddeeac02b4130c63e1228f6218b32e71287651d",
-      "bytes": 4305
+      "sha256": "f8c2746498ab2af330c6716b7bb95c32ba562e73bc677f3844863a8c4c2c7139",
+      "bytes": 4297
     },
     {
       "module": "FordEulerPowerTail",
@@ -1600,8 +1600,8 @@
     {
       "module": "FordFiniteFieldBase",
       "path": "Proof/FordFiniteFieldBase.lean",
-      "sha256": "3e54f753ebaa37cc595379e8d08b2eeadffe09541ce61404d165c7b7c1920145",
-      "bytes": 8505
+      "sha256": "efded7916064b086cd2903b34272d30a86657a1fa92a18697cfb49b969c0aeef",
+      "bytes": 8563
     },
     {
       "module": "FordFiniteFourierCharacterSum",
@@ -1684,14 +1684,14 @@
     {
       "module": "FordHenselFiber",
       "path": "Proof/FordHenselFiber.lean",
-      "sha256": "5aafca11d64a6a448270b0fcd2b70e74dc997b75f8af464e51a49d26259e4226",
-      "bytes": 3383
+      "sha256": "a699b3f3713d1ace304f7e457ce045aceba781cd061eb68d6e60c333663e085c",
+      "bytes": 3408
     },
     {
       "module": "FordHenselFiberBase",
       "path": "Proof/FordHenselFiberBase.lean",
-      "sha256": "98155699e8bdcad7e0d1e4f09c2ddec3b0e2c7eb792607c625ea6e4ac75a6fa7",
-      "bytes": 2358
+      "sha256": "b953576ec659118ab55db39586407d9abad5ff1047acab0e60e350d7a42b5148",
+      "bytes": 2383
     },
     {
       "module": "FordHenselIterate",
@@ -1702,14 +1702,14 @@
     {
       "module": "FordHenselStep",
       "path": "Proof/FordHenselStep.lean",
-      "sha256": "67d8e2d6ca484bab769fd12cbe91dba4372d22ae8ae03c3f97bc9af0d07dab5b",
-      "bytes": 9392
+      "sha256": "e538c4e5db8d5f02f2c4b151307d58d8e2bf1a2846667410c4e586c896efe5ec",
+      "bytes": 9397
     },
     {
       "module": "FordHurwitzFirstLeaf",
       "path": "Proof/FordHurwitzFirstLeaf.lean",
-      "sha256": "a4687e223c0e55e144ef2aacf6dad8322a503e09c6e05bfdb2df811d2bb88dbc",
-      "bytes": 9720
+      "sha256": "12338b762adb380ba9580a9275f4af893cd992662f6baf15a14a1e4051b7e229",
+      "bytes": 9888
     },
     {
       "module": "FordHurwitzGrowthStrip",
@@ -1726,8 +1726,8 @@
     {
       "module": "FordInitialMomentSeed",
       "path": "Proof/FordInitialMomentSeed.lean",
-      "sha256": "c1e94eddc40756d38edfbec6ff194bb55994822f842ebbc5afa5d0d3301b3169",
-      "bytes": 11519
+      "sha256": "db7d80f1c260cf472f5e2e7420897df69c366b87f9f1b48207e7b798c059a605",
+      "bytes": 11537
     },
     {
       "module": "FordIntegerPower",
@@ -1984,8 +1984,8 @@
     {
       "module": "FordMixedLogAntitone",
       "path": "Proof/FordMixedLogAntitone.lean",
-      "sha256": "fd6304d616605ddde0efaba365e7cf6c1007668c4d2f3991152b480109ed5ce6",
-      "bytes": 1880
+      "sha256": "88ea8e2a3a9f96df86a895155af2b5655bf85fc0d595f166f646a2d395f47f82",
+      "bytes": 2026
     },
     {
       "module": "FordMixedLogBounds",
@@ -2008,8 +2008,8 @@
     {
       "module": "FordMixedReciprocalIntegral",
       "path": "Proof/FordMixedReciprocalIntegral.lean",
-      "sha256": "14757ac42ccc766bb394c70cc09eb0c6b1e52985d802e4180112d1d53110af9e",
-      "bytes": 5445
+      "sha256": "a4e562753678d0e5136fe5c10fba187c76977e705ac9dd9d3a3c94be3f3a33c1",
+      "bytes": 5876
     },
     {
       "module": "FordMixedResidueCardinality",
@@ -2026,8 +2026,8 @@
     {
       "module": "FordMixedSourceCount",
       "path": "Proof/FordMixedSourceCount.lean",
-      "sha256": "ebb05acf657728437c36b23047e53975e0be12f84975b2d26a1d0ca47d84951b",
-      "bytes": 2340
+      "sha256": "4e0bed1b9203a5ca2cadf545d6e70c9ece6962bd3d58308a20e551f2e77f3e14",
+      "bytes": 3192
     },
     {
       "module": "FordMixedTriangularExponent",
@@ -2074,8 +2074,8 @@
     {
       "module": "FordOffdiagTensorFibers",
       "path": "Proof/FordOffdiagTensorFibers.lean",
-      "sha256": "4b17816d5a5e2a51e72b2ff8cdde458018562395bc60ed88b3e3ac9417d4d8c3",
-      "bytes": 5084
+      "sha256": "0774b5b0459bad5a6b5c6d3a7612cf84f294db3ac3c6a4a38f8e78b25812044b",
+      "bytes": 5074
     },
     {
       "module": "FordOffdiagTensorSignedZero",
@@ -2140,8 +2140,8 @@
     {
       "module": "FordP16IntegerHolder",
       "path": "Proof/FordP16IntegerHolder.lean",
-      "sha256": "7d27eb38c54f16130e65f3e54de614a002ea1a3b7957b222e5aa94239722d450",
-      "bytes": 15784
+      "sha256": "c0fee0e2a6b533d7b2440d2749c4a4266cd60f4dd00ae5e3130ba0daaef4896e",
+      "bytes": 15787
     },
     {
       "module": "FordP16LiteralResidueBridge",
@@ -2158,8 +2158,8 @@
     {
       "module": "FordP16ResidueAggregation",
       "path": "Proof/FordP16ResidueAggregation.lean",
-      "sha256": "289763348e56125ae422d3257832664336e7c18ea9601ab2865ff157f1771db2",
-      "bytes": 7898
+      "sha256": "67b34c9dcaba44e79ee7854344e359c5df70b8df3aa52738792ff9afc526c2c3",
+      "bytes": 7905
     },
     {
       "module": "FordP16ResidueHolder",
@@ -2200,8 +2200,8 @@
     {
       "module": "FordP18FixedTargetInjection",
       "path": "Proof/FordP18FixedTargetInjection.lean",
-      "sha256": "18f69aef91ba0ac971df2f5ea5f379c9b4a8cbc2bbf591965dfd83afdedf69ad",
-      "bytes": 8587
+      "sha256": "7f0ada7cd88dec64e584424730b2dcd88f1f792d611c6e3b82259ddcce99828a",
+      "bytes": 8599
     },
     {
       "module": "FordP18MixedInjection",
@@ -2278,8 +2278,8 @@
     {
       "module": "FordPositiveQSourceHolder",
       "path": "Proof/FordPositiveQSourceHolder.lean",
-      "sha256": "080165bc3c44afaf50ab97a1f424720dea8a636c80e578f6575f9bea18639f5c",
-      "bytes": 8566
+      "sha256": "fb6d0656e50d65754ea5b9744aea2f64f40ec8b43703a023ee60479406334982",
+      "bytes": 8594
     },
     {
       "module": "FordPowerBox",
@@ -2362,8 +2362,8 @@
     {
       "module": "FordRealizedClassBound",
       "path": "Proof/FordRealizedClassBound.lean",
-      "sha256": "208fe3125e068f500d90eab411a3a731ae26797acff8e46cba62e9af20afbccd",
-      "bytes": 14078
+      "sha256": "f25b8d0e6013fff1cc81bd125d2d3776f6456694f983e51264b170a39be5477a",
+      "bytes": 14209
     },
     {
       "module": "FordRiseCoefficient",
@@ -2392,20 +2392,20 @@
     {
       "module": "FordScaledBlaschkeFill",
       "path": "Proof/FordScaledBlaschkeFill.lean",
-      "sha256": "5d11969847824f641e0191e193c5667c1cf322ca5f6b1c5aefbf13634b78b7f7",
-      "bytes": 14778
+      "sha256": "0fcdedd1333352d286ef7cfcc8bc52a6905949ee549905720c19f28c19c74515",
+      "bytes": 14781
     },
     {
       "module": "FordScaledBlaschkeLogDerivative",
       "path": "Proof/FordScaledBlaschkeLogDerivative.lean",
-      "sha256": "2998c16f7e4e2f93138d9f3e131cc8e705776a6cf0f6821a8e1f5a31a38f96c3",
-      "bytes": 6834
+      "sha256": "439f8346311569a71ca7c5f5fcb566c993dc76454dae1d56f5da541217a53e8a",
+      "bytes": 6838
     },
     {
       "module": "FordScaledCanonicalCorrection",
       "path": "Proof/FordScaledCanonicalCorrection.lean",
-      "sha256": "e2a8b06db0ad88f45a5f77d24ebc8ec75e897569bfd11b84139b1283f20095cb",
-      "bytes": 5915
+      "sha256": "3aed8edc1a74fab40d9083f101673c5b228aa219f5422ec222150c71bd1aa8f3",
+      "bytes": 5916
     },
     {
       "module": "FordScaledDiskEvaluation",
@@ -2434,8 +2434,8 @@
     {
       "module": "FordScaledJensenCount",
       "path": "Proof/FordScaledJensenCount.lean",
-      "sha256": "d97eedc4367f0c208d1318fcea31ebf83a19cd22545460548cf00aad99e4cc79",
-      "bytes": 6111
+      "sha256": "feb654eb110395bbfc63ec16a147e5a93e09c6de3ee05bb96780021f554b6d7f",
+      "bytes": 6087
     },
     {
       "module": "FordScaledLLogDerivativeUpper",
@@ -2554,8 +2554,8 @@
     {
       "module": "FordSource35BoundaryCap",
       "path": "Proof/FordSource35BoundaryCap.lean",
-      "sha256": "e5146a7525d88725188571c16f44c54372924e013afda2a3069b418363997874",
-      "bytes": 8262
+      "sha256": "107f9eb79110818d0ced5964d323e7313f3093c278a9edfcc3a335b82d0ee192",
+      "bytes": 8278
     },
     {
       "module": "FordSource35Energy",
@@ -2584,8 +2584,8 @@
     {
       "module": "FordSourceJacobianFormula",
       "path": "Proof/FordSourceJacobianFormula.lean",
-      "sha256": "e078ba9408257a03051711b7a8b48245925749fb1633bf6c2c97af5457c9620a",
-      "bytes": 2708
+      "sha256": "4ef9635ed4f202a9faecc80b301d5101c5901daba73c40ab66ca1d20153e5882",
+      "bytes": 2709
     },
     {
       "module": "FordSourceKernelFactor",
@@ -2614,26 +2614,26 @@
     {
       "module": "FordSourceWPrefactor",
       "path": "Proof/FordSourceWPrefactor.lean",
-      "sha256": "ed9e30e43ebd97fd73b80cfa6dd760e46e0485b4641537d1a40560cf3e0229f2",
-      "bytes": 1977
+      "sha256": "aa6d9d84fffc2954614be2c32f0017305eedfb8593cc3c9fc332bcb06eab3da3",
+      "bytes": 1980
     },
     {
       "module": "FordSourceWProduct",
       "path": "Proof/FordSourceWProduct.lean",
-      "sha256": "ee82b09df031d7ea9c3d124fcdd15edc10b9fde4e0586d85de9fc801b4e93491",
-      "bytes": 3023
+      "sha256": "208163daf14d270919bb41f26e078168be56231ff6e092416a92eef8133c6bb3",
+      "bytes": 3026
     },
     {
       "module": "FordSourceWeakBilinear",
       "path": "Proof/FordSourceWeakBilinear.lean",
-      "sha256": "3e785f1ed217ae8f1b51f2874b0485729fa4171d2df810b9ff4b3551e6ac745e",
-      "bytes": 6829
+      "sha256": "85db7dc067ebfb5641eb5998acd96582010b5c2cf6a5f5a4329288ac9640af54",
+      "bytes": 6832
     },
     {
       "module": "FordSubsetBoxBound",
       "path": "Proof/FordSubsetBoxBound.lean",
-      "sha256": "dc229aecc33b376f9446381f911acf22b619b300a4d797134f1ef36297ae9414",
-      "bytes": 4036
+      "sha256": "4ce42b91c95b008064f1a4cf5c11e55b7c45ef94c1399ae06b720bedd83b931e",
+      "bytes": 4039
     },
     {
       "module": "FordSubsetMoment",
@@ -2734,8 +2734,8 @@
     {
       "module": "FordWEnvelopeScalar",
       "path": "Proof/FordWEnvelopeScalar.lean",
-      "sha256": "5705ca1d9fabfc9fa1945993dcac50b4a3fb22db122ceb30be5c4d062bbcdfe1",
-      "bytes": 4910
+      "sha256": "b57bd5fc5af00dce3ae962a574dd359f6da108e3c67270d9a612aaf4a1ffa1d7",
+      "bytes": 5056
     },
     {
       "module": "FordWIntegral",
@@ -2776,8 +2776,8 @@
     {
       "module": "FordWeakLowerPolicyNatBridge",
       "path": "Proof/FordWeakLowerPolicyNatBridge.lean",
-      "sha256": "40664e1a8e2c23b8c8b1276b58f470ecc7caea51c2c3b277d9b000c1bfe8c1e8",
-      "bytes": 6000
+      "sha256": "e223861e841efffcb77a868324026d3e000a8eee1078c153f69a56f040103420",
+      "bytes": 6016
     },
     {
       "module": "FordWeakLowerPolicyScales",
@@ -2866,8 +2866,8 @@
     {
       "module": "FunctionalZeroTransport",
       "path": "Proof/FunctionalZeroTransport.lean",
-      "sha256": "713137c020bde4251d6367f8b1b51c3d6ed5a3c1217cf3d6f8aca9593652dfc0",
-      "bytes": 13373
+      "sha256": "ee42d26294d639d51ff53e36879b624e9d582fca8b2d6810ed7fe6da1279e971",
+      "bytes": 13375
     },
     {
       "module": "GallagherEnergyExports",
@@ -2878,14 +2878,14 @@
     {
       "module": "GallagherKernelBounds",
       "path": "Proof/GallagherKernelBounds.lean",
-      "sha256": "57185501481951a03826f600ca9f3f65f1e0b1c9bf588de039eaa05d1c7146ac",
-      "bytes": 4432
+      "sha256": "357dccbb56950bdfaa92903219b2c465186d78f306d144ca51cfb7457fb6e641",
+      "bytes": 4448
     },
     {
       "module": "GallagherPowerVariation",
       "path": "Proof/GallagherPowerVariation.lean",
-      "sha256": "e7059435f79a3251f6d10a7d86b7541c417dab47ead0e612df0ec14b0afc0486",
-      "bytes": 14379
+      "sha256": "68aeaa4a86d0639db266557db9ed7577634e8bcc6aa7a95712ae471ba1079ef7",
+      "bytes": 14283
     },
     {
       "module": "GammaCompactStrip",
@@ -2920,14 +2920,14 @@
     {
       "module": "GammaMellinInversion",
       "path": "Proof/GammaMellinInversion.lean",
-      "sha256": "48d397c4ce5115c6577863d07dd2a371aebc457246c509c1f4688c12a58ffd95",
-      "bytes": 9040
+      "sha256": "de8d9282c0a7362c1c13b74f09eb590579f0e772ca98e5281664ca939b13a7f1",
+      "bytes": 9038
     },
     {
       "module": "GammaOneSharpPower",
       "path": "Proof/GammaOneSharpPower.lean",
-      "sha256": "340b6cffd702bd5e9744c927c855856526c7d9fe06f0353a276a2ce4494feb6a",
-      "bytes": 5362
+      "sha256": "e466766a3561ab2b550a494fe0da05b8bb7e3d4b2be6dc2b6f2982aff203cb7c",
+      "bytes": 5341
     },
     {
       "module": "GammaSharpPositiveStripInterpolation",
@@ -2938,8 +2938,8 @@
     {
       "module": "GoldfeldComparisonArithmetic",
       "path": "Proof/GoldfeldComparisonArithmetic.lean",
-      "sha256": "ab3a66e3877354050ca1134d9c91e1e94a55a29365a3dbbbd1b713279183c70d",
-      "bytes": 4100
+      "sha256": "f5cae792e8e1cccbcae480715bb24d4115573e25b11cd4e01d45dd26b17527ee",
+      "bytes": 4113
     },
     {
       "module": "GoldfeldComparisonBridge",
@@ -2974,8 +2974,8 @@
     {
       "module": "GoldfeldEulerCorrection",
       "path": "Proof/GoldfeldEulerCorrection.lean",
-      "sha256": "5ac62ecc85bac96b49a26a927711cceb34f22c91c27a7dfc8e4a084fe86fc605",
-      "bytes": 4127
+      "sha256": "2d03300bf1f40b62e79cd9405b161bbd2357a5a58d19da33090abd09c5611c7d",
+      "bytes": 4130
     },
     {
       "module": "GoldfeldFourLogAbsorption",
@@ -3004,14 +3004,14 @@
     {
       "module": "GoldfeldImprimitiveDerivative",
       "path": "Proof/GoldfeldImprimitiveDerivative.lean",
-      "sha256": "0c126defc28e47776ef1ef372fd1328b88dbf8fceea2cf20f752972e6348baed",
-      "bytes": 11407
+      "sha256": "364b21d005427324f1afc592074f8174f21beb97ac7f17435eae8f2f53727ba7",
+      "bytes": 11398
     },
     {
       "module": "GoldfeldLemma11TwoDerivative",
       "path": "Proof/GoldfeldLemma11TwoDerivative.lean",
-      "sha256": "7ed5baff6e7f99970b82f61318822cc9287a723e15f641405779fc79789725ed",
-      "bytes": 25362
+      "sha256": "266866b0cef9e940f90a379e751a21f2fff1653431d0dcac953266b4f53a3b0b",
+      "bytes": 25353
     },
     {
       "module": "GoldfeldLemma11TwoFinite",
@@ -3052,14 +3052,14 @@
     {
       "module": "GoldfeldRieszMellin",
       "path": "Proof/GoldfeldRieszMellin.lean",
-      "sha256": "1b4f352e3fc60e9b12225dd02ee27cb1971eb79c44f8ee708dab662be2574cee",
-      "bytes": 15738
+      "sha256": "0a7d7b33dfb89341e1857d087291edcbbb7e3efb193c55f331efb6ab549309ef",
+      "bytes": 15757
     },
     {
       "module": "GoldfeldSameLevelComparison",
       "path": "Proof/GoldfeldSameLevelComparison.lean",
-      "sha256": "e0ac0b3e4be8a961464c4982b794c39b1133acb94d4a1d469de7c3ccc69fdbcd",
-      "bytes": 6343
+      "sha256": "141545d71b324761e2367468a781e5985d8cd23cc2fb645784f432b73b2f3624",
+      "bytes": 6346
     },
     {
       "module": "GoldfeldSameLevelImprimitiveComparison",
@@ -3088,14 +3088,14 @@
     {
       "module": "GuthMaynardAffineCrudeBound",
       "path": "Proof/GuthMaynardAffineCrudeBound.lean",
-      "sha256": "24c716c434ee74023d169bd8ceb7f248afa5c0b1085ea423ccd6564f8d6853b6",
-      "bytes": 12061
+      "sha256": "c74f4a7d430357640e4cff335bb02f2655a686956a7a19082b59b7cbd12bcb90",
+      "bytes": 12062
     },
     {
       "module": "GuthMaynardAffineSmoothingNorms",
       "path": "Proof/GuthMaynardAffineSmoothingNorms.lean",
-      "sha256": "1a281bd85568927df404ca84c0c9be220d927991dbc3b1e534792d5223168554",
-      "bytes": 36233
+      "sha256": "1e2da4151878deb8ccc8a7bf2229c467e29cea170dcdf03723c3298da169c12b",
+      "bytes": 36257
     },
     {
       "module": "GuthMaynardAffineSmoothingSubpower",
@@ -3214,14 +3214,14 @@
     {
       "module": "GuthMaynardEnergy114LocalL2",
       "path": "Proof/GuthMaynardEnergy114LocalL2.lean",
-      "sha256": "8dbf4a697e3f485548fb2a8066337914273fee6fbfbfcb675d8d0714c397edad",
-      "bytes": 9421
+      "sha256": "17d882c45cd72477f91c471c35588bda673ceed6d2a0fee6bbb6ccc7b4a7739d",
+      "bytes": 9434
     },
     {
       "module": "GuthMaynardEnergy114WeightedAverage",
       "path": "Proof/GuthMaynardEnergy114WeightedAverage.lean",
-      "sha256": "35732953346a20c0eef4d4c04ed65a4c64c25c0482cb22ab29479214a1a6e29d",
-      "bytes": 4716
+      "sha256": "2db91af40d165649bc332af03927062dd28256e8d7f6e6f52b93e034bfeda041",
+      "bytes": 4734
     },
     {
       "module": "GuthMaynardEnergy115Actual",
@@ -3232,8 +3232,8 @@
     {
       "module": "GuthMaynardEnergy116ActualFourth",
       "path": "Proof/GuthMaynardEnergy116ActualFourth.lean",
-      "sha256": "d924b61258065c28171a756da08b7dc6af8f06d17a9d2dfefec0f5187aee2296",
-      "bytes": 17296
+      "sha256": "cbf959243b6a00ef10c15745b00ba8ce345d7452fff3d862e1de3a5d2577729e",
+      "bytes": 17280
     },
     {
       "module": "GuthMaynardEnergy116ClassBudgets",
@@ -3274,8 +3274,8 @@
     {
       "module": "GuthMaynardEnergy116ShiftedMean",
       "path": "Proof/GuthMaynardEnergy116ShiftedMean.lean",
-      "sha256": "a9c54da3a6d55705bb9475bd9552b112198d9a540a7f12ccca21ca2cbf4f8b1a",
-      "bytes": 5437
+      "sha256": "73d832a616ea0a2b16c616b7aeb5b8dd128089e4de4488263bd059dc436339e9",
+      "bytes": 5458
     },
     {
       "module": "GuthMaynardEnergy116UniformFourth",
@@ -3364,8 +3364,8 @@
     {
       "module": "GuthMaynardEnergy118ShellCount",
       "path": "Proof/GuthMaynardEnergy118ShellCount.lean",
-      "sha256": "b91742f493d6e9ca5db5a04fa3d00607cd82cbf74eae9b181ef32ec06741cffa",
-      "bytes": 6816
+      "sha256": "d003ca3d0b55b7905b5e9f1302381b4130896c5cd8d95bfc568f22f400896d18",
+      "bytes": 6830
     },
     {
       "module": "GuthMaynardEnergy118SmallGCDSubpower",
@@ -3394,8 +3394,8 @@
     {
       "module": "GuthMaynardEnergy119FactorThree",
       "path": "Proof/GuthMaynardEnergy119FactorThree.lean",
-      "sha256": "d6f5aad70d007c9faa2184ed8028e8f6ffc214527d1791724581a843f88f53a9",
-      "bytes": 4360
+      "sha256": "4c8aaa56f069c5a40eb84f362b6956a0ee8b4a793670c8857a60580b3c19c2e3",
+      "bytes": 4361
     },
     {
       "module": "GuthMaynardEnergy119Factored",
@@ -3460,8 +3460,8 @@
     {
       "module": "GuthMaynardEnergyCubicActual",
       "path": "Proof/GuthMaynardEnergyCubicActual.lean",
-      "sha256": "2a7af821d364f5a2a4f5f032f6cf4b6b4bf1493e3ccd7e42263396ea489eb3c0",
-      "bytes": 3226
+      "sha256": "261b80d9d8747f71fbc60def3377b5e1e49b5bcfd5874f7386566911e1d8c4a0",
+      "bytes": 3227
     },
     {
       "module": "GuthMaynardEnergyGeometry",
@@ -3604,8 +3604,8 @@
     {
       "module": "GuthMaynardGMSourceKusminActual",
       "path": "Proof/GuthMaynardGMSourceKusminActual.lean",
-      "sha256": "4fc7c79561653bad705e0503b7137345032344a5cd9902b50d18256013bd12a5",
-      "bytes": 8021
+      "sha256": "6c72206f88721a663bebc4a56a958b540eea79ba78ff601dfdcc671372866580",
+      "bytes": 8025
     },
     {
       "module": "GuthMaynardGMSourceKusminSmallT",
@@ -3622,8 +3622,8 @@
     {
       "module": "GuthMaynardGeneralPlancherel",
       "path": "Proof/GuthMaynardGeneralPlancherel.lean",
-      "sha256": "be526e0bd1ece5dcdd8d54cf6812fc3cf1903cc252bafdc91be73e5d288479a4",
-      "bytes": 4546
+      "sha256": "c46f597978035dee0d70c2fb1b4283f68358a31d5e0c20e433282dedf7b1131e",
+      "bytes": 4599
     },
     {
       "module": "GuthMaynardHeathBrownCertified",
@@ -3826,8 +3826,8 @@
     {
       "module": "GuthMaynardJIterationMediumRegionIntegration",
       "path": "Proof/GuthMaynardJIterationMediumRegionIntegration.lean",
-      "sha256": "30192fb49fddbe9fb15b9b588f72910865cac8d571648ba7ce5a8d044dd85ac4",
-      "bytes": 17527
+      "sha256": "a260d05a34cceecd880c4a6a44cd3d998017fb979b12a00bf547023cb5e26565",
+      "bytes": 17503
     },
     {
       "module": "GuthMaynardJIterationMediumRegionTailInsertion",
@@ -3844,8 +3844,8 @@
     {
       "module": "GuthMaynardJIterationMediumSmoothing",
       "path": "Proof/GuthMaynardJIterationMediumSmoothing.lean",
-      "sha256": "dc02aa78a8a5288ab2c07cafb95e96dd01a91a13548907368f2a5f044f2769e8",
-      "bytes": 8155
+      "sha256": "c2e3b08ead7672f3797313e48804033a6c509edeebb22be04fda77ff7bc37b7e",
+      "bytes": 8284
     },
     {
       "module": "GuthMaynardJIterationMediumWindowCount",
@@ -3868,8 +3868,8 @@
     {
       "module": "GuthMaynardJIterationPoisson",
       "path": "Proof/GuthMaynardJIterationPoisson.lean",
-      "sha256": "d6c238adb7426490f2a13f59ed2532783344c49d8c65209c22a568553016f633",
-      "bytes": 13333
+      "sha256": "75a44adce93e0f7f524f90e950bf820e3daf5574df41c81cc082e4c101a18d71",
+      "bytes": 13337
     },
     {
       "module": "GuthMaynardJIterationSigmaII",
@@ -3898,8 +3898,8 @@
     {
       "module": "GuthMaynardJIterationSigmaIIFubini",
       "path": "Proof/GuthMaynardJIterationSigmaIIFubini.lean",
-      "sha256": "4efdaa4c56d8f79309db87b068565e63e0a40997b49c0806a4ceac348063bc5a",
-      "bytes": 9385
+      "sha256": "7b28f4e17203c8ab1097a6cf660b7c322cb0988a89c4b2950e10310e92b6b117",
+      "bytes": 9387
     },
     {
       "module": "GuthMaynardJIterationSigmaIIPoissonSupport",
@@ -3952,8 +3952,8 @@
     {
       "module": "GuthMaynardJutilaLemma29NineKTwo",
       "path": "Proof/GuthMaynardJutilaLemma29NineKTwo.lean",
-      "sha256": "4192faa8be198dcf6495f2a8a990a94c942260865b3fc3f49d04c005139378b4",
-      "bytes": 26576
+      "sha256": "d2905d35f3da689bd934191e9fc5e1416821078e0a8bec9bf5838fca09b0a6ef",
+      "bytes": 26577
     },
     {
       "module": "GuthMaynardJutilaOneSpacingWeld",
@@ -3976,8 +3976,8 @@
     {
       "module": "GuthMaynardJutilaReflection2941Corrected",
       "path": "Proof/GuthMaynardJutilaReflection2941Corrected.lean",
-      "sha256": "93b360bb570270f54613c94d835da89c0a4b863a5e5526bc1611b92bec1b8d24",
-      "bytes": 43789
+      "sha256": "de4ebdd2d23fb6a8ab0aa53365e03ebeeb7134bf416dc65f2b0339034400a825",
+      "bytes": 43836
     },
     {
       "module": "GuthMaynardJutilaReflection2941Robust",
@@ -3988,8 +3988,8 @@
     {
       "module": "GuthMaynardJutilaSmallScaleTransference",
       "path": "Proof/GuthMaynardJutilaSmallScaleTransference.lean",
-      "sha256": "4d37dcd49a8db8e13a21392d753ab06fa1178c0e025a7201585c8ad1dbb14c0e",
-      "bytes": 17812
+      "sha256": "0b077aa006c6a7347d95519efb786336b005a4b6140836e199588b9d78eadba0",
+      "bytes": 17813
     },
     {
       "module": "GuthMaynardJutilaSpacingPartition",
@@ -4000,14 +4000,14 @@
     {
       "module": "GuthMaynardJutilaTransference",
       "path": "Proof/GuthMaynardJutilaTransference.lean",
-      "sha256": "a99bf729a0c672db63dbd767957b11b1fa5b52d301c483307486714dbd89f950",
-      "bytes": 24092
+      "sha256": "9e82f814c4c6e343bf3d04226f0b5df620052ebc04bf9e736bbc06223fe3fe32",
+      "bytes": 24075
     },
     {
       "module": "GuthMaynardJutilaTransferenceOneScale",
       "path": "Proof/GuthMaynardJutilaTransferenceOneScale.lean",
-      "sha256": "81ec9b64a9037f33316b4c6040c0e4d68b38a81ffcd56a6b9975fbce820acae3",
-      "bytes": 24164
+      "sha256": "6b72227ba1c6e3cf394cb5451016bfe24ef78fa544e887b0296209f89fda5573",
+      "bytes": 24147
     },
     {
       "module": "GuthMaynardKTwoMultiplicitySubpower",
@@ -4018,8 +4018,8 @@
     {
       "module": "GuthMaynardLargeValueIntervalSubdivision",
       "path": "Proof/GuthMaynardLargeValueIntervalSubdivision.lean",
-      "sha256": "71a8c09e394d7936c7b032d9075438c2a9d4db3116217b6d05d5d1148907549d",
-      "bytes": 12289
+      "sha256": "2c9f230a0587e8df0aa776f5d4ab4db270a082ede2022e6afe3b6c820181bc2c",
+      "bytes": 12279
     },
     {
       "module": "GuthMaynardLargeValueThinning",
@@ -4036,14 +4036,14 @@
     {
       "module": "GuthMaynardLemma117Convolution",
       "path": "Proof/GuthMaynardLemma117Convolution.lean",
-      "sha256": "23fd409af25d01db5a789e3fcfb3e6f6580ad906b06534a398b907ad76537ee1",
-      "bytes": 18674
+      "sha256": "bb3949d100c83c31d33d89cd0e5a1c59eb3c6d80b03f46103088670ce47da5d6",
+      "bytes": 18733
     },
     {
       "module": "GuthMaynardLemma117Cubic",
       "path": "Proof/GuthMaynardLemma117Cubic.lean",
-      "sha256": "eaf8fc40095f4c8b28193d662aad53ebe85378d0267623a0924483793f67ee29",
-      "bytes": 16825
+      "sha256": "5fc2a8f53282df56f22112e905bcd96c7a98523a9620e5e84cf6446141719879",
+      "bytes": 16884
     },
     {
       "module": "GuthMaynardLemma118EnergyPacking",
@@ -4168,8 +4168,8 @@
     {
       "module": "GuthMaynardLemma295CutoffAnalytic",
       "path": "Proof/GuthMaynardLemma295CutoffAnalytic.lean",
-      "sha256": "451f7c30e3607557ee1685045fb05f70366ee4c7f8208a609efa6d5bf5c8029c",
-      "bytes": 15412
+      "sha256": "c5e3ff3bdee80c19f14987e88641b43a1e0cb63f42376f7040c117f4be691b8c",
+      "bytes": 15435
     },
     {
       "module": "GuthMaynardLemma295DeepLeftCompactIntegral",
@@ -4234,8 +4234,8 @@
     {
       "module": "GuthMaynardLemma295FiniteContour",
       "path": "Proof/GuthMaynardLemma295FiniteContour.lean",
-      "sha256": "e8e5fa88c3f292095a639870c235e2b05504dbafc8254326fe38c8f1fc7bac01",
-      "bytes": 9173
+      "sha256": "4014d9c253b7eb0107fe22cb8ce79b2b46cd355b5913ae609fca3bc4a0f7b6d8",
+      "bytes": 9174
     },
     {
       "module": "GuthMaynardLemma295FloorTruncation",
@@ -4246,8 +4246,8 @@
     {
       "module": "GuthMaynardLemma295HorizontalIntegral",
       "path": "Proof/GuthMaynardLemma295HorizontalIntegral.lean",
-      "sha256": "baff533bb8c3fc4f628dc5c0f537fdb638ab846c36e4012fdee78efa4bed7fd5",
-      "bytes": 11989
+      "sha256": "ca844b80b32bc12ff7b1fd3cae8b614dfd9124a27d2f3c16467369e1d2e67c36",
+      "bytes": 12013
     },
     {
       "module": "GuthMaynardLemma295HorizontalPointwise",
@@ -4258,20 +4258,20 @@
     {
       "module": "GuthMaynardLemma295LineTwoFubini",
       "path": "Proof/GuthMaynardLemma295LineTwoFubini.lean",
-      "sha256": "4c56d89cd6166feaaae67ef2251da011b36d9f9358d669082433170370961efc",
-      "bytes": 11571
+      "sha256": "b75b5e8ee83969956cef51c70d799801bc9357f8e03a14baaaefe2bca72fb0fa",
+      "bytes": 11640
     },
     {
       "module": "GuthMaynardLemma295MellinAllLines",
       "path": "Proof/GuthMaynardLemma295MellinAllLines.lean",
-      "sha256": "aea47b090e25bffbf9160f8d91bcf5ab24c3cdff1d36ef3949b71163263191a5",
-      "bytes": 8609
+      "sha256": "466d2f7e8877ee812325361ad30c46eef08769e4852806b9620be128de23ce28",
+      "bytes": 8610
     },
     {
       "module": "GuthMaynardLemma295MellinCompactStrip",
       "path": "Proof/GuthMaynardLemma295MellinCompactStrip.lean",
-      "sha256": "1d9b3e70d60cf2ce50c8b2a1dce2e0ef65facd5e3c937ef179a338cbcd97bc21",
-      "bytes": 16843
+      "sha256": "2346b0631bdf37e3fe13ae8fd3175546c8e6db3ea8b74ab46346094f579199ba",
+      "bytes": 16846
     },
     {
       "module": "GuthMaynardLemma295MellinPolynomialDecay",
@@ -4294,14 +4294,14 @@
     {
       "module": "GuthMaynardLemma295PolynomialKernel",
       "path": "Proof/GuthMaynardLemma295PolynomialKernel.lean",
-      "sha256": "a1ebdc62655347bde1520942b935843bb9af98acdff325979c8e38c12fbe1601",
-      "bytes": 3553
+      "sha256": "a28d08e79d0105bfd47afbb0f9e4b51154e62651abd3e979ccce980eb268a769",
+      "bytes": 3585
     },
     {
       "module": "GuthMaynardLemma295RawHorizontalIntegral",
       "path": "Proof/GuthMaynardLemma295RawHorizontalIntegral.lean",
-      "sha256": "b7c4f8155a08aa961a9f4e64ef2c786aadcd21517ec6136192f59a892cb71d36",
-      "bytes": 10412
+      "sha256": "afb5b0e5434e7dcff27a795cb50b7f2f5877488e403707cd36cc32b54770f2d8",
+      "bytes": 10413
     },
     {
       "module": "GuthMaynardLemma295RawZetaHorizontal",
@@ -4312,8 +4312,8 @@
     {
       "module": "GuthMaynardLemma295ReflectedFiniteContour",
       "path": "Proof/GuthMaynardLemma295ReflectedFiniteContour.lean",
-      "sha256": "b06cfea9c255ceb17e4ece7445d3ae22cf04b26b6910d5337ad5d2a7cbff2d86",
-      "bytes": 4380
+      "sha256": "552a6c178a5e1ea1b5da5f42c9db1ee8bb5e9bfd49e9766908e324cb71caee1b",
+      "bytes": 4378
     },
     {
       "module": "GuthMaynardLemma295ReflectedPairConstruction",
@@ -4342,8 +4342,8 @@
     {
       "module": "GuthMaynardLemma295ThetaAnalytic",
       "path": "Proof/GuthMaynardLemma295ThetaAnalytic.lean",
-      "sha256": "7d2e0b032dfa5dbc11357f21a9bce85885f61977690296061e7d23f300480bc2",
-      "bytes": 2216
+      "sha256": "09e2fb58813917a89a6bb03ca75992c58a6777c15d3a4a6ee68da39b3f8a9765",
+      "bytes": 2217
     },
     {
       "module": "GuthMaynardLemma295ThetaBounds",
@@ -4366,8 +4366,8 @@
     {
       "module": "GuthMaynardLemma295VerticalIntegrability",
       "path": "Proof/GuthMaynardLemma295VerticalIntegrability.lean",
-      "sha256": "34e9d4f25b1fcb7e5f2593f6bae2f115d51837b5dc4d17ac5aa784e96043e161",
-      "bytes": 22583
+      "sha256": "2f84fe84a1aff539c2cdad510bd730244af816b1d2a3c283442f346b47540a16",
+      "bytes": 22612
     },
     {
       "module": "GuthMaynardLemma295WeightedPairAssembly",
@@ -4474,8 +4474,8 @@
     {
       "module": "GuthMaynardLemma62NegativeNonstationary",
       "path": "Proof/GuthMaynardLemma62NegativeNonstationary.lean",
-      "sha256": "9714b5c2090f2c97bf2807a94f7b1469f5e837e80034432e8a19e68482847f25",
-      "bytes": 27044
+      "sha256": "0291a1b9c38c2609578a0661ac3d22a74442a9f49ff5edc0b8c9e3591cb53011",
+      "bytes": 27109
     },
     {
       "module": "GuthMaynardLemma62PairAssembly",
@@ -4516,8 +4516,8 @@
     {
       "module": "GuthMaynardLemma92KernelIntegrability",
       "path": "Proof/GuthMaynardLemma92KernelIntegrability.lean",
-      "sha256": "bb7e3e230c3dfff3ad897546005ec493373ecf60c0ee7e29d7898e82ab3b35d5",
-      "bytes": 8566
+      "sha256": "49b3c9cf5bb9718e47514c03b043bac9aa20376c2ab31dd5716f2f97b6f5bb75",
+      "bytes": 8567
     },
     {
       "module": "GuthMaynardLemma92LargeEllRange",
@@ -4636,14 +4636,14 @@
     {
       "module": "GuthMaynardMellinDecay",
       "path": "Proof/GuthMaynardMellinDecay.lean",
-      "sha256": "ff19b1db10c057cfcecd4c39c3875c317a61033733c63a8e46c90e7651fecdbc",
-      "bytes": 9926
+      "sha256": "9b6fa2027a0e7d785c2e797e8b055ca1d93bfb663c10ab2258fb15a13d33b77d",
+      "bytes": 9960
     },
     {
       "module": "GuthMaynardMellinRapidDecay",
       "path": "Proof/GuthMaynardMellinRapidDecay.lean",
-      "sha256": "29cf548ed57f4e801ddfb92ec82f4e46e4b9152478db03039499bab802a64465",
-      "bytes": 8219
+      "sha256": "7de6663e9e12014e83a390080c96d5d8dcca72557e24600cafccef9e8a347805",
+      "bytes": 8243
     },
     {
       "module": "GuthMaynardMellinTail",
@@ -4678,8 +4678,8 @@
     {
       "module": "GuthMaynardProp31LargeN",
       "path": "Proof/GuthMaynardProp31LargeN.lean",
-      "sha256": "5d632713780256531a22ae26d49e7eaf76e489a78f40ae3bdd49b1b2c0989453",
-      "bytes": 9877
+      "sha256": "920c6960e119a3694d0038dc505f57d8a6da749f8d772ca20f5fcf38c867d725",
+      "bytes": 9879
     },
     {
       "module": "GuthMaynardProp31PolynomialBridge",
@@ -4708,14 +4708,14 @@
     {
       "module": "GuthMaynardProp31TraceErrors",
       "path": "Proof/GuthMaynardProp31TraceErrors.lean",
-      "sha256": "0c9219eba794239969bfa41a4f064519d33813989864c12c5d2e4ec74f6da746",
-      "bytes": 15840
+      "sha256": "90b89f5a276f7e73c284a3b326e3442c2e6232cd99e1a3dc6f9b8196c6e0077b",
+      "bytes": 15870
     },
     {
       "module": "GuthMaynardProp31ValueExponent",
       "path": "Proof/GuthMaynardProp31ValueExponent.lean",
-      "sha256": "0ccdbaa7d9d3982f57aabc048b7d6719b2cb6ae995d2d81e790b70cca942230d",
-      "bytes": 2087
+      "sha256": "4b19d111a78918ddda50de7ed2b83d446fd72ab8f707f1a9ec53afec0f44f52e",
+      "bytes": 2035
     },
     {
       "module": "GuthMaynardProposition46Algebra",
@@ -4762,14 +4762,14 @@
     {
       "module": "GuthMaynardReflectionKernelVdC",
       "path": "Proof/GuthMaynardReflectionKernelVdC.lean",
-      "sha256": "0a185ce9cf1f0164e34a7b6ff5c9c00c5ee3287961e6ec514f8496f2002bde25",
-      "bytes": 13574
+      "sha256": "2ee412e1145c58f5f0cf4e2fd6f5215ab843ae02425c702c6e0ae856618ac288",
+      "bytes": 13594
     },
     {
       "module": "GuthMaynardReflectionMellin",
       "path": "Proof/GuthMaynardReflectionMellin.lean",
-      "sha256": "16a3795e41b62cd75e6d5dcdb000473caa9b763e44615b5fc39436c107c25c1e",
-      "bytes": 4801
+      "sha256": "40cdd9a1a6b93bb286ead002793beaf48aaf563350d88033b0fcfd981340e676",
+      "bytes": 4834
     },
     {
       "module": "GuthMaynardS1MassBridge",
@@ -4786,14 +4786,14 @@
     {
       "module": "GuthMaynardS1Proposition51",
       "path": "Proof/GuthMaynardS1Proposition51.lean",
-      "sha256": "660bcba5ee06c296ab9327a56f020c0d1d0b5a8d6e3ba788ff7c4efb3e51e0f6",
-      "bytes": 14264
+      "sha256": "515b4dc615f9396cc2d262f742b4fccdad4b1a5bb520210e12c54e7bf8d05261",
+      "bytes": 14266
     },
     {
       "module": "GuthMaynardS1Proposition51Endpoint",
       "path": "Proof/GuthMaynardS1Proposition51Endpoint.lean",
-      "sha256": "df630bb037eeb7509f8849fc6c59c3e539108553d342973510300b8611999a1a",
-      "bytes": 16925
+      "sha256": "f09fbf3bee1bd4e7ac03c6aab5ad0b96ec6660821e26981361c3313f8061ab5a",
+      "bytes": 16926
     },
     {
       "module": "GuthMaynardS1Source",
@@ -4804,8 +4804,8 @@
     {
       "module": "GuthMaynardS1Tail",
       "path": "Proof/GuthMaynardS1Tail.lean",
-      "sha256": "a4aa8e0bfc8c86983076a4996b0fb146d232c9c4f507d24cc512f35db70f1ef5",
-      "bytes": 34040
+      "sha256": "4ccb65b090a79083fad9171ba54ff2808c3afa23d4dcabb850da7bd8ac9d05c4",
+      "bytes": 34026
     },
     {
       "module": "GuthMaynardS2CutoffGeometry",
@@ -4840,14 +4840,14 @@
     {
       "module": "GuthMaynardS2PoweredPair",
       "path": "Proof/GuthMaynardS2PoweredPair.lean",
-      "sha256": "db6a082621fa09589151cf7e243a8b84f375fcbbfc79eef13c091b4be3eb82f9",
-      "bytes": 10171
+      "sha256": "8373e4d7524ecdc7e3dc2672b6229c666a4c88833268c313f0e7220de36fb1c1",
+      "bytes": 10180
     },
     {
       "module": "GuthMaynardS2ReflectionBridge",
       "path": "Proof/GuthMaynardS2ReflectionBridge.lean",
-      "sha256": "0bd4830741cd935395c6e69473b13e871250f13a4ad04695c47fb00649ed7412",
-      "bytes": 18635
+      "sha256": "9dda6b3fdceb29c75a1bda4a7119b60f721e2af4dee7bd2b856be1ce2aa55889",
+      "bytes": 18637
     },
     {
       "module": "GuthMaynardS2ReflectionError",
@@ -4882,8 +4882,8 @@
     {
       "module": "GuthMaynardS2ShortGapPhase",
       "path": "Proof/GuthMaynardS2ShortGapPhase.lean",
-      "sha256": "0c5b6f9a647abead75a493b8c13930a977ff17e0aae3d8ca4bd1e404c23b57b6",
-      "bytes": 4381
+      "sha256": "0b0a4ab3157e58f5cdd0b93d6fa7c7d65493aecf22771ca7d40ab6dd72975c5d",
+      "bytes": 4450
     },
     {
       "module": "GuthMaynardS2Source",
@@ -4894,8 +4894,8 @@
     {
       "module": "GuthMaynardS3ActualFourierTail",
       "path": "Proof/GuthMaynardS3ActualFourierTail.lean",
-      "sha256": "5bce3cc7a1c9f8e3a517374cfae103ca4b65263ff5f26b9bc86145f4223ed391",
-      "bytes": 14838
+      "sha256": "c8988bab8fce5c7818a1206197659adb8a56f5c362e38a4f8436c21226f03a09",
+      "bytes": 14809
     },
     {
       "module": "GuthMaynardS3ActualProfileInputs",
@@ -4912,8 +4912,8 @@
     {
       "module": "GuthMaynardS3AffineCauchy",
       "path": "Proof/GuthMaynardS3AffineCauchy.lean",
-      "sha256": "00f1feafb7a95899419b42d0f04cbd08999d98a16ad14e01a712284e7eeb7b29",
-      "bytes": 6151
+      "sha256": "43de4fc9d922bf2c2692b2ff4f67294934e67c3b6433bb562f5071276b8be315",
+      "bytes": 6199
     },
     {
       "module": "GuthMaynardS3Assembly",
@@ -4924,8 +4924,8 @@
     {
       "module": "GuthMaynardS3BlockEnergyEnvelope",
       "path": "Proof/GuthMaynardS3BlockEnergyEnvelope.lean",
-      "sha256": "eb93b0d691f9c6b7dd8df1df1fce8b6ba460f8ffd7a89f3f4d49a55d028affee",
-      "bytes": 5713
+      "sha256": "c97cf48e8090d88c04ba6a7efffc154e82abcf92752ce33330718e73216f9a6c",
+      "bytes": 5714
     },
     {
       "module": "GuthMaynardS3BlockIntegralEnergy",
@@ -4948,8 +4948,8 @@
     {
       "module": "GuthMaynardS3BlockSignedConsumer",
       "path": "Proof/GuthMaynardS3BlockSignedConsumer.lean",
-      "sha256": "79aa0490dd5c807e47ee69e582e4ee6a343f081bb36146f9f0689be7b3360e40",
-      "bytes": 2993
+      "sha256": "feb881194390694bda63cf82d894cf633f38476ec0503209e982a83c91e3ead9",
+      "bytes": 2994
     },
     {
       "module": "GuthMaynardS3BlockSqrtLogEnvelope",
@@ -4984,8 +4984,8 @@
     {
       "module": "GuthMaynardS3CubicSeamParameters",
       "path": "Proof/GuthMaynardS3CubicSeamParameters.lean",
-      "sha256": "31fbae5ba0dd647f851bbb5b17812c540290075c182c418f5ea71e31000a042b",
-      "bytes": 3282
+      "sha256": "82f5e5518defee497e0664d375f23e50a8b512565659507597b2a31a4226948e",
+      "bytes": 3283
     },
     {
       "module": "GuthMaynardS3DenominatorDilation",
@@ -5008,8 +5008,8 @@
     {
       "module": "GuthMaynardS3EnergyInserted",
       "path": "Proof/GuthMaynardS3EnergyInserted.lean",
-      "sha256": "9fef734f9f5f5e20663659c9d3ae39bdf83090c2b6fb7a199ec22d03aacbde45",
-      "bytes": 14579
+      "sha256": "469f27f7b76f0bfca713cc1183f4eabfcc50b1a41727c7b76b01f3990d14a1ca",
+      "bytes": 14580
     },
     {
       "module": "GuthMaynardS3EnergyNormalization",
@@ -5020,8 +5020,8 @@
     {
       "module": "GuthMaynardS3EpsilonCollar",
       "path": "Proof/GuthMaynardS3EpsilonCollar.lean",
-      "sha256": "66d7943bf956efb38b0590a51b53ada37884cd7344ff9dccac2bfbd45c1d6795",
-      "bytes": 4002
+      "sha256": "0f642646240916b758b79aaa1ab08bbc59c6bc42616f90eeedaa9a346fe0504b",
+      "bytes": 4003
     },
     {
       "module": "GuthMaynardS3FinalSeamSourceBound",
@@ -5062,8 +5062,8 @@
     {
       "module": "GuthMaynardS3FourierTailAbsorption",
       "path": "Proof/GuthMaynardS3FourierTailAbsorption.lean",
-      "sha256": "b68a68533da4c25e45e27683e93702bacf4fbd802ec86bb8e12db90a72658fa2",
-      "bytes": 1953
+      "sha256": "75b471c4678bf1d5d6207a4cfce86b0271cc9fcbdb5a25c790379980d847b0fd",
+      "bytes": 1955
     },
     {
       "module": "GuthMaynardS3FullUniform",
@@ -5086,8 +5086,8 @@
     {
       "module": "GuthMaynardS3InversionIntegral",
       "path": "Proof/GuthMaynardS3InversionIntegral.lean",
-      "sha256": "b4b140f13bf1095b4652e9fa8bb219bd4ec69195367d5f0e6eabc1aed1ef4ced",
-      "bytes": 3068
+      "sha256": "fef9c1c9d7fec2aaf1f6b74734bade914478e5f5ff6df686bad6f1651977de6a",
+      "bytes": 3285
     },
     {
       "module": "GuthMaynardS3IterationClosure",
@@ -5122,14 +5122,14 @@
     {
       "module": "GuthMaynardS3LiteralBalancedGeometry",
       "path": "Proof/GuthMaynardS3LiteralBalancedGeometry.lean",
-      "sha256": "a46980cb6513c4f53acbf59eebb1eff5cb3a8dc93af3eff52ce51f69b0297aa2",
-      "bytes": 14626
+      "sha256": "0620798649bcd74ee7074d3ae20a82068b7df0dbef7449f3c182cfb50ae3155e",
+      "bytes": 14612
     },
     {
       "module": "GuthMaynardS3LiteralBalancedSectorGeometry",
       "path": "Proof/GuthMaynardS3LiteralBalancedSectorGeometry.lean",
-      "sha256": "0f9127c14e2a0e6314994bd7984566c288f053ef638ea9e7a80c8277b8e1e0ac",
-      "bytes": 20856
+      "sha256": "534be1c7509e50f2d5e5755751d5cc4d67ce121c19e91cc82395d880315e2ad5",
+      "bytes": 20842
     },
     {
       "module": "GuthMaynardS3LiteralDyadicBlock",
@@ -5188,8 +5188,8 @@
     {
       "module": "GuthMaynardS3LiteralLemma82",
       "path": "Proof/GuthMaynardS3LiteralLemma82.lean",
-      "sha256": "69ff28579fc95c8a4d318c38115f63d22f04f33b3fac74afaabe6e63cbbd81dd",
-      "bytes": 33278
+      "sha256": "6a1d9552a64b6f8763cb866b89b3b4547fad25c965ab30f09fe9ebbbf396d43a",
+      "bytes": 33362
     },
     {
       "module": "GuthMaynardS3LiteralLemma83Energy",
@@ -5206,14 +5206,14 @@
     {
       "module": "GuthMaynardS3LiteralLemma84Outer",
       "path": "Proof/GuthMaynardS3LiteralLemma84Outer.lean",
-      "sha256": "5b64bc43b3566cae8cf129c16c1c89598a10ba0bef209adb24a4fdd572874b98",
-      "bytes": 59603
+      "sha256": "d1525cf7d24a74e12a28a6960541e38cc7a65cb40c85f6515faa306a89fb9553",
+      "bytes": 59620
     },
     {
       "module": "GuthMaynardS3LiteralLemma92NonzeroMedium",
       "path": "Proof/GuthMaynardS3LiteralLemma92NonzeroMedium.lean",
-      "sha256": "1899ed545ecb9fc29716e5d4a1c2707f2b8558307874c869fd94d7a138e269f7",
-      "bytes": 21013
+      "sha256": "89e07e37ee2d6d5d4d549277dfa8d279723003fb032e3c1f0c81c6d37c0c214e",
+      "bytes": 21014
     },
     {
       "module": "GuthMaynardS3LiteralLemma92RegionII",
@@ -5224,8 +5224,8 @@
     {
       "module": "GuthMaynardS3LiteralLocalization",
       "path": "Proof/GuthMaynardS3LiteralLocalization.lean",
-      "sha256": "1280aaf618bed2047477ccbbdf4c4f6248e868fb335d3151eac1ea249366a5a5",
-      "bytes": 8968
+      "sha256": "b242513a366a943df1d20cd7e8f1da55832cfb6ca07964f20416d24cda50b249",
+      "bytes": 8969
     },
     {
       "module": "GuthMaynardS3LiteralProfile",
@@ -5236,8 +5236,8 @@
     {
       "module": "GuthMaynardS3LiteralProfileFourier",
       "path": "Proof/GuthMaynardS3LiteralProfileFourier.lean",
-      "sha256": "78216b5392a121ed4db9ebc3f83b1d093f14efed6e865ce6acd7839c3822d059",
-      "bytes": 17728
+      "sha256": "ccfbc1a40140344c9c66f4c1303e713a26f9cec243960cb815c81617d30c4ed4",
+      "bytes": 17755
     },
     {
       "module": "GuthMaynardS3LiteralRadial",
@@ -5248,8 +5248,8 @@
     {
       "module": "GuthMaynardS3LiteralRadialDecay",
       "path": "Proof/GuthMaynardS3LiteralRadialDecay.lean",
-      "sha256": "203b7c5656d5d87cf62142995094b764624a1c48f9089bdc2efdda1f7e54499d",
-      "bytes": 7192
+      "sha256": "85f801e15d9f5901cf41cb98e90f453520c625747e7b29fb2acf04ef26012b4a",
+      "bytes": 7194
     },
     {
       "module": "GuthMaynardS3LiteralScaleComparison",
@@ -5314,8 +5314,8 @@
     {
       "module": "GuthMaynardS3MediumCanonicalInputs",
       "path": "Proof/GuthMaynardS3MediumCanonicalInputs.lean",
-      "sha256": "ef3b85b974ab9a0736cba45127719ebdb1357d3ce1b3221421b59f572e067e0f",
-      "bytes": 8960
+      "sha256": "f2d128eb1741a63086cc6836d1db5f1414688dd177892368fcb549ce75c82e74",
+      "bytes": 8961
     },
     {
       "module": "GuthMaynardS3MediumConcreteWeld",
@@ -5374,8 +5374,8 @@
     {
       "module": "GuthMaynardS3PositiveEnergyShiftedBound",
       "path": "Proof/GuthMaynardS3PositiveEnergyShiftedBound.lean",
-      "sha256": "cbb6fa756321a40855d276f1b56d45af43fbcd74ee0efc4a363f7b34c556634a",
-      "bytes": 12936
+      "sha256": "47a45625ac9456575c84238a41f2251a9795b3cee21375aeac210c8b05673069",
+      "bytes": 12937
     },
     {
       "module": "GuthMaynardS3PositiveFourierBridge",
@@ -5434,8 +5434,8 @@
     {
       "module": "GuthMaynardS3ScaledWideProfile",
       "path": "Proof/GuthMaynardS3ScaledWideProfile.lean",
-      "sha256": "b6c8a4b3935ffa9c0afa86f04deb73583504da97cfbd12006e12c55fd33ab4e6",
-      "bytes": 7965
+      "sha256": "bd04bb942b7767b2a1da80edce04873a8de408537c1960ed1abdfe7bea5be393",
+      "bytes": 7945
     },
     {
       "module": "GuthMaynardS3SignedMassEnvelope",
@@ -5452,8 +5452,8 @@
     {
       "module": "GuthMaynardS3StartingProfile",
       "path": "Proof/GuthMaynardS3StartingProfile.lean",
-      "sha256": "9ade39d7a1afc4939c67b23d06d939502bf58a03ba3e888198465c408591d0f6",
-      "bytes": 14254
+      "sha256": "58c12695c877a0932fa5d797bb64ae50f88798fc2c4ece28b2742fc28b27d103",
+      "bytes": 14276
     },
     {
       "module": "GuthMaynardS3SymmetryGenerators",
@@ -5464,8 +5464,8 @@
     {
       "module": "GuthMaynardS3UnequalScaleSecondPoisson",
       "path": "Proof/GuthMaynardS3UnequalScaleSecondPoisson.lean",
-      "sha256": "9de26757971e2b1eb9cd826d57c2c2c21c4b982f416a966e70568aff7bb5e1d3",
-      "bytes": 7785
+      "sha256": "dd9337ec379425c27e3217f9a85758be8aecd17e03d481f0aceaf07587e58578",
+      "bytes": 7784
     },
     {
       "module": "GuthMaynardS3WideExtremesGeneric",
@@ -5518,8 +5518,8 @@
     {
       "module": "GuthMaynardSectionFourPoisson",
       "path": "Proof/GuthMaynardSectionFourPoisson.lean",
-      "sha256": "95ea99b06c6acfca59450bf8ed5d5008f0bc137edb41b97c171a1ed494afc1ec",
-      "bytes": 12521
+      "sha256": "10d4f1aa0aac8f59f995b8869e63323036576e7c076c99cdce2e94e8b3d6433e",
+      "bytes": 12520
     },
     {
       "module": "GuthMaynardSectionFourTrace",
@@ -5536,8 +5536,8 @@
     {
       "module": "GuthMaynardSectionThreeCutoffDerivativeBudget",
       "path": "Proof/GuthMaynardSectionThreeCutoffDerivativeBudget.lean",
-      "sha256": "19a390714deca0b0b5d844df1803983e14210d8f8e072029a36221d74c7bf8cc",
-      "bytes": 16536
+      "sha256": "0f2ca154571e28d0008e41c2bc2eca694c89b4ba66f2857778d5d9c5abf071f1",
+      "bytes": 16537
     },
     {
       "module": "GuthMaynardSectorFactorization",
@@ -5638,14 +5638,14 @@
     {
       "module": "HBPerronPacketIndexedSourceV2",
       "path": "Proof/HBPerronPacketIndexedSourceV2.lean",
-      "sha256": "fdaf6f3b62a91f102b23ca5153f26773b6dc47958ac92d62e4fadf540ad73f4e",
-      "bytes": 31809
+      "sha256": "5491711b284245a9a109c23d32cb9f618e13594641e996e64d0f856d0e55e112",
+      "bytes": 31961
     },
     {
       "module": "HarmonicFrontend",
       "path": "Proof/HarmonicFrontend.lean",
-      "sha256": "9ed12f3fff6868b3730354f0a386699dc4608d39322b47f560a6a833919b834f",
-      "bytes": 36357
+      "sha256": "1860d941e7d3883ecc26bd1aaf0ae69771124f656f63dc25ae421e4662403848",
+      "bytes": 36461
     },
     {
       "module": "HarmonicInterfaces",
@@ -5662,14 +5662,14 @@
     {
       "module": "HolomorphicStripDerivativeFourth",
       "path": "Proof/HolomorphicStripDerivativeFourth.lean",
-      "sha256": "a565f5257f78f738f89217354f00e24f7b5d91256807de63053b980b62a2fa01",
-      "bytes": 18971
+      "sha256": "268ca72f656274365b024bc43ef81afa2c66d670fe98b52e98132ed6b19c2237",
+      "bytes": 19077
     },
     {
       "module": "HolomorphicSubmeanSampling",
       "path": "Proof/HolomorphicSubmeanSampling.lean",
-      "sha256": "06f54ff97eaeea8210d6baa5f8fb18f86e469efa8100e1dddee97905baa3320d",
-      "bytes": 22468
+      "sha256": "a981e5b5dee928ce36f408a899e25d8f23882c5af241ee75791731d83567e179",
+      "bytes": 22484
     },
     {
       "module": "HuxleyCompactGapExponent",
@@ -5680,8 +5680,8 @@
     {
       "module": "HuxleyDirichletSmoothing",
       "path": "Proof/HuxleyDirichletSmoothing.lean",
-      "sha256": "e5c53b3886b1e797b6bedad3173f350f4e8713cd81f3c0f08a44cc7c918305bf",
-      "bytes": 11559
+      "sha256": "901d5836a43ab6ae4da854c32692c45508ad3345ba201b6366101247482ae402",
+      "bytes": 11558
     },
     {
       "module": "HuxleyEntireKernel",
@@ -5716,8 +5716,8 @@
     {
       "module": "HuxleyJMellin",
       "path": "Proof/HuxleyJMellin.lean",
-      "sha256": "f919d1fb4719d66975748d2cf728c0910177e76bbf5217e7f05d455b58ef4311",
-      "bytes": 14779
+      "sha256": "10281bcee019717c0bf2123b93d585ec604466c797c2e3e015566ba6b1a8bf0c",
+      "bytes": 14803
     },
     {
       "module": "HuxleyJVertical",
@@ -5728,20 +5728,20 @@
     {
       "module": "HuxleyKCutoff",
       "path": "Proof/HuxleyKCutoff.lean",
-      "sha256": "3745420005e63ed32b55799710722c41e9661588824178d1e083abca2b61f21f",
-      "bytes": 16464
+      "sha256": "204012147af15f023e5f3155053eb9e47091395302260ffe664043f462de6d06",
+      "bytes": 16488
     },
     {
       "module": "HuxleyKFiniteInterchange",
       "path": "Proof/HuxleyKFiniteInterchange.lean",
-      "sha256": "6ab6d1f59c36f4272b3b401f5907f49e54235976743e42b43b0a2f45679abbb4",
-      "bytes": 8616
+      "sha256": "925c5e6d9df13413ee1161173c36fd5bbfceb1fa4bfc0601ddd73e08d6a17382",
+      "bytes": 8660
     },
     {
       "module": "HuxleyKMellin",
       "path": "Proof/HuxleyKMellin.lean",
-      "sha256": "5a15d0126f62fdf4995b53c5ae499cf82613b30e21e54cfd6159d209b1a01269",
-      "bytes": 8542
+      "sha256": "28edb4e84ee02dc71a14f220a5074d062ac7392ac24991ac256fa2cf4972b673",
+      "bytes": 8543
     },
     {
       "module": "HuxleyPrimitiveFunctionalEquation",
@@ -5776,8 +5776,8 @@
     {
       "module": "JutilaCollarA5Budget",
       "path": "Proof/JutilaCollarA5Budget.lean",
-      "sha256": "21783565b9708485ec4c2a9e46795de03188bf0df8568b46f8dbdd2399f2537b",
-      "bytes": 15686
+      "sha256": "cbc37d9df3a7cfddc991dbd6650a526a069966ce5c0a6ed3fdec5d49d2ce14b0",
+      "bytes": 15688
     },
     {
       "module": "JutilaCollarA5FiberCap",
@@ -5812,8 +5812,8 @@
     {
       "module": "JutilaDeterministicCore",
       "path": "Proof/JutilaDeterministicCore.lean",
-      "sha256": "0be6e5437ffc9d913238cb6ecdf7194e9fcdd85be5e2ede17da7c471546ae70a",
-      "bytes": 15900
+      "sha256": "a5bfc2a2abff482f9791d95f2240a466caa82269f5874c2b82625ba354fb8043",
+      "bytes": 15892
     },
     {
       "module": "JutilaDualTailContour",
@@ -5842,14 +5842,14 @@
     {
       "module": "JutilaEulerEpsilonBound",
       "path": "Proof/JutilaEulerEpsilonBound.lean",
-      "sha256": "e68435f157b5dbc6dde7a06a8f0115361d4becdf7a20599d14f7cf5d202234d9",
+      "sha256": "52f5f1e76b1cdb012c7c5350487693cbf2d8fe1af376769f4f579979a7c45a88",
       "bytes": 3399
     },
     {
       "module": "JutilaGammaZeroShift",
       "path": "Proof/JutilaGammaZeroShift.lean",
-      "sha256": "a6c28f9823d867533c93b406116080116bdbda6bd8a71ec6ac755fec8b39bf48",
-      "bytes": 21052
+      "sha256": "8dae59df8fa47826b2c1ad3362eba625b6c8fa48c4fa236ab004feae70fd3b58",
+      "bytes": 21071
     },
     {
       "module": "JutilaGappedAggregateP53Closed",
@@ -5878,8 +5878,8 @@
     {
       "module": "JutilaGappedFixedModulusAggregateP53Adapter",
       "path": "Proof/JutilaGappedFixedModulusAggregateP53Adapter.lean",
-      "sha256": "d18a41a89f888a056c817401e4a82a3ff473538e0bcd56b31f5d9a2512104f08",
-      "bytes": 6618
+      "sha256": "a2826f10ad922fd55b6cc0a0bc28ae7f56500146824562ecf86101fd2af45f89",
+      "bytes": 6651
     },
     {
       "module": "JutilaGappedGrahamBypass",
@@ -5902,8 +5902,8 @@
     {
       "module": "JutilaHybridConvexityEulerReduction",
       "path": "Proof/JutilaHybridConvexityEulerReduction.lean",
-      "sha256": "c47c0bf4e3df7d096599ae0c35be166689f0a2db58410f73794b9284249f031f",
-      "bytes": 4198
+      "sha256": "780b1541ea62cbf9ede928b5d25c6aafac15c5552f28d9349b1e860713a0d8dd",
+      "bytes": 4201
     },
     {
       "module": "JutilaHybridConvexityPrimitiveBoundary",
@@ -5932,8 +5932,8 @@
     {
       "module": "JutilaLemma3AbsoluteMass",
       "path": "Proof/JutilaLemma3AbsoluteMass.lean",
-      "sha256": "1ae864cd53acc55df72313a21a069718bc0368c24bc57095c42c2c61f3e35177",
-      "bytes": 3945
+      "sha256": "6987099254b181095fa610caad664ce964ce5e244cabb87a78acf794558aa733",
+      "bytes": 3948
     },
     {
       "module": "JutilaLemma6CanonicalLower",
@@ -5992,8 +5992,8 @@
     {
       "module": "JutilaLemma6GenericTailAbsorption",
       "path": "Proof/JutilaLemma6GenericTailAbsorption.lean",
-      "sha256": "c1f600e8a44a92b5af5f84a6a73f074453d687c8a3b77247635f9c07e6f9e950",
-      "bytes": 14066
+      "sha256": "3813b9962aa4c8def82a340d0950b90a4e52bfec28327d74d723c8821237fff1",
+      "bytes": 14067
     },
     {
       "module": "JutilaLemma6HorizontalDecay",
@@ -6016,14 +6016,14 @@
     {
       "module": "JutilaLemma6MellinIntegral",
       "path": "Proof/JutilaLemma6MellinIntegral.lean",
-      "sha256": "df71b4a9132953d13d78c3d6dc692e26fde9dbe8ca38725f5df91bd3b16ece50",
-      "bytes": 9003
+      "sha256": "24f36fce668eab732b636e538e90c38a2b7a2467f25423d41b182a7164efb219",
+      "bytes": 9004
     },
     {
       "module": "JutilaLemma6MellinIntegralSharp",
       "path": "Proof/JutilaLemma6MellinIntegralSharp.lean",
-      "sha256": "2c03bd94ca57f81beead96f5048acf5835bc0818501a9d2a429dd08010bc94a7",
-      "bytes": 7546
+      "sha256": "479ddbefa80fb28f5e2bf2c26cdd21755adaf50519a100530301ccaf5039fc40",
+      "bytes": 7547
     },
     {
       "module": "JutilaLemma6ParameterLedger",
@@ -6064,8 +6064,8 @@
     {
       "module": "JutilaMNonnegativeHalfPlaneBound",
       "path": "Proof/JutilaMNonnegativeHalfPlaneBound.lean",
-      "sha256": "36064574c8e6eb74196ed60203c679a36c1e20b5aae59bfcb33f3e7c3e4db782",
-      "bytes": 3903
+      "sha256": "422f9ad2e730e472d1135a019edd71b04ac84848431274187a9cb2d9b2d20a94",
+      "bytes": 3906
     },
     {
       "module": "JutilaMultiplierBaseStrip",
@@ -6076,8 +6076,8 @@
     {
       "module": "JutilaMultiplierRecurrence",
       "path": "Proof/JutilaMultiplierRecurrence.lean",
-      "sha256": "80e0d78fb39e1bf9633d4ae22e5106e4f81a7b1fb91277d97f4054113f8af681",
-      "bytes": 12025
+      "sha256": "70bb5baaf4ddec01c458147f6cefa87d8eeea162227ce561e9dcd63cc28297c7",
+      "bytes": 12031
     },
     {
       "module": "JutilaOneSeparatedExponentialPacking",
@@ -6130,8 +6130,8 @@
     {
       "module": "JutilaP53DivisorKernelMultiplicative",
       "path": "Proof/JutilaP53DivisorKernelMultiplicative.lean",
-      "sha256": "a0a1abfbe59365bacf65017aadc45702f6a37132572469002d156a83700da634",
-      "bytes": 14265
+      "sha256": "f4cee185ef7ff36a5ced340d7d5a3296af9aaf9d59c041058a62138d5a39aa29",
+      "bytes": 14302
     },
     {
       "module": "JutilaP53EnergyContinuity",
@@ -6142,8 +6142,8 @@
     {
       "module": "JutilaP53FiniteFubiniReindex",
       "path": "Proof/JutilaP53FiniteFubiniReindex.lean",
-      "sha256": "37f1247bb05219dd5ed9ef47bd69570f7c353ead8165cb2479511f5babe3fea3",
-      "bytes": 20716
+      "sha256": "88f322df53816ff119f1da1f5580567e51b7c8566d06d18df5532c594bcf17d6",
+      "bytes": 20738
     },
     {
       "module": "JutilaP53FiniteShift",
@@ -6244,8 +6244,8 @@
     {
       "module": "JutilaP53PairEulerFactorization",
       "path": "Proof/JutilaP53PairEulerFactorization.lean",
-      "sha256": "7f0f03136685cab94c3e4983b0e20fcd33f3dc567b434b1a948b144be7c9fb6f",
-      "bytes": 6429
+      "sha256": "4917667aeec35b43f8d71a962049daf61a2b75079ef0b8c98f6fd4ef997c3e72",
+      "bytes": 6428
     },
     {
       "module": "JutilaP53PairRExpansion",
@@ -6304,8 +6304,8 @@
     {
       "module": "JutilaP53PrincipalLeftLineEstimate",
       "path": "Proof/JutilaP53PrincipalLeftLineEstimate.lean",
-      "sha256": "3d007ee0823c02f9ac6cfe7098df32a68e9e552b1cddb4fef2758112faad1ee6",
-      "bytes": 27336
+      "sha256": "64a36393636d6276b8872d32096f463c280d436a190f270733bd058f12844a6f",
+      "bytes": 27340
     },
     {
       "module": "JutilaP53PrincipalPairShiftedContour",
@@ -6352,8 +6352,8 @@
     {
       "module": "JutilaP53PrincipalSourceLineIntegral",
       "path": "Proof/JutilaP53PrincipalSourceLineIntegral.lean",
-      "sha256": "80ff6c6fea1d304b5f10fe2f6b372887abd8101ca7fff85cfeb2e34d2890c593",
-      "bytes": 7382
+      "sha256": "731ca76d2b5b7cfe578fa9e602fd2bac6de614f75839fad5d8d1581b05f37f6b",
+      "bytes": 7383
     },
     {
       "module": "JutilaP53PseudocharacterExactBridge",
@@ -6478,14 +6478,14 @@
     {
       "module": "JutilaP53SourceScaleIntegration",
       "path": "Proof/JutilaP53SourceScaleIntegration.lean",
-      "sha256": "6b5939b0ec73b0cdd01f8d66e9fbb06ea453e3358691ae2bd101e52009e0ed98",
-      "bytes": 2727
+      "sha256": "7d337cb0e34b2238f5ee78c9ad340758176040b4f245da546412ee0a92f8f5a3",
+      "bytes": 2693
     },
     {
       "module": "JutilaP53TwoScaleContour",
       "path": "Proof/JutilaP53TwoScaleContour.lean",
-      "sha256": "79492374544e9f8b701fdaef467a7e85557337498fe88093d4e701834865b68a",
-      "bytes": 13180
+      "sha256": "7ba60518ebd14773f53fb5dec6206a9f8f61f718712307059821f3972c4e2b80",
+      "bytes": 13182
     },
     {
       "module": "JutilaPolynomialExponentialIntegral",
@@ -6514,26 +6514,26 @@
     {
       "module": "JutilaPrincipalDetectorPole",
       "path": "Proof/JutilaPrincipalDetectorPole.lean",
-      "sha256": "0a1b224be8c0fcfaebbb4562b453a084687c36627d509b56b5e9cdff534425ec",
-      "bytes": 9045
+      "sha256": "d443f29ff2f8a6130d9da74c8900ae8667124ed09ab8f255caa5bf6a9d9f18c2",
+      "bytes": 9048
     },
     {
       "module": "JutilaPrincipalDetectorVerticalIntegrability",
       "path": "Proof/JutilaPrincipalDetectorVerticalIntegrability.lean",
-      "sha256": "4194b5abef3ff651f620b7c927d1affd1a2cb5c1b561e34774ce1f506752f202",
-      "bytes": 25563
+      "sha256": "6c55f8a3864ccd0518384b2a3c6591f8719d8e366dba320037672397e72ef546",
+      "bytes": 25564
     },
     {
       "module": "JutilaPrincipalEpsilonRemainderCertified",
       "path": "Proof/JutilaPrincipalEpsilonRemainderCertified.lean",
-      "sha256": "a3d9602cd5a06f73acb9fd5b211352882e381f3a11abfad5e725fef4d907d3f3",
-      "bytes": 36449
+      "sha256": "b8bd973293344a675e7d68777762bf728a0f6bd6d8647d5fc1a9682d27eafde0",
+      "bytes": 36452
     },
     {
       "module": "JutilaPrincipalEpsilonShiftedContour",
       "path": "Proof/JutilaPrincipalEpsilonShiftedContour.lean",
-      "sha256": "fc3faa7666f782247fff2b6689f163da8606ff08f1165e5dd01ab5d737f0ea34",
-      "bytes": 35888
+      "sha256": "6e7b5957cac03cff93d3f9d9b4b6321457371e79abd4a5e62f550dda7136e8ac",
+      "bytes": 35889
     },
     {
       "module": "JutilaPrincipalFiniteHalasz",
@@ -6574,8 +6574,8 @@
     {
       "module": "JutilaPrincipalSourceConvexity",
       "path": "Proof/JutilaPrincipalSourceConvexity.lean",
-      "sha256": "0c5c054ea4ef833c6f3d714d82b89642c903647ea9d1b4ab3fbaf083019935ce",
-      "bytes": 39219
+      "sha256": "eba26a6ce8b0ffb481207c5bb337305c4949daf8351d092db50a9d05bade1644",
+      "bytes": 39238
     },
     {
       "module": "JutilaPrincipalZeroStrictBoundary",
@@ -6598,14 +6598,14 @@
     {
       "module": "JutilaPseudocharacterMExact",
       "path": "Proof/JutilaPseudocharacterMExact.lean",
-      "sha256": "e4bfb975181be88e9313675e9ea35a8c03fea57b1a861fb5713a12b2a6224dcd",
-      "bytes": 8211
+      "sha256": "b6fb08432c54fb7694d457a3da951bd8ad65cca63f80d9b93ae65e99260938d7",
+      "bytes": 8214
     },
     {
       "module": "JutilaPseudocharacterMollifierBound",
       "path": "Proof/JutilaPseudocharacterMollifierBound.lean",
-      "sha256": "a4de2968967b50904fa3827f46fa663fb154e5eb52261c7a631128e2b29fc377",
-      "bytes": 5362
+      "sha256": "626f00c59632783eccf63eb7d33dbd0e386b4b980a7da84b49b096d5835a95a2",
+      "bytes": 5365
     },
     {
       "module": "JutilaPseudocharacterMollifierSum",
@@ -6622,8 +6622,8 @@
     {
       "module": "JutilaReflectionDirichletIdentity",
       "path": "Proof/JutilaReflectionDirichletIdentity.lean",
-      "sha256": "df7e5b9fbd848993d2f8ba69fbce49786eba67a0283c2df4b10646fbfaa06406",
-      "bytes": 11566
+      "sha256": "9893cbf5ab8e19e4513b470e2ec25f1e0d19e5f15c5da8f71ad162a99cf79ce1",
+      "bytes": 11567
     },
     {
       "module": "JutilaReflectionKernelInterchange",
@@ -6658,7 +6658,7 @@
     {
       "module": "JutilaSourceQEBudget",
       "path": "Proof/JutilaSourceQEBudget.lean",
-      "sha256": "1116dcd781761c2737384c4726e0e20b28adbd77a281555384eba93049071577",
+      "sha256": "a2469739ba640ed85da09a023debe6d82d2b4eb2b5efea3f4ad05581d4fc2be4",
       "bytes": 9500
     },
     {
@@ -6676,8 +6676,8 @@
     {
       "module": "JutilaTotientSmallLogBound",
       "path": "Proof/JutilaTotientSmallLogBound.lean",
-      "sha256": "1341110ea0a764490ca6b72896b47c0e6dd5a1ae1c68860b293db477bcfa1f18",
-      "bytes": 5183
+      "sha256": "cbc0cd27ece52c39e52d0d40a40bf5f5fe38098e27b1627cbeedf40f80b52e2c",
+      "bytes": 5186
     },
     {
       "module": "JutilaTwoScaleHorizontalDecay",
@@ -6688,14 +6688,14 @@
     {
       "module": "JutilaTwoScaleSmoothing",
       "path": "Proof/JutilaTwoScaleSmoothing.lean",
-      "sha256": "ba0816645a6dcd8a05c5cfbe8da6d6105d8ffdbc9e70294f31f3ab45a6ed5ddc",
-      "bytes": 11528
+      "sha256": "bc10bef5fa8437a18f5d94f23c1d0083f187c8f608362473cc10bfed2e185855",
+      "bytes": 11544
     },
     {
       "module": "KTwoDyadicPrimeReciprocalFromCertifiedPsi",
       "path": "Proof/KTwoDyadicPrimeReciprocalFromCertifiedPsi.lean",
-      "sha256": "0532f00f4c86e27aed938f466431515a79d241bec89c5efea431273fb706bdf8",
-      "bytes": 10317
+      "sha256": "45e642303d9cf755fd05b68d8d1e59b1863c052de425f8db61a12a44911b1498",
+      "bytes": 10318
     },
     {
       "module": "KTwoDyadicPrimeReciprocalFromChebyshev",
@@ -6718,8 +6718,8 @@
     {
       "module": "KhaleAppendixB104FromSources",
       "path": "Proof/KhaleAppendixB104FromSources.lean",
-      "sha256": "bbfad71f8d3f9f0a2411567a56b9cf81f4aa930bdd0f13a15c4c857b7b363fca",
-      "bytes": 17656
+      "sha256": "f13f58e8e7cb67b334bcc47714df45ae74f026243cf76100efebba825746f85b",
+      "bytes": 17657
     },
     {
       "module": "KhaleAppendixB1FinalReduction",
@@ -6760,8 +6760,8 @@
     {
       "module": "KhaleAppendixBCotangentCertified",
       "path": "Proof/KhaleAppendixBCotangentCertified.lean",
-      "sha256": "086b78df0cf2bfd6757b52859d793ae6c12920a2c8ab07fe6b6b07cfaef2f72a",
-      "bytes": 2686
+      "sha256": "780f0a895a65b1f912ace6b7ef2b4b6a870493cc24a175d8d4a20c9a7528ef5f",
+      "bytes": 2770
     },
     {
       "module": "KhaleAppendixBEtaAlgebra",
@@ -6826,14 +6826,14 @@
     {
       "module": "KhaleAppendixBLemma41Applicability",
       "path": "Proof/KhaleAppendixBLemma41Applicability.lean",
-      "sha256": "3ea7db0dd8480d4c817ac7ee79371ae12a5ca652e17010f4644ff401ac3d2fdb",
-      "bytes": 13131
+      "sha256": "0ad0708176ffe6d9805d1aa54e593c5ab26111b6b7b5f0f35995063f55372d47",
+      "bytes": 13090
     },
     {
       "module": "KhaleAppendixBLemma41FourApplicationWeld",
       "path": "Proof/KhaleAppendixBLemma41FourApplicationWeld.lean",
-      "sha256": "27fea78e655370bb4975cde460fcae4cec0eb21bdc3e19d91536a31c88897433",
-      "bytes": 8150
+      "sha256": "68972978eb3ea24479e7822653104f110300669d79d4558ddddfee81fb3d5dd0",
+      "bytes": 8216
     },
     {
       "module": "KhaleAppendixBLemma41NaturalScales",
@@ -6886,8 +6886,8 @@
     {
       "module": "KhaleAppendixBTrigLogDerivativeCertified",
       "path": "Proof/KhaleAppendixBTrigLogDerivativeCertified.lean",
-      "sha256": "2d340b7b0c9bbb7f1f891bde626be6f1ff59ffaa143e5e845bd11b1dda5056d3",
-      "bytes": 11001
+      "sha256": "6b4c5c36bbe7e61deed84ed43895cfd8c4454714aace8628112aa5803361f202",
+      "bytes": 11061
     },
     {
       "module": "KhaleAppendixBTrigPolynomialCertified",
@@ -6904,8 +6904,8 @@
     {
       "module": "KhaleAppendixBZetaPrimePowerCertified",
       "path": "Proof/KhaleAppendixBZetaPrimePowerCertified.lean",
-      "sha256": "dafbc5977645956f4737e1b765afc1dfcbf4bcb0d740698c5f8a02e9211b1688",
-      "bytes": 7497
+      "sha256": "717e64ea7b315ea80528810464659a504778cf76cfe5e63befbc1ace4410628f",
+      "bytes": 7498
     },
     {
       "module": "KhaleCoshSqKernelIntegrable",
@@ -6916,8 +6916,8 @@
     {
       "module": "KhaleHighZeroNonvanishingFromRaw",
       "path": "Proof/KhaleHighZeroNonvanishingFromRaw.lean",
-      "sha256": "cf06276a196c8326c431c17820ec5cdf94edec513d8e9fb0f32d8c3860bcb446",
-      "bytes": 6532
+      "sha256": "fa9a20aaf8e7281c1ad87fb8cdf144bcdc08bebbc88457e807df7ffc85c5a7bc",
+      "bytes": 6533
     },
     {
       "module": "KhaleLemma41PointwiseSource",
@@ -6976,8 +6976,8 @@
     {
       "module": "KoukCompletedLogDerivativeFunctionalEquation",
       "path": "Proof/KoukCompletedLogDerivativeFunctionalEquation.lean",
-      "sha256": "e4c0136c68379902895820ed44c83e255b650841f4e3e3d2740d2fdf9d53a772",
-      "bytes": 8352
+      "sha256": "7226b1c1f17af71bf184d625df89d0129bf187e3c267f0beab372892fe9bfb6a",
+      "bytes": 8403
     },
     {
       "module": "KoukDigammaAwayFromPoles",
@@ -7012,8 +7012,8 @@
     {
       "module": "KoukExercise12TwoEndpointScalars",
       "path": "Proof/KoukExercise12TwoEndpointScalars.lean",
-      "sha256": "de6337ac99139bf69590bb9d165d972b0b57a9b6b7e293e53687722081a55c1f",
-      "bytes": 13254
+      "sha256": "be0fc3cf3cc9a4e39a717cd714203508e4076d94cc6c132d1074fda1eb7d16cb",
+      "bytes": 13245
     },
     {
       "module": "KoukExercise12TwoFinalScalarTrades",
@@ -7132,20 +7132,20 @@
     {
       "module": "KoukGammaFactorLogDerivative",
       "path": "Proof/KoukGammaFactorLogDerivative.lean",
-      "sha256": "c2b41d608b92628f1cf2d8f8856bdad751143e74cca88bb6fd7aba14593ac23b",
-      "bytes": 4952
+      "sha256": "d6610a8b409c239cbe5a1b27ce4cef6ed89e6dec9085b9e6d149b5fc205ac4e1",
+      "bytes": 4969
     },
     {
       "module": "KoukGaussDigammaSeries",
       "path": "Proof/KoukGaussDigammaSeries.lean",
-      "sha256": "a35918f647818eec756e1914cec276f1881eda84c5dd815a19bcc01d1e3225aa",
-      "bytes": 13390
+      "sha256": "de060e4bb14ca84737351760199c2af0a066ed914a40945b4a6036c16139279f",
+      "bytes": 13403
     },
     {
       "module": "KoukGaussSeriesToRightHalfPlane",
       "path": "Proof/KoukGaussSeriesToRightHalfPlane.lean",
-      "sha256": "198d56655ec94e6f47b15825ed694c74e9add9b557051350a6d836bd180c5ccc",
-      "bytes": 12084
+      "sha256": "274fd193d8146e69b6a0470b3b03a96091702448333ec7e0dd5aab987ed0f474",
+      "bytes": 12091
     },
     {
       "module": "KoukInverseWideZeroClearance",
@@ -7156,8 +7156,8 @@
     {
       "module": "KoukLemma12TwoEulerAdapter",
       "path": "Proof/KoukLemma12TwoEulerAdapter.lean",
-      "sha256": "0b6920271ea0bc11ec89ffe4911d34daa5acc2db735215b56658891601b13feb",
-      "bytes": 7332
+      "sha256": "a0f9841bc0a3dadc7fe5d358d90662a709bc2ecc510d7fe7ce58ad0347ba38d6",
+      "bytes": 7336
     },
     {
       "module": "KoukLemma12TwoSpecializations",
@@ -7168,8 +7168,8 @@
     {
       "module": "KoukLowKhaleRangeWeakGap",
       "path": "Proof/KoukLowKhaleRangeWeakGap.lean",
-      "sha256": "eb1762bda54bbaa4d8f4c960f5da19f370141e0b7c1ec87534493f0fdd185f42",
-      "bytes": 7388
+      "sha256": "31edd998413820ba53057b4aef048b220944e581e8335a6a246890d2c5c3d45b",
+      "bytes": 7390
     },
     {
       "module": "KoukNegativeHalfLogDerivativeBound",
@@ -7264,8 +7264,8 @@
     {
       "module": "KoukTheorem113NegativeRectangle",
       "path": "Proof/KoukTheorem113NegativeRectangle.lean",
-      "sha256": "229c359535d1a53f84f4093fbbe4bb3c3cd8b1c2500d19a0bd55980921308654",
-      "bytes": 17032
+      "sha256": "b66903a9a60ecb1380b646e561aca25d97206b6d6a642886ebb635611e7950d6",
+      "bytes": 17015
     },
     {
       "module": "KoukTheorem113PerCharacterGoodHeight",
@@ -7276,8 +7276,8 @@
     {
       "module": "KoukTheorem113Residues",
       "path": "Proof/KoukTheorem113Residues.lean",
-      "sha256": "e1171039fbd7d7fd60ad029dc420ba373e8bb7841cdac7c7ca4c99966b71cb0a",
-      "bytes": 13659
+      "sha256": "b735fc37314f2e479d48a5d32e6090bf8c48be173808f2819e5a23f2a552d07b",
+      "bytes": 13634
     },
     {
       "module": "KoukTheorem113SelectedHeightAggregation",
@@ -7288,7 +7288,7 @@
     {
       "module": "KoukTheorem113ToCorrectedTail",
       "path": "Proof/KoukTheorem113ToCorrectedTail.lean",
-      "sha256": "5340681d75fdfc60755d34c598397efbacf8ff6cb9950682d620311c93f9f87d",
+      "sha256": "1202ae84f047eb2f5fb9002272815b905cb35d25760c390207c80a704a6398d8",
       "bytes": 39171
     },
     {
@@ -7318,8 +7318,8 @@
     {
       "module": "KoukUniformRealEndpointPerronBound",
       "path": "Proof/KoukUniformRealEndpointPerronBound.lean",
-      "sha256": "ee94297bf8a95c269fe5dbf3ca55eeefd98aef727f1a8356ac9ff56ff27e2108",
-      "bytes": 44013
+      "sha256": "d6172a0188f2001ac384b4e6197baf74f6c0246b2bcac712f3a9b0221e53f5ee",
+      "bytes": 43916
     },
     {
       "module": "KoukWeierstrassGammaFactors",
@@ -7336,8 +7336,8 @@
     {
       "module": "L1L2PlancherelBridge",
       "path": "Proof/L1L2PlancherelBridge.lean",
-      "sha256": "f5876f4f43d410d2d3a3363c58bb57610880bd9e4968a633003768472aaea61e",
-      "bytes": 4194
+      "sha256": "08f89b7d761dc1b9eecd6d0a9ea8d12a195fe747559c6a3894e1693d34bcbf17",
+      "bytes": 4150
     },
     {
       "module": "LocalZeroCountSlice",
@@ -7450,14 +7450,14 @@
     {
       "module": "MAPDynamicHBPacketIndexedDataRefinedV3",
       "path": "Proof/MAPDynamicHBPacketIndexedDataRefinedV3.lean",
-      "sha256": "fa6177017f6471fd64d916522dad111cba3db34ff980a1f00704c072994008ec",
-      "bytes": 10125
+      "sha256": "dccafa5fc4b2319e770301671cfe74fc0d2c98c6508a9e91f67df7df95f7aa06",
+      "bytes": 10132
     },
     {
       "module": "MAPDynamicHBPacketIndexedDataV3",
       "path": "Proof/MAPDynamicHBPacketIndexedDataV3.lean",
-      "sha256": "ece077fd829ad0e2137e800c1769f3a37227ec643482c4716b1e5c68626c85c3",
-      "bytes": 9410
+      "sha256": "72672bb04855fedcda07ffa7f383c414b15d1f9a1aa96379df668edc7875574d",
+      "bytes": 9417
     },
     {
       "module": "MAPDynamicHBPacketPerronRefinedV3",
@@ -7564,14 +7564,14 @@
     {
       "module": "MAPFarRationalApproximation",
       "path": "Proof/MAPFarRationalApproximation.lean",
-      "sha256": "bee3c481e65c286ebf94729f502b62e4d1f705fedb0daafa6e42b6a1cb7815b2",
-      "bytes": 8036
+      "sha256": "1e59f0d7fb7a662e8cd3115a98018f8519aaf9d694f24b39193527ed40a24233",
+      "bytes": 8040
     },
     {
       "module": "MAPFarSourceWeldScaffold",
       "path": "Proof/MAPFarSourceWeldScaffold.lean",
-      "sha256": "6f241ecfc84b80df0fea947a68b6a0a03652cdf076c408ebabc789aae3fb4977",
-      "bytes": 12303
+      "sha256": "66520ac76efc66f4577bf88544a5d21b503cdc62b30795ce1b0979af1115b5fb",
+      "bytes": 12304
     },
     {
       "module": "MAPFinalDeterministicConnector",
@@ -7630,8 +7630,8 @@
     {
       "module": "MAPHBPerronSourceData",
       "path": "Proof/MAPHBPerronSourceData.lean",
-      "sha256": "6a9255c4b0d6b6481021bbbc03298f2d7f57bfe94f85c6443711fede87640317",
-      "bytes": 58266
+      "sha256": "b9f64b033b075c22a67f6398f3de154f56cb6b490c2887ea831f05ad648cc42c",
+      "bytes": 58332
     },
     {
       "module": "MAPHeathBrownFiniteIdentity",
@@ -7654,8 +7654,8 @@
     {
       "module": "MAPLiteralCutoffDual",
       "path": "Proof/MAPLiteralCutoffDual.lean",
-      "sha256": "ba1a66f599066d7deee7e6255c1d2d781317f77803e621460510a1ee89f878e6",
-      "bytes": 12200
+      "sha256": "931bce2e5e1c500182d5dd1600574d9c66eb61f7a5b7f8daea35b0232e0f655e",
+      "bytes": 12297
     },
     {
       "module": "MAPLiveEndpointPacketIndexedV3",
@@ -7678,8 +7678,8 @@
     {
       "module": "MAPNearOneBulkBypassConsumer",
       "path": "Proof/MAPNearOneBulkBypassConsumer.lean",
-      "sha256": "02ac3ba30d14b0f20a249bdb78ccf3bab89220e555a056f46c9a3c724e670664",
-      "bytes": 20562
+      "sha256": "b392d5aa9aa58e885f6de96ea40f7a2ee4ccd26bb82a573a8143ce139cf8754e",
+      "bytes": 20564
     },
     {
       "module": "MAPNearOneBulkBypassDensity",
@@ -7696,14 +7696,14 @@
     {
       "module": "MAPNearOneBulkBypassDetectorNonprincipal",
       "path": "Proof/MAPNearOneBulkBypassDetectorNonprincipal.lean",
-      "sha256": "49baa58e2d4cdf17199837ff751bf2356e0e05fcf196da30046f130204b77352",
-      "bytes": 23279
+      "sha256": "33b24fc088bea97865e83d4d9bcea6c53db1a02a3b3ac8a1ef04103b05d54f19",
+      "bytes": 23280
     },
     {
       "module": "MAPNearOneBulkBypassDetectorPrincipal",
       "path": "Proof/MAPNearOneBulkBypassDetectorPrincipal.lean",
-      "sha256": "373150dba3eb523d3dd9d2b6f551364f3413d9edbc723ef92cd6587a9dddf4cf",
-      "bytes": 19519
+      "sha256": "8125e7aaccf304a50f79d95c2efc7384224858dac38e0d226dfe26b8b5b07b8f",
+      "bytes": 19520
     },
     {
       "module": "MAPNearOneBulkBypassDetectorPrincipalFinite",
@@ -7720,14 +7720,14 @@
     {
       "module": "MAPNearOneBulkBypassGappedConsumer",
       "path": "Proof/MAPNearOneBulkBypassGappedConsumer.lean",
-      "sha256": "8ba1dda9bb48ff54f81d022bfe5143f4fedfae67ef067574be0044e7f8e7820d",
-      "bytes": 22283
+      "sha256": "418f5f3c0a1078a89650290e3cdafac198b5fd31d6213c87e1afc2f4bf135dce",
+      "bytes": 22285
     },
     {
       "module": "MAPNearOneBulkBypassGappedConsumerWeakTheta",
       "path": "Proof/MAPNearOneBulkBypassGappedConsumerWeakTheta.lean",
-      "sha256": "66a78b69b78e2f7581d5fe3a19dd48fd66ea1cbd7f60f77f396040ad78a27004",
-      "bytes": 26618
+      "sha256": "c45337092443824ebaecd9ea03a975ae79a9a9ed1298714de38449ba0cef6b9e",
+      "bytes": 26621
     },
     {
       "module": "MAPNearOneBulkBypassInterface",
@@ -7744,8 +7744,8 @@
     {
       "module": "MAPPacketIndexedFarBudgetConsumerV2",
       "path": "Proof/MAPPacketIndexedFarBudgetConsumerV2.lean",
-      "sha256": "f3ef3e354717d20bdf4ee5cc799918e0ba33758c40596c94fb42d12aef30eebd",
-      "bytes": 3700
+      "sha256": "5e6f1ec8206404008804527805dc35b0780d447019d2403236f31934accd310b",
+      "bytes": 3701
     },
     {
       "module": "MAPPacketIndexedFarSourceV2",
@@ -7786,8 +7786,8 @@
     {
       "module": "MAPPrimitiveRegularHighSavingFixedTheta",
       "path": "Proof/MAPPrimitiveRegularHighSavingFixedTheta.lean",
-      "sha256": "28775ed94b0642273ed2e213d88c6103fc3ecff8f793302a23828f317e77e7d7",
-      "bytes": 6688
+      "sha256": "98001d9cb153fdbf206c564e2b90a547ad5757b0a0423652b6130cc3201b4707",
+      "bytes": 6689
     },
     {
       "module": "MAPQ4Bridge",
@@ -7816,8 +7816,8 @@
     {
       "module": "MAPSmallRemainderMassBudgetV3",
       "path": "Proof/MAPSmallRemainderMassBudgetV3.lean",
-      "sha256": "a08990fb5fc256a64abc9b9e3a8218ac536fcdd9b8f9cd2b30efe9b9b44bfcc9",
-      "bytes": 43041
+      "sha256": "11f773ffd0be67b31e1b309f6feb8f8e66231dd2d1f76300eac0290b7d33203e",
+      "bytes": 43007
     },
     {
       "module": "MAPSmallRemainderTermwiseFifthV3",
@@ -7888,8 +7888,8 @@
     {
       "module": "MRTCorollary25MAPInstantiation",
       "path": "Proof/MRTCorollary25MAPInstantiation.lean",
-      "sha256": "4f496e51439771f6ba79b358bce13f3256587ad6f7e3d0e4f74de26144bbf608",
-      "bytes": 15472
+      "sha256": "ae2bbed22cc300171083fee89b3eb246f2f488ec12cb5c824499e680e3df08d1",
+      "bytes": 15629
     },
     {
       "module": "MRTCorollary25MinSum",
@@ -7900,8 +7900,8 @@
     {
       "module": "MRTCorollary25Minkowski",
       "path": "Proof/MRTCorollary25Minkowski.lean",
-      "sha256": "8cb5908efe7dd4924f520291fa8ad8e8bcf19f2d820d2c0780450065bf562837",
-      "bytes": 30242
+      "sha256": "1b496784274e238734e87e653a928a8b5baa4360dce14e7df7275f0641ce7ab3",
+      "bytes": 30414
     },
     {
       "module": "MRTCorollary25PerronCore",
@@ -7954,8 +7954,8 @@
     {
       "module": "MRTCorollary53SourceBridge",
       "path": "Proof/MRTCorollary53SourceBridge.lean",
-      "sha256": "c6623f5da4debafd9d108b0b78274ea66b58a64138aae061ab51abe33fa1e282",
-      "bytes": 37732
+      "sha256": "0fd56c032c6308e4fca17da1f108eea8a7ea40b8ddd0704c5a30ec5517f3121b",
+      "bytes": 37841
     },
     {
       "module": "MRTDynamicD12ActiveCanonicalLedger",
@@ -7996,8 +7996,8 @@
     {
       "module": "MRTDynamicD12CanonicalElementary",
       "path": "Proof/MRTDynamicD12CanonicalElementary.lean",
-      "sha256": "daafd4640dd31116098f86527bf71a04bc98552b2e6aa470eb21f67c2a136793",
-      "bytes": 3064
+      "sha256": "ff65f292cd38a6893f60b26ec9cbbd78c5a1d738764bc85dcaaf82b503c22c05",
+      "bytes": 3065
     },
     {
       "module": "MRTDynamicD12CanonicalPerBagThreeTerm",
@@ -8008,8 +8008,8 @@
     {
       "module": "MRTDynamicD12CanonicalProducer",
       "path": "Proof/MRTDynamicD12CanonicalProducer.lean",
-      "sha256": "abe40b156c61cb1dccde8c973cebfad6e61e8472f81fc3fde22c977ffcc11d1f",
-      "bytes": 18158
+      "sha256": "0d04ebe6af8263f62dac324f509780859ffe4f0504cf1fa3d905d49dfefcbb10",
+      "bytes": 18169
     },
     {
       "module": "MRTDynamicD12CanonicalScalarEnvelope",
@@ -8068,8 +8068,8 @@
     {
       "module": "MRTDynamicD12ContinuumSampling",
       "path": "Proof/MRTDynamicD12ContinuumSampling.lean",
-      "sha256": "946818c59f418cdc8ff7d3ef0be18cce0819cbe5e622179b28a3cf3ad68585c1",
-      "bytes": 9659
+      "sha256": "76c9c5fdb94ce672f5a6c812e1e5147c851272ecffad8f988c87e6f4cc767951",
+      "bytes": 9641
     },
     {
       "module": "MRTDynamicD12ContinuumSmooth",
@@ -8092,8 +8092,8 @@
     {
       "module": "MRTDynamicD12FactorExtraction",
       "path": "Proof/MRTDynamicD12FactorExtraction.lean",
-      "sha256": "fd74d25817c4d0c3935c9927d04217e0ee67ae14838e4b4f9eceadf2254c1127",
-      "bytes": 8228
+      "sha256": "accc82fa990814aecdfbaf31814d305a5449d9ae17ecf266be4019059629111f",
+      "bytes": 8227
     },
     {
       "module": "MRTDynamicD12FullMoment",
@@ -8110,8 +8110,8 @@
     {
       "module": "MRTDynamicD12GlobalScalarBridgeV3",
       "path": "Proof/MRTDynamicD12GlobalScalarBridgeV3.lean",
-      "sha256": "6bfb1becab5add76c1b7c0d601a9f3daead4297994a108342199fa59bf77949d",
-      "bytes": 15162
+      "sha256": "605e0f843827a0c44907a159c4c06bb1fc439efa0c5f6f70053141abece90d77",
+      "bytes": 15169
     },
     {
       "module": "MRTDynamicD12LiteralMass",
@@ -8146,8 +8146,8 @@
     {
       "module": "MRTDynamicD12ParameterPackage",
       "path": "Proof/MRTDynamicD12ParameterPackage.lean",
-      "sha256": "c39fd95c4600a1a5d35271723e180bccf174fc5b35940b08c1fc63947aa6ff6d",
-      "bytes": 18580
+      "sha256": "b54255b21f1f591d49aa0d3539c1790d79081eebe52aa6a2d76a1c59ddf5794e",
+      "bytes": 18586
     },
     {
       "module": "MRTDynamicD12PerBagLedger",
@@ -8170,8 +8170,8 @@
     {
       "module": "MRTDynamicD12PolynomialFactorization",
       "path": "Proof/MRTDynamicD12PolynomialFactorization.lean",
-      "sha256": "7421b04a665797d3ab82b8151f88ad2f86578af761b01e72872c8d0ce528d837",
-      "bytes": 11073
+      "sha256": "705020c740c9feac0e2d8817ef6e43aee9fc9dfbd52ddb5dd79a0529be2a9a6c",
+      "bytes": 11074
     },
     {
       "module": "MRTDynamicD12ScalarAbsorptionV3",
@@ -8236,19 +8236,19 @@
     {
       "module": "MRTEquation77",
       "path": "Proof/MRTEquation77.lean",
-      "sha256": "69d36ed68dcdb3f9710fb24f8dd03b71b5cd43a417fbdd03341558d42960c83b",
-      "bytes": 7577
+      "sha256": "057ef1ce41d05be3d9f6b5c964305779c26b632506eb30a470f58079ec04ea54",
+      "bytes": 7578
     },
     {
       "module": "MRTEquation79PacketBilinearCore",
       "path": "Proof/MRTEquation79PacketBilinearCore.lean",
-      "sha256": "9fdb91b167b4242dee6ff5804d190a9de6a5574907a0deb49540ac291ad3262f",
-      "bytes": 8345
+      "sha256": "4caf7427aab38aeb80ec32fdf229df21a1eeaaebd755b75ecb4b6fe97b435b63",
+      "bytes": 8346
     },
     {
       "module": "MRTEquation81",
       "path": "Proof/MRTEquation81.lean",
-      "sha256": "c51c9fdd41549605c37762eef75a8ad737ebeb863224455bed3ba4f0ccaa2815",
+      "sha256": "d2ef4b2cc098c0eafd8443475e536eb062b386e625ab6cbd60058bb1bc27025b",
       "bytes": 2353
     },
     {
@@ -8260,8 +8260,8 @@
     {
       "module": "MRTEquation81AveragingBilinear",
       "path": "Proof/MRTEquation81AveragingBilinear.lean",
-      "sha256": "ba238ea437202884feaa6898b90a0c8f10e8da44d436e49b628630724aa59b41",
-      "bytes": 12732
+      "sha256": "3da4d3b302aea06a5d0583d2f222e5e19b2da90bb1ec1348f3309546667f5d54",
+      "bytes": 12889
     },
     {
       "module": "MRTEquation81Kernel",
@@ -8296,14 +8296,14 @@
     {
       "module": "MRTFaithfulEquation79LocalizedBilinear",
       "path": "Proof/MRTFaithfulEquation79LocalizedBilinear.lean",
-      "sha256": "eedb6bbc3b08c93628265c977f4c210bdf2c904d1de794bd7ec50af605abd700",
-      "bytes": 31948
+      "sha256": "9e6d33686890601aa8a4c0f2f9aa0c5d74aa1c81a4bddb882427349f161cbf80",
+      "bytes": 31942
     },
     {
       "module": "MRTFaithfulEquation81Weld",
       "path": "Proof/MRTFaithfulEquation81Weld.lean",
-      "sha256": "885397d04176f194ce093fd32f9cdb67492b858a776049107e9c0e9d112f58c3",
-      "bytes": 6001
+      "sha256": "11d08d7cf19d8aa9b2d1c3150ce5d54c249bcd7d0e93b355e3be9da1f562f745",
+      "bytes": 6017
     },
     {
       "module": "MRTFaithfulEquation82",
@@ -8314,8 +8314,8 @@
     {
       "module": "MRTFaithfulHighProjection",
       "path": "Proof/MRTFaithfulHighProjection.lean",
-      "sha256": "445238f00f08a52e78ce651b7b197f49be47af3878f4cd3dbd2bbc8f0c8aaa12",
-      "bytes": 27907
+      "sha256": "62ad06565fd8113928044f32328532862ade3df020cb315f97b2ff0122c1b48f",
+      "bytes": 27960
     },
     {
       "module": "MRTFaithfulLowEstimate",
@@ -8326,8 +8326,8 @@
     {
       "module": "MRTFaithfulLowHalfRangeIBP",
       "path": "Proof/MRTFaithfulLowHalfRangeIBP.lean",
-      "sha256": "82979ab7504a00c374a430c2139057a211c58995884acb60a8ede1ed4fdcd33f",
-      "bytes": 20589
+      "sha256": "ee44806529573541432bd776616e40fabdfc8cdfb8e6c9fd37be4507254f5706",
+      "bytes": 20723
     },
     {
       "module": "MRTFaithfulLowPage47Geometry",
@@ -8350,8 +8350,8 @@
     {
       "module": "MRTFaithfulLowTonelli",
       "path": "Proof/MRTFaithfulLowTonelli.lean",
-      "sha256": "5e66fa79403197b2c9ee3d432c10aede3ebce0b8631b33fe765b23baac00f29c",
-      "bytes": 13043
+      "sha256": "d5abf064d3cc2d9e51a9ab70f7e60d846f5ec421dc1f73102ed6b14e659253d6",
+      "bytes": 13075
     },
     {
       "module": "MRTFaithfulLowTonelliSwap",
@@ -8374,8 +8374,8 @@
     {
       "module": "MRTFaithfulSmoothCutoff",
       "path": "Proof/MRTFaithfulSmoothCutoff.lean",
-      "sha256": "45b4f16015fd2673160670d0fe9398f22bdf7f61371a27b2f9941a338616e770",
-      "bytes": 8780
+      "sha256": "19b783ad4e25c8120a418191534b00774eff73e9f641fe71add1a49bbb9f7ffd",
+      "bytes": 8799
     },
     {
       "module": "MRTFaithfulSmoothCutoffBudgets",
@@ -8386,26 +8386,26 @@
     {
       "module": "MRTLemma210DyadicMeanSquare",
       "path": "Proof/MRTLemma210DyadicMeanSquare.lean",
-      "sha256": "cc989ca54c0810b7da7d04a65348febbaf1a0ee2c4c1ff35e85ab9535938df97",
-      "bytes": 19087
+      "sha256": "842fd763f55f16bfa873e296e2897274c4b5b14d74ebb639ac9817c7272c8712",
+      "bytes": 19144
     },
     {
       "module": "MRTLemma210OrthogonalityReduction",
       "path": "Proof/MRTLemma210OrthogonalityReduction.lean",
-      "sha256": "b0236799580d7795ae19168fad4645894210a6ad8c776f92f67b3226790a5a45",
-      "bytes": 6070
+      "sha256": "51dce456c4f2ea3a8e873ab7ce2a1b3aa0c98e138186c3a8438bbb68697276fa",
+      "bytes": 6127
     },
     {
       "module": "MRTLemma210SameResidueHilbert",
       "path": "Proof/MRTLemma210SameResidueHilbert.lean",
-      "sha256": "4b9e79f0f3d5b7feb823f1c51838fd6f6fc2324950abc2261a9a3a7cf25bae0b",
-      "bytes": 25018
+      "sha256": "adf8e1bdb3dd5cfbf8d8a2edcd4c17674b6efd6b5738fc20007a3cf0ee168688",
+      "bytes": 25001
     },
     {
       "module": "MRTLemma211AllCharacterSource",
       "path": "Proof/MRTLemma211AllCharacterSource.lean",
-      "sha256": "d42e15b28a62e50d4ceb588ba76d7315734724a1451bf19646692cbb33a1c0e0",
-      "bytes": 51513
+      "sha256": "53923595007197d6c800d6edbc917db704c8720d4b5b8b36ccaabd3094060a43",
+      "bytes": 51512
     },
     {
       "module": "MRTLemma215ComplementDyadicV3",
@@ -8416,8 +8416,8 @@
     {
       "module": "MRTLemma215DyadicPartition",
       "path": "Proof/MRTLemma215DyadicPartition.lean",
-      "sha256": "0a7735bf9fe20793682404f592aa23f23b0eca1149e157f018bddf8a1aca92a0",
-      "bytes": 12780
+      "sha256": "37f06b53198ee0cd6a45d930c9872697fca0862bcc61e953aa91aa6f5b7647cb",
+      "bytes": 12811
     },
     {
       "module": "MRTLemma215DynamicClassificationV3",
@@ -8434,8 +8434,8 @@
     {
       "module": "MRTLemma215DynamicFactorExtractionV3",
       "path": "Proof/MRTLemma215DynamicFactorExtractionV3.lean",
-      "sha256": "054c705030dd1af2e6bac3cd9bc204d3991af26e1494bf29ab035028bd069464",
-      "bytes": 29975
+      "sha256": "5c044c575733a6d62c0151324ff949a88518a9319ef5d0879ad11c38adae64bd",
+      "bytes": 29949
     },
     {
       "module": "MRTLemma215DynamicHighCellPruningV3",
@@ -8488,8 +8488,8 @@
     {
       "module": "MRTLemma215DynamicHighParameterScalesV3",
       "path": "Proof/MRTLemma215DynamicHighParameterScalesV3.lean",
-      "sha256": "88086f31d22144de867f868402957996d6d910a840c9485bc450669f3a8f642d",
-      "bytes": 2932
+      "sha256": "7c92331e1611c766378bb9bea9819f11b4231a20e8e06d73cefee506ad30e582",
+      "bytes": 2950
     },
     {
       "module": "MRTLemma215DynamicHighPointwiseV3",
@@ -8500,8 +8500,8 @@
     {
       "module": "MRTLemma215DynamicHighProvenanceV3",
       "path": "Proof/MRTLemma215DynamicHighProvenanceV3.lean",
-      "sha256": "4d9255f8dc5fb4ce886548fb4194c5de8f1f0d38eb2befcdf52d251aa603e9f8",
-      "bytes": 7248
+      "sha256": "15da8a8a776ec8139ee1b693ce4ea39be5dc9215977059e66f7144894d5ba936",
+      "bytes": 7250
     },
     {
       "module": "MRTLemma215DynamicHighSharpCoefficientBoundV3",
@@ -8512,8 +8512,8 @@
     {
       "module": "MRTLemma215DynamicHighUniformScaledCoefficientsV3",
       "path": "Proof/MRTLemma215DynamicHighUniformScaledCoefficientsV3.lean",
-      "sha256": "7d194712b081dd038e9f8c2e553f45985c7e511b59a5e3d6bb133b972ff8b8e9",
-      "bytes": 8076
+      "sha256": "09f3536da1d756febf1e19cc47bd0cc2d625b59f48ffaf1f1b0bf1bcc66a9af3",
+      "bytes": 8077
     },
     {
       "module": "MRTLemma215DynamicHighUniformUnscaledV3",
@@ -8548,8 +8548,8 @@
     {
       "module": "MRTLemma215DynamicPacketSourceBoundRefinedV3",
       "path": "Proof/MRTLemma215DynamicPacketSourceBoundRefinedV3.lean",
-      "sha256": "6afcc72c3d60387f4edc4a3a1ff78cb54de0374f55536c56df01d41fae18c7ba",
-      "bytes": 7422
+      "sha256": "c4a34e0fc4580c0ed7a9a76d8533ad12990ee517e70d9984646fdec393f3490c",
+      "bytes": 7423
     },
     {
       "module": "MRTLemma215DynamicPacketSourceBoundV3",
@@ -8566,8 +8566,8 @@
     {
       "module": "MRTLemma215DynamicRegroupingV3",
       "path": "Proof/MRTLemma215DynamicRegroupingV3.lean",
-      "sha256": "32ce5bedb5cb7194b1ced0e8257c8ec1009985095c20fac044409e341b33f654",
-      "bytes": 15012
+      "sha256": "5459ce47b8a4abf63e6d6c6e3ebbb3c86cf5bae9201ff42918e4953a6db94f37",
+      "bytes": 15034
     },
     {
       "module": "MRTLemma215DynamicSupportV3",
@@ -8590,8 +8590,8 @@
     {
       "module": "MRTLemma215DynamicTypeIIDivisorLogV3",
       "path": "Proof/MRTLemma215DynamicTypeIIDivisorLogV3.lean",
-      "sha256": "a974475e0fb1c7de9e0ef0343abd394d63870b08a274a7a89bcbf6603471f67b",
-      "bytes": 11955
+      "sha256": "68dbc64f20a22c6339d7d61ad030d921744688901257fb2f460e90efeed2adea",
+      "bytes": 11956
     },
     {
       "module": "MRTLemma215DynamicTypeIIDyadicV3",
@@ -8602,8 +8602,8 @@
     {
       "module": "MRTLemma215DynamicTypeIIFactorizationV3",
       "path": "Proof/MRTLemma215DynamicTypeIIFactorizationV3.lean",
-      "sha256": "3f3d3c7bb9afca53d97a63152febb7b000b52e3484b44b15a525ba8a555e967a",
-      "bytes": 9075
+      "sha256": "148bc37328695ea7bc78055cfab67476c6d913c00643b5a38b821a8a1313272c",
+      "bytes": 9074
     },
     {
       "module": "MRTLemma215DynamicTypeIIFiniteEnvelopeV3",
@@ -8686,8 +8686,8 @@
     {
       "module": "MRTLemma29Counterexample",
       "path": "Proof/MRTLemma29Counterexample.lean",
-      "sha256": "8c068e19e6ab1e70e90e0d46fd2f9fec80752a2242e3b89252d1673a8017e9a8",
-      "bytes": 5586
+      "sha256": "d49ec04ace6b9296234bbb64a17545df5d3372239d29b83f695e73ed1aadbbed",
+      "bytes": 5580
     },
     {
       "module": "MRTLemma29FiniteFourier",
@@ -8752,8 +8752,8 @@
     {
       "module": "MRTOffDiagonalPhase",
       "path": "Proof/MRTOffDiagonalPhase.lean",
-      "sha256": "11636b9dbccf0ec7a7d70942c011de7525e41f6d2621a9d41a6fb0417b6c5b5b",
-      "bytes": 6619
+      "sha256": "f627c9e99b2cfc46aaa0403b7c53764ffaa957522db41c2678492f86c3a4ab2e",
+      "bytes": 6892
     },
     {
       "module": "MRTOffDiagonalTwoIBP",
@@ -8776,14 +8776,14 @@
     {
       "module": "MRTPacketEnergy",
       "path": "Proof/MRTPacketEnergy.lean",
-      "sha256": "84791a31828d60d6c2723e2495122a6ec1986a67e6eac3fe4d2e98486b07c652",
-      "bytes": 5970
+      "sha256": "d4792839abcf9fc0d469c37a9f10263c3ed8188920d8d3057fc6fbe30145bcfd",
+      "bytes": 5986
     },
     {
       "module": "MRTPacketEquation82",
       "path": "Proof/MRTPacketEquation82.lean",
-      "sha256": "cf0c787d845cba932d657411e65eb14acb7c26a8bbb161380b526495bc54469a",
-      "bytes": 6592
+      "sha256": "c5eba896bc35461814a7079dfc721fd63c8b24b3148ec8bbf5cdb3250aab95d5",
+      "bytes": 6611
     },
     {
       "module": "MRTPacketEquation82LargeThreshold",
@@ -8812,8 +8812,8 @@
     {
       "module": "MRTProposition51FirstAnalytic",
       "path": "Proof/MRTProposition51FirstAnalytic.lean",
-      "sha256": "785b272fe0b3cd0392f1617bd05176cfcadab9711cab33c866d20b7af27a570a",
-      "bytes": 22158
+      "sha256": "97ab20cc7cf9ad15896ded0dbcacf29dc3a95fe0ce9f4cb6842b939078f2b65d",
+      "bytes": 22177
     },
     {
       "module": "MRTProposition51HardBranch",
@@ -8842,8 +8842,8 @@
     {
       "module": "MRTProposition51ProjectionLowAmplitude",
       "path": "Proof/MRTProposition51ProjectionLowAmplitude.lean",
-      "sha256": "c6ca0c483dad748794955e6ff3b66aa576e8b1b7f09233f799c6131d39562547",
-      "bytes": 5925
+      "sha256": "b9454188fc773615af7ab76292ed6f85e0d6cbe3e9c6776b243a557e969c2bde",
+      "bytes": 6154
     },
     {
       "module": "MRTProposition51ProjectionLowBudgets",
@@ -8860,14 +8860,14 @@
     {
       "module": "MRTProposition51ProjectionOneIBP",
       "path": "Proof/MRTProposition51ProjectionOneIBP.lean",
-      "sha256": "e6b33fa1a63112e4b233d66a7230d8f5d074848583c76c6da635b877a682cbbb",
-      "bytes": 6758
+      "sha256": "94f756da643a1b75d8843f0538481701dc08b7880cb2e21746033974fdd42534",
+      "bytes": 6793
     },
     {
       "module": "MRTProposition51SmoothDualityWeld",
       "path": "Proof/MRTProposition51SmoothDualityWeld.lean",
-      "sha256": "a63cd1973e83b457c06b5532aae87b449d47cc61e4fe09fb3864d4cc9217af7e",
-      "bytes": 13445
+      "sha256": "d1fb7f404a1cf1101beba2541bfe9cc98a246c9afeaed51b0ffc633ec4fef5d0",
+      "bytes": 13520
     },
     {
       "module": "MRTProposition51SmoothGallagher72",
@@ -8890,8 +8890,8 @@
     {
       "module": "MRTProposition61D12OnlyUniformCertificateV3",
       "path": "Proof/MRTProposition61D12OnlyUniformCertificateV3.lean",
-      "sha256": "89539f7688cd27208d37a969b20309fa445692f52f34b85a3692e74cae82766d",
-      "bytes": 11638
+      "sha256": "2b261e1d854b7f7a69a6ea6f32facaea69eeae9bf21f1cccc9999101f5560c25",
+      "bytes": 11648
     },
     {
       "module": "MRTProposition61HighActiveCountBudgetV3",
@@ -8908,8 +8908,8 @@
     {
       "module": "MRTProposition61HighActivePacketDataV3",
       "path": "Proof/MRTProposition61HighActivePacketDataV3.lean",
-      "sha256": "e0e88659e24aa071fcd7d89d9abb4112ba44607e2a598fe39da2fe4c6665c21e",
-      "bytes": 11606
+      "sha256": "5cd43b95aaad09f8af9af80f06cd4364734c3153b8388dd5abf93d0a85820af6",
+      "bytes": 11608
     },
     {
       "module": "MRTProposition61HighAdoptedThirtiethV3",
@@ -8944,8 +8944,8 @@
     {
       "module": "MRTProposition61HighGeometricSavingsV3",
       "path": "Proof/MRTProposition61HighGeometricSavingsV3.lean",
-      "sha256": "a6e4eea108746bdb05f2cc76424a1e11ace206d870eae3fd1d7b45b4969ac955",
-      "bytes": 3332
+      "sha256": "6deb375f1ffa36699ba0b14715899c21c6020e2595cefb1d45ce23cde448b569",
+      "bytes": 3333
     },
     {
       "module": "MRTProposition61HighParameterLedgerV3",
@@ -8968,8 +8968,8 @@
     {
       "module": "MRTProposition61HighUniformBridgeInstantiationV3",
       "path": "Proof/MRTProposition61HighUniformBridgeInstantiationV3.lean",
-      "sha256": "386c15c69d06259f390811f154a8df970b531842c91af16d59724860d51bdddd",
-      "bytes": 8491
+      "sha256": "9c304a68c0fac694e448ee46c26336318a6c911db44a57166663992d56215405",
+      "bytes": 8496
     },
     {
       "module": "MRTProposition61HighUniformScaledMixedV3",
@@ -9106,8 +9106,8 @@
     {
       "module": "MRTProposition61TypeIIParameterAbsorptionV3",
       "path": "Proof/MRTProposition61TypeIIParameterAbsorptionV3.lean",
-      "sha256": "5505f1928351a1010743626da2596f2a1e18e154c54b1194ba2a7356514ef89a",
-      "bytes": 9373
+      "sha256": "908acc9e50b8352426eff1c2fdec304c36c7ae2f5ead868ad70823dd7a606dcd",
+      "bytes": 9374
     },
     {
       "module": "MRTProposition61TypeIIPolylogBudgetV3",
@@ -9130,8 +9130,8 @@
     {
       "module": "MRTSchurTest",
       "path": "Proof/MRTSchurTest.lean",
-      "sha256": "4781fa41dfd0a6960f8dc84d14b80e376502f5f4a485f8220797f457dcfc5e2c",
-      "bytes": 4742
+      "sha256": "3436d11822bf60358a378d912d71d78f08a3212179db5e2c64080df79a3427d4",
+      "bytes": 4740
     },
     {
       "module": "MRTSourceBaseApertureOuterCutoffWeld",
@@ -9166,8 +9166,8 @@
     {
       "module": "MRTSourceLowerCollarOffResonanceBudget",
       "path": "Proof/MRTSourceLowerCollarOffResonanceBudget.lean",
-      "sha256": "23ce5986b7de1d81ea9a73153a3e8115e32d16c4ee4c9cd074d4ba14b2ddbc5f",
-      "bytes": 8318
+      "sha256": "a2a39b571a9cd08da4d9b05f14310c2fbf8ef1439a297986e82e65a8eb317c26",
+      "bytes": 8397
     },
     {
       "module": "MRTSourceLowerCollarOffResonanceCell",
@@ -9232,8 +9232,8 @@
     {
       "module": "MRTSourceOuterCutoffEndpoint",
       "path": "Proof/MRTSourceOuterCutoffEndpoint.lean",
-      "sha256": "a25ea23830b0909fc1796d97955d86697506939cd1c56d70f85e80b0805aa04e",
-      "bytes": 11312
+      "sha256": "9014ffdc617cde8d70a2610c671dacc0d31a80994d90055a2f767890f73a1d8f",
+      "bytes": 11299
     },
     {
       "module": "MRTSourcePacketAmplitudeBudgets",
@@ -9244,8 +9244,8 @@
     {
       "module": "MRTSourcePacketAmplitudeC2",
       "path": "Proof/MRTSourcePacketAmplitudeC2.lean",
-      "sha256": "93dcf23d0d8ed6a477b535d34833444d884327d141c5cdc730519bab81a172d4",
-      "bytes": 6996
+      "sha256": "b144ba7f8500c8c8793bb384bdf72bd4d4ca6656d6a6893a673a726660e48382",
+      "bytes": 7049
     },
     {
       "module": "MRTSourcePacketAmplitudeC2Budget",
@@ -9316,20 +9316,20 @@
     {
       "module": "MRTVanDerCorput",
       "path": "Proof/MRTVanDerCorput.lean",
-      "sha256": "ff04ca3a43b98dfb507f5c8b2211462144ff6ed419bb6e53667f3a398f4a13c4",
-      "bytes": 20239
+      "sha256": "e570b7175c9f9630168b54e9dc626b1023b400cf4e9a7085bb7e538d48f5028f",
+      "bytes": 20375
     },
     {
       "module": "MRTVanDerCorputCore",
       "path": "Proof/MRTVanDerCorputCore.lean",
-      "sha256": "1828eaa96066c51d22cd381617a29d71397cbff6223ffae520f99f1f3057f600",
-      "bytes": 23821
+      "sha256": "f2b6bc7a8508c3b45ed00d391be078275611c2375cdfd6a9b9356130e70dace0",
+      "bytes": 23822
     },
     {
       "module": "MRTWholeLineCutoffAutocorrelation",
       "path": "Proof/MRTWholeLineCutoffAutocorrelation.lean",
-      "sha256": "b1993e0f499eade8d87aed87027133eaf96f7d02c9055f24d6e85da932edce7a",
-      "bytes": 13225
+      "sha256": "7f2dfc03fa9d98d4e4d3613e537af78f43f5309f3af7b51371a7360479554a66",
+      "bytes": 13534
     },
     {
       "module": "MRTWholeLineEq83Parallel",
@@ -9364,20 +9364,20 @@
     {
       "module": "MRTWholeLineEquation81FromEquation82",
       "path": "Proof/MRTWholeLineEquation81FromEquation82.lean",
-      "sha256": "bce53542443e2f3496c288d14bfdac1aa35ce26dfe5cce27905a9320f5dde761",
+      "sha256": "522baa96b0607fd546de704534a46ef5354253bcb6d32c5572523254c7ff9f50",
       "bytes": 3911
     },
     {
       "module": "MRTWholeLineHighCellEquation84",
       "path": "Proof/MRTWholeLineHighCellEquation84.lean",
-      "sha256": "4b0e5424a14127df9a6defbc01511a705a55f1327b21dfcaa728aeab8d012018",
-      "bytes": 13316
+      "sha256": "76960ba9b174c152c8fcbe3da9661d86472f61a752be8ae3310d924e569fa309",
+      "bytes": 13356
     },
     {
       "module": "MRTWholeLineOffDiagonalAmplitude",
       "path": "Proof/MRTWholeLineOffDiagonalAmplitude.lean",
-      "sha256": "bd9f2ae41c2edc74568baa5a9600e6a6635de0b0f80ce64e3b0ac95608c580d3",
-      "bytes": 38061
+      "sha256": "81b9654b3b49595971c39ea40b33f949e4094e9e61f83ef37432d7e47a63956f",
+      "bytes": 38211
     },
     {
       "module": "MRTWholeLineOffDiagonalAmplitudeL1",
@@ -9412,8 +9412,8 @@
     {
       "module": "MRTWholeLinePacketFubini",
       "path": "Proof/MRTWholeLinePacketFubini.lean",
-      "sha256": "8deb312e264b801eb727c7c404f1e043f3dcaac713a0e90e1384f0dd23781881",
-      "bytes": 27674
+      "sha256": "fbacbdb07bb0f2cfdf5fb783f17bda0df2b7c1a3648383a70b1156aa0122ab3a",
+      "bytes": 27663
     },
     {
       "module": "MRTWholeLinePacketHardCorrelation",
@@ -9454,14 +9454,14 @@
     {
       "module": "MajorArcIntegratedError",
       "path": "Proof/MajorArcIntegratedError.lean",
-      "sha256": "d1cdc1a912c8d573842ebad5a42b9a869dc566f79c545844b90aecd616b38475",
-      "bytes": 12626
+      "sha256": "49ae4e7fcb6fc46c566bd3dde92830bf13c4debd0fff242e1da16fbb4c93a2a0",
+      "bytes": 12650
     },
     {
       "module": "MajorArcIntegratedPowerWeld",
       "path": "Proof/MajorArcIntegratedPowerWeld.lean",
-      "sha256": "a0b741d05a61ba225a49eccdc07d5c850449db95738c19ac5d358be4541312d9",
-      "bytes": 10088
+      "sha256": "73b412055dbc7df0349ba9e195e0805c3b160ad783f7149d2e26a7a17968eb63",
+      "bytes": 10089
     },
     {
       "module": "MajorArcMaskGeometry",
@@ -9478,8 +9478,8 @@
     {
       "module": "MajorArcPublicLiftBridge",
       "path": "Proof/MajorArcPublicLiftBridge.lean",
-      "sha256": "8f75cf579423ba85e13ece32310a9a0948854c96c26529dda9613d76f8d64f5a",
-      "bytes": 14833
+      "sha256": "b2f2c27e4cf2f8cd4300819f93d11bfcf80f246cc885e6fed51bb40f441d9958",
+      "bytes": 14882
     },
     {
       "module": "McCurleyHighImaginaryBridge",
@@ -9508,8 +9508,8 @@
     {
       "module": "MertensAnalyticLeaf",
       "path": "Proof/MertensAnalyticLeaf.lean",
-      "sha256": "b9b093e0282e02ef19375bb3634cc95a8de328bdf79022cd890c56019eff8839",
-      "bytes": 17545
+      "sha256": "e306b96178687840e786b531e1ea8bf30626391af204f5716e297e82f847e901",
+      "bytes": 18060
     },
     {
       "module": "MixedMeanFrontend",
@@ -9520,8 +9520,8 @@
     {
       "module": "MixedMeanMajorantWeld",
       "path": "Proof/MixedMeanMajorantWeld.lean",
-      "sha256": "8f3d35fab71347201ac9f661749121d642c64c934769082f421867e0ae20f6a2",
-      "bytes": 48057
+      "sha256": "c98e0794b858edf03eeaf96523329f50b070d5442ad925508efd28d960de5574",
+      "bytes": 48082
     },
     {
       "module": "MixedMellinCert",
@@ -9610,14 +9610,14 @@
     {
       "module": "MontgomeryFullScalePrincipalDensity",
       "path": "Proof/MontgomeryFullScalePrincipalDensity.lean",
-      "sha256": "c0ea7c0f533fb8cd5cb6a379ace203b36595e05d7f7cb6d47346f929b436800f",
-      "bytes": 6779
+      "sha256": "93048738debb6a332964815ebd92e0f1971fce1672c3e01d6845aa80535e1648",
+      "bytes": 6780
     },
     {
       "module": "MontgomeryFullScaleTypeI",
       "path": "Proof/MontgomeryFullScaleTypeI.lean",
-      "sha256": "48940ac5c9ea6af91102651bb5a42f585ceb53629f41480fb6d8a61991dbac4e",
-      "bytes": 4981
+      "sha256": "131f6d45785087b00e34eaeba05454ebc7642a92d85e94ed86064a2b679e5ee0",
+      "bytes": 4982
     },
     {
       "module": "MontgomeryFullScaleTypeIFamily",
@@ -9664,8 +9664,8 @@
     {
       "module": "MontgomeryLowStripContinuousTypeII",
       "path": "Proof/MontgomeryLowStripContinuousTypeII.lean",
-      "sha256": "9fc7b71fb6c7aa0ec813e9bf4228d78899f4ed589dc75d0fa3de4f099967edd6",
-      "bytes": 25985
+      "sha256": "695ff979477450f2e1035fe70b41a6913a089f784182359d91dcf35e70e1e6f8",
+      "bytes": 25986
     },
     {
       "module": "MontgomeryLowStripNonprincipalSelection",
@@ -9688,14 +9688,14 @@
     {
       "module": "MontgomeryMixedMomentFamily",
       "path": "Proof/MontgomeryMixedMomentFamily.lean",
-      "sha256": "a8e8ce2fbf3273f468a96697cc10178d490e85262cdff779f95032cd4307d2ab",
-      "bytes": 5266
+      "sha256": "a6fad224ea03b6f4bca0368c596f9bbedbb6901a287063a3b6b8c9993f791900",
+      "bytes": 5280
     },
     {
       "module": "MontgomeryMixedMomentIntegral",
       "path": "Proof/MontgomeryMixedMomentIntegral.lean",
-      "sha256": "62c8fd5435f5dd78aebd6b4ca2913912a3a81a03fc553589cf7fb27ef24a9d3f",
-      "bytes": 10517
+      "sha256": "4edd50fee393d80248612061b73bd23dc91d4aa723427ce148323da3752264f3",
+      "bytes": 10531
     },
     {
       "module": "MontgomeryMixedMomentLowStrip",
@@ -9718,8 +9718,8 @@
     {
       "module": "MontgomeryMollifierSecondMoment",
       "path": "Proof/MontgomeryMollifierSecondMoment.lean",
-      "sha256": "9d425d77e403b08cabf45ed880ff4fa4cbbddc9e02d39e785a6e59391881089d",
-      "bytes": 23145
+      "sha256": "62fd43a010bb25184038a5c19ee47d3f0093f41621791b6d83551795e3fe67d6",
+      "bytes": 23128
     },
     {
       "module": "MontgomeryNeededLowStripBridge",
@@ -9760,8 +9760,8 @@
     {
       "module": "MontgomeryTheorem12SourceDAG",
       "path": "Proof/MontgomeryTheorem12SourceDAG.lean",
-      "sha256": "57c34bf79d51b6eb6ebffe45d0a6649bf60a6a898f3da61ab1c26754b771746e",
-      "bytes": 14261
+      "sha256": "bb64015c2bd4d25ce46a6633daf213e73e8d4c6e2c2368843ef9d3789b2bcb44",
+      "bytes": 14263
     },
     {
       "module": "MontgomeryTheorem83Halasz",
@@ -9790,8 +9790,8 @@
     {
       "module": "NearCollarGallagherFiniteUnion",
       "path": "Proof/NearCollarGallagherFiniteUnion.lean",
-      "sha256": "f5579dd449b9a97c734b64920dfaade2e48f7ed5a99340d3cf0b99ff11fe5c0e",
-      "bytes": 17086
+      "sha256": "d29b51ee0c2920b22173d899d0573cd1c831b0011188838461043ddc6a68c8ee",
+      "bytes": 17104
     },
     {
       "module": "NearOneDerivative",
@@ -9802,20 +9802,20 @@
     {
       "module": "NearOneThreeLines",
       "path": "Proof/NearOneThreeLines.lean",
-      "sha256": "09efe4d3bc1de7f7aacbc3d3e5ac84bbc54b58c8f3e12639591d552a95551c72",
-      "bytes": 14864
+      "sha256": "516bb2114c1a14f42d8af0e4a64152377b2282bbc4aa98172a2582e800ea044f",
+      "bytes": 14865
     },
     {
       "module": "NonprincipalKoukSiegelFormula",
       "path": "Proof/NonprincipalKoukSiegelFormula.lean",
-      "sha256": "cb8bbe90d653d53701fc1d4789c984ced527ee43f7f9956b28e65c220281be3e",
-      "bytes": 10785
+      "sha256": "bfee401a9a3b17669a12449dc779c796589909f4664353d2820a40159ea7bb69",
+      "bytes": 10772
     },
     {
       "module": "NonprincipalTwistedMangoldtPsiCertified",
       "path": "Proof/NonprincipalTwistedMangoldtPsiCertified.lean",
-      "sha256": "f071b4f581c4bcb120a17ae8eb7a58ea1c0b2dea4612c4b9f1f193f770b93626",
-      "bytes": 27682
+      "sha256": "19d41c857ebc41ccccc881930e902f5046bad4ca6cd08b07ab9070ae9e17f0f9",
+      "bytes": 27683
     },
     {
       "module": "NonzeroDeterminantSectorGate",
@@ -9832,14 +9832,14 @@
     {
       "module": "OneSidedMaximalL2",
       "path": "Proof/OneSidedMaximalL2.lean",
-      "sha256": "376a3ca9b1a25f5803cdd97ddda6d7f727f03e67aab48ddc5bf9e8304172d5b6",
-      "bytes": 19002
+      "sha256": "c9c8de257bfc3fc1a051c5b610b95714b2225ad25311c04ac0d2b215e586e8ac",
+      "bytes": 19000
     },
     {
       "module": "PaperEdgeOutsidePerronTail",
       "path": "Proof/PaperEdgeOutsidePerronTail.lean",
-      "sha256": "55e79dd520ce28ba770585451312c7867be70e4a429088625c6a27ffe9e82d9d",
-      "bytes": 27104
+      "sha256": "8a1e139fb9d5078428ccba519bf454d6772e6b7e1bef66308ed0b1d7be27d345",
+      "bytes": 27106
     },
     {
       "module": "PaperEdgePerronRemainder",
@@ -9880,14 +9880,14 @@
     {
       "module": "PerRationalNearCollarDeterministic",
       "path": "Proof/PerRationalNearCollarDeterministic.lean",
-      "sha256": "b5ba715dcae497d20b71a2bc45e6ab50b616f38ad7cee75b7e432330a855ca72",
-      "bytes": 61284
+      "sha256": "523d07361f8aafbdc2cea4d3caf363cd3591b8c1c5095297e525f022517c7b2a",
+      "bytes": 61142
     },
     {
       "module": "PerronKernel",
       "path": "Proof/PerronKernel.lean",
-      "sha256": "1994a9312420d04c48dc715944287201fa563b0ecd6e60f967c2ac3782aedc0c",
-      "bytes": 17198
+      "sha256": "1cfc5aa5ff8c186565cc7eb63115a14f0b65cb706db3ae1551c2ec95fd1f451f",
+      "bytes": 17259
     },
     {
       "module": "PhragmenGrowthAdapter",
@@ -9898,8 +9898,8 @@
     {
       "module": "PointwiseAbelWeld",
       "path": "Proof/PointwiseAbelWeld.lean",
-      "sha256": "f38b0f2fcc0d4da6c9de52b584a339c75035ff3a37a0faece1ca25b754090186",
-      "bytes": 19893
+      "sha256": "0d00e2014c06d7365e4d8f2d40b04c9073829bf31568c00048e23612c37f47a2",
+      "bytes": 19894
     },
     {
       "module": "PointwisePerronZeroSumBounds",
@@ -9910,8 +9910,8 @@
     {
       "module": "PostA5CrowdingDeterministic",
       "path": "Proof/PostA5CrowdingDeterministic.lean",
-      "sha256": "a13b123b2deec3faa4b6b4c690ff202847e4ca2d8ad7583b7ced17a23b42b168",
-      "bytes": 20363
+      "sha256": "77aa15746c35e0ac9da69a0ca685bb0e070d4f2d05c79c382982b1fc1e2366d1",
+      "bytes": 20355
     },
     {
       "module": "PostA5HighStripSplitAssembly",
@@ -9922,14 +9922,14 @@
     {
       "module": "PostA5HighStripSplitReductionFromFourthMoment",
       "path": "Proof/PostA5HighStripSplitReductionFromFourthMoment.lean",
-      "sha256": "51d1c3955c6084c7d6df2b01fb4eb5d6561522ca420292b5abc482eb6ce5628a",
-      "bytes": 57914
+      "sha256": "d10701d463b130560107942b8f1766afa408306245b00062e25e505195f983a9",
+      "bytes": 57916
     },
     {
       "module": "PostA5LongSpacingAssembly",
       "path": "Proof/PostA5LongSpacingAssembly.lean",
-      "sha256": "64ff53e24d60a91c405fca26c4a560128372d8ff42be226715db1255daf2a4df",
-      "bytes": 17233
+      "sha256": "caede7a931bd33dc17c44015709a5f99aad3a2d60c576856bb218fe884fc5f65",
+      "bytes": 17247
     },
     {
       "module": "PostA5RecenteredDetectorAbsorption",
@@ -9964,14 +9964,14 @@
     {
       "module": "PostA5TypeICompactMassWeld",
       "path": "Proof/PostA5TypeICompactMassWeld.lean",
-      "sha256": "ca0037de50d4ea1b42673f986719a57bd42d6613428aebf92bdbd388d2ffb640",
-      "bytes": 21249
+      "sha256": "4cb22b4377c031ef3847fa3bf5f8df7eaa29ebe96801668b4c58bd16601c85ef",
+      "bytes": 21250
     },
     {
       "module": "PostA5TypeIFourierAssembly",
       "path": "Proof/PostA5TypeIFourierAssembly.lean",
-      "sha256": "d9f8eb82b3a5d8d72f97110c9d1e694ef3a204d6cbff9f968e53987e81f3dd57",
-      "bytes": 60214
+      "sha256": "c17931955de01f380267979ac36196e4e8b9bd422cf09bab295693387c35112f",
+      "bytes": 60213
     },
     {
       "module": "PostA5TypeIFourierTailAbsorption",
@@ -9994,13 +9994,13 @@
     {
       "module": "PrimeDistortionChebyshev",
       "path": "Proof/PrimeDistortionChebyshev.lean",
-      "sha256": "5700ba5db54d673bc49781a4c6ef5bc169f5512e97751e6a199a5d796d4639bd",
-      "bytes": 11803
+      "sha256": "74bf0ccebc5ac53665e09a559ffbe70b5249482e786c4adb33d27b4bdb5feec8",
+      "bytes": 12315
     },
     {
       "module": "PrimeFactorSquareRootBound",
       "path": "Proof/PrimeFactorSquareRootBound.lean",
-      "sha256": "e136adb9c8b5c12dfa5df2450cbf42718e7edce5f58a444164c074d20a541245",
+      "sha256": "1f153e7bafccc87d54f520f3e1d3e0abdd7db2d3b30a4f194cc4f49cc1ec1076",
       "bytes": 3657
     },
     {
@@ -10024,8 +10024,8 @@
     {
       "module": "PrimitiveExplicitFormulaSpine",
       "path": "Proof/PrimitiveExplicitFormulaSpine.lean",
-      "sha256": "209251a348af722a2e26bd58ec6f98d79757dc8baf0b341d3bf7a1e068ace40d",
-      "bytes": 18632
+      "sha256": "821f61158d39812641fc8687e62fa673f9507b0ea96e7f561d59643c62ff4ae4",
+      "bytes": 18583
     },
     {
       "module": "PrimitiveLFixedStripGrowth",
@@ -10036,8 +10036,8 @@
     {
       "module": "PrimitiveLFixedStripGrowthCertified",
       "path": "Proof/PrimitiveLFixedStripGrowthCertified.lean",
-      "sha256": "5df0e3820ecfd8c8d2005f1c5bfaea2bde50ddb1270ccca01c028ff8183ebf5d",
-      "bytes": 8207
+      "sha256": "184e8a3c781d27f1aa98d8d9a41ca2f173a34574767a955661049661e103807f",
+      "bytes": 8208
     },
     {
       "module": "PrimitiveLogDerivativeRemainderUnconditional",
@@ -10048,14 +10048,14 @@
     {
       "module": "PrimitiveRectangleSpecialization",
       "path": "Proof/PrimitiveRectangleSpecialization.lean",
-      "sha256": "d5fbe81dccb7c03cde1bde1e3f20d3973c2b0c6252dba9dac7410ec15a927f54",
-      "bytes": 21434
+      "sha256": "351d7e623fbb14c7265ff075ff4a3831a5e00d457b77f95a6059a975d6c1da74",
+      "bytes": 21435
     },
     {
       "module": "PrimitiveRemovableClosure",
       "path": "Proof/PrimitiveRemovableClosure.lean",
-      "sha256": "8d8e38f09df607ba018ceb4a5cd2885462cd279e3a665048a41a28d719326d04",
-      "bytes": 13495
+      "sha256": "29895aa8d77e4d59ba466cdd02a32c6e07f8f635518c09629be9246be607f302",
+      "bytes": 13480
     },
     {
       "module": "PrimitiveRootNumberNorm",
@@ -10072,8 +10072,8 @@
     {
       "module": "PrimitiveTruncatedExplicitFormulaBridge",
       "path": "Proof/PrimitiveTruncatedExplicitFormulaBridge.lean",
-      "sha256": "510372d422251cf396fc718828cab109294b1fde152c1c0007170f16dcdb38eb",
-      "bytes": 23093
+      "sha256": "c5ea49e45f68cc333931bb795dbb249c7df12a5cef22a0b053e34272856d5a71",
+      "bytes": 23078
     },
     {
       "module": "PrimitiveTwistedMangoldtCertified",
@@ -10096,8 +10096,8 @@
     {
       "module": "PrincipalDiscreteFourthFromContinuous",
       "path": "Proof/PrincipalDiscreteFourthFromContinuous.lean",
-      "sha256": "201d8770dd5bcd20d5b3dac21e1d1f45edc79093f13906c21864b44cf29792b4",
-      "bytes": 13920
+      "sha256": "59c8ec615a33b4b4bec3ae3f897b9b087971a797975d87d26850bd3f77f7f2e8",
+      "bytes": 13877
     },
     {
       "module": "PrincipalFullStripA5Source",
@@ -10132,14 +10132,14 @@
     {
       "module": "PrincipalKoukSiegelFormula",
       "path": "Proof/PrincipalKoukSiegelFormula.lean",
-      "sha256": "9610d6d80f4e9a1331f66bc60f98226c812cd8bc6448d150f7ad9bf658b2f8e5",
-      "bytes": 25976
+      "sha256": "bbdb53c44b094ceb100d9bcd0f2c377e797608fa85e317a6c404c63dfda30f38",
+      "bytes": 25978
     },
     {
       "module": "PrincipalKoukTheorem12Three",
       "path": "Proof/PrincipalKoukTheorem12Three.lean",
-      "sha256": "c78b9c231f07e3756a61a6c5d040aa0f92cd8fae30d912ce3f6de7b7ec78b4ef",
-      "bytes": 15836
+      "sha256": "4e8bfacad3ced8358647a016ea5ec5f7b699e4028c7011ce701f5c2939110b2d",
+      "bytes": 15852
     },
     {
       "module": "PrincipalLogDerivativeRemainderUnconditional",
@@ -10156,8 +10156,8 @@
     {
       "module": "PrincipalWeakVKZeroGapFromKhaleHigh",
       "path": "Proof/PrincipalWeakVKZeroGapFromKhaleHigh.lean",
-      "sha256": "3d8364855e6250900c775402d87bb7d8d6ae2654800c6b3d1e1f301511e09209",
-      "bytes": 14234
+      "sha256": "e155b3fb0427a8b16ffbf8dc398adfb090bc6fd2681e02da865f016bf251fba4",
+      "bytes": 14269
     },
     {
       "module": "PrincipalZetaA5",
@@ -10174,8 +10174,8 @@
     {
       "module": "PrincipalZetaContourTails",
       "path": "Proof/PrincipalZetaContourTails.lean",
-      "sha256": "009cada3edb0860673d1532a8c70610dcc6eb72350063539a3ae639aac8e50a0",
-      "bytes": 32606
+      "sha256": "99e707fd0e8148ae1cc5efd154dffe3fad01f4abe02c7f4f2df7c817d2183e95",
+      "bytes": 32622
     },
     {
       "module": "PrincipalZetaDetectorDichotomy",
@@ -10186,8 +10186,8 @@
     {
       "module": "PrincipalZetaDetectorPoleRemoval",
       "path": "Proof/PrincipalZetaDetectorPoleRemoval.lean",
-      "sha256": "1bee4bee9830a7f22cbf6c9af033cc0cdd6b29f39e8841bae3cb2f1225e4d313",
-      "bytes": 13289
+      "sha256": "e59319e03f84474164cd90f03dcb8ea6383f16b631af6e9a218d7c3d9144e29f",
+      "bytes": 13290
     },
     {
       "module": "PrincipalZetaFiniteStructuredSplit",
@@ -10198,8 +10198,8 @@
     {
       "module": "PrincipalZetaFixedStrip",
       "path": "Proof/PrincipalZetaFixedStrip.lean",
-      "sha256": "7cd03b4ce738a5616d46417a0f4fc26de135621c4740e56bcb2cf4f930fbbe7c",
-      "bytes": 13522
+      "sha256": "96030295ce1c7a38854be50ed85cd68474eb2646ed3243433ce450d58fa2fa5f",
+      "bytes": 13523
     },
     {
       "module": "PrincipalZetaFourthMomentFromDyadicAFE",
@@ -10264,8 +10264,8 @@
     {
       "module": "PrincipalZetaHuxley1972Equation39Exceptions",
       "path": "Proof/PrincipalZetaHuxley1972Equation39Exceptions.lean",
-      "sha256": "7183cc1d6dc7bcea2275030bb97911fa798b3922591be1fe7828741f94e2f04a",
-      "bytes": 9028
+      "sha256": "7277797463c32d651a94a4967d30b21f16537869fc99feabd5895eb291be432b",
+      "bytes": 9029
     },
     {
       "module": "PrincipalZetaHuxley1972LiteralClassCover",
@@ -10306,14 +10306,14 @@
     {
       "module": "PrincipalZetaStructuredSplitFromFourthMoment",
       "path": "Proof/PrincipalZetaStructuredSplitFromFourthMoment.lean",
-      "sha256": "371552549bd62049565e4dbb865b9f9ca5a4a7d3c8b9f94195d07fcd7448768b",
-      "bytes": 42834
+      "sha256": "226ae321512685ea1e3a3dd7135565e27d701e520adc04e9f49b88fd53075768",
+      "bytes": 42835
     },
     {
       "module": "PrincipalZetaTransport",
       "path": "Proof/PrincipalZetaTransport.lean",
-      "sha256": "96770a9842df261a01f2f5a49c94a18716bd818d5028c6017d6999f3c08d9e54",
-      "bytes": 8981
+      "sha256": "92666e11ba663bba9511943c56692b6ee187daa1720fe2415a6888bc3842a014",
+      "bytes": 8983
     },
     {
       "module": "PsiEndpointImprimitiveAdapters",
@@ -10336,8 +10336,8 @@
     {
       "module": "RamachandraEulerExpEnvelope",
       "path": "Proof/RamachandraEulerExpEnvelope.lean",
-      "sha256": "b901b0ed3ba6337de64590679a9928830a0c4e6f62c3a3ff0c992d763630f648",
-      "bytes": 21516
+      "sha256": "2610ade9c91d0869be23eb17e28a6b560a4e38e606e3ac175dfdf9c2344aa82b",
+      "bytes": 21519
     },
     {
       "module": "RamachandraFullLineReflectedBlockBudget",
@@ -10348,8 +10348,8 @@
     {
       "module": "RamachandraFullLineReflectedBlockFubini",
       "path": "Proof/RamachandraFullLineReflectedBlockFubini.lean",
-      "sha256": "2d03cb6dc0d140d011ce96765fac47955d3996e79a4c56ce8403b02c611671c2",
-      "bytes": 10217
+      "sha256": "dd05843b38196f37e32bddc6490ddc83f5aed4416ef94680fa1880c4c38df9b6",
+      "bytes": 10205
     },
     {
       "module": "RamachandraFunctionalFactorEnvelope",
@@ -10384,20 +10384,20 @@
     {
       "module": "RamachandraLongContourContinuity",
       "path": "Proof/RamachandraLongContourContinuity.lean",
-      "sha256": "d3263ca923fe9ab9525e925509336bd707f9d150751b5aafcc458949ffa04a72",
-      "bytes": 17405
+      "sha256": "789dc78055da1c9495f7fbe727d22334e032aa441737e648b02d6b2a36948813",
+      "bytes": 17406
     },
     {
       "module": "RamachandraLongContourInfiniteAssembly",
       "path": "Proof/RamachandraLongContourInfiniteAssembly.lean",
-      "sha256": "8945d109653838b1a1c5f680ef1f9a91492243eb6166f05404d2a2603d25cfbb",
-      "bytes": 17625
+      "sha256": "24606d918f909c2ec2a0756a184709a8298f878d6e02c3278b493f68ef69591a",
+      "bytes": 17626
     },
     {
       "module": "RamachandraLongContourMomentExtraction",
       "path": "Proof/RamachandraLongContourMomentExtraction.lean",
-      "sha256": "741049088fb8b694225b2be3d3a92f0fb181612665752ca456600eabcd58393c",
-      "bytes": 8985
+      "sha256": "405dc9b0fed843ba32bd327811d6273f2ce978385a6f143fa9f050b45094f585",
+      "bytes": 8939
     },
     {
       "module": "RamachandraLongContourSourcePackage",
@@ -10408,8 +10408,8 @@
     {
       "module": "RamachandraLongDyadicCutoff",
       "path": "Proof/RamachandraLongDyadicCutoff.lean",
-      "sha256": "0742e5b2eb346201920b7e5483c29fb8520165c96315c5d438e842d9b8621550",
-      "bytes": 9968
+      "sha256": "25e622df3b5b336d90bde60fa30200027160c56adbfc981501a7f0a2e2bba426",
+      "bytes": 9960
     },
     {
       "module": "RamachandraLongDyadicScalarSummability",
@@ -10444,20 +10444,20 @@
     {
       "module": "RamachandraLongTailShellCauchy",
       "path": "Proof/RamachandraLongTailShellCauchy.lean",
-      "sha256": "43175d46792a12ff50b3ee59b45e8b3f76a3135e5bec4cfd9ebde21f79ac4934",
-      "bytes": 25659
+      "sha256": "e7333a977badfcf478939586b872c8ff816417ce0021645d8874fab1ff74fb95",
+      "bytes": 25660
     },
     {
       "module": "RamachandraLongTailShellSecondMoment",
       "path": "Proof/RamachandraLongTailShellSecondMoment.lean",
-      "sha256": "8d6f4ae4518132f1f9b92d5a65df519188a1ea8000b571ef476ae83d2db4d909",
-      "bytes": 14915
+      "sha256": "60e5074f4f3e7d998937814523edebce632c82d2611a45c267af6313697badbf",
+      "bytes": 14916
     },
     {
       "module": "RamachandraLpSeriesMinkowski",
       "path": "Proof/RamachandraLpSeriesMinkowski.lean",
-      "sha256": "9f66c9555bcc9ec0674d699a89f9ab48596dc486edf982758d22ce0c01304f44",
-      "bytes": 3808
+      "sha256": "cd6b31966bf86d965f909cffd907747c390c7c26981350b77551a9f6d943895c",
+      "bytes": 3857
     },
     {
       "module": "RamachandraPrimitiveShiftedContourReduction",
@@ -10474,8 +10474,8 @@
     {
       "module": "RamachandraPrimitiveShiftedHighLowWeld",
       "path": "Proof/RamachandraPrimitiveShiftedHighLowWeld.lean",
-      "sha256": "e9bb45bebc60d354fc706d5602bc41c13537c5328012feb634cfed7f4982b39e",
-      "bytes": 7776
+      "sha256": "88063c2d82fa26da4a6fe098f8ba69da0d8b60302ed148855e06886a73fae40f",
+      "bytes": 7986
     },
     {
       "module": "RamachandraPrimitiveShiftedLongShortFinalAdapter",
@@ -10486,8 +10486,8 @@
     {
       "module": "RamachandraPrimitiveShiftedMellinReduction",
       "path": "Proof/RamachandraPrimitiveShiftedMellinReduction.lean",
-      "sha256": "08fbdfa8131b1fff2daa4c433b54496a8b4c3fedd678b8105e3158ae4460cfce",
-      "bytes": 18308
+      "sha256": "c4ad1b60a89141e6e00854335defc896fd107d60754375455ae3b5327141ac94",
+      "bytes": 18391
     },
     {
       "module": "RamachandraPrimitiveShiftedPackageAdapter",
@@ -10504,20 +10504,20 @@
     {
       "module": "RamachandraPrincipalHighContourIdentity",
       "path": "Proof/RamachandraPrincipalHighContourIdentity.lean",
-      "sha256": "cbc425b7dab69df0d67d2a556e67b5942b1523f47544fa4fd32dcb971518a502",
-      "bytes": 29429
+      "sha256": "fd857f3b0067988c49866d7c018a7664f730c8cb19c5d67861577964f34ebf20",
+      "bytes": 29394
     },
     {
       "module": "RamachandraPrincipalHighContourTails",
       "path": "Proof/RamachandraPrincipalHighContourTails.lean",
-      "sha256": "f52d08bbb5a5216f6192921f2913e3badb5450e26dc5b8e115fa83219c99022a",
-      "bytes": 27675
+      "sha256": "c7780d7016f09f5b2b07a468787150c3663b6a03dc3febc55c873aa20ff7cf0b",
+      "bytes": 27692
     },
     {
       "module": "RamachandraPrincipalHighSourceIdentity",
       "path": "Proof/RamachandraPrincipalHighSourceIdentity.lean",
-      "sha256": "d98d169326e35e482d2e82b7e8ee1d03b215b92b379bf072f68a8ba12b315c2d",
-      "bytes": 16634
+      "sha256": "e29d2194eab5c147528fc06d3b3a9737ad463298b75b91456acabee84baa17fc",
+      "bytes": 16650
     },
     {
       "module": "RamachandraPrincipalLowRange",
@@ -10534,8 +10534,8 @@
     {
       "module": "RamachandraPrincipalResidueContinuity",
       "path": "Proof/RamachandraPrincipalResidueContinuity.lean",
-      "sha256": "cee6457a2bee656507bb18ab3b79969e655096ae2d2d9755cadc1056ff1289a6",
-      "bytes": 13056
+      "sha256": "c42e4673aa5fd4c506a292c0087ed44c165bc870b1a6b08dcc4eaf8f4882b069",
+      "bytes": 13005
     },
     {
       "module": "RamachandraShiftedCoefficientEnergy",
@@ -10576,8 +10576,8 @@
     {
       "module": "RamachandraShiftedDirectShellAbsorption",
       "path": "Proof/RamachandraShiftedDirectShellAbsorption.lean",
-      "sha256": "2aca6c8c6aceb4644e51179128526a3be05cb9b655ab57e66964278ed047e14c",
-      "bytes": 15638
+      "sha256": "69468512aec541748761f9419914e2382311681c9c28b53050eb9018c4240579",
+      "bytes": 15665
     },
     {
       "module": "RamachandraShiftedDirectTailAbsorption",
@@ -10588,8 +10588,8 @@
     {
       "module": "RamachandraShiftedFunctionalEquationBridge",
       "path": "Proof/RamachandraShiftedFunctionalEquationBridge.lean",
-      "sha256": "76b4a43dc9190f9e90398c14bf92acc0ef923f880fb3ff7f5612ff6c7e59e58a",
-      "bytes": 6533
+      "sha256": "c14b8b8920fcb3b1267fc122bbcf537f6304a559fac5c87ef973b92ac97f9c38",
+      "bytes": 6535
     },
     {
       "module": "RamachandraShiftedFunctionalFactorMomentEnvelope",
@@ -10600,8 +10600,8 @@
     {
       "module": "RamachandraShiftedGammaPoleContour",
       "path": "Proof/RamachandraShiftedGammaPoleContour.lean",
-      "sha256": "bbcc085c43e15070fa2b15ef8540880de49eb922646bb385b94db7568e30bc33",
-      "bytes": 39892
+      "sha256": "81f31033df6cce3bd99f5bb0cc2b5b198c94c888d047e24279b1145f1e846631",
+      "bytes": 39987
     },
     {
       "module": "RamachandraShiftedHeadContourTails",
@@ -10636,8 +10636,8 @@
     {
       "module": "RamachandraShiftedReflectedSeries",
       "path": "Proof/RamachandraShiftedReflectedSeries.lean",
-      "sha256": "ea045f84f80eb5852a0f9a3c987decdee460cedf604f9411f459093b251da42b",
-      "bytes": 15407
+      "sha256": "181f400ba6bc5056ea143da7c2d7a599c2ee7b705e6c76a5f6fc21ed737b43f2",
+      "bytes": 15398
     },
     {
       "module": "RamachandraShiftedReflectedTailAssembly",
@@ -10648,8 +10648,8 @@
     {
       "module": "RamachandraShiftedReflectedTailInfiniteAssembly",
       "path": "Proof/RamachandraShiftedReflectedTailInfiniteAssembly.lean",
-      "sha256": "bfd286fd91fb16f88f1cb2e9bbf69d60c14fc350a188303127e3ae75ebc391c0",
-      "bytes": 8176
+      "sha256": "6b0e024af9e1f9a0bcfb923aa23023c7ddafd08f0162bb9d78d78e693d01c410",
+      "bytes": 8177
     },
     {
       "module": "RamachandraShiftedRightLineIdentity",
@@ -10666,14 +10666,14 @@
     {
       "module": "RamachandraShortContourContinuity",
       "path": "Proof/RamachandraShortContourContinuity.lean",
-      "sha256": "eab56f6b0aecff1ed0d56b24e4ccc8fdfdc40cb52dd7b81d07959c98209fdfe6",
-      "bytes": 15397
+      "sha256": "df73f7a1c24ee78cdfcee6bbdb0f2e3a1158e03c484b09b8405ee031e32e6eda",
+      "bytes": 15400
     },
     {
       "module": "RamachandraShortContourFamilyMoment",
       "path": "Proof/RamachandraShortContourFamilyMoment.lean",
-      "sha256": "5130b836c6cf7e94ea21e09915eea580c1d68c97cc05f38105c5bb2d52e67509",
-      "bytes": 17582
+      "sha256": "6c0fbbdde7e83cca915ca385326f8eec7ea632c7411c96e683e9ea664f7ddad0",
+      "bytes": 17586
     },
     {
       "module": "RamachandraShortContourSourcePackage",
@@ -10708,8 +10708,8 @@
     {
       "module": "RamachandraTheorem6SourceProofChain",
       "path": "Proof/RamachandraTheorem6SourceProofChain.lean",
-      "sha256": "b05d530922b7b3d972200182a3ea1ab8f78cf42e59c2b90f407e3f1b4b8be5ca",
-      "bytes": 31224
+      "sha256": "49773f5fb2fdd5aad0274c9a09cce91822146790baeffb1f2f6ed4ac530c590a",
+      "bytes": 31287
     },
     {
       "module": "RamachandraTheorem6Unconditional",
@@ -10726,14 +10726,14 @@
     {
       "module": "RamachandraWeightedCauchyAE",
       "path": "Proof/RamachandraWeightedCauchyAE.lean",
-      "sha256": "7ac2543edb4e9392a84e7398a95eaefd9268dca4ff26d9377148351ea130f15d",
-      "bytes": 4037
+      "sha256": "6170df730c13f0172093f026eadb8749552f038834ee9eda287ebac2d47e01eb",
+      "bytes": 4050
     },
     {
       "module": "RamanujanTailWeighted",
       "path": "Proof/RamanujanTailWeighted.lean",
-      "sha256": "2d643fc6677ddce2cfb2bfdfd7e57457ce7cfc93bc5ece4248ae49cb925e2377",
-      "bytes": 57084
+      "sha256": "de8d91649ce08310f2414b2b6c0aac98d46d65e7b4ea3a3f4d1c6a9ec9c9245c",
+      "bytes": 56969
     },
     {
       "module": "RamanujanWindowAbsorption",
@@ -10750,8 +10750,8 @@
     {
       "module": "RecenteredSampling",
       "path": "Proof/RecenteredSampling.lean",
-      "sha256": "851d2e7c2dd81f568cd4f73751b79d8d4d338be8ea20aae1ee4e2d0edf9560eb",
-      "bytes": 24336
+      "sha256": "7b1f1d5dbfa28b30ed6524ab7898f05c6b6be9d7cb9c6ad4433c0bdb71f67c5d",
+      "bytes": 24326
     },
     {
       "module": "RelativeNearOneMesh27",
@@ -10774,8 +10774,8 @@
     {
       "module": "RieszKernelBoundary",
       "path": "Proof/RieszKernelBoundary.lean",
-      "sha256": "ea57db631809c05813e0b8da1f9e918cdef26723667c823f94f6658a0de13ace",
-      "bytes": 5852
+      "sha256": "6bd0130269e24a141944713148187926e38458d814997082f47265946363130f",
+      "bytes": 5858
     },
     {
       "module": "RieszMellinInversion",
@@ -10804,20 +10804,20 @@
     {
       "module": "SelbergMainWeightClosure",
       "path": "Proof/SelbergMainWeightClosure.lean",
-      "sha256": "f56b35c2305f7fddd7af23b64d23115d31b2f44578f74661937dbb2960abf062",
-      "bytes": 44369
+      "sha256": "a07dc5b90d8077b3d77f6e88aa1fd8e36acdfd60ff829c7fb17598829f13699c",
+      "bytes": 44353
     },
     {
       "module": "SharpFinitePerronStep",
       "path": "Proof/SharpFinitePerronStep.lean",
-      "sha256": "af69aa944179fc8876fbc179c6cbc60f1c04f72df2161a69cf7ea70c348d3754",
-      "bytes": 33476
+      "sha256": "4da891a367de56ecb2d7f0acf2429c8333e5201a5bcb6dd52578a2b199f85eda",
+      "bytes": 33504
     },
     {
       "module": "SharpOutsidePerronTail",
       "path": "Proof/SharpOutsidePerronTail.lean",
-      "sha256": "5f42241ac501cf802c912d5cea07330e99ab82c3b8c302a98645fb8238afe59b",
-      "bytes": 16603
+      "sha256": "7f820d877ab06b0b392df204e2216c18f25996decd1fb9f367631cbf97ec3e03",
+      "bytes": 16605
     },
     {
       "module": "SharpPerronRemainderBridge",
@@ -10846,26 +10846,26 @@
     {
       "module": "ShiuClassIFinal",
       "path": "Proof/ShiuClassIFinal.lean",
-      "sha256": "12c40b90eec204631387242b2826f5a89391236114cfa6860acc7ec947307e1d",
-      "bytes": 21721
+      "sha256": "91cd3d9b2dea844db0179b49eca36ad046ff65bb174a9d92f68b4dc4795386f8",
+      "bytes": 21748
     },
     {
       "module": "ShiuClassIIIII",
       "path": "Proof/ShiuClassIIIII.lean",
-      "sha256": "14967f97a7e296d3418b3c744198f6be068cfd867a87e08f4beb79202391d792",
-      "bytes": 71078
+      "sha256": "4ac86ffe9c9df4c22a6bb9a918d39f96f2f63caa7629485304ed8e8ca279618a",
+      "bytes": 71062
     },
     {
       "module": "ShiuClassIVBound",
       "path": "Proof/ShiuClassIVBound.lean",
-      "sha256": "81d7f4d05d168b4309f44ea326ddad4457fc564b1abd224f84eda94a40cbd589",
-      "bytes": 54108
+      "sha256": "fd87a1d93538a2692e040e053e7feeacc72fde88b93fce4a7c86750fa1e7b938",
+      "bytes": 54106
     },
     {
       "module": "ShiuClassIVEulerBridge",
       "path": "Proof/ShiuClassIVEulerBridge.lean",
-      "sha256": "2733a347314b299b6dce6483fb96a1721ab82dec021becc143652644c8133b3b",
-      "bytes": 3508
+      "sha256": "5a98bbb00d8f1c0b0c0a87f3be35c2c42a8de7940b15a4b8dc8a45db9616bb78",
+      "bytes": 3511
     },
     {
       "module": "ShiuClassIVFinal",
@@ -10882,8 +10882,8 @@
     {
       "module": "ShiuEndToEndScaffold",
       "path": "Proof/ShiuEndToEndScaffold.lean",
-      "sha256": "4ba0dc9d6763df06f5bc45e6fdc9fc9c1587ee9bf0c18b19826b1ad0cda678b0",
-      "bytes": 40360
+      "sha256": "2b917302ec7ff0484d59bb19095669e8724596827acc38dfaf6cd9377dd4771c",
+      "bytes": 40345
     },
     {
       "module": "ShiuFoundation",
@@ -10894,20 +10894,20 @@
     {
       "module": "ShiuLemma1ClassIII",
       "path": "Proof/ShiuLemma1ClassIII.lean",
-      "sha256": "39a1a3ab3ee9356ea4d73af8826833d6053a657e791a244d1f7e3cf269779808",
-      "bytes": 12060
+      "sha256": "92faaf6f21116a67af18b159ee1da989c6ab43b925134d1d1987251b80d4d04f",
+      "bytes": 12056
     },
     {
       "module": "ShiuLemma1Rankin",
       "path": "Proof/ShiuLemma1Rankin.lean",
-      "sha256": "2191f73c4b76287ae71940c01c9bc8cd275827ca104606eea3d15c55a3283060",
-      "bytes": 18334
+      "sha256": "677a539bfab471224e91d4d6058c16118a46732511cad2ef6d5ceafc8c4bb501",
+      "bytes": 18877
     },
     {
       "module": "ShiuLemma3TauMean",
       "path": "Proof/ShiuLemma3TauMean.lean",
-      "sha256": "7f995f3d6cb8ce05cb4bf73f6af2d6173d7be91aa677a77dc165879e2417237c",
-      "bytes": 19574
+      "sha256": "72830685e561b8f4b978843e0be88b5d8e3f885dcaa4efc7f39718c38679e5db",
+      "bytes": 19699
     },
     {
       "module": "ShiuLemma4EndpointWeld",
@@ -10936,8 +10936,8 @@
     {
       "module": "ShiuSection5Split",
       "path": "Proof/ShiuSection5Split.lean",
-      "sha256": "032e5c41a46e6a6f99415d4392fef7e7711fc82a971fc4c7ceffb2201a62e1a0",
-      "bytes": 15874
+      "sha256": "e7cf98c2aa1ef8ae768735851e0cc9643e80e83707359cf6771cd281fbfa8c81",
+      "bytes": 16098
     },
     {
       "module": "ShiuSection5Structure",
@@ -10960,14 +10960,14 @@
     {
       "module": "ShortIntervalTauFour",
       "path": "Proof/ShortIntervalTauFour.lean",
-      "sha256": "0a1e24d5ea9a48030e82cc837109e7047d7d66b3e181f37c044e5baf13bd092a",
-      "bytes": 36064
+      "sha256": "8966e9b5f1115c9d7e250639809d2088e801917c3db78da971ec6ca590794b09",
+      "bytes": 36065
     },
     {
       "module": "SiegelArithmeticPositivity",
       "path": "Proof/SiegelArithmeticPositivity.lean",
-      "sha256": "896f8cd9f0eb3351484a94dff69dea3b17a4fab4b391adee5fac4b3083072179",
-      "bytes": 1812
+      "sha256": "8e592e81b63037724b8d58f073863816d5467cec88255527a2872d9ad762c60c",
+      "bytes": 1817
     },
     {
       "module": "SiegelExceptionalAbsorption",
@@ -11014,8 +11014,8 @@
     {
       "module": "SignedGallagherCore",
       "path": "Proof/SignedGallagherCore.lean",
-      "sha256": "e5e23b93359d039b02b7ec53ad18ed9fd9b6a1897354b96e7834342a7a0b3222",
-      "bytes": 20363
+      "sha256": "5da5d8e2eb7ec90d42d2a20abf7cf0190d02a6cbcc6faaa9160b11a3e3c65066",
+      "bytes": 20284
     },
     {
       "module": "SingularSeriesFiniteFactors",
@@ -11026,8 +11026,8 @@
     {
       "module": "SingularSeriesSquareMean",
       "path": "Proof/SingularSeriesSquareMean.lean",
-      "sha256": "50d1aa43d3648a2c458b20c133c36b9ec52f244210251c729ca46c6670b24256",
-      "bytes": 12916
+      "sha256": "0810372fff3645f6c0c71d1512657b507c71df2f54051611e7f5e6b6c2ea9975",
+      "bytes": 12919
     },
     {
       "module": "SlidingFourierPair",
@@ -11038,8 +11038,8 @@
     {
       "module": "StrongFEPairVerticalBound",
       "path": "Proof/StrongFEPairVerticalBound.lean",
-      "sha256": "567a876246c4a52dbecd28c5b20f5b4c5e56ab8c3c370171349484e278baaa96",
-      "bytes": 3783
+      "sha256": "fc0e58bd1d176b921d56666c168de6d1d936aa41d1a40a94e908f9a80555ac73",
+      "bytes": 3816
     },
     {
       "module": "SupportBoundaryQuantitative",
@@ -11062,8 +11062,8 @@
     {
       "module": "TruncatedTwistedPerron",
       "path": "Proof/TruncatedTwistedPerron.lean",
-      "sha256": "bc484d8f493e76ebf7886eaef19652c37aa21d09913161bbf369dcf100bc5065",
-      "bytes": 17897
+      "sha256": "2047b5367d045aeceae26c241b8a2747c026bb7287685259494825691463c0ca",
+      "bytes": 17895
     },
     {
       "module": "TwistedMangoldtPerron",
@@ -11080,8 +11080,8 @@
     {
       "module": "VonMangoldtPSeriesBound",
       "path": "Proof/VonMangoldtPSeriesBound.lean",
-      "sha256": "8887399676a19716c3911ff9329b986f54a2a231a0f87ff943b4310239715014",
-      "bytes": 3403
+      "sha256": "9929ef147f834811f936819a1ff6744dea98cacadcea251d349d66dc693ec5b2",
+      "bytes": 3428
     },
     {
       "module": "WeakVKNearDecay",
@@ -11110,8 +11110,8 @@
     {
       "module": "WideDiskLocalLogDerivative",
       "path": "Proof/WideDiskLocalLogDerivative.lean",
-      "sha256": "e79da3c7b22a1a947e15c59f45d32aaf4d048d506821cb0b78489298002ef1da",
-      "bytes": 23121
+      "sha256": "bf06a434345d2d1bcd27dd6d94d12345f9f827a9dd25de8c989fc192a44b8a4c",
+      "bytes": 23231
     },
     {
       "module": "WideDiskLocalMass",
@@ -11152,14 +11152,14 @@
     {
       "module": "ZeroFreeSiegelBorelBridge",
       "path": "Proof/ZeroFreeSiegelBorelBridge.lean",
-      "sha256": "a6b07705e6bdf767007a046aefe0e2cb61311fc331308e2712ad94b190d96640",
-      "bytes": 11958
+      "sha256": "6b26edf02acbd2c4fb868a4eff22266a560a5c269100f438840c1ba1e2a9a17f",
+      "bytes": 11959
     },
     {
       "module": "ZeroFreeSiegelSpine",
       "path": "Proof/ZeroFreeSiegelSpine.lean",
-      "sha256": "ffbb3c04b64ee85e9c9a5a9de245a782410f644416a360df3eb84252b877985a",
-      "bytes": 36989
+      "sha256": "ef87a4f9e5bb497418f5643993e78da67793d41ece18073dc6307b34529e0d2c",
+      "bytes": 37049
     },
     {
       "module": "ZeroSectorFiniteWeld",
@@ -11170,8 +11170,8 @@
     {
       "module": "ownnewLemma92RegionHighCommonCdec",
       "path": "Proof/ownnewLemma92RegionHighCommonCdec.lean",
-      "sha256": "23e095a280b96198aa09bb77f8d97d823ba6464e4e2c1024381d8f353be8938f",
-      "bytes": 18819
+      "sha256": "549612f9edac613052b2231ad1b1aae90717505bf247e97accca1cf9d3d29a70",
+      "bytes": 18820
     }
   ],
   "external_imports": [
@@ -11320,7 +11320,7 @@
     "Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed",
     "Mathlib.Topology.Algebra.InfiniteSum.Real"
   ],
-  "note": "No source Git history is invented. This substantive release preserves 1860 baseline modules byte-for-byte and records one checked proof-term optimization. Its release Git commit identifies all submitted bytes.",
+  "note": "The file records identify the Lean 4.35 release sources. The isolated source snapshot has no invented Git history. Historical Lean 4.30 replay evidence retains its original hashes and toolchain; the release Git commit identifies all submitted bytes.",
   "baseline_map_kernel_replay": {
     "module": "MAPReleaseEndpoint",
     "target": "MAPReleaseEndpoint.zero_argument_map_two_fifteenths",
@@ -12004,6 +12004,399 @@
       "change": "Two ring normalizations replaced by direct mul_pow and ac_rfl proofs; statements, names, constants, hypotheses, and imports unchanged.",
       "evidence": "evidence/proof-optimization/bhp.diff",
       "validation": "Candidate compiled with pinned Lean and standard axioms. The optimized module compiled from source in the Linux release build."
+    },
+    {
+      "paths": [
+        "Proof/APAlignedTailToRemainderTransfer.lean",
+        "Proof/APCorrectedTailToRemainderTransfer.lean",
+        "Proof/APDirectAlignedTailClosure.lean",
+        "Proof/APRegularNearAppendixBAdapter.lean",
+        "Proof/APRegularNearCGLGappedJutilaAppendixBAdapter.lean",
+        "Proof/APRegularNearCGLJutilaAppendixBAdapter.lean",
+        "Proof/APRegularNearHuxleyJutilaAppendixBAdapter.lean",
+        "Proof/APRegularNearLogSaving.lean",
+        "Proof/APTailToRemainderTransfer.lean",
+        "Proof/APZeroFieldEnergy28Core.lean",
+        "Proof/AppendixA4Detector.lean",
+        "Proof/AppendixA4GammaTails.lean",
+        "Proof/AppendixA4PostA5SetAdapter.lean",
+        "Proof/AppendixA8A9Certified.lean",
+        "Proof/AppendixTypeIPowerAlgebra.lean",
+        "Proof/BHPAllCharacterDyadicBudget.lean",
+        "Proof/BHPAmbientRademacherThreeLines.lean",
+        "Proof/BHPCanonicalHorizontalScalar.lean",
+        "Proof/BHPCanonicalPrincipalHorizontalClosed.lean",
+        "Proof/BHPCorrectedContourShift.lean",
+        "Proof/BHPHorizontalEndpointInterpolation.lean",
+        "Proof/BHPPrincipalNegativeEulerBound.lean",
+        "Proof/BHPPrincipalNormalizedGaussian.lean",
+        "Proof/BHPPrincipalResidueBound.lean",
+        "Proof/BHPRademacherGaussianThreeLines.lean",
+        "Proof/BHPShiftedHolderReduction.lean",
+        "Proof/BHPTitchmarshPerronCore.lean",
+        "Proof/BudgetedPoweredConnector.lean",
+        "Proof/CGLMeshFormalization.lean",
+        "Proof/CGLProofDAG.lean",
+        "Proof/CompletedLVerticalBound.lean",
+        "Proof/ContinuousKernelOverlap.lean",
+        "Proof/FarAnnulusSourceToModel.lean",
+        "Proof/FejerArcBridge.lean",
+        "Proof/FiniteBlaschkeAlgebra.lean",
+        "Proof/FiniteEulerDistortion.lean",
+        "Proof/FiniteHilbertInequality.lean",
+        "Proof/FixedCharacterPoweredBridge.lean",
+        "Proof/FordBoundaryCrossFourier.lean",
+        "Proof/FordBoundaryEnergyMoments.lean",
+        "Proof/FordBoundarySlotSymmetry.lean",
+        "Proof/FordCenteredDifferenceDegree.lean",
+        "Proof/FordClassEnergyDiagonal.lean",
+        "Proof/FordClassEnergyFourier.lean",
+        "Proof/FordCoarseP18Fiber.lean",
+        "Proof/FordCollisionPinnedFourier.lean",
+        "Proof/FordCompleteMomentKPower.lean",
+        "Proof/FordCoshSqFourierCertified.lean",
+        "Proof/FordDifferenceEnergyK.lean",
+        "Proof/FordEulerHurwitzContinuation.lean",
+        "Proof/FordFiniteFieldBase.lean",
+        "Proof/FordHenselFiber.lean",
+        "Proof/FordHenselFiberBase.lean",
+        "Proof/FordHenselStep.lean",
+        "Proof/FordHurwitzFirstLeaf.lean",
+        "Proof/FordInitialMomentSeed.lean",
+        "Proof/FordMixedLogAntitone.lean",
+        "Proof/FordMixedReciprocalIntegral.lean",
+        "Proof/FordMixedSourceCount.lean",
+        "Proof/FordOffdiagTensorFibers.lean",
+        "Proof/FordP16IntegerHolder.lean",
+        "Proof/FordP16ResidueAggregation.lean",
+        "Proof/FordP18FixedTargetInjection.lean",
+        "Proof/FordPositiveQSourceHolder.lean",
+        "Proof/FordRealizedClassBound.lean",
+        "Proof/FordScaledBlaschkeFill.lean",
+        "Proof/FordScaledBlaschkeLogDerivative.lean",
+        "Proof/FordScaledCanonicalCorrection.lean",
+        "Proof/FordScaledJensenCount.lean",
+        "Proof/FordSource35BoundaryCap.lean",
+        "Proof/FordSourceJacobianFormula.lean",
+        "Proof/FordSourceWPrefactor.lean",
+        "Proof/FordSourceWProduct.lean",
+        "Proof/FordSourceWeakBilinear.lean",
+        "Proof/FordSubsetBoxBound.lean",
+        "Proof/FordWEnvelopeScalar.lean",
+        "Proof/FordWeakLowerPolicyNatBridge.lean",
+        "Proof/FunctionalZeroTransport.lean",
+        "Proof/GallagherKernelBounds.lean",
+        "Proof/GallagherPowerVariation.lean",
+        "Proof/GammaMellinInversion.lean",
+        "Proof/GammaOneSharpPower.lean",
+        "Proof/GoldfeldComparisonArithmetic.lean",
+        "Proof/GoldfeldEulerCorrection.lean",
+        "Proof/GoldfeldImprimitiveDerivative.lean",
+        "Proof/GoldfeldLemma11TwoDerivative.lean",
+        "Proof/GoldfeldRieszMellin.lean",
+        "Proof/GoldfeldSameLevelComparison.lean",
+        "Proof/GuthMaynardAffineCrudeBound.lean",
+        "Proof/GuthMaynardAffineSmoothingNorms.lean",
+        "Proof/GuthMaynardEnergy114LocalL2.lean",
+        "Proof/GuthMaynardEnergy114WeightedAverage.lean",
+        "Proof/GuthMaynardEnergy116ActualFourth.lean",
+        "Proof/GuthMaynardEnergy116ShiftedMean.lean",
+        "Proof/GuthMaynardEnergy118ShellCount.lean",
+        "Proof/GuthMaynardEnergy119FactorThree.lean",
+        "Proof/GuthMaynardEnergyCubicActual.lean",
+        "Proof/GuthMaynardGMSourceKusminActual.lean",
+        "Proof/GuthMaynardGeneralPlancherel.lean",
+        "Proof/GuthMaynardJIterationMediumRegionIntegration.lean",
+        "Proof/GuthMaynardJIterationMediumSmoothing.lean",
+        "Proof/GuthMaynardJIterationPoisson.lean",
+        "Proof/GuthMaynardJIterationSigmaIIFubini.lean",
+        "Proof/GuthMaynardJutilaLemma29NineKTwo.lean",
+        "Proof/GuthMaynardJutilaReflection2941Corrected.lean",
+        "Proof/GuthMaynardJutilaSmallScaleTransference.lean",
+        "Proof/GuthMaynardJutilaTransference.lean",
+        "Proof/GuthMaynardJutilaTransferenceOneScale.lean",
+        "Proof/GuthMaynardLargeValueIntervalSubdivision.lean",
+        "Proof/GuthMaynardLemma117Convolution.lean",
+        "Proof/GuthMaynardLemma117Cubic.lean",
+        "Proof/GuthMaynardLemma295CutoffAnalytic.lean",
+        "Proof/GuthMaynardLemma295FiniteContour.lean",
+        "Proof/GuthMaynardLemma295HorizontalIntegral.lean",
+        "Proof/GuthMaynardLemma295LineTwoFubini.lean",
+        "Proof/GuthMaynardLemma295MellinAllLines.lean",
+        "Proof/GuthMaynardLemma295MellinCompactStrip.lean",
+        "Proof/GuthMaynardLemma295PolynomialKernel.lean",
+        "Proof/GuthMaynardLemma295RawHorizontalIntegral.lean",
+        "Proof/GuthMaynardLemma295ReflectedFiniteContour.lean",
+        "Proof/GuthMaynardLemma295ThetaAnalytic.lean",
+        "Proof/GuthMaynardLemma295VerticalIntegrability.lean",
+        "Proof/GuthMaynardLemma62NegativeNonstationary.lean",
+        "Proof/GuthMaynardLemma92KernelIntegrability.lean",
+        "Proof/GuthMaynardMellinDecay.lean",
+        "Proof/GuthMaynardMellinRapidDecay.lean",
+        "Proof/GuthMaynardProp31LargeN.lean",
+        "Proof/GuthMaynardProp31TraceErrors.lean",
+        "Proof/GuthMaynardProp31ValueExponent.lean",
+        "Proof/GuthMaynardReflectionKernelVdC.lean",
+        "Proof/GuthMaynardReflectionMellin.lean",
+        "Proof/GuthMaynardS1Proposition51.lean",
+        "Proof/GuthMaynardS1Proposition51Endpoint.lean",
+        "Proof/GuthMaynardS1Tail.lean",
+        "Proof/GuthMaynardS2PoweredPair.lean",
+        "Proof/GuthMaynardS2ReflectionBridge.lean",
+        "Proof/GuthMaynardS2ShortGapPhase.lean",
+        "Proof/GuthMaynardS3ActualFourierTail.lean",
+        "Proof/GuthMaynardS3AffineCauchy.lean",
+        "Proof/GuthMaynardS3BlockEnergyEnvelope.lean",
+        "Proof/GuthMaynardS3BlockSignedConsumer.lean",
+        "Proof/GuthMaynardS3CubicSeamParameters.lean",
+        "Proof/GuthMaynardS3EnergyInserted.lean",
+        "Proof/GuthMaynardS3EpsilonCollar.lean",
+        "Proof/GuthMaynardS3FourierTailAbsorption.lean",
+        "Proof/GuthMaynardS3InversionIntegral.lean",
+        "Proof/GuthMaynardS3LiteralBalancedGeometry.lean",
+        "Proof/GuthMaynardS3LiteralBalancedSectorGeometry.lean",
+        "Proof/GuthMaynardS3LiteralLemma82.lean",
+        "Proof/GuthMaynardS3LiteralLemma84Outer.lean",
+        "Proof/GuthMaynardS3LiteralLemma92NonzeroMedium.lean",
+        "Proof/GuthMaynardS3LiteralLocalization.lean",
+        "Proof/GuthMaynardS3LiteralProfileFourier.lean",
+        "Proof/GuthMaynardS3LiteralRadialDecay.lean",
+        "Proof/GuthMaynardS3MediumCanonicalInputs.lean",
+        "Proof/GuthMaynardS3PositiveEnergyShiftedBound.lean",
+        "Proof/GuthMaynardS3ScaledWideProfile.lean",
+        "Proof/GuthMaynardS3StartingProfile.lean",
+        "Proof/GuthMaynardS3UnequalScaleSecondPoisson.lean",
+        "Proof/GuthMaynardSectionFourPoisson.lean",
+        "Proof/GuthMaynardSectionThreeCutoffDerivativeBudget.lean",
+        "Proof/HBPerronPacketIndexedSourceV2.lean",
+        "Proof/HarmonicFrontend.lean",
+        "Proof/HolomorphicStripDerivativeFourth.lean",
+        "Proof/HolomorphicSubmeanSampling.lean",
+        "Proof/HuxleyDirichletSmoothing.lean",
+        "Proof/HuxleyJMellin.lean",
+        "Proof/HuxleyKCutoff.lean",
+        "Proof/HuxleyKFiniteInterchange.lean",
+        "Proof/HuxleyKMellin.lean",
+        "Proof/JutilaCollarA5Budget.lean",
+        "Proof/JutilaDeterministicCore.lean",
+        "Proof/JutilaEulerEpsilonBound.lean",
+        "Proof/JutilaGammaZeroShift.lean",
+        "Proof/JutilaGappedFixedModulusAggregateP53Adapter.lean",
+        "Proof/JutilaHybridConvexityEulerReduction.lean",
+        "Proof/JutilaLemma3AbsoluteMass.lean",
+        "Proof/JutilaLemma6GenericTailAbsorption.lean",
+        "Proof/JutilaLemma6MellinIntegral.lean",
+        "Proof/JutilaLemma6MellinIntegralSharp.lean",
+        "Proof/JutilaMNonnegativeHalfPlaneBound.lean",
+        "Proof/JutilaMultiplierRecurrence.lean",
+        "Proof/JutilaP53DivisorKernelMultiplicative.lean",
+        "Proof/JutilaP53FiniteFubiniReindex.lean",
+        "Proof/JutilaP53PairEulerFactorization.lean",
+        "Proof/JutilaP53PrincipalLeftLineEstimate.lean",
+        "Proof/JutilaP53PrincipalSourceLineIntegral.lean",
+        "Proof/JutilaP53SourceScaleIntegration.lean",
+        "Proof/JutilaP53TwoScaleContour.lean",
+        "Proof/JutilaPrincipalDetectorPole.lean",
+        "Proof/JutilaPrincipalDetectorVerticalIntegrability.lean",
+        "Proof/JutilaPrincipalEpsilonRemainderCertified.lean",
+        "Proof/JutilaPrincipalEpsilonShiftedContour.lean",
+        "Proof/JutilaPrincipalSourceConvexity.lean",
+        "Proof/JutilaPseudocharacterMExact.lean",
+        "Proof/JutilaPseudocharacterMollifierBound.lean",
+        "Proof/JutilaReflectionDirichletIdentity.lean",
+        "Proof/JutilaSourceQEBudget.lean",
+        "Proof/JutilaTotientSmallLogBound.lean",
+        "Proof/JutilaTwoScaleSmoothing.lean",
+        "Proof/KTwoDyadicPrimeReciprocalFromCertifiedPsi.lean",
+        "Proof/KhaleAppendixB104FromSources.lean",
+        "Proof/KhaleAppendixBCotangentCertified.lean",
+        "Proof/KhaleAppendixBLemma41Applicability.lean",
+        "Proof/KhaleAppendixBLemma41FourApplicationWeld.lean",
+        "Proof/KhaleAppendixBTrigLogDerivativeCertified.lean",
+        "Proof/KhaleAppendixBZetaPrimePowerCertified.lean",
+        "Proof/KhaleHighZeroNonvanishingFromRaw.lean",
+        "Proof/KoukCompletedLogDerivativeFunctionalEquation.lean",
+        "Proof/KoukExercise12TwoEndpointScalars.lean",
+        "Proof/KoukGammaFactorLogDerivative.lean",
+        "Proof/KoukGaussDigammaSeries.lean",
+        "Proof/KoukGaussSeriesToRightHalfPlane.lean",
+        "Proof/KoukLemma12TwoEulerAdapter.lean",
+        "Proof/KoukLowKhaleRangeWeakGap.lean",
+        "Proof/KoukTheorem113NegativeRectangle.lean",
+        "Proof/KoukTheorem113Residues.lean",
+        "Proof/KoukTheorem113ToCorrectedTail.lean",
+        "Proof/KoukUniformRealEndpointPerronBound.lean",
+        "Proof/L1L2PlancherelBridge.lean",
+        "Proof/MAPDynamicHBPacketIndexedDataRefinedV3.lean",
+        "Proof/MAPDynamicHBPacketIndexedDataV3.lean",
+        "Proof/MAPFarRationalApproximation.lean",
+        "Proof/MAPFarSourceWeldScaffold.lean",
+        "Proof/MAPHBPerronSourceData.lean",
+        "Proof/MAPLiteralCutoffDual.lean",
+        "Proof/MAPNearOneBulkBypassConsumer.lean",
+        "Proof/MAPNearOneBulkBypassDetectorNonprincipal.lean",
+        "Proof/MAPNearOneBulkBypassDetectorPrincipal.lean",
+        "Proof/MAPNearOneBulkBypassGappedConsumer.lean",
+        "Proof/MAPNearOneBulkBypassGappedConsumerWeakTheta.lean",
+        "Proof/MAPPacketIndexedFarBudgetConsumerV2.lean",
+        "Proof/MAPPrimitiveRegularHighSavingFixedTheta.lean",
+        "Proof/MAPSmallRemainderMassBudgetV3.lean",
+        "Proof/MRTCorollary25MAPInstantiation.lean",
+        "Proof/MRTCorollary25Minkowski.lean",
+        "Proof/MRTCorollary53SourceBridge.lean",
+        "Proof/MRTDynamicD12CanonicalElementary.lean",
+        "Proof/MRTDynamicD12CanonicalProducer.lean",
+        "Proof/MRTDynamicD12ContinuumSampling.lean",
+        "Proof/MRTDynamicD12FactorExtraction.lean",
+        "Proof/MRTDynamicD12GlobalScalarBridgeV3.lean",
+        "Proof/MRTDynamicD12ParameterPackage.lean",
+        "Proof/MRTDynamicD12PolynomialFactorization.lean",
+        "Proof/MRTEquation77.lean",
+        "Proof/MRTEquation79PacketBilinearCore.lean",
+        "Proof/MRTEquation81.lean",
+        "Proof/MRTEquation81AveragingBilinear.lean",
+        "Proof/MRTFaithfulEquation79LocalizedBilinear.lean",
+        "Proof/MRTFaithfulEquation81Weld.lean",
+        "Proof/MRTFaithfulHighProjection.lean",
+        "Proof/MRTFaithfulLowHalfRangeIBP.lean",
+        "Proof/MRTFaithfulLowTonelli.lean",
+        "Proof/MRTFaithfulSmoothCutoff.lean",
+        "Proof/MRTLemma210DyadicMeanSquare.lean",
+        "Proof/MRTLemma210OrthogonalityReduction.lean",
+        "Proof/MRTLemma210SameResidueHilbert.lean",
+        "Proof/MRTLemma211AllCharacterSource.lean",
+        "Proof/MRTLemma215DyadicPartition.lean",
+        "Proof/MRTLemma215DynamicFactorExtractionV3.lean",
+        "Proof/MRTLemma215DynamicHighParameterScalesV3.lean",
+        "Proof/MRTLemma215DynamicHighProvenanceV3.lean",
+        "Proof/MRTLemma215DynamicHighUniformScaledCoefficientsV3.lean",
+        "Proof/MRTLemma215DynamicPacketSourceBoundRefinedV3.lean",
+        "Proof/MRTLemma215DynamicRegroupingV3.lean",
+        "Proof/MRTLemma215DynamicTypeIIDivisorLogV3.lean",
+        "Proof/MRTLemma215DynamicTypeIIFactorizationV3.lean",
+        "Proof/MRTLemma29Counterexample.lean",
+        "Proof/MRTOffDiagonalPhase.lean",
+        "Proof/MRTPacketEnergy.lean",
+        "Proof/MRTPacketEquation82.lean",
+        "Proof/MRTProposition51FirstAnalytic.lean",
+        "Proof/MRTProposition51ProjectionLowAmplitude.lean",
+        "Proof/MRTProposition51ProjectionOneIBP.lean",
+        "Proof/MRTProposition51SmoothDualityWeld.lean",
+        "Proof/MRTProposition61D12OnlyUniformCertificateV3.lean",
+        "Proof/MRTProposition61HighActivePacketDataV3.lean",
+        "Proof/MRTProposition61HighGeometricSavingsV3.lean",
+        "Proof/MRTProposition61HighUniformBridgeInstantiationV3.lean",
+        "Proof/MRTProposition61TypeIIParameterAbsorptionV3.lean",
+        "Proof/MRTSchurTest.lean",
+        "Proof/MRTSourceLowerCollarOffResonanceBudget.lean",
+        "Proof/MRTSourceOuterCutoffEndpoint.lean",
+        "Proof/MRTSourcePacketAmplitudeC2.lean",
+        "Proof/MRTVanDerCorput.lean",
+        "Proof/MRTVanDerCorputCore.lean",
+        "Proof/MRTWholeLineCutoffAutocorrelation.lean",
+        "Proof/MRTWholeLineEquation81FromEquation82.lean",
+        "Proof/MRTWholeLineHighCellEquation84.lean",
+        "Proof/MRTWholeLineOffDiagonalAmplitude.lean",
+        "Proof/MRTWholeLinePacketFubini.lean",
+        "Proof/MajorArcIntegratedError.lean",
+        "Proof/MajorArcIntegratedPowerWeld.lean",
+        "Proof/MajorArcPublicLiftBridge.lean",
+        "Proof/MertensAnalyticLeaf.lean",
+        "Proof/MixedMeanMajorantWeld.lean",
+        "Proof/MontgomeryFullScalePrincipalDensity.lean",
+        "Proof/MontgomeryFullScaleTypeI.lean",
+        "Proof/MontgomeryLowStripContinuousTypeII.lean",
+        "Proof/MontgomeryMixedMomentFamily.lean",
+        "Proof/MontgomeryMixedMomentIntegral.lean",
+        "Proof/MontgomeryMollifierSecondMoment.lean",
+        "Proof/MontgomeryTheorem12SourceDAG.lean",
+        "Proof/NearCollarGallagherFiniteUnion.lean",
+        "Proof/NearOneThreeLines.lean",
+        "Proof/NonprincipalKoukSiegelFormula.lean",
+        "Proof/NonprincipalTwistedMangoldtPsiCertified.lean",
+        "Proof/OneSidedMaximalL2.lean",
+        "Proof/PaperEdgeOutsidePerronTail.lean",
+        "Proof/PerRationalNearCollarDeterministic.lean",
+        "Proof/PerronKernel.lean",
+        "Proof/PointwiseAbelWeld.lean",
+        "Proof/PostA5CrowdingDeterministic.lean",
+        "Proof/PostA5HighStripSplitReductionFromFourthMoment.lean",
+        "Proof/PostA5LongSpacingAssembly.lean",
+        "Proof/PostA5TypeICompactMassWeld.lean",
+        "Proof/PostA5TypeIFourierAssembly.lean",
+        "Proof/PrimeDistortionChebyshev.lean",
+        "Proof/PrimeFactorSquareRootBound.lean",
+        "Proof/PrimitiveExplicitFormulaSpine.lean",
+        "Proof/PrimitiveLFixedStripGrowthCertified.lean",
+        "Proof/PrimitiveRectangleSpecialization.lean",
+        "Proof/PrimitiveRemovableClosure.lean",
+        "Proof/PrimitiveTruncatedExplicitFormulaBridge.lean",
+        "Proof/PrincipalDiscreteFourthFromContinuous.lean",
+        "Proof/PrincipalKoukSiegelFormula.lean",
+        "Proof/PrincipalKoukTheorem12Three.lean",
+        "Proof/PrincipalWeakVKZeroGapFromKhaleHigh.lean",
+        "Proof/PrincipalZetaContourTails.lean",
+        "Proof/PrincipalZetaDetectorPoleRemoval.lean",
+        "Proof/PrincipalZetaFixedStrip.lean",
+        "Proof/PrincipalZetaHuxley1972Equation39Exceptions.lean",
+        "Proof/PrincipalZetaStructuredSplitFromFourthMoment.lean",
+        "Proof/PrincipalZetaTransport.lean",
+        "Proof/RamachandraEulerExpEnvelope.lean",
+        "Proof/RamachandraFullLineReflectedBlockFubini.lean",
+        "Proof/RamachandraLongContourContinuity.lean",
+        "Proof/RamachandraLongContourInfiniteAssembly.lean",
+        "Proof/RamachandraLongContourMomentExtraction.lean",
+        "Proof/RamachandraLongDyadicCutoff.lean",
+        "Proof/RamachandraLongTailShellCauchy.lean",
+        "Proof/RamachandraLongTailShellSecondMoment.lean",
+        "Proof/RamachandraLpSeriesMinkowski.lean",
+        "Proof/RamachandraPrimitiveShiftedHighLowWeld.lean",
+        "Proof/RamachandraPrimitiveShiftedMellinReduction.lean",
+        "Proof/RamachandraPrincipalHighContourIdentity.lean",
+        "Proof/RamachandraPrincipalHighContourTails.lean",
+        "Proof/RamachandraPrincipalHighSourceIdentity.lean",
+        "Proof/RamachandraPrincipalResidueContinuity.lean",
+        "Proof/RamachandraShiftedDirectShellAbsorption.lean",
+        "Proof/RamachandraShiftedFunctionalEquationBridge.lean",
+        "Proof/RamachandraShiftedGammaPoleContour.lean",
+        "Proof/RamachandraShiftedReflectedSeries.lean",
+        "Proof/RamachandraShiftedReflectedTailInfiniteAssembly.lean",
+        "Proof/RamachandraShortContourContinuity.lean",
+        "Proof/RamachandraShortContourFamilyMoment.lean",
+        "Proof/RamachandraTheorem6SourceProofChain.lean",
+        "Proof/RamachandraWeightedCauchyAE.lean",
+        "Proof/RamanujanTailWeighted.lean",
+        "Proof/RecenteredSampling.lean",
+        "Proof/RieszKernelBoundary.lean",
+        "Proof/SelbergMainWeightClosure.lean",
+        "Proof/SharpFinitePerronStep.lean",
+        "Proof/SharpOutsidePerronTail.lean",
+        "Proof/ShiuClassIFinal.lean",
+        "Proof/ShiuClassIIIII.lean",
+        "Proof/ShiuClassIVBound.lean",
+        "Proof/ShiuClassIVEulerBridge.lean",
+        "Proof/ShiuEndToEndScaffold.lean",
+        "Proof/ShiuLemma1ClassIII.lean",
+        "Proof/ShiuLemma1Rankin.lean",
+        "Proof/ShiuLemma3TauMean.lean",
+        "Proof/ShiuSection5Split.lean",
+        "Proof/ShortIntervalTauFour.lean",
+        "Proof/SiegelArithmeticPositivity.lean",
+        "Proof/SignedGallagherCore.lean",
+        "Proof/SingularSeriesSquareMean.lean",
+        "Proof/StrongFEPairVerticalBound.lean",
+        "Proof/TruncatedTwistedPerron.lean",
+        "Proof/VonMangoldtPSeriesBound.lean",
+        "Proof/WideDiskLocalLogDerivative.lean",
+        "Proof/ZeroFreeSiegelBorelBridge.lean",
+        "Proof/ZeroFreeSiegelSpine.lean",
+        "Proof/ownnewLemma92RegionHighCommonCdec.lean"
+      ],
+      "change": "Lean v4.35.0-rc2 and Mathlib API compatibility migration. The public Challenge, Solution, axiom audit and MAP release endpoint are unchanged.",
+      "validation": "lake build Challenge Solution SolutionAxiomAudit passed on macOS arm64 (10,797 jobs); the standalone theorem audit reports only propext, Classical.choice and Quot.sound.",
+      "evidence": "evidence/lean435-macos-verification.json"
     }
-  ]
+  ],
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
 }

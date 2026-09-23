@@ -16,7 +16,9 @@ lemma phase_deriv {t xi u : ℝ} (hu : u ≠ 0) :
     HasDerivAt (phase t xi) (first t xi u) u := by
   unfold phase first
   convert (Real.hasDerivAt_log hu).const_mul (t / (2 * Real.pi)) |>.sub
-    ((hasDerivAt_id u).const_mul xi) using 1 <;> field_simp [Real.pi_ne_zero, hu]
+    ((hasDerivAt_id u).const_mul xi) using 1 <;>
+    (try funext y) <;> (try simp only [Pi.sub_apply, id_eq]) <;>
+    field_simp [Real.pi_ne_zero, hu]
 
 lemma first_deriv {t xi u : ℝ} (hu : u ≠ 0) :
     HasDerivAt (first t xi) (second t u) u := by

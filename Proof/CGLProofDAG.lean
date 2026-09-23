@@ -210,9 +210,17 @@ theorem characterTwist_mul {q : ℕ} (χ : DirichletCharacter ℂ q)
     characterTwist χ (f * g) = characterTwist χ f * characterTwist χ g := by
   apply ArithmeticFunction.ext
   intro n
-  have h := congrFun (DirichletCharacter.mul_convolution_distrib χ f g) n
-  simpa [characterTwist, Pi.mul_apply, ArithmeticFunction.mul_apply,
-    LSeries.convolution_def, mul_assoc, mul_comm, mul_left_comm] using h.symm
+  have hL : characterTwist χ (f * g) n = χ n * (f * g) n := rfl
+  have hR : (characterTwist χ f * characterTwist χ g) n =
+      ∑ p ∈ n.divisorsAntidiagonal,
+        characterTwist χ f p.1 * characterTwist χ g p.2 :=
+    ArithmeticFunction.mul_apply
+  rw [hL, hR, ArithmeticFunction.mul_apply, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun p hp => ?_
+  have hprod : p.1 * p.2 = n := (Nat.mem_divisorsAntidiagonal.mp hp).1
+  change χ n * (f p.1 * g p.2) = (χ p.1 * f p.1) * (χ p.2 * g p.2)
+  rw [← hprod, Nat.cast_mul, map_mul]
+  ring
 
 theorem characterTwist_one {q : ℕ} (χ : DirichletCharacter ℂ q) :
     characterTwist χ 1 = 1 := by

@@ -84,6 +84,7 @@ theorem image_im_fixedCharacterRows {q : ℕ}
       W.image Complex.im := by
   ext y
   simp [fixedCharacterRows, fixedCharacterRowEmbedding]
+  rfl
 
 theorem filter_fixedCharacterRows {q : ℕ}
     (chi psi : DirichletCharacter ℂ q) (W : Finset ℂ) :
@@ -92,6 +93,8 @@ theorem filter_fixedCharacterRows {q : ℕ}
   by_cases h : chi = psi
   · subst psi
     simp [fixedCharacterRows, fixedCharacterRowEmbedding]
+    intro rho hrho
+    rfl
   · rw [if_neg h, Finset.filter_eq_empty_iff]
     intro row hrow
     rcases Finset.mem_map.mp hrow with ⟨rho, hrho, heq⟩

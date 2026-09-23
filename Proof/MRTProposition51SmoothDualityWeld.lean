@@ -32,7 +32,7 @@ theorem smoothGallagher_band_le
   have hfreqInt : Integrable (fun xi : ℝ ↦
       ‖(H : ℂ) * cutoffFourierKernel faithfulCutoff (-H * xi) *
         exponentialSum X f (beta - xi)‖ ^ 2) :=
-    (memLp_two_iff_integrable_sq_norm hfreq.1).1 hfreq
+    (memLp_two_iff_integrable_sq_norm hfreq.aestronglyMeasurable).1 hfreq
   have hsumInt : IntegrableOn (fun xi : ℝ ↦
       ‖exponentialSum X f (beta - xi)‖ ^ 2)
       (Icc (-(1 / H)) (1 / H)) :=
@@ -268,14 +268,14 @@ theorem smoothEquation72_dual_witness
   have hF : Integrable F := integrable_smoothCoefficientField f hH
   have hFLp : MemLp F 2 := memLp_two_smoothCoefficientField f hH
   have hF2 : Integrable (fun x : ℝ ↦ ‖F x‖ ^ 2) :=
-    (memLp_two_iff_integrable_sq_norm hFLp.1).1 hFLp
+    (memLp_two_iff_integrable_sq_norm hFLp.aestronglyMeasurable).1 hFLp
   have hE0 : 0 ≤ E := integral_nonneg fun _ ↦ sq_nonneg _
   by_cases hEpos : 0 < E
   · let g := normalizedDualWitness F
     obtain ⟨hg, hgLp, hgSupportF, hgNorm, hgPair⟩ :=
       normalizedDualWitness_spec hF hF2 hEpos
     have hg2 : Integrable (fun x : ℝ ↦ ‖g x‖ ^ 2) :=
-      (memLp_two_iff_integrable_sq_norm hgLp.1).1 hgLp
+      (memLp_two_iff_integrable_sq_norm hgLp.aestronglyMeasurable).1 hgLp
     refine ⟨g, hg, hg2, ?_, hgNorm.le, ?_⟩
     · intro x hx
       exact hgSupportF x
@@ -301,7 +301,7 @@ theorem smoothEquation72_dual_witness
         (X := X) (H := H) (beta := beta) f hH
       change _ ≤ 100 / H ^ 2 * E at harc
       have hcritical := smoothPairing_eq_criticalSum
-        (X := X) (H := H) (beta := beta) hX hH f
+        (X := X) (H := H) (beta := beta) (g := fun _ => 0) hX hH f
           (MeasureTheory.integrable_zero ℝ ℂ volume)
       have hcritZero :
           (∑ n ∈ Finset.Ioc ⌊X⌋₊ ⌊2 * X⌋₊,

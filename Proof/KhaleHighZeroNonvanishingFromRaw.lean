@@ -88,7 +88,7 @@ theorem high_positive_nonvanishing_of_high_estimate
   have hDlt : D₁ < D₂ := by
     dsimp [D₁, D₂]
     have hc := appendixBHeightCoefficient_mul_rpow_lt_104
-    simpa only [add_comm] using
+    simpa only [add_comm] using!
       add_lt_add_left (mul_lt_mul_of_pos_right hc hFpos) (18 * Real.log q)
   have hboundary : 1 - 1 / D₁ < sigma := by
     have hinv : 1 / D₂ < 1 / D₁ := one_div_lt_one_div_of_lt hD₁pos hDlt

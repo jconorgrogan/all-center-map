@@ -122,7 +122,7 @@ theorem integrable_affineSmoothing_product
   have hk : Integrable k := integrable_affineSmoothing_kernel hT hpsi
   have hconv := hf.convolution_integrand
     (ContinuousLinearMap.mul ℝ ℝ) hk
-  simpa only [k, mul_comm] using hconv
+  simpa only [k, Function.uncurry_def, ContinuousLinearMap.mul_apply', mul_comm] using! hconv
 
 /-- The source smoothing is literally convolution with the scaled kernel. -/
 theorem affineSmoothing_eq_convolution
@@ -290,7 +290,7 @@ theorem fourier_ofReal_affineSmoothing
       (hpsiCont.comp (continuous_const.mul continuous_id))
   have hkCCont : Continuous kC := Complex.continuous_ofReal.comp hkRCont
   rw [ofReal_affineSmoothing_eq_complexConvolution]
-  rw [Real.fourier_mul_convolution_eq hfC hkC hfCCont hkCCont xi]
+  rw [Real.fourier_mul_convolution_eq hfC hkC xi]
   change FourierTransform.fourier fC xi * FourierTransform.fourier kC xi = _
   rw [show FourierTransform.fourier kC xi =
       FourierTransform.fourier (fun z : ℝ => (psi z : ℂ)) (xi / T) by
@@ -668,7 +668,7 @@ theorem integrable_sq_affineSmoothing
   have hsmoothMeas : AEStronglyMeasurable
       (fun x : ℝ => affineSmoothing T psi f x ^ 2) := by
     rw [affineSmoothing_eq_convolution T psi f]
-    simpa only [k] using hconv.aestronglyMeasurable.pow 2
+    exact hconv.aestronglyMeasurable.pow 2
   apply hrhs.mono' hsmoothMeas
   filter_upwards [hpoint] with x hx
   have hlhs0 : 0 ≤ affineSmoothing T psi f x ^ 2 := sq_nonneg _

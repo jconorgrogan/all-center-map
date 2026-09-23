@@ -92,7 +92,7 @@ theorem exists_actual_prop31_largeN_bound (eps : ℝ) (heps : 0 < eps) :
     rw [abs_le]
     constructor <;> linarith
   have hS1raw := hS1 N W hNnat (by simpa [hTdef] using hT1cut)
-    (by simpa [hTdef] using hRle) (by simpa [hTdef] using hsepD) (by simpa [hTdef] using hdiam)
+    (by simpa [hTdef] using hRle) (by simpa [hTdef] using! hsepD) (by simpa [hTdef] using hdiam)
   have hS1norm : ‖sourceS1 N W‖ ≤ 1 := by
     have hh := (GuthMaynardS1MassBridge.norm_sourceS1_le_sourceS1TotalContribution
       (show 0 < N by omega) W).trans hS1raw
@@ -194,7 +194,7 @@ theorem exists_actual_prop31_largeN_bound (eps : ℝ) (heps : 0 < eps) :
     nlinarith
   have hresult := GuthMaynardProp31DirectAbsorption.prop31_direct_absorption hslo
     (by convert hshi using 1 <;> norm_num) hN1 hR0 hFeps hprem
-  simpa only [R, GuthMaynardProp31DirectAbsorption.q, mul_assoc] using hresult
+  simpa only [R, GuthMaynardProp31DirectAbsorption.q, mul_assoc] using! hresult
 
 end GuthMaynardProp31LargeN
 #print axioms GuthMaynardProp31LargeN.exists_actual_prop31_largeN_bound

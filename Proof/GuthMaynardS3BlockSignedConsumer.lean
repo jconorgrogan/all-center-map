@@ -33,7 +33,7 @@ theorem block_affine_sq_le_of_signed_bins
   have hp' : SourceAdmissibleProfile B (4*(W.card:ℝ)^2) (7/4)
       (fun v => wideProfile B W (4*v)) := hp
   have hE := rectangle_energy_le_of_dilated_signed_bound hp' A k (by
-    simpa only [scaledWideProfile, B] using hbin)
+    simpa only [scaledWideProfile, B] using! hbin)
   have hbase := orderedBalancedBlockAffine_sq_le_source_energy N W rho A i k d hd hB4
   have hout := integral_ratioDirichletKernel_sq_on_unit_le hT heta hsep hW
   have hE0 : 0 ≤ sourceFiniteAffineEnergy

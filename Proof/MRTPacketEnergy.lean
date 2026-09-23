@@ -132,7 +132,7 @@ theorem packet_energy_le_of_central_far
           (show (1 + ((c + beta * x) / R) ^ 2)⁻¹ ^ 2 ≤
             (1 + ((c + beta * x) / R) ^ 2)⁻¹ by nlinarith)
           (by nlinarith [sq_nonneg A] : 0 ≤ 4 * A ^ 2)
-        simpa [K, inv_pow] using this
+        simpa [K, inv_pow, div_eq_mul_inv] using this
   calc
     (∫ x : ℝ, ‖J x‖ ^ 2) ≤ ∫ x : ℝ, 4 * A ^ 2 * K x := by
       exact integral_mono hJInt hmajorantInt hpoint

@@ -171,7 +171,7 @@ theorem tendsto_mul_perronContourIntegrand_one
     continuousAt_id.tendsto.mono_left nhdsWithin_le_nhds
   have hfactor : Tendsto (fun s : ℂ => (x : ℂ) ^ s / s)
       (𝓝[≠] (1 : ℂ)) (𝓝 (x : ℂ)) := by
-    simpa using hpow.div hid (by norm_num)
+    simpa using! hpow.div hid (by norm_num)
   have hmul := hlog.mul hfactor
   convert hmul using 1
   · ext s

@@ -213,7 +213,7 @@ theorem integral_mul_packet_withoutOuter_eq_outer_add_lowerOuterCollarPairingErr
   have hErr : Integrable
       (Set.indicator (lowerOuterCollar X) (fun x ↦ F x - G x)) := by
     have hFG : Integrable (fun x ↦ F x - G x) := by
-      simpa [F, G] using hNoOuter.sub hOuter
+      exact hNoOuter.sub hOuter
     apply hFG.congr
     filter_upwards with x
     exact hdiff x
