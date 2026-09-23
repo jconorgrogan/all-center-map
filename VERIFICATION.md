@@ -49,7 +49,7 @@ official full Palomar verifier. The latter is pinned to PalomarSubmission
 The official verifier separately compiles the Challenge against frozen
 canonical dependencies, protects that statement from the candidate build,
 and checks the Solution with Comparator and all three kernels. It produces
-the `mechanical-report-map435preflight` artifact. The report must identify the
+the `mechanical-report-map435verify` artifact. The report must identify the
 exact source SHA and configuration and report `status: pass` and
 `stage: complete`.
 
