@@ -30,13 +30,15 @@ sources:
   - title: >-
       Prime Pairs at the Prime Number Theorem Threshold: Hardy--Littlewood for
       Almost Every Shift in Every Interval of Length X^(2/15+epsilon)
-    type: "original-proof"
+    type: "paper"
     authors: ["Conor Grogan"]
-    relationship: "other"
+    relationship: "formalizes"
+    location: "paper/prime-pairs-pnt-threshold.tex"
     note: >-
-      The manuscript's MAP theorem is the release target. The paper is
-      paper/prime-pairs-pnt-threshold.tex. STATEMENT.md is the
-      reader-facing statement. Authorship and Apache-2.0 licensing were
+      The manuscript first presented the MAP result, before the Lean
+      formalization. This development formalizes its Theorem 1.1. The
+      manuscript and formalization are both by Conor Grogan. STATEMENT.md
+      is the reader-facing statement. Authorship and Apache-2.0 licensing were
       confirmed on 2026-09-20.
   - title: "Correlations of the von Mangoldt and higher divisor functions I. Long shift ranges"
     type: "paper"

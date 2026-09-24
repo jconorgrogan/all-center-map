@@ -17,6 +17,15 @@ Linux and proof-closure records.
 The original release scaffold is under `evidence/historical_scaffold`.
 Author, maintainer, and Apache-2.0 licensing were confirmed on 2026-09-20.
 
+## Manuscript and formalization
+
+Conor Grogan’s manuscript first presented the all-center MAP result. The Lean
+development subsequently formalized its Theorem 1.1. The author confirmed this
+order on 2026-09-24. The source is included as
+[the manuscript](paper/prime-pairs-pnt-threshold.tex), and `formalization.yaml`
+records it as a paper with the relationship `formalizes`. Both the manuscript
+and the formalization are by Conor Grogan.
+
 ## Mathematical source map
 
 The closed release theorem has no unproved source premise. The development
