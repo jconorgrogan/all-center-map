@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-09-23T23:17:02.877669+00:00",
+  "verified_at_utc": "2026-09-24T01:08:18.292101+00:00",
   "platform": {
     "system": "Darwin",
     "release": "24.1.0",
@@ -20,7 +20,7 @@
       "exit_code": 0,
       "jobs": 10797,
       "log": "evidence/lean435-macos-build.log",
-      "log_sha256": "856a92d996c1cbb2d167be4e95bf6003fa52d9e161610a8d5ab1eff58a9ba9f6"
+      "log_sha256": "cb2a59f5e81155e97bcb7ebdc6878820e30344acead6b0183e8df547ea703a50"
     },
     {
       "command": "lake env lean SolutionAxiomAudit.lean",
@@ -34,5 +34,10 @@
       "log_sha256": "47d1066d39cd7623b17af78f8155cb630e4a3c8eb7c237d799d69ba2d049e4d2"
     }
   ],
-  "scope": "Author macOS build and axiom audit. Linux, independent kernels and official Palomar preflight have separate run records."
+  "scope": "Author macOS build and axiom audit. Linux, independent kernels and official Palomar preflight have separate run records.",
+  "statement_surfaces": {
+    "Challenge.lean": "6022cc8b295ad00f470dd031d793f7205a7a34f120ca4acb398ac3862ed93317",
+    "Solution.lean": "af3e06cae6407f084bb72adf5da01df9eb90c45991632c3ef2fd19479fc0a513",
+    "SolutionAxiomAudit.lean": "d4e947c07b78c6a9ad26d2ec2b84cbf2e02dd9bce690352cbe0b62450da2d676"
+  }
 }

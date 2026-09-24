@@ -4,7 +4,7 @@ import MAPReleaseEndpoint
 # Solution surface for the all-center MAP endpoint
 
 This theorem is supplied by the verified zero-argument endpoint in Proof/.
-The release uses the exact proven Lean v4.30.0-rc2 / Mathlib pin.
+The release uses the exact proven Lean v4.35.0-rc2 / Mathlib pin.
 -/
 
 namespace AllCenterMAP
@@ -42,7 +42,7 @@ theorem map_two_fifteenths :
             ∀ center : UnitAddCircle,
               (∫ alpha in centeredArc H center ∩ minorArcs X B D,
                   ‖primeExponentialSum X alpha‖ ^ 2
-                    ∂AddCircle.haarAddCircle) ≤
+                    ∂(@AddCircle.haarAddCircle 1 ⟨Real.zero_lt_one⟩)) ≤
                 C * X * Real.rpow (Real.log X) (-A) := by
   exact MAPReleaseEndpoint.zero_argument_map_two_fifteenths
 

@@ -55,7 +55,7 @@ theorem map_two_fifteenths :
             ∀ center : UnitAddCircle,
               (∫ alpha in centeredArc H center ∩ minorArcs X B D,
                   ‖primeExponentialSum X alpha‖ ^ 2
-                    ∂AddCircle.haarAddCircle) ≤
+                    ∂(@AddCircle.haarAddCircle 1 ⟨Real.zero_lt_one⟩)) ≤
                 C * X * Real.rpow (Real.log X) (-A) := by
   sorry
 
